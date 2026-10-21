@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>02 · Trạng thái trống — Chat với tài liệu</title>
+<link rel="stylesheet" href="assets/design-system.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></symbol>
+  <symbol id="i-upload" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M17 8l-5-5-5 5"/><path d="M12 3v12"/></symbol>
+  <symbol id="i-send" viewBox="0 0 24 24"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4z"/></symbol>
+  <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M3 6h18"/><path d="M3 12h18"/><path d="M3 18h18"/></symbol>
+  <symbol id="i-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
+  <symbol id="i-folder" viewBox="0 0 24 24"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></symbol>
+  <symbol id="i-message" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14"/><path d="M5 12h14"/></symbol>
+</svg>
+<a class="skip-link" href="#main">Bỏ qua tới nội dung chính</a>
+
+<div class="app">
+  <header class="topbar">
+    <button class="btn btn-ghost btn-icon drawer-toggle" type="button" aria-label="Mở danh sách tài liệu" aria-expanded="false"><svg class="icon"><use href="#i-menu"/></svg></button>
+    <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">CW</span>Chat với tài liệu</a>
+    <span class="docset-name"><svg class="icon icon-sm"><use href="#i-folder"/></svg>Bộ tài liệu: Dự án X</span>
+    <span class="topbar-spacer"></span>
+    <button class="user-menu" type="button" aria-haspopup="menu"><span class="avatar" aria-hidden="true">L</span>Nguyễn Thị Lan<svg class="icon icon-sm"><use href="#i-chevron"/></svg></button>
+  </header>
+
+  <div class="workspace">
+    <aside class="docs-panel" aria-labelledby="docs-title">
+      <div class="docs-panel-header">
+        <h2 id="docs-title">Tài liệu <span class="muted" data-show-in="empty">(0)</span><span class="muted" data-show-in="processing">(3)</span></h2>
+      </div>
+      <div class="dropzone" role="button" tabindex="0" aria-describedby="dz-hint">
+        <svg class="icon"><use href="#i-upload"/></svg>
+        <span><strong>Kéo thả PDF vào đây</strong> hoặc <a href="03-xac-nhan-phan-loai.html">chọn file</a></span>
+        <span id="dz-hint" class="small">PDF dạng văn bản · tối đa 200 trang, 20 MB</span>
+      </div>
+
+      <p class="muted small" style="padding: 0 var(--sp-4)" data-show-in="empty">Chưa có tài liệu nào trong bộ này.</p>
+
+      <ul class="doc-list" data-show-in="processing" aria-live="polite">
+        <li class="doc-row">
+          <svg class="icon"><use href="#i-file"/></svg>
+          <div><div class="doc-name">HopDongKhung.pdf</div><div class="doc-meta">48 trang · Đang xử lý 62%</div>
+            <div class="progress" role="progressbar" aria-valuenow="62" aria-valuemin="0" aria-valuemax="100" aria-label="Tiến trình xử lý HopDongKhung.pdf"><span style="width:62%"></span></div></div>
+          <span class="badge badge-processing">Đang xử lý</span>
+        </li>
+        <li class="doc-row">
+          <svg class="icon"><use href="#i-file"/></svg>
+          <div><div class="doc-name">PhuLuc2.pdf</div><div class="doc-meta">12 trang · Đang xử lý 15%</div>
+            <div class="progress" role="progressbar" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" aria-label="Tiến trình xử lý PhuLuc2.pdf"><span style="width:15%"></span></div></div>
+          <span class="badge badge-processing">Đang xử lý</span>
+        </li>
+        <li class="doc-row">
+          <svg class="icon"><use href="#i-file"/></svg>
+          <div><div class="doc-name">BaoGia_v3.pdf</div><div class="doc-meta">Đang chờ xử lý</div></div>
+          <span class="badge badge-neutral">Đã tải lên</span>
+        </li>
+      </ul>
+
+      <div class="docs-panel-footer">
+        <button class="btn btn-secondary btn-sm" type="button" disabled><svg class="icon icon-sm"><use href="#i-plus"/></svg>Hội thoại mới</button>
+      </div>
+    </aside>
+
+    <main class="chat" id="main">
+      <div class="chat-scroll">
+        <!-- E-01: chưa có tài liệu -->
+        <section class="empty" data-show-in="empty" aria-labelledby="empty-title">
+          <div class="empty-illus"><svg class="icon"><use href="#i-message"/></svg></div>
+          <h1 id="empty-title">Tải lên tài liệu PDF đầu tiên để bắt đầu hỏi đáp</h1>
+          <p class="muted">Sau khi tài liệu được xử lý, bạn có thể hỏi bằng tiếng Việt hoặc tiếng Anh và nhận câu trả lời kèm tên tài liệu, số trang nguồn.</p>
+          <ol class="steps">
+            <li><span class="step-no">1</span><div><strong>Tải tài liệu lên</strong><p class="muted small">Kéo thả file PDF vào khu vực bên trái. Chỉ tải tài liệu loại Công khai hoặc Nội bộ.</p></div></li>
+            <li><span class="step-no">2</span><div><strong>Chờ xử lý xong</strong><p class="muted small">Tài liệu chuyển sang trạng thái “Sẵn sàng”, thường dưới 2 phút cho 50 trang.</p></div></li>
+            <li><span class="step-no">3</span><div><strong>Đặt câu hỏi</strong><p class="muted small">Ví dụ: “Thời hạn thanh toán trong hợp đồng khung là bao lâu?”</p></div></li>
+          </ol>
+          <div class="dropzone dropzone-lg" role="button" tabindex="0" style="width:100%; margin:0">
+            <svg class="icon"><use href="#i-upload"/></svg>
+            <span><strong>Kéo thả PDF vào đây</strong> hoặc <a href="03-xac-nhan-phan-loai.html">chọn file từ máy</a></span>
+          </div>
+        </section>
+
+        <!-- E-02: mọi tài liệu đang xử lý -->
+        <section class="empty" data-show-in="processing" aria-labelledby="proc-title">
+          <div class="empty-illus"><svg class="icon"><use href="#i-file"/></svg></div>
+          <h1 id="proc-title">Đang xử lý 3 tài liệu</h1>
+          <p class="muted">Bạn có thể hỏi ngay khi ít nhất một tài liệu ở trạng thái “Sẵn sàng”. Danh sách bên trái tự cập nhật, không cần tải lại trang.</p>
+        </section>
+      </div>
+
+      <div class="composer-wrap">
+        <form class="composer" onsubmit="return false">
+          <label for="q" class="sr-only">Câu hỏi về tài liệu</label>
+          <textarea id="q" rows="2" placeholder="Đặt câu hỏi về tài liệu…" data-max="2000" data-counter="q-count" data-send="q-send" aria-describedby="composer-hint" data-show-in="processing"></textarea>
+          <textarea rows="2" placeholder="Hãy tải tài liệu lên trước khi đặt câu hỏi" disabled aria-describedby="composer-hint" data-show-in="empty"></textarea>
+          <div class="composer-row">
+            <span id="composer-hint" class="small muted"><span data-show-in="empty">Chưa có tài liệu sẵn sàng</span><span data-show-in="processing">Nút Gửi sẽ bật khi có tài liệu sẵn sàng</span></span>
+            <span class="row"><span id="q-count" class="counter" hidden></span>
+            <button id="q-send" class="btn btn-primary" type="submit" disabled data-locked="1"><svg class="icon icon-sm"><use href="#i-send"/></svg>Gửi</button></span>
+          </div>
+        </form>
+        <p class="grounding"><svg class="icon icon-sm"><use href="#i-info"/></svg>Câu trả lời chỉ dựa trên tài liệu đã tải lên. Hãy đối chiếu nguồn trước khi gửi cho đối tác.</p>
+      </div>
+    </main>
+  </div>
+</div>
+
+<div class="state-switcher" role="group" aria-label="Trạng thái màn hình (chỉ trong file thiết kế)">
+  <span class="state-switcher-label">Trạng thái</span>
+  <button type="button" data-state="empty">Chưa có tài liệu (E-01)</button>
+  <button type="button" data-state="processing">Tất cả đang xử lý (E-02)</button>
+</div>
+
+<details class="design-notes">
+  <summary>📝 Ghi chú thiết kế · 02</summary>
+  <div class="dn-body">
+    <table>
+      <tr><th>Use case</th><td>UC-06 (A1), UC-07 (E1)</td></tr>
+      <tr><th>UI</th><td>UI-001, UI-003, UI-006, UI-007, UI-008</td></tr>
+      <tr><th>Trường hợp biên</th><td>E-01, E-02</td></tr>
+      <tr><th>Component</th><td><code>EmptyState</code>, <code>DocumentsPanel</code>, <code>Composer</code>, <code>GroundingNotice</code></td></tr>
+      <tr><th>API</th><td>409 <code>NO_READY_DOCUMENTS</code>; SSE <code>document.status</code></td></tr>
+      <tr><th>UX</th><td>“Mọi trạng thái rỗng hướng dẫn bước tiếp theo” (Blueprint §2.5)</td></tr>
+    </table>
+  </div>
+</details>
+<script src="assets/prototype.js"></script>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>09 · Quản trị: Gỡ tài liệu — Chat với tài liệu</title>
+<link rel="stylesheet" href="assets/design-system.css">
+<style>
+  .search { position: relative; max-width: 420px; margin-bottom: var(--sp-4); }
+  .search .icon { position: absolute; left: var(--sp-3); top: 10px; color: var(--c-neutral-500); }
+  .search .input { padding-left: 40px; }
+  .meta-grid { display: grid; grid-template-columns: auto 1fr; gap: var(--sp-1) var(--sp-4); font-size: var(--fs-sm); background: var(--c-neutral-50); padding: var(--sp-3); border-radius: var(--r-md); }
+  .meta-grid dt { color: var(--c-neutral-600); }
+  .meta-grid dd { margin: 0; font-weight: var(--fw-medium); }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-users" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.9"/><path d="M16 3.1a4 4 0 0 1 0 7.8"/></symbol>
+  <symbol id="i-trash" viewBox="0 0 24 24"><path d="M3 6h18"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/></symbol>
+  <symbol id="i-list" viewBox="0 0 24 24"><path d="M8 6h13"/><path d="M8 12h13"/><path d="M8 18h13"/><path d="M3 6h.01"/><path d="M3 12h.01"/><path d="M3 18h.01"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.3-4.3"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24"><path d="M10.3 3.9L1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><path d="M12 9v4"/><path d="M12 17h.01"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-6"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+  <symbol id="i-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
+</svg>
+<a class="skip-link" href="#main">Bỏ qua tới nội dung chính</a>
+
+<div class="app">
+  <header class="topbar">
+    <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">CW</span>Chat với tài liệu · Quản trị</a>
+    <span class="topbar-spacer"></span>
+    <button class="user-menu" type="button"><span class="avatar" aria-hidden="true">H</span>Lê Quốc Hùng · Quản trị viên CNTT<svg class="icon icon-sm"><use href="#i-chevron"/></svg></button>
+  </header>
+  <div class="admin">
+    <nav class="admin-nav" aria-label="Quản trị">
+      <span class="admin-nav-label">Bộ tài liệu: Dự án X</span>
+      <a href="08-quan-tri-nhom-truy-cap.html"><svg class="icon"><use href="#i-users"/></svg>Nhóm truy cập</a>
+      <a href="09-quan-tri-go-tai-lieu.html" aria-current="page"><svg class="icon"><use href="#i-trash"/></svg>Gỡ tài liệu</a>
+      <a href="10-quan-tri-nhat-ky.html"><svg class="icon"><use href="#i-list"/></svg>Nhật ký truy cập</a>
+    </nav>
+
+    <main class="admin-main" id="main">
+      <div class="page-head">
+        <div>
+          <h1>Gỡ tài liệu · Dự án X</h1>
+          <p class="muted">Gỡ hoàn toàn theo yêu cầu của Trưởng nhóm BD hoặc Pháp chế, trong vòng 1 ngày làm việc (BR-017).</p>
+        </div>
+      </div>
+
+      <div class="banner banner-info" style="margin-bottom: var(--sp-4)">
+        <svg class="icon"><use href="#i-shield"/></svg>
+        <div>Bạn chỉ thấy <strong>thông tin mô tả</strong> của tài liệu, không xem được nội dung (BRU-007).</div>
+      </div>
+
+      <div class="banner banner-warning" style="margin-bottom: var(--sp-4)" data-show-in="pending" role="alert">
+        <svg class="icon"><use href="#i-clock"/></svg>
+        <div><strong class="banner-title">BienBanHop_1510.pdf: đang chờ xóa file gốc</strong>
+          Nội dung đã bị xóa khỏi tìm kiếm và hỏi đáp. Việc xóa file lưu trữ sẽ được thử lại tự động; cảnh báo gửi tới nhóm vận hành nếu quá 4 giờ.</div>
+      </div>
+
+      <div class="search">
+        <svg class="icon"><use href="#i-search"/></svg>
+        <label for="q" class="sr-only">Tìm theo tên file</label>
+        <input id="q" class="input" type="search" placeholder="Tìm theo tên file…" value="">
+      </div>
+
+      <div class="table-wrap">
+        <table class="table">
+          <caption class="sr-only">Tài liệu trong bộ Dự án X (chỉ thông tin mô tả)</caption>
+          <thead><tr><th scope="col">Tên file</th><th scope="col">Số trang</th><th scope="col">Dung lượng</th><th scope="col">Người tải lên</th><th scope="col">Thời điểm</th><th scope="col">Trạng thái</th><th scope="col"><span class="sr-only">Thao tác</span></th></tr></thead>
+          <tbody>
+            <tr data-show-in="list dialog"><td><strong>BienBanHop_1510.pdf</strong></td><td>6</td><td>1,2 MB</td><td>lan.nt@congty.vn</td><td>15/11/2026 10:24</td><td><span class="badge badge-ready">Sẵn sàng</span></td><td><button class="btn btn-ghost btn-sm" type="button" style="color: var(--c-danger-700)"><svg class="icon icon-sm"><use href="#i-trash"/></svg>Gỡ</button></td></tr>
+            <tr data-show-in="pending"><td><strong>BienBanHop_1510.pdf</strong></td><td>6</td><td>1,2 MB</td><td>lan.nt@congty.vn</td><td>15/11/2026 10:24</td><td><span class="badge badge-processing">Đang chờ xóa</span></td><td></td></tr>
+            <tr><td><strong>BaoGia_v3.pdf</strong></td><td>62</td><td>8,4 MB</td><td>minh.tv@congty.vn</td><td>14/11/2026 16:02</td><td><span class="badge badge-ready">Sẵn sàng</span></td><td><button class="btn btn-ghost btn-sm" type="button" style="color: var(--c-danger-700)"><svg class="icon icon-sm"><use href="#i-trash"/></svg>Gỡ</button></td></tr>
+            <tr><td><strong>scan_bienban_0910.pdf</strong></td><td>—</td><td>14,8 MB</td><td>anh.pd@congty.vn</td><td>10/11/2026 09:40</td><td><span class="badge badge-failed">Lỗi</span></td><td><button class="btn btn-ghost btn-sm" type="button" style="color: var(--c-danger-700)"><svg class="icon icon-sm"><use href="#i-trash"/></svg>Gỡ</button></td></tr>
+            <tr><td><strong>HopDongKhung.pdf</strong></td><td>48</td><td>5,1 MB</td><td>minh.tv@congty.vn</td><td>04/11/2026 08:15</td><td><span class="badge badge-ready">Sẵn sàng</span></td><td><button class="btn btn-ghost btn-sm" type="button" style="color: var(--c-danger-700)"><svg class="icon icon-sm"><use href="#i-trash"/></svg>Gỡ</button></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+</div>
+
+<!-- Hộp thoại xác nhận gỡ (UC-20 bước 2–4) -->
+<div class="overlay" data-show-in="dialog">
+  <form class="dialog" role="alertdialog" aria-modal="true" aria-labelledby="pg-title" aria-describedby="pg-desc" onsubmit="return false">
+    <div class="dialog-header">
+      <div class="dialog-icon danger"><svg class="icon"><use href="#i-trash"/></svg></div>
+      <div><h2 id="pg-title">Gỡ hoàn toàn tài liệu?</h2>
+        <p id="pg-desc" class="muted small">Thao tác <strong>không hoàn tác được</strong>. File gốc, nội dung đã xử lý và các đoạn trích trong lịch sử hội thoại đều bị xóa.</p></div>
+    </div>
+    <div class="dialog-body">
+      <dl class="meta-grid">
+        <dt>Tên file</dt><dd>BienBanHop_1510.pdf</dd>
+        <dt>Người tải lên</dt><dd>lan.nt@congty.vn · 15/11/2026 10:24</dd>
+      </dl>
+      <div class="field">
+        <label for="by">Người yêu cầu gỡ <span aria-hidden="true">*</span></label>
+        <input id="by" class="input" type="email" required value="minh.tv@congty.vn">
+        <span class="field-hint">Trưởng nhóm BD hoặc Pháp chế</span>
+      </div>
+      <div class="field">
+        <label for="reason">Lý do <span aria-hidden="true">*</span></label>
+        <textarea id="reason" class="textarea" rows="3" required>Tài liệu thuộc loại Mật, bị tải lên nhầm.</textarea>
+        <span class="field-hint">Ghi vào nhật ký truy cập; không lưu nội dung tài liệu.</span>
+      </div>
+      <label class="checkbox"><input type="checkbox" checked><span>Tôi hiểu tài liệu sẽ bị xóa vĩnh viễn khỏi công cụ.</span></label>
+    </div>
+    <div class="dialog-footer">
+      <button class="btn btn-secondary" type="button">Hủy</button>
+      <button class="btn btn-danger" type="submit"><svg class="icon icon-sm"><use href="#i-trash"/></svg>Gỡ vĩnh viễn</button>
+    </div>
+  </form>
+</div>
+
+<div class="toast-region" aria-live="polite" data-show-in="done">
+  <div class="toast toast-success" role="status"><svg class="icon" style="color:var(--c-success-700)"><use href="#i-check"/></svg><div><strong>Đã gỡ BienBanHop_1510.pdf</strong><br>Tài liệu đã biến khỏi danh sách của mọi người dùng. Đã ghi nhật ký.</div></div>
+</div>
+
+<div class="state-switcher" role="group" aria-label="Trạng thái màn hình (chỉ trong file thiết kế)">
+  <span class="state-switcher-label">Trạng thái</span>
+  <button type="button" data-state="list">Danh sách</button>
+  <button type="button" data-state="dialog">Xác nhận gỡ</button>
+  <button type="button" data-state="done">Đã gỡ</button>
+  <button type="button" data-state="pending">Chờ xóa file (lỗi lưu trữ)</button>
+</div>
+
+<details class="design-notes">
+  <summary>📝 Ghi chú thiết kế · 09</summary>
+  <div class="dn-body">
+    <table>
+      <tr><th>Use case</th><td>UC-20 Gỡ tài liệu (A1 hủy, E1 đang được trích dẫn)</td></tr>
+      <tr><th>Story / AC</th><td>US-020, AC-US020-1/2, AC-017</td></tr>
+      <tr><th>Quy tắc</th><td>BR-017, BRU-001, BRU-002, BRU-007</td></tr>
+      <tr><th>API</th><td><code>GET /admin/doc-sets/{dsid}/documents?q=</code>, <code>DELETE /admin/documents/{id}</code> {reason, requested_by} → 202 purge_status</td></tr>
+      <tr><th>Blueprint</th><td>ALG-07 (purging → purge_pending), DD-09</td></tr>
+      <tr><th>Component</th><td><code>AdminDocumentsPage</code>, <code>PurgeDialog</code></td></tr>
+    </table>
+    <p>Hộp thoại dùng <code>role="alertdialog"</code>, focus mặc định ở nút <strong>Hủy</strong> (thao tác phá hủy không được là mặc định). Nút gỡ màu đỏ, có cả chữ và biểu tượng.</p>
+  </div>
+</details>
+<script src="assets/prototype.js"></script>
+</body>
+</html>

@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>04 · Tải tài liệu lên và trạng thái xử lý — Chat với tài liệu</title>
+<link rel="stylesheet" href="assets/design-system.css">
+<style>
+  .batch { max-width: var(--chat-max-w); margin: 0 auto; width: 100%; }
+  .batch-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--sp-3); margin: var(--sp-4) 0; }
+  .stat { border: 1px solid var(--c-neutral-200); border-radius: var(--r-md); padding: var(--sp-3); }
+  .stat-num { font-size: var(--fs-2xl); font-weight: var(--fw-semibold); line-height: 1.1; }
+  .spin { animation: rot 1s linear infinite; } @keyframes rot { to { transform: rotate(360deg); } }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></symbol>
+  <symbol id="i-upload" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M17 8l-5-5-5 5"/><path d="M12 3v12"/></symbol>
+  <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24"><path d="M10.3 3.9L1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><path d="M12 9v4"/><path d="M12 17h.01"/></symbol>
+  <symbol id="i-x-circle" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M15 9l-6 6"/><path d="M9 9l6 6"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-6"/></symbol>
+  <symbol id="i-loader" viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-6.2-8.6"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M3 6h18"/><path d="M3 12h18"/><path d="M3 18h18"/></symbol>
+  <symbol id="i-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
+  <symbol id="i-folder" viewBox="0 0 24 24"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14"/><path d="M5 12h14"/></symbol>
+  <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M23 4v6h-6"/><path d="M20.5 15a9 9 0 1 1-2.1-9.4L23 10"/></symbol>
+  <symbol id="i-send" viewBox="0 0 24 24"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4z"/></symbol>
+</svg>
+<a class="skip-link" href="#main">Bỏ qua tới nội dung chính</a>
+
+<div class="app">
+  <header class="topbar">
+    <button class="btn btn-ghost btn-icon drawer-toggle" type="button" aria-label="Mở danh sách tài liệu" aria-expanded="false"><svg class="icon"><use href="#i-menu"/></svg></button>
+    <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">CW</span>Chat với tài liệu</a>
+    <span class="docset-name"><svg class="icon icon-sm"><use href="#i-folder"/></svg>Bộ tài liệu: Dự án X</span>
+    <span class="topbar-spacer"></span>
+    <button class="user-menu" type="button" aria-haspopup="menu">
+      <span class="avatar" aria-hidden="true" data-show-in="member">L</span><span data-show-in="member">Nguyễn Thị Lan</span>
+      <span class="avatar" aria-hidden="true" data-show-in="manager">M</span><span data-show-in="manager">Trần Văn Minh · Quản lý bộ tài liệu</span>
+      <svg class="icon icon-sm"><use href="#i-chevron"/></svg></button>
+  </header>
+
+  <div class="workspace">
+    <aside class="docs-panel" aria-labelledby="docs-title">
+      <div class="docs-panel-header">
+        <h2 id="docs-title">Tài liệu <span class="muted" data-show-in="member">(9)</span><span class="muted" data-show-in="manager">(50)</span></h2>
+      </div>
+      <div class="dropzone" role="button" tabindex="0" aria-describedby="dz-hint">
+        <svg class="icon"><use href="#i-upload"/></svg>
+        <span><strong>Kéo thả PDF vào đây</strong> hoặc <a href="#">chọn file</a></span>
+        <span id="dz-hint" class="small" data-show-in="member">Mỗi lần một file · tối đa 200 trang, 20 MB</span>
+        <span class="small" data-show-in="manager">Tải lô tối đa 50 file · mỗi file ≤ 200 trang, 20 MB</span>
+      </div>
+
+      <ul class="doc-list" aria-live="polite" aria-label="Danh sách tài liệu, mới nhất trước">
+        <li class="doc-row">
+          <svg class="icon spin"><use href="#i-loader"/></svg>
+          <div><div class="doc-name">KeHoachTrienKhai.pdf</div><div class="doc-meta">Đang tải lên 40%</div>
+            <div class="progress" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" aria-label="Tải lên KeHoachTrienKhai.pdf"><span style="width:40%; background: var(--c-primary-600)"></span></div></div>
+          <span class="badge badge-info">Đang tải</span>
+        </li>
+        <li class="doc-row">
+          <svg class="icon"><use href="#i-file"/></svg>
+          <div><div class="doc-name">BaoGia_v3.pdf</div><div class="doc-meta">62 trang · Đang xử lý 62%</div>
+            <div class="progress" role="progressbar" aria-valuenow="62" aria-valuemin="0" aria-valuemax="100" aria-label="Xử lý BaoGia_v3.pdf"><span style="width:62%"></span></div></div>
+          <span class="badge badge-processing">Đang xử lý</span>
+        </li>
+        <li class="doc-row">
+          <svg class="icon"><use href="#i-file"/></svg>
+          <div><div class="doc-name">HopDongKhung (2).pdf</div><div class="doc-meta">48 trang · vừa xong</div></div>
+          <span class="badge badge-ready">Sẵn sàng</span>
+        </li>
+        <li class="doc-row">
+          <svg class="icon" style="color: var(--c-danger-700)"><use href="#i-x-circle"/></svg>
+          <div><div class="doc-name">scan_bienban_0910.pdf</div><div class="doc-error">Không trích xuất được chữ (có thể là bản scan). Bản MVP chưa hỗ trợ PDF scan.</div></div>
+          <span class="badge badge-failed">Lỗi</span>
+        </li>
+        <li class="doc-row">
+          <svg class="icon" style="color: var(--c-danger-700)"><use href="#i-x-circle"/></svg>
+          <div><div class="doc-name">HoSoNangLuc.pdf</div><div class="doc-error">File được bảo vệ bằng mật khẩu. Hãy gỡ mật khẩu rồi tải lại.</div></div>
+          <span class="badge badge-failed">Lỗi</span>
+        </li>
+        <li class="doc-row">
+          <svg class="icon" style="color: var(--c-danger-700)"><use href="#i-x-circle"/></svg>
+          <div><div class="doc-name">BangGia_cu.pdf</div><div class="doc-error">File bị hỏng hoặc không đọc được. Hãy xuất lại PDF và thử lại.</div></div>
+          <span class="badge badge-failed">Lỗi</span>
+        </li>
+        <li class="doc-row"><svg class="icon"><use href="#i-file"/></svg><div><div class="doc-name">DieuKhoanBaoMat.pdf</div><div class="doc-meta">8 trang · 20/10</div></div><span class="badge badge-ready">Sẵn sàng</span></li>
+        <li class="doc-row"><svg class="icon"><use href="#i-file"/></svg><div><div class="doc-name">PhuLuc2.pdf</div><div class="doc-meta">12 trang · 19/10</div></div><span class="badge badge-ready">Sẵn sàng</span></li>
+        <li class="doc-row"><svg class="icon"><use href="#i-file"/></svg><div><div class="doc-name">HopDongKhung.pdf</div><div class="doc-meta">48 trang · 19/10</div></div><span class="badge badge-ready">Sẵn sàng</span></li>
+      </ul>
+
+      <div class="docs-panel-footer">
+        <button class="btn btn-secondary btn-sm" type="button"><svg class="icon icon-sm"><use href="#i-plus"/></svg>Hội thoại mới</button>
+      </div>
+    </aside>
+
+    <main class="chat" id="main">
+      <div class="chat-scroll">
+        <div class="chat-inner" data-show-in="member">
+          <div class="banner banner-info">
+            <svg class="icon"><use href="#i-info"/></svg>
+            <div><strong class="banner-title">Bạn vẫn hỏi được trong lúc tài liệu đang xử lý</strong>
+              Câu trả lời sẽ chỉ dùng các tài liệu “Sẵn sàng” và ghi chú tên các tài liệu chưa được dùng.</div>
+          </div>
+        </div>
+
+        <section class="batch card" data-show-in="manager" aria-labelledby="batch-title">
+          <div class="card-body">
+            <h1 id="batch-title">Kết quả tải lô · 50 file</h1>
+            <p class="muted small">Bắt đầu 09:12 · Danh sách bên trái cập nhật theo thời gian thực</p>
+            <div class="batch-stats">
+              <div class="stat"><div class="stat-num" style="color:var(--c-success-700)">44</div><div class="small muted">Sẵn sàng</div></div>
+              <div class="stat"><div class="stat-num" style="color:var(--c-warning-700)">2</div><div class="small muted">Đang xử lý</div></div>
+              <div class="stat"><div class="stat-num" style="color:var(--c-danger-700)">3</div><div class="small muted">Lỗi khi xử lý</div></div>
+              <div class="stat"><div class="stat-num" style="color:var(--c-neutral-700)">1</div><div class="small muted">Bị từ chối</div></div>
+            </div>
+            <div class="banner banner-warning">
+              <svg class="icon"><use href="#i-alert"/></svg>
+              <div><strong class="banner-title">Bộ tài liệu đã đạt tối đa 50 file</strong>
+                File “PhuLuc5.pdf” không được tiếp nhận. Liên hệ Trưởng nhóm BD hoặc yêu cầu CNTT gỡ bớt tài liệu cũ.</div>
+            </div>
+            <div class="table-wrap" style="margin-top: var(--sp-4)">
+              <table class="table">
+                <caption class="sr-only">File cần xử lý</caption>
+                <thead><tr><th scope="col">File</th><th scope="col">Kết quả</th><th scope="col">Việc cần làm</th></tr></thead>
+                <tbody>
+                  <tr><td>scan_bienban_0910.pdf</td><td><span class="badge badge-failed">Bản scan</span></td><td>Xin bản PDF gốc dạng văn bản</td></tr>
+                  <tr><td>HoSoNangLuc.pdf</td><td><span class="badge badge-failed">Có mật khẩu</span></td><td>Gỡ mật khẩu rồi tải lại</td></tr>
+                  <tr><td>BangGia_cu.pdf</td><td><span class="badge badge-failed">File hỏng</span></td><td>Xuất lại PDF</td></tr>
+                  <tr><td>PhuLuc5.pdf</td><td><span class="badge badge-neutral">Đã đủ 50 file</span></td><td>Gỡ bớt tài liệu cũ</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div class="composer-wrap">
+        <form class="composer" onsubmit="return false">
+          <label for="q" class="sr-only">Câu hỏi về tài liệu</label>
+          <textarea id="q" rows="2" placeholder="Đặt câu hỏi về tài liệu…" data-max="2000" data-counter="q-count" data-send="q-send"></textarea>
+          <div class="composer-row">
+            <span class="small muted">Enter để gửi · Shift+Enter để xuống dòng</span>
+            <span class="row"><span id="q-count" class="counter" hidden></span>
+            <button id="q-send" class="btn btn-primary" type="submit" disabled><svg class="icon icon-sm"><use href="#i-send"/></svg>Gửi</button></span>
+          </div>
+        </form>
+        <p class="grounding"><svg class="icon icon-sm"><use href="#i-info"/></svg>Câu trả lời chỉ dựa trên tài liệu đã tải lên. Hãy đối chiếu nguồn trước khi gửi cho đối tác.</p>
+      </div>
+    </main>
+  </div>
+</div>
+
+<div class="toast-region" aria-live="polite" data-show-in="member">
+  <div class="toast toast-danger" role="status"><svg class="icon" style="color:var(--c-danger-700)"><use href="#i-x-circle"/></svg><div><strong>BaoCao.docx</strong><br>Chỉ hỗ trợ file PDF.</div></div>
+  <div class="toast toast-danger" role="status"><svg class="icon" style="color:var(--c-danger-700)"><use href="#i-x-circle"/></svg><div><strong>TongHopDuAn.pdf</strong><br>File vượt quá giới hạn 200 trang / 20 MB.</div></div>
+  <div class="toast" role="status"><svg class="icon" style="color:var(--c-primary-600)"><use href="#i-info"/></svg><div><strong>HopDongKhung.pdf đã tồn tại</strong><br>File mới được lưu thành HopDongKhung (2).pdf.</div></div>
+  <div class="toast" role="status"><svg class="icon spin" style="color:var(--c-warning-700)"><use href="#i-refresh"/></svg><div><strong>Mất kết nối, đang thử lại… (2/3)</strong><br>KeHoachTrienKhai.pdf</div></div>
+</div>
+
+<div class="state-switcher" role="group" aria-label="Trạng thái màn hình (chỉ trong file thiết kế)">
+  <span class="state-switcher-label">Vai trò</span>
+  <button type="button" data-state="member">Thành viên BD</button>
+  <button type="button" data-state="manager">Trưởng nhóm (tải lô)</button>
+</div>
+
+<details class="design-notes">
+  <summary>📝 Ghi chú thiết kế · 04</summary>
+  <div class="dn-body">
+    <table>
+      <tr><th>Use case</th><td>UC-01, UC-02, UC-05, UC-06</td></tr>
+      <tr><th>Story / AC</th><td>US-001..005, AC-US002-2/4, AC-US004-1, AC-US005-1</td></tr>
+      <tr><th>UI</th><td>UI-001</td></tr>
+      <tr><th>Trường hợp biên</th><td>E-03 (docx), E-04 (hỏng), E-05 (mật khẩu), E-06 (scan), E-07 (quá lớn), E-08 (đủ 50), E-09 (trùng tên), E-10 (mất mạng), E-20 (cập nhật thời gian thực)</td></tr>
+      <tr><th>API</th><td><code>POST …/documents</code> (202, 413, 415, 409), <code>…/documents:batch</code> (207), SSE <code>document.status</code></td></tr>
+      <tr><th>Component</th><td><code>UploadDropzone</code>, <code>DocumentRow</code>, <code>useUploadStore</code></td></tr>
+    </table>
+    <p>Trạng thái không chỉ dựa vào màu: luôn có nhãn chữ + biểu tượng (WCAG 1.4.1). Thanh tiến trình có <code>role="progressbar"</code>.</p>
+  </div>
+</details>
+<script src="assets/prototype.js"></script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>03 · Xác nhận phân loại tài liệu — Chat với tài liệu</title>
+<link rel="stylesheet" href="assets/design-system.css">
+<style>
+  .class-list { margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-2); }
+  .class-list li { display: flex; gap: var(--sp-2); align-items: center; padding: var(--sp-2) var(--sp-3); border-radius: var(--r-md); font-size: var(--fs-sm); }
+  .class-ok { background: var(--c-success-50); color: var(--c-success-700); }
+  .class-no { background: var(--c-danger-50); color: var(--c-danger-700); }
+  .file-chip { display: flex; gap: var(--sp-2); align-items: center; padding: var(--sp-2) var(--sp-3); background: var(--c-neutral-100); border-radius: var(--r-md); font-size: var(--fs-sm); }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></symbol>
+  <symbol id="i-upload" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M17 8l-5-5-5 5"/><path d="M12 3v12"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-6"/></symbol>
+  <symbol id="i-x-circle" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M15 9l-6 6"/><path d="M9 9l6 6"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M3 6h18"/><path d="M3 12h18"/><path d="M3 18h18"/></symbol>
+  <symbol id="i-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
+  <symbol id="i-folder" viewBox="0 0 24 24"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></symbol>
+</svg>
+
+<div class="app" aria-hidden="true">
+  <header class="topbar">
+    <button class="btn btn-ghost btn-icon drawer-toggle" type="button" tabindex="-1"><svg class="icon"><use href="#i-menu"/></svg></button>
+    <span class="brand"><span class="brand-mark">CW</span>Chat với tài liệu</span>
+    <span class="docset-name"><svg class="icon icon-sm"><use href="#i-folder"/></svg>Bộ tài liệu: Dự án X</span>
+    <span class="topbar-spacer"></span>
+    <span class="user-menu"><span class="avatar">L</span>Nguyễn Thị Lan<svg class="icon icon-sm"><use href="#i-chevron"/></svg></span>
+  </header>
+  <div class="workspace">
+    <aside class="docs-panel">
+      <div class="docs-panel-header"><h2>Tài liệu <span class="muted">(12)</span></h2></div>
+      <div class="dropzone is-active"><svg class="icon"><use href="#i-upload"/></svg><span><strong>Thả file để tải lên</strong></span></div>
+      <ul class="doc-list">
+        <li class="doc-row"><svg class="icon"><use href="#i-file"/></svg><div><div class="doc-name">HopDongKhung.pdf</div><div class="doc-meta">48 trang</div></div><span class="badge badge-ready">Sẵn sàng</span></li>
+        <li class="doc-row"><svg class="icon"><use href="#i-file"/></svg><div><div class="doc-name">PhuLuc2.pdf</div><div class="doc-meta">12 trang</div></div><span class="badge badge-ready">Sẵn sàng</span></li>
+      </ul>
+    </aside>
+    <main class="chat"><div class="chat-scroll"></div></main>
+  </div>
+</div>
+
+<div class="overlay">
+  <div class="dialog" role="dialog" aria-modal="true" aria-labelledby="cls-title" aria-describedby="cls-desc">
+    <div class="dialog-header">
+      <div class="dialog-icon warning"><svg class="icon"><use href="#i-shield"/></svg></div>
+      <div>
+        <h2 id="cls-title">Xác nhận phân loại tài liệu</h2>
+        <p id="cls-desc" class="muted small">Bắt buộc ở lần tải lên đầu tiên trong mỗi phiên đăng nhập.</p>
+      </div>
+    </div>
+    <div class="dialog-body">
+      <div class="file-chip"><svg class="icon icon-sm"><use href="#i-file"/></svg>Bạn sắp tải lên 2 file: KeHoachTrienKhai.pdf, DieuKhoanBaoMat.pdf</div>
+      <ul class="class-list" aria-label="Loại tài liệu được phép">
+        <li class="class-ok"><svg class="icon icon-sm"><use href="#i-check"/></svg>Công khai — được tải</li>
+        <li class="class-ok"><svg class="icon icon-sm"><use href="#i-check"/></svg>Nội bộ — được tải</li>
+        <li class="class-no"><svg class="icon icon-sm"><use href="#i-x-circle"/></svg>Mật — không được tải</li>
+        <li class="class-no"><svg class="icon icon-sm"><use href="#i-x-circle"/></svg>Tuyệt mật — không được tải</li>
+      </ul>
+      <label class="checkbox">
+        <input type="checkbox" id="confirm">
+        <span>Tôi xác nhận các tài liệu này thuộc loại <strong>Công khai</strong> hoặc <strong>Nội bộ</strong>, không phải Mật hay Tuyệt mật.</span>
+      </label>
+      <p class="field-hint">Lượt xác nhận được ghi vào nhật ký truy cập. Nếu tải nhầm, hãy báo Trưởng nhóm BD để Phòng CNTT gỡ tài liệu.</p>
+    </div>
+    <div class="dialog-footer">
+      <a class="btn btn-secondary" href="05-hoi-dap.html">Hủy</a>
+      <button class="btn btn-primary" id="go" type="button" disabled>Xác nhận và tải lên</button>
+    </div>
+  </div>
+</div>
+
+<details class="design-notes">
+  <summary>📝 Ghi chú thiết kế · 03</summary>
+  <div class="dn-body">
+    <table>
+      <tr><th>Use case</th><td>UC-03 («extend» UC-01 tại “tải lần đầu trong phiên”)</td></tr>
+      <tr><th>Story / AC</th><td>AC-US001-4</td></tr>
+      <tr><th>UI</th><td>UI-010</td></tr>
+      <tr><th>Quy tắc</th><td>BRU-001</td></tr>
+      <tr><th>API</th><td><code>POST /doc-sets/{dsid}/classification-confirmations</code>; thiếu → 409 <code>CLASSIFICATION_REQUIRED</code></td></tr>
+      <tr><th>Component</th><td><code>ClassificationDialog</code></td></tr>
+    </table>
+    <p>Nút chính bị vô hiệu cho tới khi đánh dấu ô xác nhận. Hộp thoại giữ focus bên trong; Esc = Hủy.</p>
+  </div>
+</details>
+<script>
+  document.getElementById("confirm").addEventListener("change", function (e) {
+    document.getElementById("go").disabled = !e.target.checked;
+  });
+  document.getElementById("go").addEventListener("click", function () { location.href = "04-tai-tai-lieu-len.html"; });
+  document.getElementById("confirm").focus();
+</script>
+</body>
+</html>

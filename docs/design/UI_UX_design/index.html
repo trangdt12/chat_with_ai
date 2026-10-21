@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UI/UX Design — Chat với tài liệu (MVP)</title>
+<link rel="stylesheet" href="assets/design-system.css">
+<style>
+  .wrap { max-width: 1200px; margin: 0 auto; padding: var(--sp-8) var(--sp-6) var(--sp-12); display: flex; flex-direction: column; gap: var(--sp-10); }
+  .hero p { margin-top: var(--sp-2); max-width: 820px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: var(--sp-4); }
+  .screen-card { display: flex; flex-direction: column; gap: var(--sp-2); padding: var(--sp-5); text-decoration: none; color: inherit; transition: box-shadow var(--dur-fast) var(--ease), border-color var(--dur-fast) var(--ease); }
+  .screen-card:hover { box-shadow: var(--sh-md); border-color: var(--c-primary-100); color: inherit; }
+  .screen-no { font-family: var(--font-mono); font-size: var(--fs-sm); color: var(--c-primary-700); }
+  .screen-card h3 { font-size: var(--fs-lg); }
+  .tags { display: flex; flex-wrap: wrap; gap: var(--sp-1); margin-top: auto; padding-top: var(--sp-2); }
+  section > h2 { margin-bottom: var(--sp-4); font-size: var(--fs-xl); }
+  .flow { display: flex; flex-wrap: wrap; gap: var(--sp-2); align-items: center; font-size: var(--fs-sm); }
+  .flow a { padding: var(--sp-2) var(--sp-3); background: var(--c-white); border: 1px solid var(--c-neutral-200); border-radius: var(--r-md); text-decoration: none; }
+  .flow .arrow { color: var(--c-neutral-500); }
+  .swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: var(--sp-3); }
+  .swatch { border: 1px solid var(--c-neutral-200); border-radius: var(--r-md); overflow: hidden; background: var(--c-white); font-size: var(--fs-sm); }
+  .swatch-color { height: 56px; display: flex; align-items: flex-end; padding: var(--sp-2); font-weight: var(--fw-semibold); }
+  .swatch-meta { padding: var(--sp-2) var(--sp-3); }
+  .swatch-meta code { font-family: var(--font-mono); font-size: var(--fs-xs); }
+  .type-row { display: grid; grid-template-columns: 180px 1fr; gap: var(--sp-4); align-items: baseline; padding: var(--sp-2) 0; border-bottom: 1px solid var(--c-neutral-200); }
+  .space-row { display: flex; align-items: center; gap: var(--sp-3); font-size: var(--fs-sm); }
+  .space-bar { height: 12px; background: var(--c-primary-600); border-radius: 2px; }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-6); }
+  @media (max-width: 1000px) { .two-col { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<main class="wrap">
+  <header class="hero">
+    <div class="row"><span class="brand-mark" aria-hidden="true">CW</span><span class="muted small">UI/UX Design v0.1 · 2026-10-21 · Draft</span></div>
+    <h1 style="font-size: var(--fs-2xl); margin-top: var(--sp-3)">Thiết kế giao diện — Chat với tài liệu (MVP)</h1>
+    <p class="muted">11 màn hình HTML, mỗi màn một file, dùng chung design system <code>assets/design-system.css</code>. Mỗi màn có thanh <strong>Trạng thái</strong> ở cuối trang để xem các biến thể (lỗi, rỗng, đang xử lý…) và khung <strong>📝 Ghi chú thiết kế</strong> truy vết về use case, story, trường hợp biên, API và Blueprint. Hai thành phần này chỉ có trong file thiết kế, không có ở sản phẩm.</p>
+    <p class="muted small">Nguồn: Blueprint SDD-CWD-001 v0.2 (§2.4 kịch bản UX, §2.5 ràng buộc UX, §3.2.1 component), PRD v0.4 (§4 UI-001..010, §4.2 E-01..22), Đặc tả Use Case v0.2. Dữ liệu trong màn hình là dữ liệu mẫu [GĐ].</p>
+  </header>
+
+  <section aria-labelledby="flow-title">
+    <h2 id="flow-title">Luồng chính</h2>
+    <div class="flow">
+      <a href="01-dang-nhap.html">01 Đăng nhập</a><span class="arrow">→</span>
+      <a href="02-trang-thai-trong.html">02 Trạng thái trống</a><span class="arrow">→</span>
+      <a href="03-xac-nhan-phan-loai.html">03 Xác nhận phân loại</a><span class="arrow">→</span>
+      <a href="04-tai-tai-lieu-len.html">04 Tải lên &amp; xử lý</a><span class="arrow">→</span>
+      <a href="05-hoi-dap.html">05 Hỏi đáp</a><span class="arrow">→</span>
+      <a href="06-trich-dan.html">06 Xem trích dẫn</a>
+    </div>
+    <div class="flow" style="margin-top: var(--sp-3)">
+      <span class="muted">Quản trị:</span>
+      <a href="08-quan-tri-nhom-truy-cap.html">08 Nhóm truy cập</a><span class="arrow">·</span>
+      <a href="09-quan-tri-go-tai-lieu.html">09 Gỡ tài liệu</a><span class="arrow">·</span>
+      <a href="10-quan-tri-nhat-ky.html">10 Nhật ký</a>
+    </div>
+  </section>
+
+  <section aria-labelledby="screens-title">
+    <h2 id="screens-title">Danh mục màn hình</h2>
+    <div class="grid">
+      <a class="card screen-card" href="01-dang-nhap.html"><span class="screen-no">01</span><h3>Đăng nhập</h3><p class="muted small">Đăng nhập Microsoft 365; phiên hết hạn; đăng nhập lỗi.</p><span class="tags"><span class="badge badge-info">UC-18</span><span class="badge badge-neutral">E-18</span><span class="badge badge-neutral">3 trạng thái</span></span></a>
+      <a class="card screen-card" href="02-trang-thai-trong.html"><span class="screen-no">02</span><h3>Trạng thái trống</h3><p class="muted small">Chưa có tài liệu (hướng dẫn 3 bước); mọi tài liệu đang xử lý.</p><span class="tags"><span class="badge badge-info">UC-06, UC-07</span><span class="badge badge-neutral">E-01, E-02</span></span></a>
+      <a class="card screen-card" href="03-xac-nhan-phan-loai.html"><span class="screen-no">03</span><h3>Xác nhận phân loại tài liệu</h3><p class="muted small">Hộp thoại bắt buộc ở lần tải lên đầu tiên trong phiên.</p><span class="tags"><span class="badge badge-info">UC-03</span><span class="badge badge-neutral">UI-010</span><span class="badge badge-neutral">BRU-001</span></span></a>
+      <a class="card screen-card" href="04-tai-tai-lieu-len.html"><span class="screen-no">04</span><h3>Tải lên &amp; trạng thái xử lý</h3><p class="muted small">Đang tải, đang xử lý %, sẵn sàng, lỗi; từ chối file; trùng tên; tải lô của Trưởng nhóm.</p><span class="tags"><span class="badge badge-info">UC-01, 02, 05, 06</span><span class="badge badge-neutral">E-03..E-10, E-20</span></span></a>
+      <a class="card screen-card" href="05-hoi-dap.html"><span class="screen-no">05</span><h3>Hỏi đáp có trích dẫn</h3><p class="muted small">Câu trả lời có nguồn, câu hỏi tiếp nối, đang trả lời + Dừng, đánh giá 👎 kèm lý do, sao chép.</p><span class="tags"><span class="badge badge-info">UC-07..12, 15, 17</span><span class="badge badge-neutral">4 trạng thái</span></span></a>
+      <a class="card screen-card" href="06-trich-dan.html"><span class="screen-no">06</span><h3>Xem trích dẫn nguồn</h3><p class="muted small">Đoạn trích ≤ 300 ký tự, mở PDF gốc tại trang; tài liệu đã gỡ.</p><span class="tags"><span class="badge badge-info">UC-13, UC-14</span><span class="badge badge-neutral">E-22</span></span></a>
+      <a class="card screen-card" href="07-trang-thai-cau-tra-loi.html"><span class="screen-no">07</span><h3>Trạng thái đặc biệt của câu trả lời</h3><p class="muted small">Không tìm thấy, cần làm rõ, đã dừng, bị gián đoạn, giới hạn 30 câu/giờ.</p><span class="tags"><span class="badge badge-info">UC-10, UC-12</span><span class="badge badge-neutral">E-11..E-13, E-16, E-17</span></span></a>
+      <a class="card screen-card" href="08-quan-tri-nhom-truy-cap.html"><span class="screen-no">08</span><h3>Quản trị: Nhóm truy cập</h3><p class="muted small">Thành viên, vai trò Quản lý bộ tài liệu, thêm/gỡ, tài khoản không tồn tại.</p><span class="tags"><span class="badge badge-info">UC-19</span><span class="badge badge-neutral">BRU-007</span></span></a>
+      <a class="card screen-card" href="09-quan-tri-go-tai-lieu.html"><span class="screen-no">09</span><h3>Quản trị: Gỡ tài liệu</h3><p class="muted small">Chỉ thông tin mô tả; xác nhận gỡ vĩnh viễn; chờ xóa file lưu trữ.</p><span class="tags"><span class="badge badge-info">UC-20</span><span class="badge badge-neutral">BR-017</span></span></a>
+      <a class="card screen-card" href="10-quan-tri-nhat-ky.html"><span class="screen-no">10</span><h3>Quản trị: Nhật ký truy cập</h3><p class="muted small">Lọc theo thời gian, người, thao tác; xuất CSV; giới hạn 12 tháng.</p><span class="tags"><span class="badge badge-info">UC-21</span><span class="badge badge-neutral">BR-016</span></span></a>
+      <a class="card screen-card" href="11-khong-co-quyen.html"><span class="screen-no">11</span><h3>Không có quyền truy cập</h3><p class="muted small">Chưa thuộc nhóm nào; bị thu hồi quyền trong lúc dùng.</p><span class="tags"><span class="badge badge-info">UC-18 E3</span><span class="badge badge-neutral">E-19</span></span></a>
+    </div>
+  </section>
+
+  <section aria-labelledby="trace-title">
+    <h2 id="trace-title">Truy vết use case → màn hình</h2>
+    <div class="table-wrap">
+      <table class="table">
+        <thead><tr><th scope="col">Use case</th><th scope="col">Màn hình</th><th scope="col">UI (PRD §4.1)</th><th scope="col">Trường hợp biên</th></tr></thead>
+        <tbody>
+          <tr><td>UC-01 Tải PDF lên · UC-05 Báo từ chối</td><td>03, 04</td><td>UI-001, UI-010</td><td>E-03..E-10</td></tr>
+          <tr><td>UC-02 Tải lô</td><td>04 (vai trò Trưởng nhóm)</td><td>UI-001</td><td>E-08</td></tr>
+          <tr><td>UC-03 Xác nhận phân loại</td><td>03</td><td>UI-010</td><td>—</td></tr>
+          <tr><td>UC-06 Danh sách &amp; trạng thái</td><td>02, 04</td><td>UI-001</td><td>E-01, E-02, E-20</td></tr>
+          <tr><td>UC-07 Đặt câu hỏi · UC-08 · UC-09</td><td>05</td><td>UI-003, UI-006, UI-007</td><td>E-14, E-15</td></tr>
+          <tr><td>UC-10 Không tìm thấy</td><td>07</td><td>UI-003</td><td>E-16</td></tr>
+          <tr><td>UC-11 Hỏi tiếp nối</td><td>05</td><td>UI-003</td><td>E-17 (07)</td></tr>
+          <tr><td>UC-12 Dừng</td><td>05, 07</td><td>UI-006</td><td>E-11, E-12 (07)</td></tr>
+          <tr><td>UC-13 Xem đoạn nguồn · UC-14 Mở PDF gốc</td><td>06</td><td>UI-004</td><td>E-22</td></tr>
+          <tr><td>UC-15 Sao chép · UC-17 Đánh giá</td><td>05</td><td>UI-005</td><td>—</td></tr>
+          <tr><td>UC-16 Hội thoại mới</td><td>02, 04, 05</td><td>UI-008</td><td>—</td></tr>
+          <tr><td>UC-18 Đăng nhập</td><td>01, 11</td><td>—</td><td>E-18, E-19, E-21</td></tr>
+          <tr><td>UC-19 Nhóm truy cập</td><td>08</td><td>—</td><td>—</td></tr>
+          <tr><td>UC-20 Gỡ tài liệu</td><td>09</td><td>—</td><td>E-22</td></tr>
+          <tr><td>UC-21 Nhật ký</td><td>10</td><td>—</td><td>—</td></tr>
+          <tr><td colspan="4" class="muted">UI-002 (tên bộ tài liệu) và UI-009 (khả năng tiếp cận) có mặt trên mọi màn hình. E-13 giới hạn tần suất: màn 07. E-21 truy cập ngoài VPN: không tới được ứng dụng nên không có màn hình.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section aria-labelledby="tokens-title">
+    <h2 id="tokens-title">Design tokens</h2>
+    <h3 style="margin-bottom: var(--sp-3)">Màu (tương phản trên nền trắng, WCAG 2.1 AA ≥ 4,5:1)</h3>
+    <div class="swatches">
+      <div class="swatch"><div class="swatch-color" style="background:var(--c-primary-600); color:#fff">Aa</div><div class="swatch-meta"><code>--c-primary-600</code><br>#1d4ed8 · 6,7:1 · nút chính, link</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:var(--c-primary-700); color:#fff">Aa</div><div class="swatch-meta"><code>--c-primary-700</code><br>#1e40af · 8,6:1 · hover</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:var(--c-neutral-900); color:#fff">Aa</div><div class="swatch-meta"><code>--c-neutral-900</code><br>#111827 · 17,7:1 · chữ chính</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:var(--c-neutral-600); color:#fff">Aa</div><div class="swatch-meta"><code>--c-neutral-600</code><br>#4b5563 · 7,6:1 · chữ phụ</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:var(--c-success-700); color:#fff">Aa</div><div class="swatch-meta"><code>--c-success-700</code><br>#15803d · Sẵn sàng</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:var(--c-warning-700); color:#fff">Aa</div><div class="swatch-meta"><code>--c-warning-700</code><br>#b45309 · Đang xử lý</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:var(--c-danger-700); color:#fff">Aa</div><div class="swatch-meta"><code>--c-danger-700</code><br>#b91c1c · Lỗi, gỡ</div></div>
+      <div class="swatch"><div class="swatch-color" style="background:var(--c-neutral-50); color:var(--c-neutral-900); border-bottom:1px solid var(--c-neutral-200)">Aa</div><div class="swatch-meta"><code>--c-neutral-50</code><br>#f9fafb · nền trang</div></div>
+    </div>
+
+    <div class="two-col" style="margin-top: var(--sp-6)">
+      <div>
+        <h3 style="margin-bottom: var(--sp-2)">Chữ (Segoe UI / system-ui, không tải font ngoài)</h3>
+        <div class="type-row"><code>--fs-2xl 28px</code><span style="font-size:var(--fs-2xl); font-weight:600">Tiêu đề lớn</span></div>
+        <div class="type-row"><code>--fs-xl 22px</code><span style="font-size:var(--fs-xl); font-weight:600">Tiêu đề trang</span></div>
+        <div class="type-row"><code>--fs-lg 18px</code><span style="font-size:var(--fs-lg); font-weight:600">Tiêu đề mục</span></div>
+        <div class="type-row"><code>--fs-md 16px</code><span>Thân chữ — câu trả lời, câu hỏi</span></div>
+        <div class="type-row"><code>--fs-sm 14px</code><span style="font-size:var(--fs-sm)">Trích dẫn, metadata, nhãn</span></div>
+        <div class="type-row"><code>--fs-xs 12px</code><span style="font-size:var(--fs-xs); font-weight:600">BADGE</span></div>
+      </div>
+      <div>
+        <h3 style="margin-bottom: var(--sp-2)">Khoảng cách (bậc 4px) · bo góc · chuyển động</h3>
+        <div class="stack" style="gap: var(--sp-2)">
+          <div class="space-row"><code>--sp-1</code><span class="space-bar" style="width:4px"></span>4px</div>
+          <div class="space-row"><code>--sp-2</code><span class="space-bar" style="width:8px"></span>8px</div>
+          <div class="space-row"><code>--sp-4</code><span class="space-bar" style="width:16px"></span>16px</div>
+          <div class="space-row"><code>--sp-6</code><span class="space-bar" style="width:24px"></span>24px</div>
+          <div class="space-row"><code>--sp-8</code><span class="space-bar" style="width:32px"></span>32px</div>
+          <div class="space-row"><code>--sp-12</code><span class="space-bar" style="width:48px"></span>48px</div>
+        </div>
+        <p class="small muted" style="margin-top: var(--sp-3)">Bo góc: <code>--r-sm 4</code> · <code>--r-md 8</code> · <code>--r-lg 12</code> · <code>--r-full</code>. Chuyển động: <code>--dur-fast 120ms</code> · <code>--dur-base 200ms</code> · <code>--dur-slow 300ms</code>; tắt khi người dùng bật <em>prefers-reduced-motion</em>.</p>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="comp-title">
+    <h2 id="comp-title">Component chính</h2>
+    <div class="stack">
+      <div class="row" style="flex-wrap: wrap">
+        <button class="btn btn-primary" type="button">Nút chính</button>
+        <button class="btn btn-secondary" type="button">Nút phụ</button>
+        <button class="btn btn-ghost" type="button">Nút nhẹ</button>
+        <button class="btn btn-danger" type="button">Gỡ vĩnh viễn</button>
+        <button class="btn btn-stop" type="button">Dừng</button>
+        <button class="btn btn-primary" type="button" disabled>Vô hiệu</button>
+      </div>
+      <div class="row" style="flex-wrap: wrap">
+        <span class="badge badge-ready">Sẵn sàng</span><span class="badge badge-processing">Đang xử lý</span><span class="badge badge-failed">Lỗi</span><span class="badge badge-info">Đang tải</span><span class="badge badge-neutral">Đã tải lên</span>
+        <span>Trích dẫn: <span class="cite">1</span><span class="cite">2</span><span class="cite removed">3</span></span>
+      </div>
+      <div class="banner banner-info"><div><strong>Banner thông tin</strong>Dùng cho ghi chú tài liệu chưa sẵn sàng, không tìm thấy.</div></div>
+      <div class="banner banner-warning"><div><strong>Banner cảnh báo</strong>Dùng cho phiên hết hạn, giới hạn tần suất, câu trả lời gián đoạn.</div></div>
+      <div class="banner banner-danger"><div><strong>Banner lỗi</strong>Dùng cho lỗi chặn thao tác.</div></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="a11y-title">
+    <h2 id="a11y-title">Ràng buộc UX đã áp dụng (Blueprint §2.5)</h2>
+    <div class="table-wrap">
+      <table class="table">
+        <thead><tr><th scope="col">Ràng buộc</th><th scope="col">Cách áp dụng trong thiết kế</th></tr></thead>
+        <tbody>
+          <tr><td>Tương phản màu ≥ 4,5:1</td><td>Mọi cặp chữ/nền dùng token đã kiểm tra tỷ lệ (bảng màu ở trên)</td></tr>
+          <tr><td>Chữ thân ≥ 16px, trích dẫn ≥ 14px</td><td><code>--fs-md</code>, <code>--fs-sm</code>; dùng <code>rem</code> để co giãn theo cài đặt trình duyệt</td></tr>
+          <tr><td>Vùng bấm ≥ 32×32 (chuột)</td><td><code>--tap-min</code> cho nút nhỏ, chỉ số trích dẫn có vùng bấm 22×20 nằm trong dòng chữ, có thể dùng bàn phím</td></tr>
+          <tr><td>Trạng thái tải trong ≤ 300ms</td><td>“Đang trả lời…”, thanh tiến trình, toast thử lại</td></tr>
+          <tr><td>Thông điệp lỗi rõ ràng, không kỹ thuật</td><td>Toàn bộ thông điệp E-01..E-22 theo PRD §4.2, kèm hành động gợi ý</td></tr>
+          <tr><td>Trạng thái rỗng hướng dẫn bước tiếp</td><td>Màn 02 (3 bước), màn 10 (không có kết quả)</td></tr>
+          <tr><td>Bàn phím, trình đọc màn hình</td><td>Skip link, <code>:focus-visible</code>, nhãn ARIA, <code>aria-live</code> cho câu trả lời và trạng thái tài liệu, <code>role="progressbar"</code>, hộp thoại <code>aria-modal</code></td></tr>
+          <tr><td>Thích ứng 768–2560px</td><td>≥ 1280px: hai vùng; 768–1279px: thanh tài liệu thành ngăn kéo (nút ☰); &lt; 768px ngoài phạm vi MVP</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</main>
+</body>
+</html>

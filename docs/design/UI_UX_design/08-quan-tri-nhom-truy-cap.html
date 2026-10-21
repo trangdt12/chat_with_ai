@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>08 · Quản trị: Nhóm truy cập — Chat với tài liệu</title>
+<link rel="stylesheet" href="assets/design-system.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-users" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.9"/><path d="M16 3.1a4 4 0 0 1 0 7.8"/></symbol>
+  <symbol id="i-trash" viewBox="0 0 24 24"><path d="M3 6h18"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/></symbol>
+  <symbol id="i-list" viewBox="0 0 24 24"><path d="M8 6h13"/><path d="M8 12h13"/><path d="M8 18h13"/><path d="M3 6h.01"/><path d="M3 12h.01"/><path d="M3 18h.01"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14"/><path d="M5 12h14"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24"><path d="M10.3 3.9L1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><path d="M12 9v4"/><path d="M12 17h.01"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-6"/></symbol>
+  <symbol id="i-chevron" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
+  <symbol id="i-folder" viewBox="0 0 24 24"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6L6 18"/><path d="M6 6l12 12"/></symbol>
+</svg>
+<a class="skip-link" href="#main">Bỏ qua tới nội dung chính</a>
+
+<div class="app">
+  <header class="topbar">
+    <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">CW</span>Chat với tài liệu · Quản trị</a>
+    <span class="topbar-spacer"></span>
+    <button class="user-menu" type="button"><span class="avatar" aria-hidden="true">H</span>Lê Quốc Hùng · Quản trị viên CNTT<svg class="icon icon-sm"><use href="#i-chevron"/></svg></button>
+  </header>
+  <div class="admin">
+    <nav class="admin-nav" aria-label="Quản trị">
+      <span class="admin-nav-label">Bộ tài liệu: Dự án X</span>
+      <a href="08-quan-tri-nhom-truy-cap.html" aria-current="page"><svg class="icon"><use href="#i-users"/></svg>Nhóm truy cập</a>
+      <a href="09-quan-tri-go-tai-lieu.html"><svg class="icon"><use href="#i-trash"/></svg>Gỡ tài liệu</a>
+      <a href="10-quan-tri-nhat-ky.html"><svg class="icon"><use href="#i-list"/></svg>Nhật ký truy cập</a>
+    </nav>
+
+    <main class="admin-main" id="main">
+      <div class="page-head">
+        <div>
+          <h1>Nhóm truy cập · Dự án X</h1>
+          <p class="muted">Chỉ thành viên trong nhóm mới xem và hỏi được tài liệu. Gỡ thành viên có hiệu lực ngay ở thao tác kế tiếp của họ.</p>
+        </div>
+        <button class="btn btn-primary" type="button"><svg class="icon icon-sm"><use href="#i-plus"/></svg>Thêm thành viên</button>
+      </div>
+
+      <div class="banner banner-info" style="margin-bottom: var(--sp-4)">
+        <svg class="icon"><use href="#i-shield"/></svg>
+        <div>Quản trị viên không có quyền xem hay hỏi nội dung tài liệu (BRU-007). Muốn xem, hãy tự thêm mình vào nhóm như một Thành viên BD; thao tác này được ghi nhật ký.</div>
+      </div>
+
+      <div class="table-wrap">
+        <table class="table">
+          <caption class="sr-only">Thành viên nhóm truy cập bộ tài liệu Dự án X</caption>
+          <thead><tr><th scope="col">Thành viên</th><th scope="col">Email</th><th scope="col">Vai trò</th><th scope="col">Thêm lúc</th><th scope="col"><span class="sr-only">Thao tác</span></th></tr></thead>
+          <tbody>
+            <tr><td><strong>Trần Văn Minh</strong></td><td>minh.tv@congty.vn</td>
+              <td><label class="sr-only" for="r1">Vai trò của Trần Văn Minh</label><select id="r1" class="select" style="min-height:var(--tap-min); padding: 2px var(--sp-2)"><option>Thành viên</option><option selected>Quản lý bộ tài liệu</option></select></td>
+              <td class="muted">02/11/2026</td><td><button class="btn btn-ghost btn-sm" type="button" aria-label="Gỡ Trần Văn Minh khỏi nhóm"><svg class="icon icon-sm"><use href="#i-x"/></svg>Gỡ</button></td></tr>
+            <tr><td><strong>Nguyễn Thị Lan</strong></td><td>lan.nt@congty.vn</td>
+              <td><label class="sr-only" for="r2">Vai trò của Nguyễn Thị Lan</label><select id="r2" class="select" style="min-height:var(--tap-min); padding: 2px var(--sp-2)"><option selected>Thành viên</option><option>Quản lý bộ tài liệu</option></select></td>
+              <td class="muted">02/11/2026</td><td><button class="btn btn-ghost btn-sm" type="button" aria-label="Gỡ Nguyễn Thị Lan khỏi nhóm"><svg class="icon icon-sm"><use href="#i-x"/></svg>Gỡ</button></td></tr>
+            <tr data-show-in="list add notfound"><td><strong>Phạm Đức Anh</strong></td><td>anh.pd@congty.vn</td>
+              <td><label class="sr-only" for="r3">Vai trò của Phạm Đức Anh</label><select id="r3" class="select" style="min-height:var(--tap-min); padding: 2px var(--sp-2)"><option selected>Thành viên</option><option>Quản lý bộ tài liệu</option></select></td>
+              <td class="muted">03/11/2026</td><td><button class="btn btn-ghost btn-sm" type="button" aria-label="Gỡ Phạm Đức Anh khỏi nhóm"><svg class="icon icon-sm"><use href="#i-x"/></svg>Gỡ</button></td></tr>
+            <tr><td><strong>Võ Thị Hà</strong></td><td>ha.vt@congty.vn</td>
+              <td><label class="sr-only" for="r4">Vai trò của Võ Thị Hà</label><select id="r4" class="select" style="min-height:var(--tap-min); padding: 2px var(--sp-2)"><option selected>Thành viên</option><option>Quản lý bộ tài liệu</option></select></td>
+              <td class="muted">03/11/2026</td><td><button class="btn btn-ghost btn-sm" type="button" aria-label="Gỡ Võ Thị Hà khỏi nhóm"><svg class="icon icon-sm"><use href="#i-x"/></svg>Gỡ</button></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="small muted" style="margin-top: var(--sp-3)">10 thành viên · 1 Quản lý bộ tài liệu</p>
+    </main>
+  </div>
+</div>
+
+<!-- Hộp thoại thêm thành viên -->
+<div class="overlay" data-show-in="add notfound">
+  <form class="dialog" role="dialog" aria-modal="true" aria-labelledby="add-title" onsubmit="return false">
+    <div class="dialog-header"><div><h2 id="add-title">Thêm thành viên vào nhóm truy cập</h2><p class="muted small">Tài khoản phải tồn tại trong Microsoft 365 công ty.</p></div></div>
+    <div class="dialog-body">
+      <div class="field">
+        <label for="email">Email công ty</label>
+        <input id="email" class="input" type="email" value="tuan.lm@congty.vn" aria-describedby="email-err" data-show-in="add">
+        <input class="input" type="email" value="tuan.lm@congty.vn" aria-invalid="true" aria-describedby="email-err" data-show-in="notfound">
+        <span id="email-err" class="field-error" data-show-in="notfound"><svg class="icon icon-sm"><use href="#i-alert"/></svg>Không tìm thấy tài khoản này trong Microsoft 365 công ty. Kiểm tra lại email.</span>
+      </div>
+      <div class="field">
+        <label for="role">Vai trò</label>
+        <select id="role" class="select"><option selected>Thành viên — xem, hỏi, tải từng file</option><option>Quản lý bộ tài liệu — thêm quyền tải lô</option></select>
+      </div>
+    </div>
+    <div class="dialog-footer">
+      <button class="btn btn-secondary" type="button">Hủy</button>
+      <button class="btn btn-primary" type="submit">Thêm</button>
+    </div>
+  </form>
+</div>
+
+<div class="toast-region" aria-live="polite" data-show-in="removed">
+  <div class="toast toast-success" role="status"><svg class="icon" style="color:var(--c-success-700)"><use href="#i-check"/></svg><div><strong class="banner-title">Đã gỡ Phạm Đức Anh khỏi nhóm</strong><br>Quyền hết hiệu lực từ thao tác kế tiếp của người này. Đã ghi nhật ký.</div></div>
+</div>
+
+<div class="state-switcher" role="group" aria-label="Trạng thái màn hình (chỉ trong file thiết kế)">
+  <span class="state-switcher-label">Trạng thái</span>
+  <button type="button" data-state="list">Danh sách</button>
+  <button type="button" data-state="add">Thêm thành viên</button>
+  <button type="button" data-state="notfound">Không có tài khoản</button>
+  <button type="button" data-state="removed">Đã gỡ</button>
+</div>
+
+<details class="design-notes">
+  <summary>📝 Ghi chú thiết kế · 08</summary>
+  <div class="dn-body">
+    <table>
+      <tr><th>Use case</th><td>UC-19 Quản lý nhóm truy cập (E1: tài khoản không tồn tại)</td></tr>
+      <tr><th>Story / AC</th><td>US-013, US-014, AC-US014-2, AC-US002-4 (vai trò manager)</td></tr>
+      <tr><th>Quy tắc</th><td>BRU-007, PCON-03, NFR-011, OI-03</td></tr>
+      <tr><th>API</th><td><code>GET/POST /admin/doc-sets/{dsid}/members</code>, <code>PATCH/DELETE …/members/{uid}</code>; 404 <code>USER_NOT_IN_DIRECTORY</code></td></tr>
+      <tr><th>Component</th><td><code>MembersPage</code></td></tr>
+    </table>
+    <p>Đổi vai trò dùng <code>select</code> có nhãn ẩn cho trình đọc màn hình. Nút “Gỡ” có <code>aria-label</code> chứa tên người để không mơ hồ khi đọc bằng bàn phím.</p>
+  </div>
+</details>
+<script src="assets/prototype.js"></script>
+</body>
+</html>

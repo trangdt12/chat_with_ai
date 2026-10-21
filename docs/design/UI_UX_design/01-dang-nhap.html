@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>01 · Đăng nhập — Chat với tài liệu</title>
+<link rel="stylesheet" href="assets/design-system.css">
+<style>
+  .login { min-height: calc(100vh - var(--design-bar-h, 0px)); display: grid; place-items: center; padding: var(--sp-6); background: var(--c-neutral-50); }
+  .login-card { width: 100%; max-width: 440px; }
+  .login-card .card-body { display: flex; flex-direction: column; gap: var(--sp-6); padding: var(--sp-8); }
+  .login-brand { display: flex; align-items: center; gap: var(--sp-3); }
+  .login-brand .brand-mark { width: 40px; height: 40px; font-size: var(--fs-md); }
+  .ms-btn { width: 100%; min-height: 48px; }
+  .ms-logo { width: 20px; height: 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+  .ms-logo span:nth-child(1) { background: #f25022; } .ms-logo span:nth-child(2) { background: #7fba00; }
+  .ms-logo span:nth-child(3) { background: #00a4ef; } .ms-logo span:nth-child(4) { background: #ffb900; }
+  .login-foot { font-size: var(--fs-sm); color: var(--c-neutral-600); display: flex; gap: var(--sp-2); align-items: flex-start; }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24"><path d="M10.3 3.9L1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><path d="M12 9v4"/><path d="M12 17h.01"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+</svg>
+
+<main class="login">
+  <section class="card login-card" aria-labelledby="login-title">
+    <div class="card-body">
+      <div class="login-brand">
+        <div class="brand-mark" aria-hidden="true">CW</div>
+        <div>
+          <h1 id="login-title">Chat với tài liệu</h1>
+          <p class="muted small">Hỏi đáp có dẫn nguồn trên tài liệu dự án</p>
+        </div>
+      </div>
+
+      <!-- Trạng thái: phiên hết hạn (E-18, AC-US012-2) -->
+      <div class="banner banner-warning" role="status" data-show-in="expired">
+        <svg class="icon"><use href="#i-clock"/></svg>
+        <div><strong class="banner-title">Phiên đăng nhập đã hết hạn</strong>
+          Bạn không hoạt động quá 8 giờ. Câu hỏi bạn đang gõ đã được giữ lại và sẽ hiện lại sau khi đăng nhập.</div>
+      </div>
+
+      <!-- Trạng thái: đăng nhập thất bại (UC-18 E2) -->
+      <div class="banner banner-danger" role="alert" data-show-in="failed">
+        <svg class="icon"><use href="#i-alert"/></svg>
+        <div><strong class="banner-title">Không đăng nhập được</strong>
+          Tài khoản Microsoft 365 chưa xác thực thành công. Vui lòng thử lại hoặc liên hệ Phòng CNTT.</div>
+      </div>
+
+      <div class="stack">
+        <p>Đăng nhập bằng tài khoản Microsoft 365 của công ty để tiếp tục.</p>
+        <a class="btn btn-primary ms-btn" href="05-hoi-dap.html">
+          <span class="ms-logo" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+          Đăng nhập bằng Microsoft 365
+        </a>
+      </div>
+
+      <div class="login-foot">
+        <svg class="icon icon-sm"><use href="#i-lock"/></svg>
+        <p>Chỉ truy cập được trong mạng nội bộ hoặc qua VPN công ty. Câu trả lời chỉ dựa trên tài liệu đã tải lên, luôn đối chiếu nguồn trước khi gửi cho đối tác.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="state-switcher" role="group" aria-label="Trạng thái màn hình (chỉ trong file thiết kế)">
+  <span class="state-switcher-label">Trạng thái</span>
+  <button type="button" data-state="default">Mặc định</button>
+  <button type="button" data-state="expired">Phiên hết hạn</button>
+  <button type="button" data-state="failed">Đăng nhập lỗi</button>
+</div>
+
+<details class="design-notes">
+  <summary>📝 Ghi chú thiết kế · 01</summary>
+  <div class="dn-body">
+    <table>
+      <tr><th>Use case</th><td>UC-18 Đăng nhập</td></tr>
+      <tr><th>Story / AC</th><td>US-012, AC-US012-1, AC-US012-2</td></tr>
+      <tr><th>Trường hợp biên</th><td>E-18 (phiên hết hạn), E-21 (ngoài VPN: không tới được trang này)</td></tr>
+      <tr><th>API</th><td><code>GET /auth/login</code> → Entra ID → <code>/auth/callback</code></td></tr>
+      <tr><th>Blueprint</th><td>§3.2.1 <code>AuthGate</code>; SAD §3.2.4</td></tr>
+    </table>
+    <p>Không có form nhập mật khẩu: xác thực hoàn toàn do Microsoft 365 (ADR-09). Không hiển thị logo/thương hiệu Microsoft ngoài biểu tượng chuẩn trên nút đăng nhập.</p>
+  </div>
+</details>
+<script src="assets/prototype.js"></script>
+</body>
+</html>
