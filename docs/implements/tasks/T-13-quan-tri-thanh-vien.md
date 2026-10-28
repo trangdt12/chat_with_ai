@@ -72,3 +72,4 @@ DELETE /admin/doc-sets/{dsid}/members/{uid}     → 204
 | `test_role_change_enables_batch_upload` | Sau PATCH manager, upload 2 file → 202 |
 | `test_audit_meta_has_no_email` | `meta` chỉ có id, vai trò |
 | Playwright: thêm email sai → lỗi tại ô; thêm đúng → dòng mới | Đúng text |
+- Khi làm: API thêm/đổi vai trò trả 201/200 như bảng §2.2; test "upload 2 file" kỳ vọng 200 (theo T-05, không phải 202). Xác nhận gỡ thành viên dùng hộp thoại `alertdialog` (`components/Modal.tsx`).

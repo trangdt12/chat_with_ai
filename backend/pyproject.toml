@@ -35,9 +35,17 @@ asyncio_default_test_loop_scope = "session"
 testpaths = ["tests"]
 
 [tool.ruff]
-line-length = 110
+line-length = 120
 target-version = "py312"
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "B", "UP"]
 ignore = ["B008"]
+
+[tool.ruff.lint.per-file-ignores]
+# Prompt gửi cho Claude: giữ mỗi quy tắc trên một dòng.
+"app/qa/prompts.py" = ["E501"]
+
+[tool.ruff.lint.isort]
+# Thư mục backend/alembic/ (migration) làm ruff tưởng gói `alembic` là first-party.
+known-third-party = ["alembic"]

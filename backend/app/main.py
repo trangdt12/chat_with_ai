@@ -5,8 +5,12 @@ from fastapi.exceptions import RequestValidationError
 from sqlalchemy import text
 from sqlalchemy.ext.asyncio import AsyncSession
 
+from app.admin.router import router as admin_router
+from app.auth.router import router as auth_router
 from app.db import get_db
+from app.documents.router import router as documents_router
 from app.errors import AppError, app_error_handler, unhandled_error_handler, validation_error_handler
+from app.qa.router import router as qa_router
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(name)s %(message)s")
 
@@ -28,7 +32,10 @@ def create_app() -> FastAPI:
     app.add_exception_handler(Exception, unhandled_error_handler)
 
     app.include_router(health_router, prefix=API_PREFIX)
-    # Router các module được gắn ở đây (T-03, T-05, T-07, T-10, T-13, T-14).
+    app.include_router(auth_router, prefix=API_PREFIX)
+    app.include_router(documents_router, prefix=API_PREFIX)
+    app.include_router(qa_router, prefix=API_PREFIX)
+    app.include_router(admin_router, prefix=API_PREFIX)
     return app
 
 

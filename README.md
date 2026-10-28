@@ -35,11 +35,24 @@ docker compose exec api pytest
 # Frontend: unit test (Vitest)
 docker compose exec web npm test
 
-# End-to-end (Playwright, chạy trên máy host; backend phải bật LLM_FAKE=1, EMBED_FAKE=1)
-cd web && npx playwright install chromium && npm run e2e
+# End-to-end (Playwright, chạy trên máy host; backend phải bật LLM_FAKE=1, EMBED_FAKE=1
+# và nên đặt RETRIEVAL_NOT_FOUND_TAU=0.25 vì embedding giả cho cosine thấp hơn bge-m3)
+# Mỗi spec tự đặt lại dữ liệu bằng `docker compose exec -T api python -m app.seed --reset`
+cd web && npm install && npx playwright install chromium && npm run e2e
 
-# Bộ câu hỏi đánh giá với Claude thật (T-15)
+# Bộ câu hỏi đánh giá với Claude thật (T-15): sinh PDF mẫu, kiểm tra, rồi chạy (~20–30 lần gọi Claude)
+cd web && npm run eval:corpus && cd ..
 docker compose exec api python /eval/run_eval.py --dry-run
+docker compose exec api python /eval/run_eval.py          # báo cáo ở eval/reports/YYYY-MM-DD.md
+```
+
+- Kịch bản demo 15 phút: [docs/implements/demo-script.md](docs/implements/demo-script.md).
+- Thử Claude thật không cần giao diện: `docker compose exec api python -m app.qa.llm_smoke`.
+
+DB test `cwd_test` được tạo bởi `backend/docker/initdb/` **chỉ khi volume `pgdata` còn trống**. Nếu volume đã có từ trước (pytest báo `database "cwd_test" does not exist`), tạo tay một lần:
+
+```bash
+docker compose exec db psql -U cwd -d cwd -c "CREATE DATABASE cwd_test OWNER cwd"
 ```
 
 Đặt lại dữ liệu mẫu: `docker compose exec api python -m app.seed --reset`.

@@ -74,3 +74,4 @@ PDF mẫu nhỏ để test đặt ở `backend/tests/fixtures/pdf/` (dùng chung
 ## 5. Ghi chú
 - Giới hạn kiểm tra phía client (đuôi file, 20 MB, số file) làm ở T-07 chỉ để phản hồi nhanh; server luôn kiểm tra lại.
 - Kiểm tra số trang và PDF mã hóa/hỏng/scan do worker làm (T-06), vì cần mở file.
+- Khi làm: tên trường multipart là `files` (lặp lại cho nhiều file), response 200. PDF mẫu cho test được sinh trong code (`backend/tests/pdf_factory.py`) thay vì file nhị phân trong `tests/fixtures/pdf/`.

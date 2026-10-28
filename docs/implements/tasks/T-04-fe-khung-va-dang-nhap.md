@@ -58,3 +58,4 @@ Dùng Vitest + Testing Library; mock `fetch`.
 
 ## 5. Ghi chú
 - Màu sắc, font, khoảng cách theo `web/src/styles/tokens.css` (T-01). Tham khảo bố cục chung ở [index.html](../../design/UI_UX_design/index.html).
+- Khi làm: handler 401 chỉ thêm `expired=1` khi trước đó đã có `/me` (lần đầu chưa đăng nhập thì không hiện banner hết phiên). `draftStore` có thêm `peekDraft()` vì React StrictMode gọi hàm khởi tạo state 2 lần.

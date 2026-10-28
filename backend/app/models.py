@@ -100,7 +100,6 @@ class Document(Base):
         UniqueConstraint("doc_set_id", "filename", name="documents_doc_set_filename_key"),
         CheckConstraint(_in("status", ("uploaded", "processing", "ready", "failed")), name="documents_status_check"),
         CheckConstraint("progress BETWEEN 0 AND 100", name="documents_progress_check"),
-        Index("documents_list_idx", "doc_set_id", "uploaded_at"),
     )
 
     id: Mapped[uuid.UUID] = _uuid_pk()
@@ -118,8 +117,22 @@ class Document(Base):
     uploaded_at: Mapped[datetime] = _now()
 
 
+Index("documents_list_idx", Document.doc_set_id, Document.uploaded_at.desc())
+
+
 class Chunk(Base):
     __tablename__ = "chunks"
+    __table_args__ = (
+        Index(
+            "chunks_embedding_hnsw",
+            "embedding",
+            postgresql_using="hnsw",
+            postgresql_with={"m": 16, "ef_construction": 64},
+            postgresql_ops={"embedding": "vector_cosine_ops"},
+        ),
+        Index("chunks_tsv_gin", "tsv", postgresql_using="gin"),
+        Index("chunks_doc_idx", "doc_set_id", "document_id"),
+    )
 
     id: Mapped[uuid.UUID] = _uuid_pk()
     document_id: Mapped[uuid.UUID] = mapped_column(
@@ -155,6 +168,7 @@ class Turn(Base):
         UniqueConstraint("conversation_id", "turn_index", name="turns_conversation_turn_key"),
         CheckConstraint(_in("answer_type", ("answered", "not_found", "clarification")), name="turns_answer_type_check"),
         CheckConstraint(_in("status", ("completed", "stopped", "incomplete")), name="turns_status_check"),
+        Index("turns_conv_idx", "conversation_id", "turn_index"),
     )
 
     id: Mapped[uuid.UUID] = _uuid_pk()

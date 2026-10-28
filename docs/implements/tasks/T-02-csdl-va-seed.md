@@ -71,3 +71,5 @@ Bộ tài liệu: `doc_sets(name='Dự án X')`.
 ## 5. Ghi chú
 - Tham khảo cấu trúc đầy đủ ở [schema.sql](../../design/schema.sql); bản thử nghiệm bỏ các schema riêng, RLS, partition và các bảng billing/analytics.
 - Vector 1024 chiều khớp `bge-m3`. Nếu đổi model embedding thì phải sửa số chiều và tạo lại chỉ mục.
+- Khi làm: `audit_log.action` có thêm `view_list` (T-07 cần) nên là 11 giá trị. Seed có thêm `anh@demo.local` (Phạm Đức Anh, member "Dự án X") cho kịch bản gỡ thành viên ở T-13/T-15, nên test kiểm tra số user = `len(SEED_USERS)` = 5. Có thêm `python -m app.seed --reset` (T-15 dùng): TRUNCATE mọi bảng và xóa file đã tải lên.
+- Test dựng schema bằng `alembic downgrade base` → `upgrade head` một lần mỗi lượt pytest (fixture `_migrate`), fixture `db` TRUNCATE các bảng trước mỗi test.

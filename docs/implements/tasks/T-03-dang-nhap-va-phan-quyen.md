@@ -71,3 +71,4 @@ def can_admin(ctx) -> bool:               return ctx.is_admin
 ## 5. Ghi chú
 - Không làm CSRF token: cookie `SameSite=Lax` và API chỉ nhận JSON/multipart từ cùng origin là đủ cho bản chạy local.
 - Fixture `login_as(email)` trong `tests/conftest.py` để các task sau dùng lại.
+- Khi làm: email đăng nhập được chuẩn hóa `strip().lower()`. Ngoài `require_*` có thêm `ensure_member(ctx, dsid)` dùng trong service khi `dsid` chỉ biết sau khi đọc DB (file, trích dẫn, hội thoại). Engine tạo với `hide_parameters=True` để log lỗi SQL không kèm nội dung.

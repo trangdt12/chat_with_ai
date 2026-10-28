@@ -91,3 +91,4 @@ GET /admin/audit-logs?doc_set_id=&from=YYYY-MM-DD&to=YYYY-MM-DD&user_id=&action=
 | `test_audit_query_filters_and_cursor` | Lọc theo user/action/ngày đúng; trang 2 không trùng trang 1 |
 | `test_audit_meta_never_contains_content` | Quét mọi `meta` sau luồng hỏi đáp: không chứa chuỗi câu hỏi |
 | Playwright: gỡ tài liệu → tab Lan không còn file | Pass |
+- Khi làm: lọc nhật ký theo bộ tài liệu có kèm các dòng `login` (không gắn bộ) của thành viên **hiện tại** của bộ, để thấy "đăng nhập" trong AC-US022-1. Ngày `from`/`to` tính theo giờ Việt Nam (UTC+7). Response có thêm `id`, `user_id` để FE làm khóa dòng và hiển thị người dùng đích.

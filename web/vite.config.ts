@@ -17,5 +17,7 @@ export default defineConfig({
     globals: true,
     setupFiles: ["./src/test/setup.ts"],
     include: ["src/**/*.test.{ts,tsx}"],
+    // T-01 chưa có test frontend; không để `npm test` báo lỗi vì thiếu file test.
+    passWithNoTests: true,
   },
 });

@@ -1,0 +1,56 @@
+{
+  "_note": "Tài liệu mẫu tự soạn (không phải tài liệu thật). Mỗi phần tử của `pages` là một trang PDF. Sinh PDF: cd web && npm run eval:corpus",
+  "documents": [
+    {
+      "file": "HopDongKhung.pdf",
+      "title": "HỢP ĐỒNG KHUNG CUNG CẤP GIẢI PHÁP PHẦN MỀM",
+      "pages": [
+        "Số hợp đồng: HD-2024-017. Ngày ký: 01/03/2024.\n\nĐiều 1. Các bên. Bên Mua là Công ty Cổ phần Thương mại Hoàng Long. Bên Bán là Công ty TNHH Giải pháp Số An Phát.\n\nĐiều 2. Phạm vi. Bên Bán cung cấp phần mềm quản lý bán hàng, dịch vụ triển khai và hỗ trợ kỹ thuật theo các đơn đặt hàng phát sinh trong thời hạn hợp đồng. Tổng giá trị dự kiến của hợp đồng là 2,5 tỷ đồng.",
+        "Điều 5. Thanh toán.\n\n5.1. Bên Mua thanh toán cho Bên Bán trong thời hạn 30 ngày kể từ ngày nhận được hóa đơn giá trị gia tăng hợp lệ và biên bản giao nhận có chữ ký của hai bên.\n\n5.2. Thanh toán bằng chuyển khoản, đồng tiền thanh toán là Việt Nam đồng.",
+        "Điều 6. Ngoại lệ và phạt chậm thanh toán.\n\n6.1. Trường hợp Bên Bán chậm giao hàng quá 10 ngày so với đơn đặt hàng, thời hạn thanh toán tại Điều 5.1 được tính lại từ ngày giao hàng thực tế.\n\n6.2. Nếu Bên Mua chậm thanh toán, Bên Mua chịu phạt 0,05% giá trị chậm thanh toán cho mỗi ngày chậm.",
+        "Điều 9. Bảo hành. Phần mềm được bảo hành 12 tháng kể từ ngày nghiệm thu.\n\nĐiều 10. Chấm dứt hợp đồng. Mỗi bên có quyền đơn phương chấm dứt hợp đồng với điều kiện thông báo bằng văn bản cho bên kia trước 60 ngày."
+      ]
+    },
+    {
+      "file": "PhuLuc2.pdf",
+      "title": "PHỤ LỤC 2 — ĐIỀU KHOẢN BỔ SUNG CỦA HỢP ĐỒNG KHUNG HD-2024-017",
+      "pages": [
+        "Mục 1. Điều chỉnh thời hạn thanh toán. Đối với đơn đặt hàng có giá trị trên 1 tỷ đồng, thời hạn thanh toán là 45 ngày kể từ ngày nhận được hóa đơn hợp lệ.",
+        "Mục 2. Bảo trì. Phí bảo trì năm đầu bằng 15% giá trị phần mềm, thanh toán một lần khi nghiệm thu."
+      ]
+    },
+    {
+      "file": "BaoGia_v3.pdf",
+      "title": "BÁO GIÁ PHẦN MỀM QUẢN LÝ BÁN HÀNG — PHIÊN BẢN 3",
+      "pages": [
+        "Bảng giá.\n\n1. Gói phần mềm bản quyền: 450.000.000 đồng.\n2. Triển khai và đào tạo: 120.000.000 đồng.\n\nGiá chưa bao gồm thuế giá trị gia tăng.",
+        "Điều kiện báo giá. Báo giá có hiệu lực trong 30 ngày kể từ ngày phát hành. Khách hàng ký hợp đồng trước ngày 31/12/2024 được giảm 5% giá gói phần mềm."
+      ]
+    },
+    {
+      "file": "KeHoachTrienKhai.pdf",
+      "title": "KẾ HOẠCH TRIỂN KHAI DỰ ÁN",
+      "pages": [
+        "Giai đoạn 1 — Khảo sát. Thời gian thực hiện 2 tuần, gồm phỏng vấn người dùng và thu thập quy trình bán hàng hiện tại.",
+        "Giai đoạn 2 — Triển khai. Thời gian thực hiện 8 tuần, gồm cài đặt, chuyển đổi dữ liệu và đào tạo. Ngày vận hành chính thức (go-live) dự kiến là 15/06/2024.",
+        "Nhân sự. Quản lý dự án phía Bên Bán là ông Nguyễn Văn Bình. Đầu mối phía Bên Mua là bà Trần Thu Hà."
+      ]
+    },
+    {
+      "file": "DieuKhoanBaoMat.pdf",
+      "title": "THỎA THUẬN BẢO MẬT THÔNG TIN",
+      "pages": [
+        "Điều 1. Nghĩa vụ bảo mật. Các bên giữ bí mật thông tin trao đổi trong quá trình hợp tác. Nghĩa vụ bảo mật kéo dài 5 năm sau khi hợp đồng chấm dứt.",
+        "Điều 2. Vi phạm. Bên vi phạm nghĩa vụ bảo mật phải bồi thường thiệt hại thực tế và chịu phạt 200 triệu đồng cho mỗi lần vi phạm."
+      ]
+    },
+    {
+      "file": "ServiceLevelAgreement.pdf",
+      "title": "SERVICE LEVEL AGREEMENT",
+      "pages": [
+        "1. Availability. The Vendor guarantees a monthly uptime of 99.5% for the production environment, excluding scheduled maintenance announced at least 48 hours in advance.",
+        "2. Incident response. Critical incidents receive a response within 4 hours, 24/7. If the monthly uptime commitment is not met, the Customer receives a service credit of 10% of the monthly fee."
+      ]
+    }
+  ]
+}

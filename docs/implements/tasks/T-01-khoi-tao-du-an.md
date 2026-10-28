@@ -56,3 +56,4 @@ async def app_error_handler(request, exc: AppError) -> JSONResponse:
 ## 5. Ghi chú
 - Model `bge-m3` (~2 GB) được tải lần đầu khi worker chạy T-06; mount `./models` để không tải lại.
 - Không làm CI, Terraform, observability (README §4).
+- Khi làm: thêm `tests/test_config.py` cho tiêu chí "đổi biến môi trường thì giá trị đổi theo"; Vitest bật `passWithNoTests` để `npm test` không lỗi khi chưa có test frontend; ruff khai báo `alembic` là third-party (vì có thư mục `backend/alembic/`). DB `cwd_test` chỉ được tạo khi volume `pgdata` còn trống, xem README gốc nếu cần tạo tay.

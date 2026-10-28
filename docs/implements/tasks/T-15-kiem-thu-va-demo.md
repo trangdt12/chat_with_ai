@@ -91,3 +91,4 @@ Chuẩn bị trước: `docker compose up`, `python -m app.seed --reset`, tải 
 ## 5. Ghi chú
 - Mỗi lần chạy bộ đánh giá gọi Claude khoảng 20–30 lần, chi phí nhỏ, nhưng vẫn không đưa vào test tự động chạy thường xuyên.
 - Đây là bộ đo nhỏ. Bộ 50 câu chính thức (G-05..G-09) làm khi đi tiếp lên bản chính thức.
+- Khi làm: file mẫu e2e sinh trong code (`web/e2e/fixtures/pdf.ts`); corpus đánh giá viết ở `eval/corpus_src.json` và in ra PDF tiếng Việt bằng Chromium (`cd web && npm run eval:corpus`). `run_eval.py` chạy trong container `api` (thư mục `eval/` được mount vào `/eval`), tự tạo bộ tài liệu "Eval" trong DB và gán người chạy (mặc định `minh@demo.local`) làm Quản lý. Dùng `npm` thay `pnpm`.

@@ -135,3 +135,4 @@ Stream kiểm tra `cancel` sau mỗi block. Ngoài ra, một task song song đ�
 ## 5. Ghi chú
 - Tham khảo luồng ở [SAD §3.2.1](../../design/SAD.md) và sự kiện ở SAD Phụ lục A.4 (đã bỏ `schema_version` và `latency` cho gọn).
 - Nếu sau này chạy nhiều worker uvicorn, registry trong bộ nhớ không còn đủ; khi đó chuyển sang PostgreSQL `LISTEN/NOTIFY` như thiết kế gốc (Blueprint DD-08).
+- Khi làm: lượt được lưu **trước** khi gửi sự kiện kết thúc (completed/stopped/failed) để test và FE đọc được ngay. Dừng dùng `asyncio.wait` giữa `__anext__` và `cancel.wait()`, hủy task đang chờ để thoát `async with` của SDK.

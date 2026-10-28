@@ -27,6 +27,7 @@ services:
       - ./backend:/app
       - ./data/files:/data/files
       - ./models:/models
+      - ./eval:/eval
     depends_on:
       db:
         condition: service_healthy

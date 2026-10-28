@@ -1,0 +1,138 @@
+# Bộ câu hỏi đánh giá nhỏ (T-15). Chạy với Claude thật: docker compose exec api python /eval/run_eval.py
+# type: SC-01 một tài liệu · SC-02 nhiều tài liệu · SC-03 không có trong tài liệu · SC-04 câu hỏi tiếp nối
+# expected: các ý bắt buộc phải có (so khớp không phân biệt hoa thường, bỏ dấu chấm)
+# sources: trích dẫn bắt buộc (đúng file và trang)
+
+# ---------------- SC-01: một tài liệu (8 câu, 2 tiếng Anh, 1 hỏi chéo ngôn ngữ)
+- id: Q01
+  type: SC-01
+  lang: vi
+  question: "Thời hạn thanh toán trong hợp đồng khung là bao lâu?"
+  expected: ["30 ngày"]
+  sources: [{file: "HopDongKhung.pdf", page: 2}]
+- id: Q02
+  type: SC-01
+  lang: vi
+  question: "Hợp đồng khung có số hiệu là gì?"
+  expected: ["HD-2024-017"]
+  sources: [{file: "HopDongKhung.pdf", page: 1}]
+- id: Q03
+  type: SC-01
+  lang: vi
+  question: "Phần mềm được bảo hành bao lâu theo hợp đồng khung?"
+  expected: ["12 tháng"]
+  sources: [{file: "HopDongKhung.pdf", page: 4}]
+- id: Q04
+  type: SC-01
+  lang: vi
+  question: "Giá gói phần mềm bản quyền trong báo giá phiên bản 3 là bao nhiêu?"
+  expected: ["450.000.000"]
+  sources: [{file: "BaoGia_v3.pdf", page: 1}]
+- id: Q05
+  type: SC-01
+  lang: vi
+  question: "Giai đoạn triển khai của dự án kéo dài bao lâu?"
+  expected: ["8 tuần"]
+  sources: [{file: "KeHoachTrienKhai.pdf", page: 2}]
+- id: Q06
+  type: SC-01
+  lang: en
+  question: "What is the monthly uptime commitment in the SLA?"
+  expected: ["99.5%"]
+  sources: [{file: "ServiceLevelAgreement.pdf", page: 1}]
+- id: Q07
+  type: SC-01
+  lang: en
+  question: "How quickly must critical incidents receive a response?"
+  expected: ["4 hours"]
+  sources: [{file: "ServiceLevelAgreement.pdf", page: 2}]
+- id: Q08
+  type: SC-01
+  lang: en
+  note: "hỏi chéo ngôn ngữ: câu hỏi tiếng Anh, tài liệu tiếng Việt"
+  question: "How many days of notice are required to terminate the framework contract?"
+  expected: ["60"]
+  sources: [{file: "HopDongKhung.pdf", page: 4}]
+
+# ---------------- SC-02: nhiều tài liệu (4 câu, có 1 cặp giá trị mâu thuẫn)
+- id: Q09
+  type: SC-02
+  lang: vi
+  note: "mâu thuẫn: hợp đồng 30 ngày, phụ lục 45 ngày cho đơn trên 1 tỷ — phải nêu cả hai kèm nguồn"
+  question: "Thời hạn thanh toán là bao nhiêu ngày theo hợp đồng khung và theo phụ lục 2?"
+  expected: ["30 ngày", "45 ngày"]
+  sources: [{file: "HopDongKhung.pdf", page: 2}, {file: "PhuLuc2.pdf", page: 1}]
+- id: Q10
+  type: SC-02
+  lang: vi
+  question: "Giá gói phần mềm bản quyền và phí bảo trì năm đầu là bao nhiêu?"
+  expected: ["450.000.000", "15%"]
+  sources: [{file: "BaoGia_v3.pdf", page: 1}, {file: "PhuLuc2.pdf", page: 2}]
+- id: Q11
+  type: SC-02
+  lang: vi
+  question: "Mức phạt chậm thanh toán và mức phạt vi phạm bảo mật là bao nhiêu?"
+  expected: ["0,05%", "200 triệu"]
+  sources: [{file: "HopDongKhung.pdf", page: 3}, {file: "DieuKhoanBaoMat.pdf", page: 2}]
+- id: Q12
+  type: SC-02
+  lang: vi
+  question: "Ngày go-live dự kiến là ngày nào và báo giá có hiệu lực trong bao lâu?"
+  expected: ["15/06/2024", "30 ngày"]
+  sources: [{file: "KeHoachTrienKhai.pdf", page: 2}, {file: "BaoGia_v3.pdf", page: 2}]
+
+# ---------------- SC-03: không có trong tài liệu (4 câu, gồm 1 câu kiến thức phổ thông)
+- id: Q13
+  type: SC-03
+  lang: vi
+  question: "Thủ đô của Pháp là gì?"
+  expected: []
+  sources: []
+- id: Q14
+  type: SC-03
+  lang: vi
+  question: "Mức lương của quản lý dự án là bao nhiêu?"
+  expected: []
+  sources: []
+- id: Q15
+  type: SC-03
+  lang: vi
+  question: "Điều khoản phạt chậm tiến độ thi công là bao nhiêu phần trăm?"
+  expected: []
+  sources: []
+- id: Q16
+  type: SC-03
+  lang: en
+  question: "Who is the CEO of the vendor company?"
+  expected: []
+  sources: []
+
+# ---------------- SC-04: câu hỏi tiếp nối (4 câu)
+- id: Q17
+  type: SC-04
+  lang: vi
+  history: ["Thời hạn thanh toán trong hợp đồng khung là bao lâu?"]
+  question: "Điều khoản đó có ngoại lệ không?"
+  expected: ["giao hàng"]
+  sources: [{file: "HopDongKhung.pdf", page: 3}]
+- id: Q18
+  type: SC-04
+  lang: vi
+  history: ["Giá gói phần mềm bản quyền trong báo giá phiên bản 3 là bao nhiêu?"]
+  question: "Báo giá đó còn hiệu lực trong bao lâu?"
+  expected: ["30 ngày"]
+  sources: [{file: "BaoGia_v3.pdf", page: 2}]
+- id: Q19
+  type: SC-04
+  lang: vi
+  history: ["Giai đoạn triển khai của dự án kéo dài bao lâu?"]
+  question: "Ai là quản lý dự án của giai đoạn đó?"
+  expected: ["Nguyễn Văn Bình"]
+  sources: [{file: "KeHoachTrienKhai.pdf", page: 3}]
+- id: Q20
+  type: SC-04
+  lang: en
+  history: ["What is the monthly uptime commitment in the SLA?"]
+  question: "What happens if it is not met?"
+  expected: ["10%"]
+  sources: [{file: "ServiceLevelAgreement.pdf", page: 2}]

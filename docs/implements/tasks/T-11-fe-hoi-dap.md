@@ -97,3 +97,4 @@ Dùng `navigator.clipboard.writeText`, sau đó hiện toast "Đã sao chép câ
 ## 5. Ghi chú
 - Backend không chèn chuỗi `[n]` vào `text`; vị trí chỉ số do frontend dựng từ `citations` của từng delta. T-10 cần giữ đúng quy ước này.
 - Không có API đọc lại lịch sử hội thoại: tải lại trang sẽ mở hội thoại trống. Chấp nhận được ở bản thử nghiệm.
+- Khi làm: khóa bản nháp dùng chung với T-04 là `sessionStorage["cwd.draft"]`. Chỉ số `[n]` được chèn bằng ký tự đánh dấu vùng riêng (Private Use) rồi thay bằng nút qua một rehype plugin, nên markdown nhiều đoạn vẫn hiển thị đúng. Popover render qua portal (tránh bị cắt bởi vùng cuộn).

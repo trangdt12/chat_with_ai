@@ -123,3 +123,4 @@ class Embedder:
 - Tham khảo: Blueprint ALG-01, ALG-02 ([Blueprint_SDD.md §3.8](../../design/Blueprint_SDD.md)).
 - Lần chạy đầu, bge-m3 (≈ 2,2 GB) tải về volume `models/`, nên lâu. Nếu máy dev quá chậm, có thể đổi `embed_model` sang một model đa ngôn ngữ 1024 chiều nhẹ hơn; đổi model thì phải xử lý lại toàn bộ tài liệu.
 - PDF chỉ có owner password (`decrypt("")` thành công) vẫn được nhận.
+- Khi làm: `FakeEmbedder` là túi từ (bỏ dấu) băm vào 1024 chiều để câu có chung từ thì cosine cao — dùng được cho cả pytest lẫn e2e. Model embedding chỉ tải khi cần (`get_embedder()`), cả `api` (tìm kiếm) và `worker` đều nạp model.

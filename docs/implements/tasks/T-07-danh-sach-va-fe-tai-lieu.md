@@ -98,3 +98,4 @@ Chu kỳ 3 giây đáp ứng yêu cầu "cập nhật ít nhất mỗi 5 giây" 
 ## 5. Ghi chú
 - Giao diện bám màn [02](../../design/UI_UX_design/02-trang-thai-trong.html), [03](../../design/UI_UX_design/03-xac-nhan-phan-loai.html), [04](../../design/UI_UX_design/04-tai-tai-lieu-len.html) và design token trong `UI_UX_design/assets`.
 - Định dạng response khi tải lô (kết quả từng file, tên mới khi trùng) theo T-05; nếu T-05 đổi thì cập nhật `uploadFiles` cho khớp.
+- Khi làm: thêm hành động audit `view_list` vào constraint (T-02). Logic tải lên nằm ở `web/src/hooks/useUpload.tsx` để thanh tài liệu và màn trống dùng chung.
