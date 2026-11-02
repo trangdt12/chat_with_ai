@@ -12,9 +12,13 @@ Tài liệu: yêu cầu ở [docs/requirements](docs/requirements/UserStories.md
 | Test case, ma trận AC ↔ TC, định nghĩa PASS/FAIL viết trước khi chạy | [docs/test-cases.md](docs/test-cases.md) (sinh từ [docs/test/test-cases.yaml](docs/test/test-cases.yaml); lịch sử git cho thấy định nghĩa được commit trước lượt chạy) |
 | 100% AC của US-001, US-009 có TC; không TC nào thiếu AC | [docs/test-cases.md](docs/test-cases.md) §2, dòng "Kiểm tra độ phủ (máy)" |
 | Chạy toàn bộ TC bằng Playwright trong CI | [.github/workflows/tests.yml](.github/workflows/tests.yml) → [scripts/run-tests.sh](scripts/run-tests.sh) |
-| Bằng chứng: trace, log, ảnh chụp | [playwright-report/](playwright-report/) (HTML có trace, ảnh, video) · [reports/](reports/) (log, junit, môi trường) |
+| Bằng chứng: trace, log, ảnh chụp | [playwright-report/](playwright-report/) (HTML có trace, ảnh, video) · [reports/](reports/) (log, junit, môi trường) — xem ghi chú bên dưới |
 | Mọi FAIL có bug ticket; PASS lặp lại ≥ 2 lần | [docs/bugs/](docs/bugs/) · 2 lượt `run-1`, `run-2` trên cùng commit, Playwright `--repeat-each=3` |
 | Truy vết US ↔ AC ↔ TC ↔ bằng chứng | [docs/traceability.md](docs/traceability.md) |
+
+**Trace, ảnh chụp, video thô của từng test** nằm trong `playwright-report/<lượt>/data/`: `*.zip` là trace, `*.png` là ảnh chụp, `*.webm` là video. Xem bằng cách mở `playwright-report/<lượt>/index.html`, chọn một test, rồi xem mục Attachments. Muốn xem một trace riêng thì chạy `cd web && npx playwright show-trace ../playwright-report/<lượt>/data/<file>.zip`.
+
+Thư mục `test-results/` (`outputDir` của Playwright) không được đưa vào repo vì hai lý do. Thứ nhất, Playwright xóa thư mục này ở mỗi lần chạy, nên nó chỉ giữ dữ liệu của lượt cuối cùng. Thứ hai, mọi file trong đó đã được chép vào `playwright-report/<lượt>/data/`.
 
 Cấu trúc thư mục:
 
