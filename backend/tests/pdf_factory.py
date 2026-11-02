@@ -24,7 +24,8 @@ def _content_stream(text: str) -> bytes:
     return "\n".join(ops).encode("latin-1")
 
 
-def make_pdf(pages: list[str]) -> bytes:
+def make_pdf(pages: list[str], pad: int = 0) -> bytes:
+    """`pad` > 0: thêm 1 dòng chú thích PDF (~pad byte) cuối content stream trang 1 để tăng kích thước file."""
     objects: list[bytes] = []
     n = len(pages)
     page_ids = [4 + 2 * i for i in range(n)]
@@ -41,6 +42,8 @@ def make_pdf(pages: list[str]) -> bytes:
             ).encode()
         )
         stream = _content_stream(text) if text else b""
+        if i == 0 and pad > 0:
+            stream += b"\n%" + b"x" * max(pad - 2, 0)
         objects.append(b"<< /Length %d >>\nstream\n" % len(stream) + stream + b"\nendstream")
 
     out = io.BytesIO()
@@ -55,6 +58,17 @@ def make_pdf(pages: list[str]) -> bytes:
         out.write(f"{off:010d} 00000 n \n".encode())
     out.write(f"trailer\n<< /Size {len(objects) + 1} /Root 1 0 R >>\nstartxref\n{xref}\n%%EOF\n".encode())
     return out.getvalue()
+
+
+def make_pdf_of_size(pages: list[str], size: int) -> bytes:
+    """PDF hợp lệ dài đúng `size` byte (kiểm thử biên dung lượng)."""
+    pad = 0
+    for _ in range(5):
+        data = make_pdf(pages, pad)
+        if len(data) == size:
+            return data
+        pad += size - len(data)
+    raise ValueError(f"không dựng được PDF dài đúng {size} byte")
 
 
 def encrypt_pdf(data: bytes, user_password: str = "secret", owner_password: str = "owner") -> bytes:

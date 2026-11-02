@@ -1,0 +1,4180 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "E:\\Working\\SDLC\\chat_with_ai\\web\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "-c",
+      "e2e/playwright.config.ts",
+      "--repeat-each=3"
+    ],
+    "configFile": "E:\\Working\\SDLC\\chat_with_ai\\web\\e2e\\playwright.config.ts",
+    "rootDir": "E:/Working/SDLC/chat_with_ai/web/e2e",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "E:/Working/SDLC/chat_with_ai/web/test-results",
+        "repeatEach": 3,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "E:/Working/SDLC/chat_with_ai/web/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "*.spec.ts"
+        ],
+        "timeout": 90000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results",
+        "repeatEach": 3,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "chromium",
+        "testDir": "E:\\Working\\SDLC\\chat_with_ai\\web\\e2e",
+        "snapshotDir": "E:\\Working\\SDLC\\chat_with_ai\\web\\e2e",
+        "testIgnore": [],
+        "testMatch": "*.spec.ts",
+        "timeout": 90000,
+        "use": {
+          "baseURL": "http://localhost:5173",
+          "locale": "vi-VN",
+          "trace": "on",
+          "screenshot": "on",
+          "video": "on",
+          "permissions": [
+            "clipboard-read",
+            "clipboard-write"
+          ],
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.8078.4 Safari/537.36",
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "screen": {
+            "width": 1920,
+            "height": 1080
+          },
+          "deviceScaleFactor": 1,
+          "isMobile": false,
+          "hasTouch": false,
+          "defaultBrowserType": "chromium"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "chromium"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "html",
+        {
+          "open": "never",
+          "outputFolder": "E:/Working/SDLC/chat_with_ai/playwright-report/run-3"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "E:/Working/SDLC/chat_with_ai/reports/run-3/playwright/results.json"
+        }
+      ],
+      [
+        "junit",
+        {
+          "outputFile": "E:/Working/SDLC/chat_with_ai/reports/run-3/playwright/junit.xml"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "admin.spec.ts",
+      "file": "admin.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Hùng thêm thành viên: email sai báo lỗi tại ô, email đúng thêm dòng mới",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "serial",
+                  "location": {
+                    "file": "E:\\Working\\SDLC\\chat_with_ai\\web\\e2e\\admin.spec.ts",
+                    "line": 0,
+                    "column": 0
+                  }
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2512,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [
+                    {
+                      "buffer": "MjAyNi0xMS0wMiAxNjowNTo0NSwzMTEgSU5GTyBhcHAuc2VlZCBzZWVkIHhvbmc6IDUgdMOgaSBraG/huqNuLCBi4buZIHTDoGkgbGnhu4d1ICdE4buxIMOhbiBYJwo="
+                    }
+                  ],
+                  "retry": 0,
+                  "startTime": "2026-11-02T16:05:42.611Z",
+                  "annotations": [
+                    {
+                      "type": "serial",
+                      "location": {
+                        "file": "E:\\Working\\SDLC\\chat_with_ai\\web\\e2e\\admin.spec.ts",
+                        "line": 0,
+                        "column": 0
+                      }
+                    }
+                  ],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\admin-Hùng-thêm-thành-viên-1ea30--ô-email-đúng-thêm-dòng-mới-chromium\\test-finished-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\admin-Hùng-thêm-thành-viên-1ea30--ô-email-đúng-thêm-dòng-mới-chromium\\video.webm"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\admin-Hùng-thêm-thành-viên-1ea30--ô-email-đúng-thêm-dòng-mới-chromium\\trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d4043a9dd1ab94463227-87a31d865fd7792e0dce",
+          "file": "admin.spec.ts",
+          "line": 8,
+          "column": 1
+        },
+        {
+          "title": "Anh bị gỡ → thao tác kế tiếp ra trang không có quyền",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "serial",
+                  "location": {
+                    "file": "E:\\Working\\SDLC\\chat_with_ai\\web\\e2e\\admin.spec.ts",
+                    "line": 0,
+                    "column": 0
+                  }
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2671,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T16:05:48.611Z",
+                  "annotations": [
+                    {
+                      "type": "serial",
+                      "location": {
+                        "file": "E:\\Working\\SDLC\\chat_with_ai\\web\\e2e\\admin.spec.ts",
+                        "line": 0,
+                        "column": 0
+                      }
+                    }
+                  ],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\admin-Anh-bị-gỡ-→-thao-tác-kế-tiếp-ra-trang-không-có-quyền-chromium\\test-finished-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\admin-Anh-bị-gỡ-→-thao-tác-kế-tiếp-ra-trang-không-có-quyền-chromium\\video.webm"
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\admin-Anh-bị-gỡ-→-thao-tác-kế-tiếp-ra-trang-không-có-quyền-chromium\\test-finished-2.png"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\admin-Anh-bị-gỡ-→-thao-tác-kế-tiếp-ra-trang-không-có-quyền-chromium\\trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d4043a9dd1ab94463227-7f8e7cd2c7d2440bf248",
+          "file": "admin.spec.ts",
+          "line": 23,
+          "column": 1
+        },
+        {
+          "title": "gỡ tài liệu → biến khỏi danh sách của Lan; trích dẫn cũ báo đã gỡ; nhật ký có các thao tác",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "serial",
+                  "location": {
+                    "file": "E:\\Working\\SDLC\\chat_with_ai\\web\\e2e\\admin.spec.ts",
+                    "line": 0,
+                    "column": 0
+                  }
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 7428,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T16:05:51.398Z",
+                  "annotations": [
+                    {
+                      "type": "serial",
+                      "location": {
+                        "file": "E:\\Working\\SDLC\\chat_with_ai\\web\\e2e\\admin.spec.ts",
+                        "line": 0,
+                        "column": 0
+                      }
+                    }
+                  ],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\admin-gỡ-tài-liệu-→-biến-k-dbea0--gỡ-nhật-ký-có-các-thao-tác-chromium\\test-finished-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\admin-gỡ-tài-liệu-→-biến-k-dbea0--gỡ-nhật-ký-có-các-thao-tác-chromium\\video.webm"
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\admin-gỡ-tài-liệu-→-biến-k-dbea0--gỡ-nhật-ký-có-các-thao-tác-chromium\\test-finished-2.png"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\admin-gỡ-tài-liệu-→-biến-k-dbea0--gỡ-nhật-ký-có-các-thao-tác-chromium\\trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d4043a9dd1ab94463227-474c8607b6ad4c212f00",
+          "file": "admin.spec.ts",
+          "line": 38,
+          "column": 1
+        },
+        {
+          "title": "Hùng thêm thành viên: email sai báo lỗi tại ô, email đúng thêm dòng mới",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "serial",
+                  "location": {
+                    "file": "E:\\Working\\SDLC\\chat_with_ai\\web\\e2e\\admin.spec.ts",
+                    "line": 0,
+                    "column": 0
+                  }
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2301,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [
+                    {
+                      "buffer": "MjAyNi0xMS0wMiAxNjowNzo1Miw5OTkgSU5GTyBhcHAuc2VlZCBzZWVkIHhvbmc6IDUgdMOgaSBraG/huqNuLCBi4buZIHTDoGkgbGnhu4d1ICdE4buxIMOhbiBYJwo="
+                    }
+                  ],
+                  "retry": 0,
+                  "startTime": "2026-11-02T16:07:50.120Z",
+                  "annotations": [
+                    {
+                      "type": "serial",
+                      "location": {
+                        "file": "E:\\Working\\SDLC\\chat_with_ai\\web\\e2e\\admin.spec.ts",
+                        "line": 0,
+                        "column": 0
+                      }
+                    }
+                  ],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\admin-Hùng-thêm-thành-viên-1ea30--ô-email-đúng-thêm-dòng-mới-chromium-repeat1\\test-finished-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\admin-Hùng-thêm-thành-viên-1ea30--ô-email-đúng-thêm-dòng-mới-chromium-repeat1\\video.webm"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\admin-Hùng-thêm-thành-viên-1ea30--ô-email-đúng-thêm-dòng-mới-chromium-repeat1\\trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d4043a9dd1ab94463227-be4948eabff632842b76",
+          "file": "admin.spec.ts",
+          "line": 8,
+          "column": 1
+        },
+        {
+          "title": "Anh bị gỡ → thao tác kế tiếp ra trang không có quyền",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "serial",
+                  "location": {
+                    "file": "E:\\Working\\SDLC\\chat_with_ai\\web\\e2e\\admin.spec.ts",
+                    "line": 0,
+                    "column": 0
+                  }
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2712,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T16:07:56.087Z",
+                  "annotations": [
+                    {
+                      "type": "serial",
+                      "location": {
+                        "file": "E:\\Working\\SDLC\\chat_with_ai\\web\\e2e\\admin.spec.ts",
+                        "line": 0,
+                        "column": 0
+                      }
+                    }
+                  ],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\admin-Anh-bị-gỡ-→-thao-tác-kế-tiếp-ra-trang-không-có-quyền-chromium-repeat1\\test-finished-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\admin-Anh-bị-gỡ-→-thao-tác-kế-tiếp-ra-trang-không-có-quyền-chromium-repeat1\\video.webm"
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\admin-Anh-bị-gỡ-→-thao-tác-kế-tiếp-ra-trang-không-có-quyền-chromium-repeat1\\test-finished-2.png"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\admin-Anh-bị-gỡ-→-thao-tác-kế-tiếp-ra-trang-không-có-quyền-chromium-repeat1\\trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d4043a9dd1ab94463227-d09329b247207b1dca8c",
+          "file": "admin.spec.ts",
+          "line": 23,
+          "column": 1
+        },
+        {
+          "title": "gỡ tài liệu → biến khỏi danh sách của Lan; trích dẫn cũ báo đã gỡ; nhật ký có các thao tác",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "serial",
+                  "location": {
+                    "file": "E:\\Working\\SDLC\\chat_with_ai\\web\\e2e\\admin.spec.ts",
+                    "line": 0,
+                    "column": 0
+                  }
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 7440,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T16:07:58.904Z",
+                  "annotations": [
+                    {
+                      "type": "serial",
+                      "location": {
+                        "file": "E:\\Working\\SDLC\\chat_with_ai\\web\\e2e\\admin.spec.ts",
+                        "line": 0,
+                        "column": 0
+                      }
+                    }
+                  ],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\admin-gỡ-tài-liệu-→-biến-k-dbea0--gỡ-nhật-ký-có-các-thao-tác-chromium-repeat1\\test-finished-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\admin-gỡ-tài-liệu-→-biến-k-dbea0--gỡ-nhật-ký-có-các-thao-tác-chromium-repeat1\\video.webm"
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\admin-gỡ-tài-liệu-→-biến-k-dbea0--gỡ-nhật-ký-có-các-thao-tác-chromium-repeat1\\test-finished-2.png"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\admin-gỡ-tài-liệu-→-biến-k-dbea0--gỡ-nhật-ký-có-các-thao-tác-chromium-repeat1\\trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d4043a9dd1ab94463227-da1a42a59aaad7c75ebc",
+          "file": "admin.spec.ts",
+          "line": 38,
+          "column": 1
+        },
+        {
+          "title": "Hùng thêm thành viên: email sai báo lỗi tại ô, email đúng thêm dòng mới",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "serial",
+                  "location": {
+                    "file": "E:\\Working\\SDLC\\chat_with_ai\\web\\e2e\\admin.spec.ts",
+                    "line": 0,
+                    "column": 0
+                  }
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2583,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [
+                    {
+                      "buffer": "MjAyNi0xMS0wMiAxNjoxMDowMywwODQgSU5GTyBhcHAuc2VlZCBzZWVkIHhvbmc6IDUgdMOgaSBraG/huqNuLCBi4buZIHTDoGkgbGnhu4d1ICdE4buxIMOhbiBYJwo="
+                    }
+                  ],
+                  "retry": 0,
+                  "startTime": "2026-11-02T16:10:00.966Z",
+                  "annotations": [
+                    {
+                      "type": "serial",
+                      "location": {
+                        "file": "E:\\Working\\SDLC\\chat_with_ai\\web\\e2e\\admin.spec.ts",
+                        "line": 0,
+                        "column": 0
+                      }
+                    }
+                  ],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\admin-Hùng-thêm-thành-viên-1ea30--ô-email-đúng-thêm-dòng-mới-chromium-repeat2\\test-finished-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\admin-Hùng-thêm-thành-viên-1ea30--ô-email-đúng-thêm-dòng-mới-chromium-repeat2\\video.webm"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\admin-Hùng-thêm-thành-viên-1ea30--ô-email-đúng-thêm-dòng-mới-chromium-repeat2\\trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d4043a9dd1ab94463227-43a856820d2b937f8091",
+          "file": "admin.spec.ts",
+          "line": 8,
+          "column": 1
+        },
+        {
+          "title": "Anh bị gỡ → thao tác kế tiếp ra trang không có quyền",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "serial",
+                  "location": {
+                    "file": "E:\\Working\\SDLC\\chat_with_ai\\web\\e2e\\admin.spec.ts",
+                    "line": 0,
+                    "column": 0
+                  }
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2856,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T16:10:06.625Z",
+                  "annotations": [
+                    {
+                      "type": "serial",
+                      "location": {
+                        "file": "E:\\Working\\SDLC\\chat_with_ai\\web\\e2e\\admin.spec.ts",
+                        "line": 0,
+                        "column": 0
+                      }
+                    }
+                  ],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\admin-Anh-bị-gỡ-→-thao-tác-kế-tiếp-ra-trang-không-có-quyền-chromium-repeat2\\test-finished-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\admin-Anh-bị-gỡ-→-thao-tác-kế-tiếp-ra-trang-không-có-quyền-chromium-repeat2\\video.webm"
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\admin-Anh-bị-gỡ-→-thao-tác-kế-tiếp-ra-trang-không-có-quyền-chromium-repeat2\\test-finished-2.png"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\admin-Anh-bị-gỡ-→-thao-tác-kế-tiếp-ra-trang-không-có-quyền-chromium-repeat2\\trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d4043a9dd1ab94463227-50d09fd5dd9bdc56c905",
+          "file": "admin.spec.ts",
+          "line": 23,
+          "column": 1
+        },
+        {
+          "title": "gỡ tài liệu → biến khỏi danh sách của Lan; trích dẫn cũ báo đã gỡ; nhật ký có các thao tác",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "serial",
+                  "location": {
+                    "file": "E:\\Working\\SDLC\\chat_with_ai\\web\\e2e\\admin.spec.ts",
+                    "line": 0,
+                    "column": 0
+                  }
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 7550,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T16:10:09.594Z",
+                  "annotations": [
+                    {
+                      "type": "serial",
+                      "location": {
+                        "file": "E:\\Working\\SDLC\\chat_with_ai\\web\\e2e\\admin.spec.ts",
+                        "line": 0,
+                        "column": 0
+                      }
+                    }
+                  ],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\admin-gỡ-tài-liệu-→-biến-k-dbea0--gỡ-nhật-ký-có-các-thao-tác-chromium-repeat2\\test-finished-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\admin-gỡ-tài-liệu-→-biến-k-dbea0--gỡ-nhật-ký-có-các-thao-tác-chromium-repeat2\\video.webm"
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\admin-gỡ-tài-liệu-→-biến-k-dbea0--gỡ-nhật-ký-có-các-thao-tác-chromium-repeat2\\test-finished-2.png"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\admin-gỡ-tài-liệu-→-biến-k-dbea0--gỡ-nhật-ký-có-các-thao-tác-chromium-repeat2\\trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d4043a9dd1ab94463227-d9c2c6c0fb21e1776529",
+          "file": "admin.spec.ts",
+          "line": 38,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "auth.spec.ts",
+      "file": "auth.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "chưa đăng nhập mở / → về trang đăng nhập",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1011,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [
+                    {
+                      "buffer": "MjAyNi0xMS0wMiAxNjowNjowMSw2MzQgSU5GTyBhcHAuc2VlZCBzZWVkIHhvbmc6IDUgdMOgaSBraG/huqNuLCBi4buZIHTDoGkgbGnhu4d1ICdE4buxIMOhbiBYJwo="
+                    }
+                  ],
+                  "retry": 0,
+                  "startTime": "2026-11-02T16:05:59.047Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\auth-chưa-đăng-nhập-mở-→-về-trang-đăng-nhập-chromium\\test-finished-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\auth-chưa-đăng-nhập-mở-→-về-trang-đăng-nhập-chromium\\video.webm"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\auth-chưa-đăng-nhập-mở-→-về-trang-đăng-nhập-chromium\\trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d748ac400d08b85935ef-af8414f4021d5155184a",
+          "file": "auth.spec.ts",
+          "line": 6,
+          "column": 1
+        },
+        {
+          "title": "chưa đăng nhập mở /admin → về trang đăng nhập",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1006,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T16:06:03.191Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\auth-chưa-đăng-nhập-mở-admin-→-về-trang-đăng-nhập-chromium\\test-finished-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\auth-chưa-đăng-nhập-mở-admin-→-về-trang-đăng-nhập-chromium\\video.webm"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\auth-chưa-đăng-nhập-mở-admin-→-về-trang-đăng-nhập-chromium\\trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d748ac400d08b85935ef-776d285adccef8c56710",
+          "file": "auth.spec.ts",
+          "line": 13,
+          "column": 1
+        },
+        {
+          "title": "Lan đăng nhập → thấy bộ tài liệu; đăng xuất thì Back không vào lại được",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1288,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T16:06:04.233Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\auth-Lan-đăng-nhập-→-thấy--3c776-thì-Back-không-vào-lại-được-chromium\\test-finished-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\auth-Lan-đăng-nhập-→-thấy--3c776-thì-Back-không-vào-lại-được-chromium\\video.webm"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\auth-Lan-đăng-nhập-→-thấy--3c776-thì-Back-không-vào-lại-được-chromium\\trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d748ac400d08b85935ef-5dc28c8933b470118e6e",
+          "file": "auth.spec.ts",
+          "line": 18,
+          "column": 1
+        },
+        {
+          "title": "người ngoài nhóm → trang không có quyền, không lộ tên bộ tài liệu",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1206,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T16:06:05.580Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\auth-người-ngoài-nhóm-→-tr-14881-ền-không-lộ-tên-bộ-tài-liệu-chromium\\test-finished-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\auth-người-ngoài-nhóm-→-tr-14881-ền-không-lộ-tên-bộ-tài-liệu-chromium\\video.webm"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\auth-người-ngoài-nhóm-→-tr-14881-ền-không-lộ-tên-bộ-tài-liệu-chromium\\trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d748ac400d08b85935ef-26c3b6eeef6149f3b273",
+          "file": "auth.spec.ts",
+          "line": 33,
+          "column": 1
+        },
+        {
+          "title": "admin không thuộc nhóm → trang quản trị",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1154,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T16:06:06.844Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\auth-admin-không-thuộc-nhóm-→-trang-quản-trị-chromium\\test-finished-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\auth-admin-không-thuộc-nhóm-→-trang-quản-trị-chromium\\video.webm"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\auth-admin-không-thuộc-nhóm-→-trang-quản-trị-chromium\\trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d748ac400d08b85935ef-87e4ae7297f624ce0d55",
+          "file": "auth.spec.ts",
+          "line": 40,
+          "column": 1
+        },
+        {
+          "title": "chưa đăng nhập mở / → về trang đăng nhập",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1042,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [
+                    {
+                      "buffer": "MjAyNi0xMS0wMiAxNjowODowOSw4MDYgSU5GTyBhcHAuc2VlZCBzZWVkIHhvbmc6IDUgdMOgaSBraG/huqNuLCBi4buZIHTDoGkgbGnhu4d1ICdE4buxIMOhbiBYJwo="
+                    }
+                  ],
+                  "retry": 0,
+                  "startTime": "2026-11-02T16:08:06.589Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\auth-chưa-đăng-nhập-mở-→-về-trang-đăng-nhập-chromium-repeat1\\test-finished-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\auth-chưa-đăng-nhập-mở-→-về-trang-đăng-nhập-chromium-repeat1\\video.webm"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\auth-chưa-đăng-nhập-mở-→-về-trang-đăng-nhập-chromium-repeat1\\trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d748ac400d08b85935ef-47db310195657b046519",
+          "file": "auth.spec.ts",
+          "line": 6,
+          "column": 1
+        },
+        {
+          "title": "chưa đăng nhập mở /admin → về trang đăng nhập",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1074,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T16:08:11.421Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\auth-chưa-đăng-nhập-mở-admin-→-về-trang-đăng-nhập-chromium-repeat1\\test-finished-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\auth-chưa-đăng-nhập-mở-admin-→-về-trang-đăng-nhập-chromium-repeat1\\video.webm"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\auth-chưa-đăng-nhập-mở-admin-→-về-trang-đăng-nhập-chromium-repeat1\\trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d748ac400d08b85935ef-af5db2443b9464b86011",
+          "file": "auth.spec.ts",
+          "line": 13,
+          "column": 1
+        },
+        {
+          "title": "Lan đăng nhập → thấy bộ tài liệu; đăng xuất thì Back không vào lại được",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1287,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T16:08:12.534Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\auth-Lan-đăng-nhập-→-thấy--3c776-thì-Back-không-vào-lại-được-chromium-repeat1\\test-finished-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\auth-Lan-đăng-nhập-→-thấy--3c776-thì-Back-không-vào-lại-được-chromium-repeat1\\video.webm"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\auth-Lan-đăng-nhập-→-thấy--3c776-thì-Back-không-vào-lại-được-chromium-repeat1\\trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d748ac400d08b85935ef-758005ef15251d5950b5",
+          "file": "auth.spec.ts",
+          "line": 18,
+          "column": 1
+        },
+        {
+          "title": "người ngoài nhóm → trang không có quyền, không lộ tên bộ tài liệu",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1248,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T16:08:13.872Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\auth-người-ngoài-nhóm-→-tr-14881-ền-không-lộ-tên-bộ-tài-liệu-chromium-repeat1\\test-finished-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\auth-người-ngoài-nhóm-→-tr-14881-ền-không-lộ-tên-bộ-tài-liệu-chromium-repeat1\\video.webm"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\auth-người-ngoài-nhóm-→-tr-14881-ền-không-lộ-tên-bộ-tài-liệu-chromium-repeat1\\trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d748ac400d08b85935ef-60cffdd75fd9cdcf20a4",
+          "file": "auth.spec.ts",
+          "line": 33,
+          "column": 1
+        },
+        {
+          "title": "admin không thuộc nhóm → trang quản trị",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1163,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T16:08:15.168Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\auth-admin-không-thuộc-nhóm-→-trang-quản-trị-chromium-repeat1\\test-finished-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\auth-admin-không-thuộc-nhóm-→-trang-quản-trị-chromium-repeat1\\video.webm"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\auth-admin-không-thuộc-nhóm-→-trang-quản-trị-chromium-repeat1\\trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d748ac400d08b85935ef-cf4a617380783f7833c4",
+          "file": "auth.spec.ts",
+          "line": 40,
+          "column": 1
+        },
+        {
+          "title": "chưa đăng nhập mở / → về trang đăng nhập",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1103,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [
+                    {
+                      "buffer": "MjAyNi0xMS0wMiAxNjoxMDoxOSw5MzQgSU5GTyBhcHAuc2VlZCBzZWVkIHhvbmc6IDUgdMOgaSBraG/huqNuLCBi4buZIHTDoGkgbGnhu4d1ICdE4buxIMOhbiBYJwo="
+                    }
+                  ],
+                  "retry": 0,
+                  "startTime": "2026-11-02T16:10:17.387Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\auth-chưa-đăng-nhập-mở-→-về-trang-đăng-nhập-chromium-repeat2\\test-finished-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\auth-chưa-đăng-nhập-mở-→-về-trang-đăng-nhập-chromium-repeat2\\video.webm"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\auth-chưa-đăng-nhập-mở-→-về-trang-đăng-nhập-chromium-repeat2\\trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d748ac400d08b85935ef-8e7b51f7c615dede2ab4",
+          "file": "auth.spec.ts",
+          "line": 6,
+          "column": 1
+        },
+        {
+          "title": "chưa đăng nhập mở /admin → về trang đăng nhập",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1000,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T16:10:21.549Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\auth-chưa-đăng-nhập-mở-admin-→-về-trang-đăng-nhập-chromium-repeat2\\test-finished-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\auth-chưa-đăng-nhập-mở-admin-→-về-trang-đăng-nhập-chromium-repeat2\\video.webm"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\auth-chưa-đăng-nhập-mở-admin-→-về-trang-đăng-nhập-chromium-repeat2\\trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d748ac400d08b85935ef-96af3b82a0a264e9517d",
+          "file": "auth.spec.ts",
+          "line": 13,
+          "column": 1
+        },
+        {
+          "title": "Lan đăng nhập → thấy bộ tài liệu; đăng xuất thì Back không vào lại được",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1202,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T16:10:22.593Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\auth-Lan-đăng-nhập-→-thấy--3c776-thì-Back-không-vào-lại-được-chromium-repeat2\\test-finished-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\auth-Lan-đăng-nhập-→-thấy--3c776-thì-Back-không-vào-lại-được-chromium-repeat2\\video.webm"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\auth-Lan-đăng-nhập-→-thấy--3c776-thì-Back-không-vào-lại-được-chromium-repeat2\\trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d748ac400d08b85935ef-da2eb18ef5de7819ea65",
+          "file": "auth.spec.ts",
+          "line": 18,
+          "column": 1
+        },
+        {
+          "title": "người ngoài nhóm → trang không có quyền, không lộ tên bộ tài liệu",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1207,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T16:10:23.858Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\auth-người-ngoài-nhóm-→-tr-14881-ền-không-lộ-tên-bộ-tài-liệu-chromium-repeat2\\test-finished-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\auth-người-ngoài-nhóm-→-tr-14881-ền-không-lộ-tên-bộ-tài-liệu-chromium-repeat2\\video.webm"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\auth-người-ngoài-nhóm-→-tr-14881-ền-không-lộ-tên-bộ-tài-liệu-chromium-repeat2\\trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d748ac400d08b85935ef-33b04379be29450deab1",
+          "file": "auth.spec.ts",
+          "line": 33,
+          "column": 1
+        },
+        {
+          "title": "admin không thuộc nhóm → trang quản trị",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1167,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T16:10:25.121Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\auth-admin-không-thuộc-nhóm-→-trang-quản-trị-chromium-repeat2\\test-finished-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\auth-admin-không-thuộc-nhóm-→-trang-quản-trị-chromium-repeat2\\video.webm"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\auth-admin-không-thuộc-nhóm-→-trang-quản-trị-chromium-repeat2\\trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d748ac400d08b85935ef-61b9baa451294be85ddb",
+          "file": "auth.spec.ts",
+          "line": 40,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "backbone.spec.ts",
+      "file": "backbone.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "TC-009 câu hỏi về file vừa tải trích dẫn đúng file",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "serial",
+                  "location": {
+                    "file": "E:\\Working\\SDLC\\chat_with_ai\\web\\e2e\\backbone.spec.ts",
+                    "line": 0,
+                    "column": 0
+                  }
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 12824,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [
+                    {
+                      "buffer": "MjAyNi0xMS0wMiAxNjowNjoxMCw2NjUgSU5GTyBhcHAuc2VlZCBzZWVkIHhvbmc6IDUgdMOgaSBraG/huqNuLCBi4buZIHTDoGkgbGnhu4d1ICdE4buxIMOhbiBYJwo="
+                    }
+                  ],
+                  "retry": 0,
+                  "startTime": "2026-11-02T16:06:08.073Z",
+                  "annotations": [
+                    {
+                      "type": "serial",
+                      "location": {
+                        "file": "E:\\Working\\SDLC\\chat_with_ai\\web\\e2e\\backbone.spec.ts",
+                        "line": 0,
+                        "column": 0
+                      }
+                    }
+                  ],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\backbone-TC-009-câu-hỏi-về-file-vừa-tải-trích-dẫn-đúng-file-chromium\\test-finished-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\backbone-TC-009-câu-hỏi-về-file-vừa-tải-trích-dẫn-đúng-file-chromium\\video.webm"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\backbone-TC-009-câu-hỏi-về-file-vừa-tải-trích-dẫn-đúng-file-chromium\\trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "584e665fa770b5a82b5f-86a54c074167f3c194ca",
+          "file": "backbone.spec.ts",
+          "line": 10,
+          "column": 1
+        },
+        {
+          "title": "TC-018 không hỏi lại xác nhận trong cùng phiên",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "serial",
+                  "location": {
+                    "file": "E:\\Working\\SDLC\\chat_with_ai\\web\\e2e\\backbone.spec.ts",
+                    "line": 0,
+                    "column": 0
+                  }
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 9879,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [
+                    {
+                      "buffer": "MjAyNi0xMS0wMiAxNjowNjozOSw5NDQgSU5GTyBhcHAuc2VlZCBzZWVkIHhvbmc6IDUgdMOgaSBraG/huqNuLCBi4buZIHTDoGkgbGnhu4d1ICdE4buxIMOhbiBYJwo="
+                    }
+                  ],
+                  "retry": 0,
+                  "startTime": "2026-11-02T16:06:37.613Z",
+                  "annotations": [
+                    {
+                      "type": "serial",
+                      "location": {
+                        "file": "E:\\Working\\SDLC\\chat_with_ai\\web\\e2e\\backbone.spec.ts",
+                        "line": 0,
+                        "column": 0
+                      }
+                    }
+                  ],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\backbone-TC-018-không-hỏi-lại-xác-nhận-trong-cùng-phiên-chromium\\test-finished-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\backbone-TC-018-không-hỏi-lại-xác-nhận-trong-cùng-phiên-chromium\\video.webm"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\backbone-TC-018-không-hỏi-lại-xác-nhận-trong-cùng-phiên-chromium\\trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "584e665fa770b5a82b5f-71c91b2d614d47b41fe7",
+          "file": "backbone.spec.ts",
+          "line": 39,
+          "column": 1
+        },
+        {
+          "title": "TC-009 câu hỏi về file vừa tải trích dẫn đúng file",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "serial",
+                  "location": {
+                    "file": "E:\\Working\\SDLC\\chat_with_ai\\web\\e2e\\backbone.spec.ts",
+                    "line": 0,
+                    "column": 0
+                  }
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 13684,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [
+                    {
+                      "buffer": "MjAyNi0xMS0wMiAxNjowODoxOSwwMjIgSU5GTyBhcHAuc2VlZCBzZWVkIHhvbmc6IDUgdMOgaSBraG/huqNuLCBi4buZIHTDoGkgbGnhu4d1ICdE4buxIMOhbiBYJwo="
+                    }
+                  ],
+                  "retry": 0,
+                  "startTime": "2026-11-02T16:08:16.407Z",
+                  "annotations": [
+                    {
+                      "type": "serial",
+                      "location": {
+                        "file": "E:\\Working\\SDLC\\chat_with_ai\\web\\e2e\\backbone.spec.ts",
+                        "line": 0,
+                        "column": 0
+                      }
+                    }
+                  ],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\backbone-TC-009-câu-hỏi-về-file-vừa-tải-trích-dẫn-đúng-file-chromium-repeat1\\test-finished-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\backbone-TC-009-câu-hỏi-về-file-vừa-tải-trích-dẫn-đúng-file-chromium-repeat1\\video.webm"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\backbone-TC-009-câu-hỏi-về-file-vừa-tải-trích-dẫn-đúng-file-chromium-repeat1\\trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "584e665fa770b5a82b5f-80a20ca1af860484f55a",
+          "file": "backbone.spec.ts",
+          "line": 10,
+          "column": 1
+        },
+        {
+          "title": "TC-018 không hỏi lại xác nhận trong cùng phiên",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "serial",
+                  "location": {
+                    "file": "E:\\Working\\SDLC\\chat_with_ai\\web\\e2e\\backbone.spec.ts",
+                    "line": 0,
+                    "column": 0
+                  }
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 9937,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [
+                    {
+                      "buffer": "MjAyNi0xMS0wMiAxNjowODo0OSw5NDEgSU5GTyBhcHAuc2VlZCBzZWVkIHhvbmc6IDUgdMOgaSBraG/huqNuLCBi4buZIHTDoGkgbGnhu4d1ICdE4buxIMOhbiBYJwo="
+                    }
+                  ],
+                  "retry": 0,
+                  "startTime": "2026-11-02T16:08:47.670Z",
+                  "annotations": [
+                    {
+                      "type": "serial",
+                      "location": {
+                        "file": "E:\\Working\\SDLC\\chat_with_ai\\web\\e2e\\backbone.spec.ts",
+                        "line": 0,
+                        "column": 0
+                      }
+                    }
+                  ],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\backbone-TC-018-không-hỏi-lại-xác-nhận-trong-cùng-phiên-chromium-repeat1\\test-finished-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\backbone-TC-018-không-hỏi-lại-xác-nhận-trong-cùng-phiên-chromium-repeat1\\video.webm"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\backbone-TC-018-không-hỏi-lại-xác-nhận-trong-cùng-phiên-chromium-repeat1\\trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "584e665fa770b5a82b5f-2e2aea96d77e37928db6",
+          "file": "backbone.spec.ts",
+          "line": 39,
+          "column": 1
+        },
+        {
+          "title": "TC-009 câu hỏi về file vừa tải trích dẫn đúng file",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "serial",
+                  "location": {
+                    "file": "E:\\Working\\SDLC\\chat_with_ai\\web\\e2e\\backbone.spec.ts",
+                    "line": 0,
+                    "column": 0
+                  }
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 13720,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [
+                    {
+                      "buffer": "MjAyNi0xMS0wMiAxNjoxMDoyOCw5ODcgSU5GTyBhcHAuc2VlZCBzZWVkIHhvbmc6IDUgdMOgaSBraG/huqNuLCBi4buZIHTDoGkgbGnhu4d1ICdE4buxIMOhbiBYJwo="
+                    }
+                  ],
+                  "retry": 0,
+                  "startTime": "2026-11-02T16:10:26.362Z",
+                  "annotations": [
+                    {
+                      "type": "serial",
+                      "location": {
+                        "file": "E:\\Working\\SDLC\\chat_with_ai\\web\\e2e\\backbone.spec.ts",
+                        "line": 0,
+                        "column": 0
+                      }
+                    }
+                  ],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\backbone-TC-009-câu-hỏi-về-file-vừa-tải-trích-dẫn-đúng-file-chromium-repeat2\\test-finished-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\backbone-TC-009-câu-hỏi-về-file-vừa-tải-trích-dẫn-đúng-file-chromium-repeat2\\video.webm"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\backbone-TC-009-câu-hỏi-về-file-vừa-tải-trích-dẫn-đúng-file-chromium-repeat2\\trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "584e665fa770b5a82b5f-ff5a4fd286ccd6c2be74",
+          "file": "backbone.spec.ts",
+          "line": 10,
+          "column": 1
+        },
+        {
+          "title": "TC-018 không hỏi lại xác nhận trong cùng phiên",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "serial",
+                  "location": {
+                    "file": "E:\\Working\\SDLC\\chat_with_ai\\web\\e2e\\backbone.spec.ts",
+                    "line": 0,
+                    "column": 0
+                  }
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 9885,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [
+                    {
+                      "buffer": "MjAyNi0xMS0wMiAxNjoxMDo1OSwxNTQgSU5GTyBhcHAuc2VlZCBzZWVkIHhvbmc6IDUgdMOgaSBraG/huqNuLCBi4buZIHTDoGkgbGnhu4d1ICdE4buxIMOhbiBYJwo="
+                    }
+                  ],
+                  "retry": 0,
+                  "startTime": "2026-11-02T16:10:56.928Z",
+                  "annotations": [
+                    {
+                      "type": "serial",
+                      "location": {
+                        "file": "E:\\Working\\SDLC\\chat_with_ai\\web\\e2e\\backbone.spec.ts",
+                        "line": 0,
+                        "column": 0
+                      }
+                    }
+                  ],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\backbone-TC-018-không-hỏi-lại-xác-nhận-trong-cùng-phiên-chromium-repeat2\\test-finished-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\backbone-TC-018-không-hỏi-lại-xác-nhận-trong-cùng-phiên-chromium-repeat2\\video.webm"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\backbone-TC-018-không-hỏi-lại-xác-nhận-trong-cùng-phiên-chromium-repeat2\\trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "584e665fa770b5a82b5f-f2a040f85f052ec7d2b0",
+          "file": "backbone.spec.ts",
+          "line": 39,
+          "column": 1
+        }
+      ],
+      "suites": [
+        {
+          "title": "TC-014",
+          "file": "backbone.spec.ts",
+          "line": 20,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-014 câu trả lời ghi chú file chưa sẵn sàng",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "serial",
+                      "location": {
+                        "file": "E:\\Working\\SDLC\\chat_with_ai\\web\\e2e\\backbone.spec.ts",
+                        "line": 0,
+                        "column": 0
+                      }
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 16416,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [
+                        {
+                          "buffer": "MjAyNi0xMS0wMiAxNjowNjoyMyw2MjkgSU5GTyBhcHAuc2VlZCBzZWVkIHhvbmc6IDUgdMOgaSBraG/huqNuLCBi4buZIHTDoGkgbGnhu4d1ICdE4buxIMOhbiBYJwo="
+                        },
+                        {
+                          "buffer": "IENvbnRhaW5lciBjaGF0X3dpdGhfYWktd29ya2VyLTEgU3RvcHBpbmcgCg=="
+                        },
+                        {
+                          "buffer": "IENvbnRhaW5lciBjaGF0X3dpdGhfYWktd29ya2VyLTEgU3RvcHBlZCAK"
+                        },
+                        {
+                          "buffer": "IENvbnRhaW5lciBjaGF0X3dpdGhfYWktZGItMSBXYWl0aW5nIAo="
+                        },
+                        {
+                          "buffer": "IENvbnRhaW5lciBjaGF0X3dpdGhfYWktZGItMSBIZWFsdGh5IAo="
+                        },
+                        {
+                          "buffer": "IENvbnRhaW5lciBjaGF0X3dpdGhfYWktd29ya2VyLTEgU3RhcnRpbmcgCg=="
+                        },
+                        {
+                          "buffer": "IENvbnRhaW5lciBjaGF0X3dpdGhfYWktd29ya2VyLTEgU3RhcnRlZCAK"
+                        }
+                      ],
+                      "retry": 0,
+                      "startTime": "2026-11-02T16:06:21.046Z",
+                      "annotations": [
+                        {
+                          "type": "serial",
+                          "location": {
+                            "file": "E:\\Working\\SDLC\\chat_with_ai\\web\\e2e\\backbone.spec.ts",
+                            "line": 0,
+                            "column": 0
+                          }
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\backbone-TC-014-TC-014-câu-7ed84--ghi-chú-file-chưa-sẵn-sàng-chromium\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\backbone-TC-014-TC-014-câu-7ed84--ghi-chú-file-chưa-sẵn-sàng-chromium\\video.webm"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\backbone-TC-014-TC-014-câu-7ed84--ghi-chú-file-chưa-sẵn-sàng-chromium\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "584e665fa770b5a82b5f-0e7e38b37948226f1ad9",
+              "file": "backbone.spec.ts",
+              "line": 23,
+              "column": 3
+            },
+            {
+              "title": "TC-014 câu trả lời ghi chú file chưa sẵn sàng",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "serial",
+                      "location": {
+                        "file": "E:\\Working\\SDLC\\chat_with_ai\\web\\e2e\\backbone.spec.ts",
+                        "line": 0,
+                        "column": 0
+                      }
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 17193,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [
+                        {
+                          "buffer": "MjAyNi0xMS0wMiAxNjowODozMiw4MzUgSU5GTyBhcHAuc2VlZCBzZWVkIHhvbmc6IDUgdMOgaSBraG/huqNuLCBi4buZIHTDoGkgbGnhu4d1ICdE4buxIMOhbiBYJwo="
+                        },
+                        {
+                          "buffer": "IENvbnRhaW5lciBjaGF0X3dpdGhfYWktd29ya2VyLTEgU3RvcHBpbmcgCg=="
+                        },
+                        {
+                          "buffer": "IENvbnRhaW5lciBjaGF0X3dpdGhfYWktd29ya2VyLTEgU3RvcHBlZCAK"
+                        },
+                        {
+                          "buffer": "IENvbnRhaW5lciBjaGF0X3dpdGhfYWktZGItMSBXYWl0aW5nIAo="
+                        },
+                        {
+                          "buffer": "IENvbnRhaW5lciBjaGF0X3dpdGhfYWktZGItMSBIZWFsdGh5IAo="
+                        },
+                        {
+                          "buffer": "IENvbnRhaW5lciBjaGF0X3dpdGhfYWktd29ya2VyLTEgU3RhcnRpbmcgCg=="
+                        },
+                        {
+                          "buffer": "IENvbnRhaW5lciBjaGF0X3dpdGhfYWktd29ya2VyLTEgU3RhcnRlZCAK"
+                        }
+                      ],
+                      "retry": 0,
+                      "startTime": "2026-11-02T16:08:30.287Z",
+                      "annotations": [
+                        {
+                          "type": "serial",
+                          "location": {
+                            "file": "E:\\Working\\SDLC\\chat_with_ai\\web\\e2e\\backbone.spec.ts",
+                            "line": 0,
+                            "column": 0
+                          }
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\backbone-TC-014-TC-014-câu-7ed84--ghi-chú-file-chưa-sẵn-sàng-chromium-repeat1\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\backbone-TC-014-TC-014-câu-7ed84--ghi-chú-file-chưa-sẵn-sàng-chromium-repeat1\\video.webm"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\backbone-TC-014-TC-014-câu-7ed84--ghi-chú-file-chưa-sẵn-sàng-chromium-repeat1\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "584e665fa770b5a82b5f-149513dd70a503b428a6",
+              "file": "backbone.spec.ts",
+              "line": 23,
+              "column": 3
+            },
+            {
+              "title": "TC-014 câu trả lời ghi chú file chưa sẵn sàng",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 90000,
+                  "annotations": [
+                    {
+                      "type": "serial",
+                      "location": {
+                        "file": "E:\\Working\\SDLC\\chat_with_ai\\web\\e2e\\backbone.spec.ts",
+                        "line": 0,
+                        "column": 0
+                      }
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 16477,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [
+                        {
+                          "buffer": "MjAyNi0xMS0wMiAxNjoxMDo0Miw4MTEgSU5GTyBhcHAuc2VlZCBzZWVkIHhvbmc6IDUgdMOgaSBraG/huqNuLCBi4buZIHTDoGkgbGnhu4d1ICdE4buxIMOhbiBYJwo="
+                        },
+                        {
+                          "buffer": "IENvbnRhaW5lciBjaGF0X3dpdGhfYWktd29ya2VyLTEgU3RvcHBpbmcgCg=="
+                        },
+                        {
+                          "buffer": "IENvbnRhaW5lciBjaGF0X3dpdGhfYWktd29ya2VyLTEgU3RvcHBlZCAK"
+                        },
+                        {
+                          "buffer": "IENvbnRhaW5lciBjaGF0X3dpdGhfYWktZGItMSBXYWl0aW5nIAo="
+                        },
+                        {
+                          "buffer": "IENvbnRhaW5lciBjaGF0X3dpdGhfYWktZGItMSBIZWFsdGh5IAo="
+                        },
+                        {
+                          "buffer": "IENvbnRhaW5lciBjaGF0X3dpdGhfYWktd29ya2VyLTEgU3RhcnRpbmcgCg=="
+                        },
+                        {
+                          "buffer": "IENvbnRhaW5lciBjaGF0X3dpdGhfYWktd29ya2VyLTEgU3RhcnRlZCAK"
+                        }
+                      ],
+                      "retry": 0,
+                      "startTime": "2026-11-02T16:10:40.233Z",
+                      "annotations": [
+                        {
+                          "type": "serial",
+                          "location": {
+                            "file": "E:\\Working\\SDLC\\chat_with_ai\\web\\e2e\\backbone.spec.ts",
+                            "line": 0,
+                            "column": 0
+                          }
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\backbone-TC-014-TC-014-câu-7ed84--ghi-chú-file-chưa-sẵn-sàng-chromium-repeat2\\test-finished-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\backbone-TC-014-TC-014-câu-7ed84--ghi-chú-file-chưa-sẵn-sàng-chromium-repeat2\\video.webm"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\backbone-TC-014-TC-014-câu-7ed84--ghi-chú-file-chưa-sẵn-sàng-chromium-repeat2\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "584e665fa770b5a82b5f-728d1540603fb47cc291",
+              "file": "backbone.spec.ts",
+              "line": 23,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "batch.spec.ts",
+      "file": "batch.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Minh tải 3 file một lần → 3 dòng trạng thái riêng → đều Sẵn sàng",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5747,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [
+                    {
+                      "buffer": "MjAyNi0xMS0wMiAxNjowNjo1MCwxODcgSU5GTyBhcHAuc2VlZCBzZWVkIHhvbmc6IDUgdMOgaSBraG/huqNuLCBi4buZIHTDoGkgbGnhu4d1ICdE4buxIMOhbiBYJwo="
+                    }
+                  ],
+                  "retry": 0,
+                  "startTime": "2026-11-02T16:06:47.664Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\batch-Minh-tải-3-file-một--d487c-g-thái-riêng-→-đều-Sẵn-sàng-chromium\\test-finished-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\batch-Minh-tải-3-file-một--d487c-g-thái-riêng-→-đều-Sẵn-sàng-chromium\\video.webm"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\batch-Minh-tải-3-file-một--d487c-g-thái-riêng-→-đều-Sẵn-sàng-chromium\\trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "02c35700430e7db5dddf-ac78ba2383b2415d28b6",
+          "file": "batch.spec.ts",
+          "line": 7,
+          "column": 1
+        },
+        {
+          "title": "Minh tải 3 file một lần → 3 dòng trạng thái riêng → đều Sẵn sàng",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5641,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [
+                    {
+                      "buffer": "MjAyNi0xMS0wMiAxNjowOTowMCwzNTggSU5GTyBhcHAuc2VlZCBzZWVkIHhvbmc6IDUgdMOgaSBraG/huqNuLCBi4buZIHTDoGkgbGnhu4d1ICdE4buxIMOhbiBYJwo="
+                    }
+                  ],
+                  "retry": 0,
+                  "startTime": "2026-11-02T16:08:57.741Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\batch-Minh-tải-3-file-một--d487c-g-thái-riêng-→-đều-Sẵn-sàng-chromium-repeat1\\test-finished-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\batch-Minh-tải-3-file-một--d487c-g-thái-riêng-→-đều-Sẵn-sàng-chromium-repeat1\\video.webm"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\batch-Minh-tải-3-file-một--d487c-g-thái-riêng-→-đều-Sẵn-sàng-chromium-repeat1\\trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "02c35700430e7db5dddf-1deae77d0905332ccb31",
+          "file": "batch.spec.ts",
+          "line": 7,
+          "column": 1
+        },
+        {
+          "title": "Minh tải 3 file một lần → 3 dòng trạng thái riêng → đều Sẵn sàng",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5485,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [
+                    {
+                      "buffer": "MjAyNi0xMS0wMiAxNjoxMTowOSw0OTMgSU5GTyBhcHAuc2VlZCBzZWVkIHhvbmc6IDUgdMOgaSBraG/huqNuLCBi4buZIHTDoGkgbGnhu4d1ICdE4buxIMOhbiBYJwo="
+                    }
+                  ],
+                  "retry": 0,
+                  "startTime": "2026-11-02T16:11:06.953Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\batch-Minh-tải-3-file-một--d487c-g-thái-riêng-→-đều-Sẵn-sàng-chromium-repeat2\\test-finished-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\batch-Minh-tải-3-file-một--d487c-g-thái-riêng-→-đều-Sẵn-sàng-chromium-repeat2\\video.webm"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\batch-Minh-tải-3-file-một--d487c-g-thái-riêng-→-đều-Sẵn-sàng-chromium-repeat2\\trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "02c35700430e7db5dddf-a533ed4f06f1232c9a3e",
+          "file": "batch.spec.ts",
+          "line": 7,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "chat.spec.ts",
+      "file": "chat.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "hỏi → stream → [1] → popover → mở PDF đúng trang",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "serial",
+                  "location": {
+                    "file": "E:\\Working\\SDLC\\chat_with_ai\\web\\e2e\\chat.spec.ts",
+                    "line": 0,
+                    "column": 0
+                  }
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2724,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [
+                    {
+                      "buffer": "MjAyNi0xMS0wMiAxNjowNjo1OSwwMzMgSU5GTyBhcHAuc2VlZCBzZWVkIHhvbmc6IDUgdMOgaSBraG/huqNuLCBi4buZIHTDoGkgbGnhu4d1ICdE4buxIMOhbiBYJwo="
+                    }
+                  ],
+                  "retry": 0,
+                  "startTime": "2026-11-02T16:06:56.785Z",
+                  "annotations": [
+                    {
+                      "type": "serial",
+                      "location": {
+                        "file": "E:\\Working\\SDLC\\chat_with_ai\\web\\e2e\\chat.spec.ts",
+                        "line": 0,
+                        "column": 0
+                      }
+                    }
+                  ],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\chat-hỏi-→-stream-→-1-→-popover-→-mở-PDF-đúng-trang-chromium\\test-finished-1.png"
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\chat-hỏi-→-stream-→-1-→-popover-→-mở-PDF-đúng-trang-chromium\\test-finished-2.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\chat-hỏi-→-stream-→-1-→-popover-→-mở-PDF-đúng-trang-chromium\\video.webm"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\chat-hỏi-→-stream-→-1-→-popover-→-mở-PDF-đúng-trang-chromium\\trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6dac514d5d837ca37b9e-4a13152268e153962f67",
+          "file": "chat.spec.ts",
+          "line": 19,
+          "column": 1
+        },
+        {
+          "title": "bàn phím: Tab tới [1], Enter mở, Esc đóng và trả focus",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "serial",
+                  "location": {
+                    "file": "E:\\Working\\SDLC\\chat_with_ai\\web\\e2e\\chat.spec.ts",
+                    "line": 0,
+                    "column": 0
+                  }
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1546,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T16:07:07.214Z",
+                  "annotations": [
+                    {
+                      "type": "serial",
+                      "location": {
+                        "file": "E:\\Working\\SDLC\\chat_with_ai\\web\\e2e\\chat.spec.ts",
+                        "line": 0,
+                        "column": 0
+                      }
+                    }
+                  ],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\chat-bàn-phím-Tab-tới-1-Enter-mở-Esc-đóng-và-trả-focus-chromium\\test-finished-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\chat-bàn-phím-Tab-tới-1-Enter-mở-Esc-đóng-và-trả-focus-chromium\\video.webm"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\chat-bàn-phím-Tab-tới-1-Enter-mở-Esc-đóng-và-trả-focus-chromium\\trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6dac514d5d837ca37b9e-ce396972aa13801746c3",
+          "file": "chat.spec.ts",
+          "line": 52,
+          "column": 1
+        },
+        {
+          "title": "câu hỏi tiếp nối, câu không có trong tài liệu, Hội thoại mới",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "serial",
+                  "location": {
+                    "file": "E:\\Working\\SDLC\\chat_with_ai\\web\\e2e\\chat.spec.ts",
+                    "line": 0,
+                    "column": 0
+                  }
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 18367,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('article.msg-assistant').last()\nExpected substring: \u001b[32m\"\u001b[7mKhô\u001b[27mng t\u001b[7mìm thấy t\u001b[27mhông tin này tr\u001b[7mo\u001b[27mng \u001b[7mcác\u001b[27m tài liệu\u001b[7m đã tải lên.\u001b[27m\"\u001b[39m\nReceived string:    \u001b[31m\"\u001b[7mAITheo tài liệu HopDongKhung.pdf, Ngoai le: khi cham giao ha\u001b[27mng\u001b[7m,\u001b[27m t\u001b[7mhoi han thanh toan duoc gia han them 15 ngay.1 T\u001b[27mhông tin này\u001b[7m nằm ở\u001b[27m tr\u001b[7ma\u001b[27mng \u001b[7m3 của\u001b[27m tài liệu\u001b[7m.1NguồnHopDongKhung.pdf · trang 3Sao chép kèm nguồn\u001b[27m\"\u001b[39m\nTimeout: 15000ms\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" locator('article.msg-assistant').last() with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for locator('article.msg-assistant').last()\u001b[22m\n\u001b[2m    2 × locator resolved to <article aria-busy=\"true\" class=\"msg-assistant\" aria-label=\"Câu trả lời lượt 3\">…</article>\u001b[22m\n\u001b[2m      - unexpected value \"AIĐang trả lời…\"\u001b[22m\n\u001b[2m    2 × locator resolved to <article aria-busy=\"true\" class=\"msg-assistant\" aria-label=\"Câu trả lời lượt 3\">…</article>\u001b[22m\n\u001b[2m      - unexpected value \"AITheo tài liệu HopDongKhung.pdf, Ngoai le: khi cham giao hang, thoi han thanh toan duoc gia han them 15 ngay.1\"\u001b[22m\n\u001b[2m    - locator resolved to <article aria-busy=\"true\" class=\"msg-assistant\" aria-label=\"Câu trả lời lượt 3\">…</article>\u001b[22m\n\u001b[2m    - unexpected value \"AITheo tài liệu HopDongKhung.pdf, Ngoai le: khi cham giao hang, thoi han thanh toan duoc gia han them 15 ngay.1 Thông tin này nằm ở trang 3 của tài liệu.1\"\u001b[22m\n\u001b[2m    28 × locator resolved to <article aria-busy=\"false\" class=\"msg-assistant\" aria-label=\"Câu trả lời lượt 3\">…</article>\u001b[22m\n\u001b[2m       - unexpected value \"AITheo tài liệu HopDongKhung.pdf, Ngoai le: khi cham giao hang, thoi han thanh toan duoc gia han them 15 ngay.1 Thông tin này nằm ở trang 3 của tài liệu.1NguồnHopDongKhung.pdf · trang 3Sao chép kèm nguồn\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('article.msg-assistant').last()\nExpected substring: \u001b[32m\"\u001b[7mKhô\u001b[27mng t\u001b[7mìm thấy t\u001b[27mhông tin này tr\u001b[7mo\u001b[27mng \u001b[7mcác\u001b[27m tài liệu\u001b[7m đã tải lên.\u001b[27m\"\u001b[39m\nReceived string:    \u001b[31m\"\u001b[7mAITheo tài liệu HopDongKhung.pdf, Ngoai le: khi cham giao ha\u001b[27mng\u001b[7m,\u001b[27m t\u001b[7mhoi han thanh toan duoc gia han them 15 ngay.1 T\u001b[27mhông tin này\u001b[7m nằm ở\u001b[27m tr\u001b[7ma\u001b[27mng \u001b[7m3 của\u001b[27m tài liệu\u001b[7m.1NguồnHopDongKhung.pdf · trang 3Sao chép kèm nguồn\u001b[27m\"\u001b[39m\nTimeout: 15000ms\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" locator('article.msg-assistant').last() with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for locator('article.msg-assistant').last()\u001b[22m\n\u001b[2m    2 × locator resolved to <article aria-busy=\"true\" class=\"msg-assistant\" aria-label=\"Câu trả lời lượt 3\">…</article>\u001b[22m\n\u001b[2m      - unexpected value \"AIĐang trả lời…\"\u001b[22m\n\u001b[2m    2 × locator resolved to <article aria-busy=\"true\" class=\"msg-assistant\" aria-label=\"Câu trả lời lượt 3\">…</article>\u001b[22m\n\u001b[2m      - unexpected value \"AITheo tài liệu HopDongKhung.pdf, Ngoai le: khi cham giao hang, thoi han thanh toan duoc gia han them 15 ngay.1\"\u001b[22m\n\u001b[2m    - locator resolved to <article aria-busy=\"true\" class=\"msg-assistant\" aria-label=\"Câu trả lời lượt 3\">…</article>\u001b[22m\n\u001b[2m    - unexpected value \"AITheo tài liệu HopDongKhung.pdf, Ngoai le: khi cham giao hang, thoi han thanh toan duoc gia han them 15 ngay.1 Thông tin này nằm ở trang 3 của tài liệu.1\"\u001b[22m\n\u001b[2m    28 × locator resolved to <article aria-busy=\"false\" class=\"msg-assistant\" aria-label=\"Câu trả lời lượt 3\">…</article>\u001b[22m\n\u001b[2m       - unexpected value \"AITheo tài liệu HopDongKhung.pdf, Ngoai le: khi cham giao hang, thoi han thanh toan duoc gia han them 15 ngay.1 Thông tin này nằm ở trang 3 của tài liệu.1NguồnHopDongKhung.pdf · trang 3Sao chép kèm nguồn\"\u001b[22m\n\n    at E:\\Working\\SDLC\\chat_with_ai\\web\\e2e\\chat.spec.ts:72:34",
+                    "location": {
+                      "file": "E:\\Working\\SDLC\\chat_with_ai\\web\\e2e\\chat.spec.ts",
+                      "column": 34,
+                      "line": 72
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 70 |\u001b[39m\n \u001b[90m 71 |\u001b[39m   \u001b[36mawait\u001b[39m ask(page\u001b[33m,\u001b[39m \u001b[32m\"Thủ đô của Pháp là gì?\"\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 72 |\u001b[39m   \u001b[36mawait\u001b[39m expect(lastAnswer(page))\u001b[33m.\u001b[39mtoContainText(\u001b[32m\"Không tìm thấy thông tin này trong các tài liệu đã tải lên.\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 73 |\u001b[39m\n \u001b[90m 74 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByRole(\u001b[32m\"button\"\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m\"Hội thoại mới\"\u001b[39m })\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m 75 |\u001b[39m   \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m\"article.msg-assistant\"\u001b[39m))\u001b[33m.\u001b[39mtoHaveCount(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "E:\\Working\\SDLC\\chat_with_ai\\web\\e2e\\chat.spec.ts",
+                        "column": 34,
+                        "line": 72
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('article.msg-assistant').last()\nExpected substring: \u001b[32m\"\u001b[7mKhô\u001b[27mng t\u001b[7mìm thấy t\u001b[27mhông tin này tr\u001b[7mo\u001b[27mng \u001b[7mcác\u001b[27m tài liệu\u001b[7m đã tải lên.\u001b[27m\"\u001b[39m\nReceived string:    \u001b[31m\"\u001b[7mAITheo tài liệu HopDongKhung.pdf, Ngoai le: khi cham giao ha\u001b[27mng\u001b[7m,\u001b[27m t\u001b[7mhoi han thanh toan duoc gia han them 15 ngay.1 T\u001b[27mhông tin này\u001b[7m nằm ở\u001b[27m tr\u001b[7ma\u001b[27mng \u001b[7m3 của\u001b[27m tài liệu\u001b[7m.1NguồnHopDongKhung.pdf · trang 3Sao chép kèm nguồn\u001b[27m\"\u001b[39m\nTimeout: 15000ms\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" locator('article.msg-assistant').last() with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for locator('article.msg-assistant').last()\u001b[22m\n\u001b[2m    2 × locator resolved to <article aria-busy=\"true\" class=\"msg-assistant\" aria-label=\"Câu trả lời lượt 3\">…</article>\u001b[22m\n\u001b[2m      - unexpected value \"AIĐang trả lời…\"\u001b[22m\n\u001b[2m    2 × locator resolved to <article aria-busy=\"true\" class=\"msg-assistant\" aria-label=\"Câu trả lời lượt 3\">…</article>\u001b[22m\n\u001b[2m      - unexpected value \"AITheo tài liệu HopDongKhung.pdf, Ngoai le: khi cham giao hang, thoi han thanh toan duoc gia han them 15 ngay.1\"\u001b[22m\n\u001b[2m    - locator resolved to <article aria-busy=\"true\" class=\"msg-assistant\" aria-label=\"Câu trả lời lượt 3\">…</article>\u001b[22m\n\u001b[2m    - unexpected value \"AITheo tài liệu HopDongKhung.pdf, Ngoai le: khi cham giao hang, thoi han thanh toan duoc gia han them 15 ngay.1 Thông tin này nằm ở trang 3 của tài liệu.1\"\u001b[22m\n\u001b[2m    28 × locator resolved to <article aria-busy=\"false\" class=\"msg-assistant\" aria-label=\"Câu trả lời lượt 3\">…</article>\u001b[22m\n\u001b[2m       - unexpected value \"AITheo tài liệu HopDongKhung.pdf, Ngoai le: khi cham giao hang, thoi han thanh toan duoc gia han them 15 ngay.1 Thông tin này nằm ở trang 3 của tài liệu.1NguồnHopDongKhung.pdf · trang 3Sao chép kèm nguồn\"\u001b[22m\n\n\n  70 |\n  71 |   await ask(page, \"Thủ đô của Pháp là gì?\");\n> 72 |   await expect(lastAnswer(page)).toContainText(\"Không tìm thấy thông tin này trong các tài liệu đã tải lên.\");\n     |                                  ^\n  73 |\n  74 |   await page.getByRole(\"button\", { name: \"Hội thoại mới\" }).click();\n  75 |   await expect(page.locator(\"article.msg-assistant\")).toHaveCount(0);\n    at E:\\Working\\SDLC\\chat_with_ai\\web\\e2e\\chat.spec.ts:72:34"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T16:07:08.833Z",
+                  "annotations": [
+                    {
+                      "type": "serial",
+                      "location": {
+                        "file": "E:\\Working\\SDLC\\chat_with_ai\\web\\e2e\\chat.spec.ts",
+                        "line": 0,
+                        "column": 0
+                      }
+                    }
+                  ],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\chat-câu-hỏi-tiếp-nối-câu--6795b-rong-tài-liệu-Hội-thoại-mới-chromium\\test-failed-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\chat-câu-hỏi-tiếp-nối-câu--6795b-rong-tài-liệu-Hội-thoại-mới-chromium\\video.webm"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\chat-câu-hỏi-tiếp-nối-câu--6795b-rong-tài-liệu-Hội-thoại-mới-chromium\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\chat-câu-hỏi-tiếp-nối-câu--6795b-rong-tài-liệu-Hội-thoại-mới-chromium\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "E:\\Working\\SDLC\\chat_with_ai\\web\\e2e\\chat.spec.ts",
+                    "column": 34,
+                    "line": 72
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "6dac514d5d837ca37b9e-c59636b6015dbd34a98c",
+          "file": "chat.spec.ts",
+          "line": 64,
+          "column": 1
+        },
+        {
+          "title": "Dừng giữa chừng → nhãn đã dừng, ô nhập dùng được",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "serial",
+                  "location": {
+                    "file": "E:\\Working\\SDLC\\chat_with_ai\\web\\e2e\\chat.spec.ts",
+                    "line": 0,
+                    "column": 0
+                  }
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": -1,
+                  "parallelIndex": -1,
+                  "status": "skipped",
+                  "duration": 0,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T16:07:28.172Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "6dac514d5d837ca37b9e-93eaea8d0479594a79d1",
+          "file": "chat.spec.ts",
+          "line": 79,
+          "column": 1
+        },
+        {
+          "title": "Sao chép kèm nguồn",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "serial",
+                  "location": {
+                    "file": "E:\\Working\\SDLC\\chat_with_ai\\web\\e2e\\chat.spec.ts",
+                    "line": 0,
+                    "column": 0
+                  }
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": -1,
+                  "parallelIndex": -1,
+                  "status": "skipped",
+                  "duration": 0,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T16:07:28.172Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "6dac514d5d837ca37b9e-a0f6eb4398d8c10b71ca",
+          "file": "chat.spec.ts",
+          "line": 90,
+          "column": 1
+        },
+        {
+          "title": "👎 kèm lý do",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "serial",
+                  "location": {
+                    "file": "E:\\Working\\SDLC\\chat_with_ai\\web\\e2e\\chat.spec.ts",
+                    "line": 0,
+                    "column": 0
+                  }
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": -1,
+                  "parallelIndex": -1,
+                  "status": "skipped",
+                  "duration": 0,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T16:07:28.172Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "6dac514d5d837ca37b9e-7161134a3e5357c6bd9e",
+          "file": "chat.spec.ts",
+          "line": 99,
+          "column": 1
+        },
+        {
+          "title": "ô nhập rỗng: Enter không gửi",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "serial",
+                  "location": {
+                    "file": "E:\\Working\\SDLC\\chat_with_ai\\web\\e2e\\chat.spec.ts",
+                    "line": 0,
+                    "column": 0
+                  }
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": -1,
+                  "parallelIndex": -1,
+                  "status": "skipped",
+                  "duration": 0,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T16:07:28.172Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "6dac514d5d837ca37b9e-c9433491ef225188cee2",
+          "file": "chat.spec.ts",
+          "line": 108,
+          "column": 1
+        },
+        {
+          "title": "hỏi → stream → [1] → popover → mở PDF đúng trang",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "serial",
+                  "location": {
+                    "file": "E:\\Working\\SDLC\\chat_with_ai\\web\\e2e\\chat.spec.ts",
+                    "line": 0,
+                    "column": 0
+                  }
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2447,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [
+                    {
+                      "buffer": "MjAyNi0xMS0wMiAxNjowOTowOSwwOTAgSU5GTyBhcHAuc2VlZCBzZWVkIHhvbmc6IDUgdMOgaSBraG/huqNuLCBi4buZIHTDoGkgbGnhu4d1ICdE4buxIMOhbiBYJwo="
+                    }
+                  ],
+                  "retry": 0,
+                  "startTime": "2026-11-02T16:09:06.781Z",
+                  "annotations": [
+                    {
+                      "type": "serial",
+                      "location": {
+                        "file": "E:\\Working\\SDLC\\chat_with_ai\\web\\e2e\\chat.spec.ts",
+                        "line": 0,
+                        "column": 0
+                      }
+                    }
+                  ],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\chat-hỏi-→-stream-→-1-→-popover-→-mở-PDF-đúng-trang-chromium-repeat1\\test-finished-1.png"
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\chat-hỏi-→-stream-→-1-→-popover-→-mở-PDF-đúng-trang-chromium-repeat1\\test-finished-2.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\chat-hỏi-→-stream-→-1-→-popover-→-mở-PDF-đúng-trang-chromium-repeat1\\video.webm"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\chat-hỏi-→-stream-→-1-→-popover-→-mở-PDF-đúng-trang-chromium-repeat1\\trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6dac514d5d837ca37b9e-d6ac508f07384511dabb",
+          "file": "chat.spec.ts",
+          "line": 19,
+          "column": 1
+        },
+        {
+          "title": "bàn phím: Tab tới [1], Enter mở, Esc đóng và trả focus",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "serial",
+                  "location": {
+                    "file": "E:\\Working\\SDLC\\chat_with_ai\\web\\e2e\\chat.spec.ts",
+                    "line": 0,
+                    "column": 0
+                  }
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1800,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T16:09:16.939Z",
+                  "annotations": [
+                    {
+                      "type": "serial",
+                      "location": {
+                        "file": "E:\\Working\\SDLC\\chat_with_ai\\web\\e2e\\chat.spec.ts",
+                        "line": 0,
+                        "column": 0
+                      }
+                    }
+                  ],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\chat-bàn-phím-Tab-tới-1-Enter-mở-Esc-đóng-và-trả-focus-chromium-repeat1\\test-finished-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\chat-bàn-phím-Tab-tới-1-Enter-mở-Esc-đóng-và-trả-focus-chromium-repeat1\\video.webm"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\chat-bàn-phím-Tab-tới-1-Enter-mở-Esc-đóng-và-trả-focus-chromium-repeat1\\trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6dac514d5d837ca37b9e-f42d9954a69c9c5e473f",
+          "file": "chat.spec.ts",
+          "line": 52,
+          "column": 1
+        },
+        {
+          "title": "câu hỏi tiếp nối, câu không có trong tài liệu, Hội thoại mới",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "serial",
+                  "location": {
+                    "file": "E:\\Working\\SDLC\\chat_with_ai\\web\\e2e\\chat.spec.ts",
+                    "line": 0,
+                    "column": 0
+                  }
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 18807,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('article.msg-assistant').last()\nExpected substring: \u001b[32m\"\u001b[7mKhô\u001b[27mng t\u001b[7mìm thấy t\u001b[27mhông tin này tr\u001b[7mo\u001b[27mng \u001b[7mcác\u001b[27m tài liệu\u001b[7m đã tải lên.\u001b[27m\"\u001b[39m\nReceived string:    \u001b[31m\"\u001b[7mAITheo tài liệu HopDongKhung.pdf, Ngoai le: khi cham giao ha\u001b[27mng\u001b[7m,\u001b[27m t\u001b[7mhoi han thanh toan duoc gia han them 15 ngay.1 T\u001b[27mhông tin này\u001b[7m nằm ở\u001b[27m tr\u001b[7ma\u001b[27mng \u001b[7m3 của\u001b[27m tài liệu\u001b[7m.1NguồnHopDongKhung.pdf · trang 3Sao chép kèm nguồn\u001b[27m\"\u001b[39m\nTimeout: 15000ms\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" locator('article.msg-assistant').last() with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for locator('article.msg-assistant').last()\u001b[22m\n\u001b[2m    - locator resolved to <article aria-busy=\"true\" class=\"msg-assistant\" aria-label=\"Câu trả lời lượt 3\">…</article>\u001b[22m\n\u001b[2m    - unexpected value \"AIĐang trả lời…\"\u001b[22m\n\u001b[2m    3 × locator resolved to <article aria-busy=\"true\" class=\"msg-assistant\" aria-label=\"Câu trả lời lượt 3\">…</article>\u001b[22m\n\u001b[2m      - unexpected value \"AITheo tài liệu HopDongKhung.pdf, Ngoai le: khi cham giao hang, thoi han thanh toan duoc gia han them 15 ngay.1\"\u001b[22m\n\u001b[2m    - locator resolved to <article aria-busy=\"true\" class=\"msg-assistant\" aria-label=\"Câu trả lời lượt 3\">…</article>\u001b[22m\n\u001b[2m    - unexpected value \"AITheo tài liệu HopDongKhung.pdf, Ngoai le: khi cham giao hang, thoi han thanh toan duoc gia han them 15 ngay.1 Thông tin này nằm ở trang 3 của tài liệu.1\"\u001b[22m\n\u001b[2m    28 × locator resolved to <article aria-busy=\"false\" class=\"msg-assistant\" aria-label=\"Câu trả lời lượt 3\">…</article>\u001b[22m\n\u001b[2m       - unexpected value \"AITheo tài liệu HopDongKhung.pdf, Ngoai le: khi cham giao hang, thoi han thanh toan duoc gia han them 15 ngay.1 Thông tin này nằm ở trang 3 của tài liệu.1NguồnHopDongKhung.pdf · trang 3Sao chép kèm nguồn\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('article.msg-assistant').last()\nExpected substring: \u001b[32m\"\u001b[7mKhô\u001b[27mng t\u001b[7mìm thấy t\u001b[27mhông tin này tr\u001b[7mo\u001b[27mng \u001b[7mcác\u001b[27m tài liệu\u001b[7m đã tải lên.\u001b[27m\"\u001b[39m\nReceived string:    \u001b[31m\"\u001b[7mAITheo tài liệu HopDongKhung.pdf, Ngoai le: khi cham giao ha\u001b[27mng\u001b[7m,\u001b[27m t\u001b[7mhoi han thanh toan duoc gia han them 15 ngay.1 T\u001b[27mhông tin này\u001b[7m nằm ở\u001b[27m tr\u001b[7ma\u001b[27mng \u001b[7m3 của\u001b[27m tài liệu\u001b[7m.1NguồnHopDongKhung.pdf · trang 3Sao chép kèm nguồn\u001b[27m\"\u001b[39m\nTimeout: 15000ms\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" locator('article.msg-assistant').last() with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for locator('article.msg-assistant').last()\u001b[22m\n\u001b[2m    - locator resolved to <article aria-busy=\"true\" class=\"msg-assistant\" aria-label=\"Câu trả lời lượt 3\">…</article>\u001b[22m\n\u001b[2m    - unexpected value \"AIĐang trả lời…\"\u001b[22m\n\u001b[2m    3 × locator resolved to <article aria-busy=\"true\" class=\"msg-assistant\" aria-label=\"Câu trả lời lượt 3\">…</article>\u001b[22m\n\u001b[2m      - unexpected value \"AITheo tài liệu HopDongKhung.pdf, Ngoai le: khi cham giao hang, thoi han thanh toan duoc gia han them 15 ngay.1\"\u001b[22m\n\u001b[2m    - locator resolved to <article aria-busy=\"true\" class=\"msg-assistant\" aria-label=\"Câu trả lời lượt 3\">…</article>\u001b[22m\n\u001b[2m    - unexpected value \"AITheo tài liệu HopDongKhung.pdf, Ngoai le: khi cham giao hang, thoi han thanh toan duoc gia han them 15 ngay.1 Thông tin này nằm ở trang 3 của tài liệu.1\"\u001b[22m\n\u001b[2m    28 × locator resolved to <article aria-busy=\"false\" class=\"msg-assistant\" aria-label=\"Câu trả lời lượt 3\">…</article>\u001b[22m\n\u001b[2m       - unexpected value \"AITheo tài liệu HopDongKhung.pdf, Ngoai le: khi cham giao hang, thoi han thanh toan duoc gia han them 15 ngay.1 Thông tin này nằm ở trang 3 của tài liệu.1NguồnHopDongKhung.pdf · trang 3Sao chép kèm nguồn\"\u001b[22m\n\n    at E:\\Working\\SDLC\\chat_with_ai\\web\\e2e\\chat.spec.ts:72:34",
+                    "location": {
+                      "file": "E:\\Working\\SDLC\\chat_with_ai\\web\\e2e\\chat.spec.ts",
+                      "column": 34,
+                      "line": 72
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 70 |\u001b[39m\n \u001b[90m 71 |\u001b[39m   \u001b[36mawait\u001b[39m ask(page\u001b[33m,\u001b[39m \u001b[32m\"Thủ đô của Pháp là gì?\"\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 72 |\u001b[39m   \u001b[36mawait\u001b[39m expect(lastAnswer(page))\u001b[33m.\u001b[39mtoContainText(\u001b[32m\"Không tìm thấy thông tin này trong các tài liệu đã tải lên.\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 73 |\u001b[39m\n \u001b[90m 74 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByRole(\u001b[32m\"button\"\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m\"Hội thoại mới\"\u001b[39m })\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m 75 |\u001b[39m   \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m\"article.msg-assistant\"\u001b[39m))\u001b[33m.\u001b[39mtoHaveCount(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "E:\\Working\\SDLC\\chat_with_ai\\web\\e2e\\chat.spec.ts",
+                        "column": 34,
+                        "line": 72
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('article.msg-assistant').last()\nExpected substring: \u001b[32m\"\u001b[7mKhô\u001b[27mng t\u001b[7mìm thấy t\u001b[27mhông tin này tr\u001b[7mo\u001b[27mng \u001b[7mcác\u001b[27m tài liệu\u001b[7m đã tải lên.\u001b[27m\"\u001b[39m\nReceived string:    \u001b[31m\"\u001b[7mAITheo tài liệu HopDongKhung.pdf, Ngoai le: khi cham giao ha\u001b[27mng\u001b[7m,\u001b[27m t\u001b[7mhoi han thanh toan duoc gia han them 15 ngay.1 T\u001b[27mhông tin này\u001b[7m nằm ở\u001b[27m tr\u001b[7ma\u001b[27mng \u001b[7m3 của\u001b[27m tài liệu\u001b[7m.1NguồnHopDongKhung.pdf · trang 3Sao chép kèm nguồn\u001b[27m\"\u001b[39m\nTimeout: 15000ms\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" locator('article.msg-assistant').last() with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for locator('article.msg-assistant').last()\u001b[22m\n\u001b[2m    - locator resolved to <article aria-busy=\"true\" class=\"msg-assistant\" aria-label=\"Câu trả lời lượt 3\">…</article>\u001b[22m\n\u001b[2m    - unexpected value \"AIĐang trả lời…\"\u001b[22m\n\u001b[2m    3 × locator resolved to <article aria-busy=\"true\" class=\"msg-assistant\" aria-label=\"Câu trả lời lượt 3\">…</article>\u001b[22m\n\u001b[2m      - unexpected value \"AITheo tài liệu HopDongKhung.pdf, Ngoai le: khi cham giao hang, thoi han thanh toan duoc gia han them 15 ngay.1\"\u001b[22m\n\u001b[2m    - locator resolved to <article aria-busy=\"true\" class=\"msg-assistant\" aria-label=\"Câu trả lời lượt 3\">…</article>\u001b[22m\n\u001b[2m    - unexpected value \"AITheo tài liệu HopDongKhung.pdf, Ngoai le: khi cham giao hang, thoi han thanh toan duoc gia han them 15 ngay.1 Thông tin này nằm ở trang 3 của tài liệu.1\"\u001b[22m\n\u001b[2m    28 × locator resolved to <article aria-busy=\"false\" class=\"msg-assistant\" aria-label=\"Câu trả lời lượt 3\">…</article>\u001b[22m\n\u001b[2m       - unexpected value \"AITheo tài liệu HopDongKhung.pdf, Ngoai le: khi cham giao hang, thoi han thanh toan duoc gia han them 15 ngay.1 Thông tin này nằm ở trang 3 của tài liệu.1NguồnHopDongKhung.pdf · trang 3Sao chép kèm nguồn\"\u001b[22m\n\n\n  70 |\n  71 |   await ask(page, \"Thủ đô của Pháp là gì?\");\n> 72 |   await expect(lastAnswer(page)).toContainText(\"Không tìm thấy thông tin này trong các tài liệu đã tải lên.\");\n     |                                  ^\n  73 |\n  74 |   await page.getByRole(\"button\", { name: \"Hội thoại mới\" }).click();\n  75 |   await expect(page.locator(\"article.msg-assistant\")).toHaveCount(0);\n    at E:\\Working\\SDLC\\chat_with_ai\\web\\e2e\\chat.spec.ts:72:34"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T16:09:18.835Z",
+                  "annotations": [
+                    {
+                      "type": "serial",
+                      "location": {
+                        "file": "E:\\Working\\SDLC\\chat_with_ai\\web\\e2e\\chat.spec.ts",
+                        "line": 0,
+                        "column": 0
+                      }
+                    }
+                  ],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\chat-câu-hỏi-tiếp-nối-câu--6795b-rong-tài-liệu-Hội-thoại-mới-chromium-repeat1\\test-failed-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\chat-câu-hỏi-tiếp-nối-câu--6795b-rong-tài-liệu-Hội-thoại-mới-chromium-repeat1\\video.webm"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\chat-câu-hỏi-tiếp-nối-câu--6795b-rong-tài-liệu-Hội-thoại-mới-chromium-repeat1\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\chat-câu-hỏi-tiếp-nối-câu--6795b-rong-tài-liệu-Hội-thoại-mới-chromium-repeat1\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "E:\\Working\\SDLC\\chat_with_ai\\web\\e2e\\chat.spec.ts",
+                    "column": 34,
+                    "line": 72
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "6dac514d5d837ca37b9e-0b048af0d53d9d4f79d2",
+          "file": "chat.spec.ts",
+          "line": 64,
+          "column": 1
+        },
+        {
+          "title": "Dừng giữa chừng → nhãn đã dừng, ô nhập dùng được",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "serial",
+                  "location": {
+                    "file": "E:\\Working\\SDLC\\chat_with_ai\\web\\e2e\\chat.spec.ts",
+                    "line": 0,
+                    "column": 0
+                  }
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": -1,
+                  "parallelIndex": -1,
+                  "status": "skipped",
+                  "duration": 0,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T16:09:38.783Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "6dac514d5d837ca37b9e-9fb6aa7035a52693a762",
+          "file": "chat.spec.ts",
+          "line": 79,
+          "column": 1
+        },
+        {
+          "title": "Sao chép kèm nguồn",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "serial",
+                  "location": {
+                    "file": "E:\\Working\\SDLC\\chat_with_ai\\web\\e2e\\chat.spec.ts",
+                    "line": 0,
+                    "column": 0
+                  }
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": -1,
+                  "parallelIndex": -1,
+                  "status": "skipped",
+                  "duration": 0,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T16:09:38.784Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "6dac514d5d837ca37b9e-9ee980436fa847580abe",
+          "file": "chat.spec.ts",
+          "line": 90,
+          "column": 1
+        },
+        {
+          "title": "👎 kèm lý do",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "serial",
+                  "location": {
+                    "file": "E:\\Working\\SDLC\\chat_with_ai\\web\\e2e\\chat.spec.ts",
+                    "line": 0,
+                    "column": 0
+                  }
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": -1,
+                  "parallelIndex": -1,
+                  "status": "skipped",
+                  "duration": 0,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T16:09:38.784Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "6dac514d5d837ca37b9e-5537af32227c9a9b5b35",
+          "file": "chat.spec.ts",
+          "line": 99,
+          "column": 1
+        },
+        {
+          "title": "ô nhập rỗng: Enter không gửi",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "serial",
+                  "location": {
+                    "file": "E:\\Working\\SDLC\\chat_with_ai\\web\\e2e\\chat.spec.ts",
+                    "line": 0,
+                    "column": 0
+                  }
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": -1,
+                  "parallelIndex": -1,
+                  "status": "skipped",
+                  "duration": 0,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T16:09:38.784Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "6dac514d5d837ca37b9e-8c989857a7c2a618ad61",
+          "file": "chat.spec.ts",
+          "line": 108,
+          "column": 1
+        },
+        {
+          "title": "hỏi → stream → [1] → popover → mở PDF đúng trang",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "serial",
+                  "location": {
+                    "file": "E:\\Working\\SDLC\\chat_with_ai\\web\\e2e\\chat.spec.ts",
+                    "line": 0,
+                    "column": 0
+                  }
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2612,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [
+                    {
+                      "buffer": "MjAyNi0xMS0wMiAxNjoxMToxOCwxNzAgSU5GTyBhcHAuc2VlZCBzZWVkIHhvbmc6IDUgdMOgaSBraG/huqNuLCBi4buZIHTDoGkgbGnhu4d1ICdE4buxIMOhbiBYJwo="
+                    }
+                  ],
+                  "retry": 0,
+                  "startTime": "2026-11-02T16:11:15.734Z",
+                  "annotations": [
+                    {
+                      "type": "serial",
+                      "location": {
+                        "file": "E:\\Working\\SDLC\\chat_with_ai\\web\\e2e\\chat.spec.ts",
+                        "line": 0,
+                        "column": 0
+                      }
+                    }
+                  ],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\chat-hỏi-→-stream-→-1-→-popover-→-mở-PDF-đúng-trang-chromium-repeat2\\test-finished-1.png"
+                    },
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\chat-hỏi-→-stream-→-1-→-popover-→-mở-PDF-đúng-trang-chromium-repeat2\\test-finished-2.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\chat-hỏi-→-stream-→-1-→-popover-→-mở-PDF-đúng-trang-chromium-repeat2\\video.webm"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\chat-hỏi-→-stream-→-1-→-popover-→-mở-PDF-đúng-trang-chromium-repeat2\\trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6dac514d5d837ca37b9e-0005c050ae3d92fe98ad",
+          "file": "chat.spec.ts",
+          "line": 19,
+          "column": 1
+        },
+        {
+          "title": "bàn phím: Tab tới [1], Enter mở, Esc đóng và trả focus",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "serial",
+                  "location": {
+                    "file": "E:\\Working\\SDLC\\chat_with_ai\\web\\e2e\\chat.spec.ts",
+                    "line": 0,
+                    "column": 0
+                  }
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1651,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T16:11:26.115Z",
+                  "annotations": [
+                    {
+                      "type": "serial",
+                      "location": {
+                        "file": "E:\\Working\\SDLC\\chat_with_ai\\web\\e2e\\chat.spec.ts",
+                        "line": 0,
+                        "column": 0
+                      }
+                    }
+                  ],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\chat-bàn-phím-Tab-tới-1-Enter-mở-Esc-đóng-và-trả-focus-chromium-repeat2\\test-finished-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\chat-bàn-phím-Tab-tới-1-Enter-mở-Esc-đóng-và-trả-focus-chromium-repeat2\\video.webm"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\chat-bàn-phím-Tab-tới-1-Enter-mở-Esc-đóng-và-trả-focus-chromium-repeat2\\trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "6dac514d5d837ca37b9e-cf95fe228ad03c7fc2cb",
+          "file": "chat.spec.ts",
+          "line": 52,
+          "column": 1
+        },
+        {
+          "title": "câu hỏi tiếp nối, câu không có trong tài liệu, Hội thoại mới",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "serial",
+                  "location": {
+                    "file": "E:\\Working\\SDLC\\chat_with_ai\\web\\e2e\\chat.spec.ts",
+                    "line": 0,
+                    "column": 0
+                  }
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 18440,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('article.msg-assistant').last()\nExpected substring: \u001b[32m\"\u001b[7mKhô\u001b[27mng t\u001b[7mìm thấy t\u001b[27mhông tin này tr\u001b[7mo\u001b[27mng \u001b[7mcác\u001b[27m tài liệu\u001b[7m đã tải lên.\u001b[27m\"\u001b[39m\nReceived string:    \u001b[31m\"\u001b[7mAITheo tài liệu HopDongKhung.pdf, Ngoai le: khi cham giao ha\u001b[27mng\u001b[7m,\u001b[27m t\u001b[7mhoi han thanh toan duoc gia han them 15 ngay.1 T\u001b[27mhông tin này\u001b[7m nằm ở\u001b[27m tr\u001b[7ma\u001b[27mng \u001b[7m3 của\u001b[27m tài liệu\u001b[7m.1NguồnHopDongKhung.pdf · trang 3Sao chép kèm nguồn\u001b[27m\"\u001b[39m\nTimeout: 15000ms\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" locator('article.msg-assistant').last() with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for locator('article.msg-assistant').last()\u001b[22m\n\u001b[2m    2 × locator resolved to <article aria-busy=\"true\" class=\"msg-assistant\" aria-label=\"Câu trả lời lượt 3\">…</article>\u001b[22m\n\u001b[2m      - unexpected value \"AIĐang trả lời…\"\u001b[22m\n\u001b[2m    2 × locator resolved to <article aria-busy=\"true\" class=\"msg-assistant\" aria-label=\"Câu trả lời lượt 3\">…</article>\u001b[22m\n\u001b[2m      - unexpected value \"AITheo tài liệu HopDongKhung.pdf, Ngoai le: khi cham giao hang, thoi han thanh toan duoc gia han them 15 ngay.1\"\u001b[22m\n\u001b[2m    - locator resolved to <article aria-busy=\"true\" class=\"msg-assistant\" aria-label=\"Câu trả lời lượt 3\">…</article>\u001b[22m\n\u001b[2m    - unexpected value \"AITheo tài liệu HopDongKhung.pdf, Ngoai le: khi cham giao hang, thoi han thanh toan duoc gia han them 15 ngay.1 Thông tin này nằm ở trang 3 của tài liệu.1\"\u001b[22m\n\u001b[2m    28 × locator resolved to <article aria-busy=\"false\" class=\"msg-assistant\" aria-label=\"Câu trả lời lượt 3\">…</article>\u001b[22m\n\u001b[2m       - unexpected value \"AITheo tài liệu HopDongKhung.pdf, Ngoai le: khi cham giao hang, thoi han thanh toan duoc gia han them 15 ngay.1 Thông tin này nằm ở trang 3 của tài liệu.1NguồnHopDongKhung.pdf · trang 3Sao chép kèm nguồn\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('article.msg-assistant').last()\nExpected substring: \u001b[32m\"\u001b[7mKhô\u001b[27mng t\u001b[7mìm thấy t\u001b[27mhông tin này tr\u001b[7mo\u001b[27mng \u001b[7mcác\u001b[27m tài liệu\u001b[7m đã tải lên.\u001b[27m\"\u001b[39m\nReceived string:    \u001b[31m\"\u001b[7mAITheo tài liệu HopDongKhung.pdf, Ngoai le: khi cham giao ha\u001b[27mng\u001b[7m,\u001b[27m t\u001b[7mhoi han thanh toan duoc gia han them 15 ngay.1 T\u001b[27mhông tin này\u001b[7m nằm ở\u001b[27m tr\u001b[7ma\u001b[27mng \u001b[7m3 của\u001b[27m tài liệu\u001b[7m.1NguồnHopDongKhung.pdf · trang 3Sao chép kèm nguồn\u001b[27m\"\u001b[39m\nTimeout: 15000ms\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" locator('article.msg-assistant').last() with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for locator('article.msg-assistant').last()\u001b[22m\n\u001b[2m    2 × locator resolved to <article aria-busy=\"true\" class=\"msg-assistant\" aria-label=\"Câu trả lời lượt 3\">…</article>\u001b[22m\n\u001b[2m      - unexpected value \"AIĐang trả lời…\"\u001b[22m\n\u001b[2m    2 × locator resolved to <article aria-busy=\"true\" class=\"msg-assistant\" aria-label=\"Câu trả lời lượt 3\">…</article>\u001b[22m\n\u001b[2m      - unexpected value \"AITheo tài liệu HopDongKhung.pdf, Ngoai le: khi cham giao hang, thoi han thanh toan duoc gia han them 15 ngay.1\"\u001b[22m\n\u001b[2m    - locator resolved to <article aria-busy=\"true\" class=\"msg-assistant\" aria-label=\"Câu trả lời lượt 3\">…</article>\u001b[22m\n\u001b[2m    - unexpected value \"AITheo tài liệu HopDongKhung.pdf, Ngoai le: khi cham giao hang, thoi han thanh toan duoc gia han them 15 ngay.1 Thông tin này nằm ở trang 3 của tài liệu.1\"\u001b[22m\n\u001b[2m    28 × locator resolved to <article aria-busy=\"false\" class=\"msg-assistant\" aria-label=\"Câu trả lời lượt 3\">…</article>\u001b[22m\n\u001b[2m       - unexpected value \"AITheo tài liệu HopDongKhung.pdf, Ngoai le: khi cham giao hang, thoi han thanh toan duoc gia han them 15 ngay.1 Thông tin này nằm ở trang 3 của tài liệu.1NguồnHopDongKhung.pdf · trang 3Sao chép kèm nguồn\"\u001b[22m\n\n    at E:\\Working\\SDLC\\chat_with_ai\\web\\e2e\\chat.spec.ts:72:34",
+                    "location": {
+                      "file": "E:\\Working\\SDLC\\chat_with_ai\\web\\e2e\\chat.spec.ts",
+                      "column": 34,
+                      "line": 72
+                    },
+                    "snippet": "\u001b[0m \u001b[90m 70 |\u001b[39m\n \u001b[90m 71 |\u001b[39m   \u001b[36mawait\u001b[39m ask(page\u001b[33m,\u001b[39m \u001b[32m\"Thủ đô của Pháp là gì?\"\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 72 |\u001b[39m   \u001b[36mawait\u001b[39m expect(lastAnswer(page))\u001b[33m.\u001b[39mtoContainText(\u001b[32m\"Không tìm thấy thông tin này trong các tài liệu đã tải lên.\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 73 |\u001b[39m\n \u001b[90m 74 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByRole(\u001b[32m\"button\"\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m\"Hội thoại mới\"\u001b[39m })\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m 75 |\u001b[39m   \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m\"article.msg-assistant\"\u001b[39m))\u001b[33m.\u001b[39mtoHaveCount(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "E:\\Working\\SDLC\\chat_with_ai\\web\\e2e\\chat.spec.ts",
+                        "column": 34,
+                        "line": 72
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('article.msg-assistant').last()\nExpected substring: \u001b[32m\"\u001b[7mKhô\u001b[27mng t\u001b[7mìm thấy t\u001b[27mhông tin này tr\u001b[7mo\u001b[27mng \u001b[7mcác\u001b[27m tài liệu\u001b[7m đã tải lên.\u001b[27m\"\u001b[39m\nReceived string:    \u001b[31m\"\u001b[7mAITheo tài liệu HopDongKhung.pdf, Ngoai le: khi cham giao ha\u001b[27mng\u001b[7m,\u001b[27m t\u001b[7mhoi han thanh toan duoc gia han them 15 ngay.1 T\u001b[27mhông tin này\u001b[7m nằm ở\u001b[27m tr\u001b[7ma\u001b[27mng \u001b[7m3 của\u001b[27m tài liệu\u001b[7m.1NguồnHopDongKhung.pdf · trang 3Sao chép kèm nguồn\u001b[27m\"\u001b[39m\nTimeout: 15000ms\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" locator('article.msg-assistant').last() with timeout 15000ms\u001b[22m\n\u001b[2m  - waiting for locator('article.msg-assistant').last()\u001b[22m\n\u001b[2m    2 × locator resolved to <article aria-busy=\"true\" class=\"msg-assistant\" aria-label=\"Câu trả lời lượt 3\">…</article>\u001b[22m\n\u001b[2m      - unexpected value \"AIĐang trả lời…\"\u001b[22m\n\u001b[2m    2 × locator resolved to <article aria-busy=\"true\" class=\"msg-assistant\" aria-label=\"Câu trả lời lượt 3\">…</article>\u001b[22m\n\u001b[2m      - unexpected value \"AITheo tài liệu HopDongKhung.pdf, Ngoai le: khi cham giao hang, thoi han thanh toan duoc gia han them 15 ngay.1\"\u001b[22m\n\u001b[2m    - locator resolved to <article aria-busy=\"true\" class=\"msg-assistant\" aria-label=\"Câu trả lời lượt 3\">…</article>\u001b[22m\n\u001b[2m    - unexpected value \"AITheo tài liệu HopDongKhung.pdf, Ngoai le: khi cham giao hang, thoi han thanh toan duoc gia han them 15 ngay.1 Thông tin này nằm ở trang 3 của tài liệu.1\"\u001b[22m\n\u001b[2m    28 × locator resolved to <article aria-busy=\"false\" class=\"msg-assistant\" aria-label=\"Câu trả lời lượt 3\">…</article>\u001b[22m\n\u001b[2m       - unexpected value \"AITheo tài liệu HopDongKhung.pdf, Ngoai le: khi cham giao hang, thoi han thanh toan duoc gia han them 15 ngay.1 Thông tin này nằm ở trang 3 của tài liệu.1NguồnHopDongKhung.pdf · trang 3Sao chép kèm nguồn\"\u001b[22m\n\n\n  70 |\n  71 |   await ask(page, \"Thủ đô của Pháp là gì?\");\n> 72 |   await expect(lastAnswer(page)).toContainText(\"Không tìm thấy thông tin này trong các tài liệu đã tải lên.\");\n     |                                  ^\n  73 |\n  74 |   await page.getByRole(\"button\", { name: \"Hội thoại mới\" }).click();\n  75 |   await expect(page.locator(\"article.msg-assistant\")).toHaveCount(0);\n    at E:\\Working\\SDLC\\chat_with_ai\\web\\e2e\\chat.spec.ts:72:34"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T16:11:27.859Z",
+                  "annotations": [
+                    {
+                      "type": "serial",
+                      "location": {
+                        "file": "E:\\Working\\SDLC\\chat_with_ai\\web\\e2e\\chat.spec.ts",
+                        "line": 0,
+                        "column": 0
+                      }
+                    }
+                  ],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\chat-câu-hỏi-tiếp-nối-câu--6795b-rong-tài-liệu-Hội-thoại-mới-chromium-repeat2\\test-failed-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\chat-câu-hỏi-tiếp-nối-câu--6795b-rong-tài-liệu-Hội-thoại-mới-chromium-repeat2\\video.webm"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\chat-câu-hỏi-tiếp-nối-câu--6795b-rong-tài-liệu-Hội-thoại-mới-chromium-repeat2\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\chat-câu-hỏi-tiếp-nối-câu--6795b-rong-tài-liệu-Hội-thoại-mới-chromium-repeat2\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "E:\\Working\\SDLC\\chat_with_ai\\web\\e2e\\chat.spec.ts",
+                    "column": 34,
+                    "line": 72
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "6dac514d5d837ca37b9e-dd8b509eabcd2061ea13",
+          "file": "chat.spec.ts",
+          "line": 64,
+          "column": 1
+        },
+        {
+          "title": "Dừng giữa chừng → nhãn đã dừng, ô nhập dùng được",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "serial",
+                  "location": {
+                    "file": "E:\\Working\\SDLC\\chat_with_ai\\web\\e2e\\chat.spec.ts",
+                    "line": 0,
+                    "column": 0
+                  }
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": -1,
+                  "parallelIndex": -1,
+                  "status": "skipped",
+                  "duration": 0,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T16:11:47.237Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "6dac514d5d837ca37b9e-054b1662922842e24548",
+          "file": "chat.spec.ts",
+          "line": 79,
+          "column": 1
+        },
+        {
+          "title": "Sao chép kèm nguồn",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "serial",
+                  "location": {
+                    "file": "E:\\Working\\SDLC\\chat_with_ai\\web\\e2e\\chat.spec.ts",
+                    "line": 0,
+                    "column": 0
+                  }
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": -1,
+                  "parallelIndex": -1,
+                  "status": "skipped",
+                  "duration": 0,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T16:11:47.237Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "6dac514d5d837ca37b9e-fc26575fb23383b51503",
+          "file": "chat.spec.ts",
+          "line": 90,
+          "column": 1
+        },
+        {
+          "title": "👎 kèm lý do",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "serial",
+                  "location": {
+                    "file": "E:\\Working\\SDLC\\chat_with_ai\\web\\e2e\\chat.spec.ts",
+                    "line": 0,
+                    "column": 0
+                  }
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": -1,
+                  "parallelIndex": -1,
+                  "status": "skipped",
+                  "duration": 0,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T16:11:47.237Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "6dac514d5d837ca37b9e-8e4cf0ecec448530afa3",
+          "file": "chat.spec.ts",
+          "line": 99,
+          "column": 1
+        },
+        {
+          "title": "ô nhập rỗng: Enter không gửi",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [
+                {
+                  "type": "serial",
+                  "location": {
+                    "file": "E:\\Working\\SDLC\\chat_with_ai\\web\\e2e\\chat.spec.ts",
+                    "line": 0,
+                    "column": 0
+                  }
+                }
+              ],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": -1,
+                  "parallelIndex": -1,
+                  "status": "skipped",
+                  "duration": 0,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T16:11:47.237Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "skipped"
+            }
+          ],
+          "id": "6dac514d5d837ca37b9e-350f47e18c8093ef5cb4",
+          "file": "chat.spec.ts",
+          "line": 108,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "upload.spec.ts",
+      "file": "upload.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Lan: xác nhận phân loại → tải PDF → Đang xử lý → Sẵn sàng",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5773,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [
+                    {
+                      "buffer": "MjAyNi0xMS0wMiAxNjowNzozMSw4ODYgSU5GTyBhcHAuc2VlZCBzZWVkIHhvbmc6IDUgdMOgaSBraG/huqNuLCBi4buZIHTDoGkgbGnhu4d1ICdE4buxIMOhbiBYJwo="
+                    }
+                  ],
+                  "retry": 0,
+                  "startTime": "2026-11-02T16:07:29.180Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\upload-Lan-xác-nhận-phân-l-d7f17-PDF-→-Đang-xử-lý-→-Sẵn-sàng-chromium\\test-finished-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\upload-Lan-xác-nhận-phân-l-d7f17-PDF-→-Đang-xử-lý-→-Sẵn-sàng-chromium\\video.webm"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\upload-Lan-xác-nhận-phân-l-d7f17-PDF-→-Đang-xử-lý-→-Sẵn-sàng-chromium\\trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "64f97298e5aac3754605-a9cb9c9aa6f23804df9a",
+          "file": "upload.spec.ts",
+          "line": 7,
+          "column": 1
+        },
+        {
+          "title": ".docx và PDF hỏng báo lỗi riêng từng file, PDF scan báo không trích xuất được chữ",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 8559,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T16:07:38.564Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\upload--docx-và-PDF-hỏng-b-db298-o-không-trích-xuất-được-chữ-chromium\\test-finished-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\upload--docx-và-PDF-hỏng-b-db298-o-không-trích-xuất-được-chữ-chromium\\video.webm"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\upload--docx-và-PDF-hỏng-b-db298-o-không-trích-xuất-được-chữ-chromium\\trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "64f97298e5aac3754605-3b1e635d88dd6765f98b",
+          "file": "upload.spec.ts",
+          "line": 18,
+          "column": 1
+        },
+        {
+          "title": "Lan chọn 2 file → bị từ chối, hướng dẫn tải từng file",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1243,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T16:07:47.272Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\upload-Lan-chọn-2-file-→-bị-từ-chối-hướng-dẫn-tải-từng-file-chromium\\test-finished-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\upload-Lan-chọn-2-file-→-bị-từ-chối-hướng-dẫn-tải-từng-file-chromium\\video.webm"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\upload-Lan-chọn-2-file-→-bị-từ-chối-hướng-dẫn-tải-từng-file-chromium\\trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "64f97298e5aac3754605-16a1a2b0074aa5f0cb65",
+          "file": "upload.spec.ts",
+          "line": 36,
+          "column": 1
+        },
+        {
+          "title": "Lan: xác nhận phân loại → tải PDF → Đang xử lý → Sẵn sàng",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5747,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [
+                    {
+                      "buffer": "MjAyNi0xMS0wMiAxNjowOTo0MiwzMzggSU5GTyBhcHAuc2VlZCBzZWVkIHhvbmc6IDUgdMOgaSBraG/huqNuLCBi4buZIHTDoGkgbGnhu4d1ICdE4buxIMOhbiBYJwo="
+                    }
+                  ],
+                  "retry": 0,
+                  "startTime": "2026-11-02T16:09:40.112Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\upload-Lan-xác-nhận-phân-l-d7f17-PDF-→-Đang-xử-lý-→-Sẵn-sàng-chromium-repeat1\\test-finished-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\upload-Lan-xác-nhận-phân-l-d7f17-PDF-→-Đang-xử-lý-→-Sẵn-sàng-chromium-repeat1\\video.webm"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\upload-Lan-xác-nhận-phân-l-d7f17-PDF-→-Đang-xử-lý-→-Sẵn-sàng-chromium-repeat1\\trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "64f97298e5aac3754605-258092325b41731ecf61",
+          "file": "upload.spec.ts",
+          "line": 7,
+          "column": 1
+        },
+        {
+          "title": ".docx và PDF hỏng báo lỗi riêng từng file, PDF scan báo không trích xuất được chữ",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 8555,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T16:09:48.959Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\upload--docx-và-PDF-hỏng-b-db298-o-không-trích-xuất-được-chữ-chromium-repeat1\\test-finished-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\upload--docx-và-PDF-hỏng-b-db298-o-không-trích-xuất-được-chữ-chromium-repeat1\\video.webm"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\upload--docx-và-PDF-hỏng-b-db298-o-không-trích-xuất-được-chữ-chromium-repeat1\\trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "64f97298e5aac3754605-26c224e051782b3895b9",
+          "file": "upload.spec.ts",
+          "line": 18,
+          "column": 1
+        },
+        {
+          "title": "Lan chọn 2 file → bị từ chối, hướng dẫn tải từng file",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1566,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T16:09:57.632Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\upload-Lan-chọn-2-file-→-bị-từ-chối-hướng-dẫn-tải-từng-file-chromium-repeat1\\test-finished-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\upload-Lan-chọn-2-file-→-bị-từ-chối-hướng-dẫn-tải-từng-file-chromium-repeat1\\video.webm"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\upload-Lan-chọn-2-file-→-bị-từ-chối-hướng-dẫn-tải-từng-file-chromium-repeat1\\trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "64f97298e5aac3754605-a440f3d87bb9e50e5045",
+          "file": "upload.spec.ts",
+          "line": 36,
+          "column": 1
+        },
+        {
+          "title": "Lan: xác nhận phân loại → tải PDF → Đang xử lý → Sẵn sàng",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5472,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [
+                    {
+                      "buffer": "MjAyNi0xMS0wMiAxNjoxMTo1MSwwMTggSU5GTyBhcHAuc2VlZCBzZWVkIHhvbmc6IDUgdMOgaSBraG/huqNuLCBi4buZIHTDoGkgbGnhu4d1ICdE4buxIMOhbiBYJwo="
+                    }
+                  ],
+                  "retry": 0,
+                  "startTime": "2026-11-02T16:11:48.273Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\upload-Lan-xác-nhận-phân-l-d7f17-PDF-→-Đang-xử-lý-→-Sẵn-sàng-chromium-repeat2\\test-finished-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\upload-Lan-xác-nhận-phân-l-d7f17-PDF-→-Đang-xử-lý-→-Sẵn-sàng-chromium-repeat2\\video.webm"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\upload-Lan-xác-nhận-phân-l-d7f17-PDF-→-Đang-xử-lý-→-Sẵn-sàng-chromium-repeat2\\trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "64f97298e5aac3754605-4e32383f759003c83624",
+          "file": "upload.spec.ts",
+          "line": 7,
+          "column": 1
+        },
+        {
+          "title": ".docx và PDF hỏng báo lỗi riêng từng file, PDF scan báo không trích xuất được chữ",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 8820,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T16:11:57.368Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\upload--docx-và-PDF-hỏng-b-db298-o-không-trích-xuất-được-chữ-chromium-repeat2\\test-finished-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\upload--docx-và-PDF-hỏng-b-db298-o-không-trích-xuất-được-chữ-chromium-repeat2\\video.webm"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\upload--docx-và-PDF-hỏng-b-db298-o-không-trích-xuất-được-chữ-chromium-repeat2\\trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "64f97298e5aac3754605-b90ef44b10ba70040327",
+          "file": "upload.spec.ts",
+          "line": 18,
+          "column": 1
+        },
+        {
+          "title": "Lan chọn 2 file → bị từ chối, hướng dẫn tải từng file",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 90000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1232,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-02T16:12:06.330Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\upload-Lan-chọn-2-file-→-bị-từ-chối-hướng-dẫn-tải-từng-file-chromium-repeat2\\test-finished-1.png"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\upload-Lan-chọn-2-file-→-bị-từ-chối-hướng-dẫn-tải-từng-file-chromium-repeat2\\video.webm"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "E:\\Working\\SDLC\\chat_with_ai\\web\\test-results\\upload-Lan-chọn-2-file-→-bị-từ-chối-hướng-dẫn-tải-từng-file-chromium-repeat2\\trace.zip"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "64f97298e5aac3754605-d0d212ab6ebf8563bbbd",
+          "file": "upload.spec.ts",
+          "line": 36,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-02T16:05:41.487Z",
+    "duration": 387162.74199999997,
+    "expected": 51,
+    "skipped": 12,
+    "unexpected": 3,
+    "flaky": 0
+  }
+}

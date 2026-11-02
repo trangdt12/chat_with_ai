@@ -1,0 +1,1778 @@
+# Định nghĩa PASS/FAIL máy đọc được cho từng test case — TP-CWD-001 (TEST_PLAN.md).
+# TC-001..035: đường xương sống US-001 + US-009 (02-test-plan.md). TC-036..102, PERF-001..005: chu kỳ 2–3.
+# Viết TRƯỚC khi chạy. Không sửa khối `expect` sau khi đã thấy kết quả; muốn đổi thì tăng `version`
+# của TC và ghi lý do vào `changelog`.
+#
+# Quy tắc verdict (áp dụng cho mọi TC):
+#   PASS    ⇔ lệnh `run` kết thúc với exit code 0 VÀ `verdict` đúng VÀ mọi dòng `expect` được hiện thực
+#             thành assert trong mã test (review đối chiếu trước lần chạy đầu).
+#   FAIL    ⇔ bất kỳ dòng `expect` nào sai.
+#   BLOCKED ⇔ không đánh giá được (skip, timeout hạ tầng, thiếu dữ liệu, test chưa viết). BLOCKED KHÔNG phải PASS.
+#   Lớp E: PASS chỉ khi PASS 3/3 lần chạy liên tiếp.
+#
+# Trường:
+#   ac       danh sách AC
+#   req      danh sách NFR / E / G / DoD (TC-036+). Bắt buộc: ac hoặc req có ≥ 1 phần tử; không có thì không được ở file này
+#   layer    U | I | E | Q | P | S, hoặc danh sách khi một TC gom nhiều lớp (xem TEST_PLAN.md §6.1)
+#   profile  FAKE | REAL | none
+#   status   existing                → test đã có, assert đã khớp `expect`
+#            existing-unreviewed     → test đã có nhưng CHƯA đối chiếu assert với `expect`; phải review (EN-4)
+#                                      rồi đổi thành existing hoặc existing-needs-assert trước lần chạy đầu
+#            existing-needs-assert   → test đã có, phải thêm assert ghi trong `gap`
+#            to-write                → test chưa có; `target` là tên dự kiến
+#            manual                  → người chấm điền file kết quả; máy đọc file đó
+#            blocked                 → chưa viết/chạy được; lý do ở `blocked_by` (ID câu hỏi mở / việc TK)
+#            deferred                → tính năng không có trong test item; xem NT-xx ở TEST_PLAN.md §5
+#   target, run  có thể là danh sách; PASS cần mọi lệnh exit code 0
+#   expect   các mệnh đề phải đúng; ký hiệu: r = response, ev = danh sách sự kiện SSE,
+#            done = payload answer.completed, doc = dòng documents, DB = DB cwd_test (lớp I) hoặc cwd (lớp E/Q/P)
+
+version: 2
+written: 2026-10-28
+updated: 2026-11-02
+commit_under_test: 20031fe
+changelog:
+  - "v2 (2026-11-02): thêm TC-036..102 và PERF-001..005 theo TEST_PLAN.md Phụ lục A; thêm trường req, status existing-unreviewed/blocked/deferred. TC-001..035 không đổi."
+
+profiles:
+  FAKE: {LLM_FAKE: 1, EMBED_FAKE: 1, RETRIEVAL_NOT_FOUND_TAU: 0.25}
+  REAL: {LLM_FAKE: 0, EMBED_FAKE: 0, RETRIEVAL_NOT_FOUND_TAU: 0.35, LLM_MODEL: claude-opus-5-5}
+
+helpers:
+  norm: "app.ingestion.chunker.normalize_page(s) → gộp mọi khoảng trắng thành 1 dấu cách → strip → lower()"
+  page_text: "pypdf.PdfReader(doc.file_path).pages[page-1].extract_text()"
+
+test_cases:
+
+  # ======================================================================= US-001
+  - id: TC-001
+    title: Tải 1 PDF hợp lệ → API nhận, tạo dòng documents trạng thái uploaded
+    ac: [AC-US001-1a]
+    layer: I
+    profile: FAKE
+    status: existing
+    target: backend/tests/documents/test_upload.py::test_single_pdf_ok
+    run: docker compose exec api pytest tests/documents/test_upload.py::test_single_pdf_ok
+    given: Lan đã đăng nhập, đã xác nhận phân loại
+    when: POST /doc-sets/{dsid}/documents với 1 PDF 2 trang
+    expect:
+      - r.status == 200
+      - len(r.json) == 1 and r.json[0].status == "uploaded" and r.json[0].error_code is None and r.json[0].id is not None
+      - DB documents[id].status == "uploaded" and pages is None and uploaded_by == lan.id
+      - file tại doc.file_path có bytes == bytes đã gửi
+    verdict: exit_code == 0
+
+  - id: TC-002
+    title: Worker xử lý tài liệu uploaded → ready, progress 100, pages đúng
+    ac: [AC-US001-1a]
+    layer: I
+    profile: FAKE
+    status: existing
+    target: backend/tests/ingestion/test_worker.py::test_worker_happy_path
+    run: docker compose exec api pytest tests/ingestion/test_worker.py::test_worker_happy_path
+    given: 1 tài liệu uploaded, PDF 2 trang có chữ
+    when: claim_next_document() rồi process_document()
+    expect:
+      - (doc.status, doc.progress, doc.pages, doc.error_code) == ("ready", 100, 2, None)
+      - "{c.page_number for c in chunks} == {1, 2}"
+    verdict: exit_code == 0
+
+  - id: TC-003
+    title: Biên trên — PDF đúng 200 trang và PDF đúng 20 971 520 byte được nhận và tới ready
+    ac: [AC-US001-1a]
+    layer: I
+    profile: FAKE
+    status: existing
+    target: backend/tests/documents/test_upload.py::test_upper_bounds_accepted
+    run: docker compose exec api pytest tests/documents/test_upload.py::test_upper_bounds_accepted
+    given: |
+      pdf_200 = make_pdf(200 trang, mỗi trang ≥ 40 ký tự)
+      pdf_20m = make_pdf(2 trang) + phần đệm sau %%EOF sao cho len == 20_971_520
+    when: tải từng file, chạy process_document cho mỗi id
+    expect:
+      - với cả 2 file - r.status == 200 and r.json[0].status == "uploaded" and r.json[0].error_code is None
+      - pdf_200 - doc.status == "ready" and doc.pages == 200
+      - pdf_20m - doc.status == "ready" and doc.size_bytes == 20971520
+    verdict: exit_code == 0
+
+  - id: TC-004
+    title: UI — tải PDF qua hộp xác nhận, dòng tài liệu tự chuyển "Sẵn sàng" không tải lại trang
+    ac: [AC-US001-1a]
+    layer: E
+    profile: FAKE
+    status: existing
+    target: "web/e2e/upload.spec.ts › Lan: xác nhận phân loại → tải PDF → Đang xử lý → Sẵn sàng"
+    run: 'cd web && npx playwright test -c e2e/playwright.config.ts upload.spec.ts -g "Lan: xác nhận phân loại" --repeat-each=3'
+    given: seed --reset; Lan đăng nhập; bộ tài liệu trống
+    when: chọn HopDongKhung.pdf (3 trang), xác nhận phân loại
+    expect:
+      - "docRow('HopDongKhung.pdf') hiển thị"
+      - "docRow có chữ 'Sẵn sàng' trong ≤ 60 s, không có page.reload() / page.goto() sau khi chọn file"
+      - "docRow chứa '3 trang'"
+    verdict: exit_code == 0 với --repeat-each=3
+
+  - id: TC-005
+    title: Chuỗi trạng thái quan sát được là dãy con của uploaded → processing → ready
+    ac: [AC-US001-1a]
+    layer: I
+    profile: FAKE
+    status: existing
+    target: eval/measure_ingest.py
+    run: docker compose exec api python /eval/measure_ingest.py --pages 3 --runs 1 --poll 0.2 --json /eval/reports/ingest-fake.json
+    given: seed --reset; worker đang chạy; Lan đã xác nhận phân loại
+    when: tải 1 PDF 3 trang, poll GET /doc-sets/{dsid}/documents mỗi 0,2 s tới khi ready/failed hoặc 60 s
+    expect:
+      - "statuses (đã bỏ các giá trị lặp liên tiếp) là dãy con của ['uploaded', 'processing', 'ready']"
+      - "progress không giảm giữa hai lần poll liên tiếp"
+      - "trạng thái cuối == 'ready' and progress == 100 and pages == 3"
+    verdict: "json.runs[0].sequence_ok and json.runs[0].progress_monotonic and json.runs[0].final == 'ready'"
+
+  - id: TC-006
+    title: NFR-003 — PDF 50 trang tới ready ≤ 120 s, 3/3 lần
+    ac: [AC-US001-1b]
+    layer: P
+    profile: REAL
+    status: existing
+    target: eval/measure_ingest.py
+    run: docker compose exec api python /eval/measure_ingest.py --pages 50 --runs 3 --poll 1 --json /eval/reports/ingest-50.json
+    given: model bge-m3 đã nạp (worker đã xử lý xong ≥ 1 file trước đó); không có tài liệu nào khác đang chờ; máy tham chiếu (OI-T3)
+    when: mỗi lần - seed --reset, tải 1 PDF 50 trang chữ dày (~1 500 ký tự/trang), đo t = lúc thấy ready − lúc API trả 200
+    expect:
+      - "len(runs) == 3"
+      - "all(r.final == 'ready' for r in runs)"
+      - "all(r.seconds_to_ready <= 120 for r in runs)"
+      - "báo cáo ghi CPU, RAM, GPU (có/không), commit"
+    verdict: "json.all_pass == true"
+
+  - id: TC-007
+    title: NFR-003 — PDF 200 trang tới ready ≤ 480 s, 3/3 lần
+    ac: [AC-US001-1b]
+    layer: P
+    profile: REAL
+    status: existing
+    target: eval/measure_ingest.py
+    run: docker compose exec api python /eval/measure_ingest.py --pages 200 --runs 3 --poll 1 --json /eval/reports/ingest-200.json
+    given: như TC-006
+    when: như TC-006 với PDF 200 trang
+    expect:
+      - "len(runs) == 3"
+      - "all(r.final == 'ready' for r in runs)"
+      - "all(r.seconds_to_ready <= 480 for r in runs)"
+    verdict: "json.all_pass == true"
+
+  - id: TC-008
+    title: API — bộ có 2 file ready, hỏi thông tin chỉ có ở file F → trích dẫn F
+    ac: [AC-US001-2]
+    layer: I
+    profile: FAKE
+    status: existing
+    target: backend/tests/qa/test_ask_api.py::test_answer_cites_only_source_file
+    run: docker compose exec api pytest tests/qa/test_ask_api.py::test_answer_cites_only_source_file
+    given: |
+      HopDongKhung.pdf ready, chunk tr.14 = "Thời hạn thanh toán là 30 ngày…"
+      BaoGia_v3.pdf ready, chunk tr.1 = "Gói phần mềm bản quyền giá 450.000.000 đồng."
+      FakeLlmClient mặc định (trích search result đầu tiên)
+    when: hỏi "Giá gói phần mềm bản quyền trong báo giá là bao nhiêu?"
+    expect:
+      - done.answer_type == "answered"
+      - len(done.citations) >= 1
+      - any(c.filename == "BaoGia_v3.pdf" for c in done.citations)
+    verdict: exit_code == 0
+
+  - id: TC-009
+    title: UI — Lan tải 2 file, hỏi về báo giá → có nút "Nguồn n - BaoGia_v3.pdf"
+    ac: [AC-US001-2]
+    layer: E
+    profile: FAKE
+    status: existing
+    target: "web/e2e/backbone.spec.ts › TC-009 câu hỏi về file vừa tải trích dẫn đúng file"
+    run: 'cd web && npx playwright test -c e2e/playwright.config.ts backbone.spec.ts -g "TC-009" --repeat-each=3'
+    given: seed --reset; Lan uploadOneByOne([CONTRACT, QUOTE]) — cả hai "Sẵn sàng"
+    when: ask("Giá gói phần mềm bản quyền trong báo giá là bao nhiêu?")
+    expect:
+      - "lastAnswer có ≥ 1 button tên khớp /^Nguồn \\d+: BaoGia_v3\\.pdf trang 1$/"
+      - "lastAnswer .sources chứa 'BaoGia_v3.pdf · trang 1'"
+    verdict: exit_code == 0 với --repeat-each=3
+
+  - id: TC-010
+    title: Claude thật — câu Q04 (chỉ có trong BaoGia_v3.pdf) trả đúng giá trị và trích dẫn đúng file/trang
+    ac: [AC-US001-2]
+    layer: Q
+    profile: REAL
+    status: existing
+    target: eval/run_eval.py (câu Q04 trong eval/questions.yaml)
+    run: docker compose exec api python /eval/run_eval.py
+    given: corpus eval/corpus/ đủ 6 file, tất cả ready trong bộ "Eval"
+    when: hỏi Q04 "Giá gói phần mềm bản quyền trong báo giá phiên bản 3 là bao nhiêu?"
+    expect:
+      - Q04.answer_type == "answered"
+      - "'450.000.000' ∈ normalize(answer)  (normalize của run_eval.py)"
+      - "{file: 'BaoGia_v3.pdf', page: 1} ∈ Q04.citations"
+    verdict: "json.rows['Q04'].passed and json.rows['Q04'].citations_ok"
+
+  - id: TC-011
+    title: API — tài liệu processing được liệt kê trong pending_documents
+    ac: [AC-US001-3]
+    layer: I
+    profile: FAKE
+    status: existing
+    target: backend/tests/qa/test_ask_api.py::test_ask_pending_documents
+    run: docker compose exec api pytest tests/qa/test_ask_api.py::test_ask_pending_documents
+    given: HopDongKhung.pdf ready; BaoGia_v3.pdf processing
+    when: hỏi câu mặc định
+    expect:
+      - 'done.pending_documents == [{"id": str(BaoGia.id), "filename": "BaoGia_v3.pdf"}]'
+    verdict: exit_code == 0
+
+  - id: TC-012
+    title: API — pending_documents = đúng tập uploaded ∪ processing; không có failed; không trích dẫn file pending; áp dụng cả not_found
+    ac: [AC-US001-3]
+    layer: I
+    profile: FAKE
+    status: existing
+    target: backend/tests/qa/test_ask_api.py::test_pending_documents_exact_set
+    run: docker compose exec api pytest tests/qa/test_ask_api.py::test_pending_documents_exact_set
+    given: A.pdf ready (có chunk); B.pdf uploaded; C.pdf processing; D.pdf failed (B, C có chunk cũ cùng nội dung với A để bẫy truy vấn)
+    when: (1) hỏi câu có trong A; (2) hỏi "Thủ đô của Pháp là gì?"
+    expect:
+      - "(1) {d.filename for d in done.pending_documents} == {'B.pdf', 'C.pdf'}"
+      - "(1) not any(c.document_id in {B.id, C.id, D.id} for c in done.citations)"
+      - "(2) done.answer_type == 'not_found' and {d.filename for d in done.pending_documents} == {'B.pdf', 'C.pdf'}"
+    verdict: exit_code == 0
+
+  - id: TC-013
+    title: Component — có pending_documents thì hiện ghi chú kèm tên file
+    ac: [AC-US001-3]
+    layer: U
+    profile: none
+    status: existing
+    target: "web/src/components/AnswerCard.test.tsx › pending_documents → ghi chú tài liệu chưa dùng"
+    run: docker compose exec web npx vitest run src/components/AnswerCard.test.tsx -t "pending_documents"
+    expect:
+      - "có text khớp /chưa được dùng để trả lời vì đang xử lý/"
+      - "có text 'BaoGia_v3.pdf'"
+    verdict: exit_code == 0
+
+  - id: TC-014
+    title: UI — file đang chờ xử lý được nêu trong ghi chú của câu trả lời
+    ac: [AC-US001-3]
+    layer: E
+    profile: FAKE
+    status: existing
+    target: "web/e2e/backbone.spec.ts › TC-014 câu trả lời ghi chú file chưa sẵn sàng"
+    run: 'cd web && npx playwright test -c e2e/playwright.config.ts backbone.spec.ts -g "TC-014" --repeat-each=3'
+    given: |
+      seed --reset; Lan uploadOneByOne([CONTRACT]) → "Sẵn sàng";
+      `docker compose stop worker`; Lan tải QUOTE → dòng hiện "Đã tải lên"
+    when: ask("Thời hạn thanh toán là bao lâu?"); sau test luôn `docker compose start worker` (afterEach)
+    expect:
+      - "lastAnswer .pending-note hiển thị và chứa 'BaoGia_v3.pdf'"
+      - "lastAnswer không có button tên khớp /BaoGia_v3\\.pdf/"
+    verdict: exit_code == 0 với --repeat-each=3
+
+  - id: TC-015
+    title: Component — nút "Xác nhận và tải lên" bị vô hiệu tới khi tích ô
+    ac: [AC-US001-4]
+    layer: U
+    profile: none
+    status: existing
+    target: "web/src/components/ClassificationDialog.test.tsx › nút chính bị vô hiệu tới khi tích xác nhận"
+    run: docker compose exec web npx vitest run src/components/ClassificationDialog.test.tsx -t "vô hiệu"
+    expect:
+      - nút chính disabled khi chưa tích
+      - nút chính enabled sau khi tích
+    verdict: exit_code == 0
+
+  - id: TC-016
+    title: API — chưa xác nhận phân loại thì 409 và không tạo tài liệu; xác nhận ghi đúng 1 dòng nhật ký
+    ac: [AC-US001-4]
+    layer: I
+    profile: FAKE
+    status: existing
+    target: backend/tests/documents/test_upload.py::test_requires_classification
+    run: docker compose exec api pytest tests/documents/test_upload.py::test_requires_classification
+    given: Lan đăng nhập, phiên chưa xác nhận
+    when: tải 1 PDF; rồi xác nhận; rồi tải lại
+    expect:
+      - lần 1 - r.status == 409 and r.json.code == "CLASSIFICATION_REQUIRED"
+      - lần 1 - count(documents) == 0
+      - sau xác nhận - count(audit_log where action='classification_confirm' and user_id=lan and doc_set_id=dsid) == 1
+      - lần 2 - r.status == 200
+    verdict: exit_code == 0
+
+  - id: TC-017
+    title: UI — lần tải đầu trong phiên mới luôn hiện hộp xác nhận, nút khóa tới khi tích
+    ac: [AC-US001-4]
+    layer: E
+    profile: FAKE
+    status: existing
+    target: "web/e2e/upload.spec.ts › 2 test đầu (mỗi test là 1 browser context = 1 phiên mới), qua helper confirmClassification"
+    run: 'cd web && npx playwright test -c e2e/playwright.config.ts upload.spec.ts -g "Lan: xác nhận phân loại|.docx và PDF hỏng" --repeat-each=3'
+    expect:
+      - "ở cả 2 phiên - dialog 'Xác nhận phân loại tài liệu' hiển thị"
+      - "nút 'Xác nhận và tải lên' disabled trước khi tích checkbox"
+      - "sau khi bấm - dialog ẩn"
+    verdict: exit_code == 0 với --repeat-each=3
+
+  - id: TC-018
+    title: UI — lần tải thứ hai trong cùng phiên không hiện lại hộp xác nhận
+    ac: [AC-US001-4]
+    layer: E
+    profile: FAKE
+    status: existing
+    target: "web/e2e/backbone.spec.ts › TC-018 không hỏi lại xác nhận trong cùng phiên"
+    run: 'cd web && npx playwright test -c e2e/playwright.config.ts backbone.spec.ts -g "TC-018" --repeat-each=3'
+    given: seed --reset; Lan đăng nhập; tải CONTRACT qua hộp xác nhận
+    when: chọn QUOTE trong cùng page
+    expect:
+      - "dialog 'Xác nhận phân loại tài liệu' có count == 0 trong suốt 2 s sau khi chọn file"
+      - "docRow('BaoGia_v3.pdf') hiển thị"
+    verdict: exit_code == 0 với --repeat-each=3
+
+  # ======================================================================= US-009
+  - id: TC-019
+    title: API — câu trả lời answered có trích dẫn với filename, page, document_id
+    ac: [AC-US009-1]
+    layer: I
+    profile: FAKE
+    status: existing
+    target: backend/tests/qa/test_ask_api.py::test_ask_happy_path_event_order
+    run: docker compose exec api pytest tests/qa/test_ask_api.py::test_ask_happy_path_event_order
+    expect:
+      - ev[0].name == "answer.started" and ev[-1].name == "answer.completed"
+      - done.answer_type == "answered"
+      - (done.citations[0].idx, filename, page, document_id) == (1, "HopDongKhung.pdf", 14, doc.id)
+      - tập citation_id trong các answer.delta == tập citation_id trong done
+    verdict: exit_code == 0
+
+  - id: TC-020
+    title: API — bất biến - answered ⇒ ≥ 1 trích dẫn, filename ≠ "", 1 ≤ page ≤ documents.pages
+    ac: [AC-US009-1]
+    layer: I
+    profile: FAKE
+    status: existing
+    target: backend/tests/qa/test_ask_api.py::test_answered_citation_invariants
+    run: docker compose exec api pytest tests/qa/test_ask_api.py::test_answered_citation_invariants
+    given: tài liệu 3 trang đi qua worker thật (process_document + FakeEmbedder) để pages và chunk.page_number là dữ liệu thật
+    when: hỏi 3 câu có trong tài liệu (mỗi câu ứng với 1 trang)
+    expect:
+      - "với mỗi câu - done.answer_type == 'answered' and len(done.citations) >= 1"
+      - "với mỗi trích dẫn c - c.filename != '' and isinstance(c.page, int) and 1 <= c.page <= documents[c.document_id].pages"
+    verdict: exit_code == 0
+
+  - id: TC-021
+    title: Component — answered hiện [1] trong thân và danh sách Nguồn
+    ac: [AC-US009-1]
+    layer: U
+    profile: none
+    status: existing
+    target: "web/src/components/AnswerCard.test.tsx › answered: nội dung, [1], nguồn, sao chép, đánh giá"
+    run: docker compose exec web npx vitest run src/components/AnswerCard.test.tsx -t "answered"
+    expect:
+      - có nút trích dẫn [1]
+      - có danh sách nguồn với tên file và trang
+    verdict: exit_code == 0
+
+  - id: TC-022
+    title: UI — câu trả lời có nút "Nguồn 1 - <file> trang <p>" và danh sách nguồn
+    ac: [AC-US009-1]
+    layer: E
+    profile: FAKE
+    status: existing
+    target: "web/e2e/chat.spec.ts › hỏi → stream → [1] → popover → mở PDF đúng trang"
+    run: 'cd web && npx playwright test -c e2e/playwright.config.ts chat.spec.ts -g "hỏi → stream" --repeat-each=3'
+    expect:
+      - "lastAnswer có button tên khớp /^Nguồn 1: HopDongKhung\\.pdf trang \\d+$/"
+      - "lastAnswer .sources chứa 'HopDongKhung.pdf · trang'"
+    verdict: exit_code == 0 với --repeat-each=3
+
+  - id: TC-023
+    title: Claude thật — mọi lượt answered của bộ eval có ≥ 1 trích dẫn đủ file và trang
+    ac: [AC-US009-1]
+    layer: Q
+    profile: REAL
+    status: existing
+    target: eval/run_eval.py (đọc JSON sau khi chạy)
+    run: docker compose exec api python /eval/run_eval.py
+    expect:
+      - "answered = [r for r in json.rows if r.answer_type == 'answered']; len(answered) >= 1"
+      - "all(len(r.citations) >= 1 for r in answered)"
+      - "all(c.file != '' and c.page >= 1 for r in answered for c in r.citations)"
+    verdict: "json.checks.citation_present_all == true"
+
+  - id: TC-024
+    title: API — GET /citations/{id} trả snippet 1–300 ký tự, filename/page/document_id trùng SSE
+    ac: [AC-US009-2]
+    layer: I
+    profile: FAKE
+    status: existing
+    target: backend/tests/qa/test_ask_api.py::test_get_citation_ok_removed_forbidden (phần 200)
+    run: docker compose exec api pytest tests/qa/test_ask_api.py::test_get_citation_ok_removed_forbidden
+    expect:
+      - r.status == 200
+      - (body.filename, body.page, body.document_id) == ("HopDongKhung.pdf", 14, doc.id)
+      - 0 < len(body.snippet) <= 300
+    verdict: exit_code == 0
+
+  - id: TC-025
+    title: Unit — snippet bị cắt tối đa 300 ký tự
+    ac: [AC-US009-2]
+    layer: U
+    profile: none
+    status: existing
+    target: backend/tests/qa/test_citation_filter.py::test_snippet_max_300
+    run: docker compose exec api pytest tests/qa/test_citation_filter.py::test_snippet_max_300
+    expect:
+      - cited_text dài > 300 → len(citation.snippet) == 300
+    verdict: exit_code == 0
+
+  - id: TC-026
+    title: Component — bấm [1] mở popover có đoạn trích
+    ac: [AC-US009-2]
+    layer: U
+    profile: none
+    status: existing
+    target: "web/src/components/AnswerCard.test.tsx › bấm [1] mở popover có đoạn trích; Esc đóng và trả focus"
+    run: docker compose exec web npx vitest run src/components/AnswerCard.test.tsx -t "popover"
+    expect:
+      - popover hiển thị đoạn trích trả về từ API
+    verdict: exit_code == 0
+
+  - id: TC-027
+    title: UI — popover hiện "<file> · trang <p>" và đoạn trích
+    ac: [AC-US009-2]
+    layer: E
+    profile: FAKE
+    status: existing
+    target: "web/e2e/chat.spec.ts › hỏi → stream → [1] → popover → mở PDF đúng trang"
+    run: 'cd web && npx playwright test -c e2e/playwright.config.ts chat.spec.ts -g "hỏi → stream" --repeat-each=3'
+    expect:
+      - "dialog hiển thị sau khi bấm [1]"
+      - "dialog .popover-quote chứa 'thanh toan'"
+      - "dialog chứa 'HopDongKhung.pdf · trang {p}' với p lấy từ tên nút 'Nguồn 1: HopDongKhung.pdf trang {p}'"
+    verdict: exit_code == 0 với --repeat-each=3
+
+  - id: TC-028
+    title: Claude thật — 100% đoạn trích nằm trên đúng trang đã nêu
+    ac: [AC-US009-3a]
+    layer: Q
+    profile: REAL
+    status: existing
+    target: eval/check_grounding.py
+    run: docker compose exec api python /eval/check_grounding.py --run /eval/reports/<ngày>.json   (ghi <ngày>-grounding.json)
+    given: vừa chạy xong run_eval.py (TC-010) ở hồ sơ REAL; DB chưa reset
+    when: với mỗi citation_id của mọi lượt answered - đọc snippet, page, document.file_path từ DB; trích page_text
+    expect:
+      - "turns_checked >= 16"
+      - "violations == [] với violation = norm(snippet) not in norm(page_text(doc, page))"
+    verdict: "json.turns_checked >= 16 and len(json.violations) == 0"
+
+  - id: TC-029
+    title: API — đoạn trích nằm trên đúng trang (hồ sơ FAKE, chạy mỗi lần CI)
+    ac: [AC-US009-3a]
+    layer: I
+    profile: FAKE
+    status: existing
+    target: backend/tests/qa/test_ask_api.py::test_snippet_is_on_cited_page
+    run: docker compose exec api pytest tests/qa/test_ask_api.py::test_snippet_is_on_cited_page
+    given: PDF 3 trang (pdf_factory) đi qua worker thật; mỗi trang một sự kiện khác nhau
+    when: hỏi 3 câu, mỗi câu nhắm 1 trang
+    expect:
+      - "với mọi trích dẫn - norm(Citation.snippet) in norm(page_text(doc, Citation.page))"
+    verdict: exit_code == 0
+
+  - id: TC-030
+    title: Người chấm — đoạn trích hỗ trợ đúng nội dung câu trả lời (100% yes)
+    ac: [AC-US009-3b]
+    layer: Q
+    profile: REAL
+    status: manual
+    target: eval/reports/<ngày>-grounding-review.csv
+    run: "docker compose exec api python /eval/check_grounding.py --run /eval/reports/<ngày>.json --export-review → người chấm điền cột supports → docker compose exec api python /eval/check_grounding.py --run /eval/reports/<ngày>.json --score-review"
+    given: cùng lượt chạy với TC-028
+    rubric: "Chỉ dựa vào snippet, có suy ra được đúng nội dung của span_text không? yes | no. Không chắc → no."
+    expect:
+      - "số dòng CSV == số cặp (span có trích dẫn, trích dẫn) trong lượt chạy"
+      - "mọi dòng supports ∈ {'yes', 'no'} (không ô trống)"
+      - "count(supports == 'no') == 0"
+    verdict: "--score-review in JSON có pass == true (rows == expected_rows, blank_or_invalid == 0, no_count == 0); exit code 0"
+
+  - id: TC-031
+    title: Unit — khối không có trích dẫn hợp lệ bị loại (đầu, cuối, giữa không phải câu nối, index ngoài phạm vi)
+    ac: [AC-US009-4]
+    layer: U
+    profile: none
+    status: existing
+    target: backend/tests/qa/test_citation_filter.py::{test_uncited_leading_block_dropped, test_uncited_trailing_block_dropped, test_non_connective_between_dropped, test_out_of_range_index_ignored}
+    run: docker compose exec api pytest tests/qa/test_citation_filter.py -k "uncited_leading or uncited_trailing or non_connective_between or out_of_range"
+    expect:
+      - text của khối không nguồn không có trong spans đã trả và không có trong finalize().answer_text
+    verdict: exit_code == 0 và 4 test được chọn (không phải 0)
+
+  - id: TC-032
+    title: Unit — câu nối ngắn giữa hai khối có nguồn được giữ (ngoại lệ đã ghi trong AC)
+    ac: [AC-US009-4]
+    layer: U
+    profile: none
+    status: existing
+    target: backend/tests/qa/test_citation_filter.py::{test_connective_between_cited_kept, test_is_connective_cases}
+    run: docker compose exec api pytest tests/qa/test_citation_filter.py -k "connective_between_cited_kept or is_connective_cases"
+    expect:
+      - câu nối nằm giữa 2 khối có nguồn xuất hiện trong span với citations == ()
+      - is_connective đúng theo bảng tham số (≤ 12 từ, không chữ số, < 30% từ viết hoa)
+    verdict: exit_code == 0
+
+  - id: TC-033
+    title: Unit — không khối nào có nguồn → not_found
+    ac: [AC-US009-4]
+    layer: U
+    profile: none
+    status: existing
+    target: backend/tests/qa/test_citation_filter.py::{test_all_uncited_is_not_found, test_marker_only_is_not_found}
+    run: docker compose exec api pytest tests/qa/test_citation_filter.py -k "all_uncited_is_not_found or marker_only_is_not_found"
+    expect:
+      - finalize() == FilterResult("not_found", (), "", ())
+    verdict: exit_code == 0
+
+  - id: TC-034
+    title: API — khối bịa không nguồn không tới người dùng và không được lưu
+    ac: [AC-US009-4]
+    layer: I
+    profile: FAKE
+    status: existing
+    target: backend/tests/qa/test_ask_api.py::test_uncited_blocks_never_streamed_or_saved
+    run: docker compose exec api pytest tests/qa/test_ask_api.py::test_uncited_blocks_never_streamed_or_saved
+    given: |
+      llm.script = [TextBlock("Theo kinh nghiệm thường là 99 ngày.", ()),
+                    TextBlock("Thời hạn là 30 ngày.", (RawCitation(0, "30 ngày"),)),
+                    TextBlock("Có thể kéo dài tới 7 ngày nữa theo Luật Thương mại.", ()),
+                    AnswerDone("end_turn", 1, 1)]
+    when: hỏi câu mặc định
+    expect:
+      - "streamed = ''.join(d.text for d in ev if name == 'answer.delta')"
+      - "'99 ngày' not in streamed and '7 ngày' not in streamed and '30 ngày' in streamed"
+      - "turn.answer == streamed"
+      - "done.answer_type == 'answered'"
+    verdict: exit_code == 0
+
+  - id: TC-035
+    title: API — mọi khối không nguồn → not_found, không có delta, answer rỗng
+    ac: [AC-US009-4]
+    layer: I
+    profile: FAKE
+    status: existing
+    target: backend/tests/qa/test_ask_api.py::test_all_uncited_becomes_not_found
+    run: docker compose exec api pytest tests/qa/test_ask_api.py::test_all_uncited_becomes_not_found
+    given: 'llm.script = [TextBlock("Thời hạn là 30 ngày.", ()), AnswerDone("end_turn", 1, 1)]'
+    when: hỏi câu mặc định
+    expect:
+      - "[name for name, _ in ev] == ['answer.started', 'answer.completed']"
+      - "done.answer_type == 'not_found' and done.citations == []"
+      - "turn.answer == '' and turn.answer_type == 'not_found'"
+    verdict: exit_code == 0
+
+  # ======================================================================= US-002 (TC-036..040)
+  - id: TC-036
+    title: API — Minh tải lô 50 PDF → 50 dòng riêng, 100% tới ready
+    ac: [AC-US002-1]
+    req: [NFR-007]
+    layer: I
+    profile: FAKE
+    status: to-write
+    target: backend/tests/documents/test_upload.py::test_batch_50_all_ready
+    run: docker compose exec api pytest tests/documents/test_upload.py::test_batch_50_all_ready
+    given: Minh (Quản lý) đã xác nhận phân loại; bộ tài liệu trống; 50 PDF (pdf_factory, 2 trang, tên khác nhau)
+    when: gửi 1 request tải lô 50 file; chạy worker tới khi không còn tài liệu uploaded/processing
+    expect:
+      - "r.status theo hợp đồng đã chốt ở OQ-TP-04 (openapi.json: 207)"
+      - "len(kết quả) == 50 and all(x.id is not None and x.error_code is None for x in kết quả)"
+      - "count(documents where doc_set_id = dsid) == 50"
+      - "sau worker - count(documents where status = 'ready') == 50"
+      - "GET /doc-sets/{dsid}/documents trả 50 dòng, filename khác nhau từng đôi"
+    verdict: exit_code == 0
+
+  - id: TC-037
+    title: UI — Minh tải 3 file một lần → 3 dòng trạng thái riêng → đều "Sẵn sàng"
+    ac: [AC-US002-1]
+    layer: E
+    profile: FAKE
+    status: existing-unreviewed
+    target: "web/e2e/batch.spec.ts › Minh tải 3 file một lần → 3 dòng trạng thái riêng → đều Sẵn sàng"
+    run: 'cd web && npx playwright test -c e2e/playwright.config.ts batch.spec.ts --repeat-each=3'
+    given: seed --reset; Minh đăng nhập
+    when: chooseFiles([CONTRACT, APPENDIX, QUOTE]) trong 1 lần chọn; xác nhận phân loại
+    expect:
+      - "docRow của cả 3 file hiển thị cùng lúc (3 dòng riêng)"
+      - "cả 3 docRow chứa 'Sẵn sàng' trong ≤ 60 s, không reload trang"
+    verdict: exit_code == 0 với --repeat-each=3
+
+  - id: TC-038
+    title: API — lô có 1 file quá lớn → các file hợp lệ vẫn được nhận, file lỗi có error_code riêng
+    ac: [AC-US002-2]
+    req: [E-07]
+    layer: I
+    profile: FAKE
+    status: existing-unreviewed
+    target: backend/tests/documents/test_upload.py::test_batch_one_too_large_others_ok
+    run: docker compose exec api pytest tests/documents/test_upload.py::test_batch_one_too_large_others_ok
+    given: Minh (Quản lý); lô gồm n PDF hợp lệ + 1 file > 20 971 520 byte
+    when: tải lô
+    expect:
+      - "kết quả của file quá lớn - id is None and error_code == 'FILE_TOO_LARGE'"
+      - "kết quả của mỗi file hợp lệ - id is not None and error_code is None"
+      - "count(documents) == n (file lỗi không tạo dòng)"
+    verdict: exit_code == 0
+
+  - id: TC-039
+    title: Claude thật — bộ 50 file (≥ 5 file 200 trang), mỗi file 1 câu chỉ có ở file đó → 100% trích dẫn đúng file
+    ac: [AC-US002-3]
+    req: [NFR-007]
+    layer: Q
+    profile: REAL
+    status: blocked
+    blocked_by: [TK-07 sinh corpus 50 file và câu hỏi theo từng file, OQ-TP-08 ngân sách]
+    target: "eval/run_eval.py với --corpus eval/corpus50 --questions eval/questions-per-file.yaml (cần tạo)"
+    run: docker compose exec api python /eval/run_eval.py --doc-set Eval50 --corpus /eval/corpus50 --questions /eval/questions-per-file.yaml
+    given: 50 PDF tự soạn, ≥ 5 file 200 trang, mỗi file chứa 1 sự kiện duy nhất (mã/số không trùng file khác)
+    when: với mỗi file F hỏi 1 câu về sự kiện của F
+    expect:
+      - "50 file đều ready trước khi hỏi"
+      - "với 50/50 câu - answer_type == 'answered' and any(c.file == F for c in citations)"
+    verdict: "sum(r.citations_ok for r in json.rows) == 50 and len(json.rows) == 50"
+
+  - id: TC-040
+    title: Thành viên chọn nhiều file → lô bị từ chối, hướng dẫn tải từng file; không tạo tài liệu
+    ac: [AC-US002-4]
+    req: [G-11]
+    layer: [I, E]
+    profile: FAKE
+    status: existing-unreviewed
+    target:
+      - backend/tests/documents/test_upload.py::test_member_cannot_batch
+      - "web/e2e/upload.spec.ts › Lan chọn 2 file → bị từ chối, hướng dẫn tải từng file"
+    run:
+      - docker compose exec api pytest tests/documents/test_upload.py::test_member_cannot_batch
+      - 'cd web && npx playwright test -c e2e/playwright.config.ts upload.spec.ts -g "Lan chọn 2 file" --repeat-each=3'
+    given: Lan (Thành viên), đã xác nhận phân loại
+    when: gửi 2 file trong 1 request / chọn 2 file trên UI
+    expect:
+      - "API - r.status == 403 and count(documents) == 0"
+      - "UI - có thông báo hướng dẫn tải từng file; không có docRow nào được tạo"
+    verdict: exit_code == 0 (E - với --repeat-each=3)
+
+  # ======================================================================= US-003..005 (TC-041..046)
+  - id: TC-041
+    title: API — danh sách 5 file có tên, số trang, trạng thái; mới nhất trước
+    ac: [AC-US003-1]
+    layer: I
+    profile: FAKE
+    status: existing-unreviewed
+    target: backend/tests/documents/test_list.py::test_list_documents_sorted_desc
+    run: docker compose exec api pytest tests/documents/test_list.py::test_list_documents_sorted_desc
+    given: 5 tài liệu tải lần lượt
+    when: GET /doc-sets/{dsid}/documents
+    expect:
+      - "len(r.json) == 5"
+      - "mọi phần tử có filename, pages, status"
+      - "thứ tự theo uploaded_at giảm dần"
+    verdict: exit_code == 0
+
+  - id: TC-042
+    title: UI — thanh tài liệu hiện đúng 5 file với tên, số trang, trạng thái; mới nhất trên cùng
+    ac: [AC-US003-1]
+    layer: E
+    profile: FAKE
+    status: to-write
+    target: "web/e2e/upload.spec.ts › danh sách 5 file: tên, số trang, trạng thái, mới nhất trước"
+    run: 'cd web && npx playwright test -c e2e/playwright.config.ts upload.spec.ts -g "danh sách 5 file" --repeat-each=3'
+    given: seed --reset; Lan uploadOneByOne 5 PDF có số trang khác nhau, đợi cả 5 "Sẵn sàng"
+    when: mở trang chủ
+    expect:
+      - "số dòng tài liệu == 5"
+      - "mỗi dòng chứa tên file, '<n> trang' đúng với file, và 'Sẵn sàng'"
+      - "thứ tự tên trong DOM == ngược thứ tự tải lên"
+    verdict: exit_code == 0 với --repeat-each=3
+
+  - id: TC-043
+    title: API/worker — .docx bị từ chối khi tải; PDF hỏng, có mật khẩu, scan → failed với lý do; không file nào ready
+    ac: [AC-US004-1]
+    req: [E-03, E-04, E-05, E-06]
+    layer: I
+    profile: FAKE
+    status: existing-unreviewed
+    target:
+      - backend/tests/documents/test_upload.py::test_not_pdf_magic_bytes
+      - backend/tests/ingestion/test_worker.py::test_worker_pdf_errors
+      - backend/tests/ingestion/test_pdf.py::test_pdf_errors
+    run: docker compose exec api pytest tests/documents/test_upload.py::test_not_pdf_magic_bytes tests/ingestion/test_worker.py::test_worker_pdf_errors tests/ingestion/test_pdf.py::test_pdf_errors
+    expect:
+      - ".docx (magic PK) - r.status == 415 and code == 'NOT_PDF' and không tạo dòng documents"
+      - "PDF hỏng - status == 'failed' với error_code của E-04"
+      - "PDF có mật khẩu người dùng - status == 'failed' với error_code của E-05"
+      - "PDF không có lớp chữ - status == 'failed' với error_code của E-06"
+      - "tên mã lỗi theo hợp đồng đã chốt (OQ-TP-04); không file nào status == 'ready'"
+    verdict: exit_code == 0
+
+  - id: TC-044
+    title: UI — mỗi file lỗi có thông báo riêng nêu lý do; không file nào "Sẵn sàng"
+    ac: [AC-US004-1]
+    req: [E-03, E-04, E-06, E-07]
+    layer: [U, E]
+    profile: FAKE
+    status: existing-unreviewed
+    target:
+      - web/src/components/UploadDropzone.test.tsx
+      - "web/e2e/upload.spec.ts › .docx và PDF hỏng báo lỗi riêng từng file, PDF scan báo không trích xuất được chữ"
+    run:
+      - docker compose exec web npx vitest run src/components/UploadDropzone.test.tsx
+      - 'cd web && npx playwright test -c e2e/playwright.config.ts upload.spec.ts -g ".docx và PDF hỏng" --repeat-each=3'
+    when: Lan chọn DOCX, CORRUPT, SCAN
+    expect:
+      - "BaoCao.docx - thông báo chứa 'chỉ hỗ trợ file PDF' và không có docRow"
+      - "BangGia_cu.pdf - dòng 'Lỗi' kèm lý do hỏng/không đọc được (E-04)"
+      - "scan_bienban.pdf - dòng 'Lỗi' kèm lý do không trích xuất được chữ (E-06)"
+      - "file > 20 MB bị chặn ở client trước khi gửi (UploadDropzone)"
+      - "không dòng nào chứa 'Sẵn sàng'"
+    verdict: exit_code == 0 (E - với --repeat-each=3)
+
+  - id: TC-045
+    title: Hook — còn file đang xử lý thì làm mới danh sách ≤ 5 s; hết thì dừng
+    ac: [AC-US005-1]
+    layer: U
+    profile: none
+    status: existing-unreviewed
+    target: web/src/hooks/useDocuments.test.tsx
+    run: docker compose exec web npx vitest run src/hooks/useDocuments.test.tsx
+    expect:
+      - "có tài liệu uploaded/processing - refetchInterval <= 5000 ms"
+      - "không còn tài liệu uploaded/processing - không poll"
+    verdict: exit_code == 0
+
+  - id: TC-046
+    title: UI — dòng file đang xử lý hiện % tăng dần, cập nhật ≤ 5 s, tới "Sẵn sàng" hoặc "Lỗi"
+    ac: [AC-US005-1]
+    layer: E
+    profile: FAKE
+    status: existing-needs-assert
+    target: "web/e2e/upload.spec.ts › Lan: xác nhận phân loại → tải PDF → Đang xử lý → Sẵn sàng"
+    run: 'cd web && npx playwright test -c e2e/playwright.config.ts upload.spec.ts -g "Lan: xác nhận phân loại" --repeat-each=3'
+    gap: "Dùng PDF 200 trang để thấy được giai đoạn processing; ghi lại các giá trị % trên docRow mỗi 500 ms"
+    expect:
+      - "quan sát được ≥ 2 giá trị % khác nhau trên docRow"
+      - "dãy % không giảm"
+      - "khoảng cách giữa hai lần % trên UI thay đổi ≤ 5 s cho tới trạng thái cuối"
+      - "trạng thái cuối là 'Sẵn sàng' hoặc 'Lỗi'"
+    verdict: exit_code == 0 với --repeat-each=3
+
+  # ======================================================================= US-006..008 (TC-047..053)
+  - id: TC-047
+    title: UI — gửi câu hỏi hoàn chỉnh bằng phím Enter → nhận câu trả lời
+    ac: [AC-US006-1]
+    req: [NFR-001]
+    layer: E
+    profile: FAKE
+    status: existing-needs-assert
+    target: "web/e2e/chat.spec.ts › hỏi → stream → [1] → popover → mở PDF đúng trang"
+    run: 'cd web && npx playwright test -c e2e/playwright.config.ts chat.spec.ts -g "hỏi → stream" --repeat-each=3'
+    gap: "Kiểm helper ask() gửi bằng Enter; nếu đang bấm nút Gửi thì thêm 1 test gửi bằng page.keyboard.press('Enter')"
+    expect:
+      - "sau Enter - lastAnswer xuất hiện và có nội dung"
+      - "phần thời gian p90 ≤ 5 s đo ở PERF-001 (REAL), không đo ở đây"
+    verdict: exit_code == 0 với --repeat-each=3
+
+  - id: TC-048
+    title: Claude thật — 20 câu SC-01, ≥ 80% khớp đáp án
+    ac: [AC-US006-2]
+    req: [G-06]
+    layer: Q
+    profile: REAL
+    status: blocked
+    blocked_by: [OQ-TP-03 bộ câu hỏi hiện có 8 câu SC-01, cần 20]
+    target: eval/run_eval.py
+    run: docker compose exec api python /eval/run_eval.py
+    expect:
+      - "sc01 = [r for r in json.rows if r.type == 'SC-01']; len(sc01) >= 20"
+      - "sum(r.passed for r in sc01) / len(sc01) >= 0.80"
+    verdict: "hai dòng expect đúng (tính từ json.rows, không dùng dấu ✅ trong báo cáo markdown)"
+
+  - id: TC-049
+    title: Ô nhập rỗng hoặc chỉ khoảng trắng → nút Gửi vô hiệu, không có request
+    ac: [AC-US006-3]
+    req: [E-14]
+    layer: [I, E]
+    profile: FAKE
+    status: existing-unreviewed
+    target:
+      - backend/tests/qa/test_ask_api.py::test_ask_validation_and_permissions
+      - "web/e2e/chat.spec.ts › ô nhập rỗng: Enter không gửi"
+    run:
+      - docker compose exec api pytest tests/qa/test_ask_api.py::test_ask_validation_and_permissions
+      - 'cd web && npx playwright test -c e2e/playwright.config.ts chat.spec.ts -g "ô nhập rỗng" --repeat-each=3'
+    expect:
+      - "API - question = '   ' → 422"
+      - "UI - với '' và '   ': nút Gửi disabled; nhấn Enter không phát sinh request POST …/messages (đếm bằng page.on('request') == 0)"
+    verdict: exit_code == 0 (E - với --repeat-each=3)
+
+  - id: TC-050
+    title: Người chấm — bộ 50 câu, ≥ 80% trả lời đúng, 0 câu mâu thuẫn với tài liệu
+    ac: [AC-US007-1]
+    req: [G-06]
+    layer: Q
+    profile: REAL
+    status: blocked
+    blocked_by: [OQ-TP-03 bộ 50 câu, rubric "đúng" và "mâu thuẫn" chưa có (PO / Trưởng nhóm BD)]
+    target: "eval/reports/<ngày>-correctness-review.csv (cần thêm --export-correctness vào check_grounding.py)"
+    run: "người chấm điền CSV → script chấm đọc CSV"
+    rubric: "correct = yes | no theo đáp án BD; contradiction = yes | no (câu trả lời nêu giá trị trái với tài liệu). Không chắc → correct = no"
+    expect:
+      - "số dòng == 50, không ô trống"
+      - "count(correct == yes) / 50 >= 0.80"
+      - "count(contradiction == yes) == 0"
+    verdict: pass == true trong JSON chấm
+
+  - id: TC-051
+    title: Câu hỏi kiến thức phổ thông không có trong tài liệu → "không tìm thấy", không dùng kiến thức chung
+    ac: [AC-US007-2]
+    req: [E-16]
+    layer: [I, Q]
+    profile: [FAKE, REAL]
+    status: existing-unreviewed
+    target:
+      - backend/tests/qa/test_retriever.py::test_unrelated_question_not_found
+      - eval/run_eval.py (câu SC-03 kiến thức phổ thông, ví dụ "Thủ đô của Pháp là gì?")
+    run:
+      - docker compose exec api pytest tests/qa/test_retriever.py::test_unrelated_question_not_found
+      - docker compose exec api python /eval/run_eval.py
+    expect:
+      - "FAKE - retriever trả not_found cho câu không liên quan"
+      - "REAL - câu kiến thức phổ thông có answer_type == 'not_found' and citations == []"
+      - "REAL - câu trả lời không chứa đáp án kiến thức chung (ví dụ 'Paris')"
+    verdict: exit_code == 0 và dòng tương ứng trong json.rows có passed == true
+
+  - id: TC-052
+    title: Claude thật — 10 câu SC-02, ≥ 70% đủ thông tin và trích dẫn từng tài liệu liên quan
+    ac: [AC-US008-1]
+    req: [G-07]
+    layer: Q
+    profile: REAL
+    status: blocked
+    blocked_by: [OQ-TP-03 bộ câu hỏi hiện có 4 câu SC-02, cần 10]
+    target: eval/run_eval.py
+    run: docker compose exec api python /eval/run_eval.py
+    expect:
+      - "sc02 = [r for r in json.rows if r.type == 'SC-02']; len(sc02) >= 10"
+      - "sum(r.passed and r.citations_ok for r in sc02) / len(sc02) >= 0.70"
+    verdict: hai dòng expect đúng
+
+  - id: TC-053
+    title: Hai tài liệu nêu hai giá trị khác nhau → câu trả lời nêu cả hai, mỗi giá trị kèm nguồn
+    ac: [AC-US008-2]
+    layer: [U, Q]
+    profile: [none, REAL]
+    status: existing-unreviewed
+    target:
+      - backend/tests/qa/test_citation_filter.py::test_two_conflicting_values_both_shown
+      - eval/run_eval.py (cặp câu mâu thuẫn trong SC-02, ví dụ 30 ngày ở HopDongKhung và 45 ngày ở PhuLuc2)
+    run:
+      - docker compose exec api pytest tests/qa/test_citation_filter.py::test_two_conflicting_values_both_shown
+      - docker compose exec api python /eval/run_eval.py
+    expect:
+      - "U - cả hai khối giá trị đều được phát ra, mỗi khối có citation của tài liệu tương ứng"
+      - "REAL - câu trả lời chứa cả hai giá trị; citations chứa cả hai file"
+    verdict: exit_code == 0 và dòng câu mâu thuẫn trong json.rows có passed and citations_ok
+
+  # ======================================================================= US-010, 011, 016..019 (TC-054..062)
+  - id: TC-054
+    title: Claude thật — 10 câu SC-03, ≥ 9/10 nhận "không tìm thấy"
+    ac: [AC-US010-1]
+    req: [G-08]
+    layer: Q
+    profile: REAL
+    status: blocked
+    blocked_by: [OQ-TP-03 bộ câu hỏi hiện có 4 câu SC-03, cần 10]
+    target: eval/run_eval.py
+    run: docker compose exec api python /eval/run_eval.py
+    note: "run_eval.py đang đặt THRESHOLDS['SC-03'] = 0.75; ngưỡng PRD là 0.90 — verdict tính theo PRD, không theo dấu ✅ của báo cáo"
+    expect:
+      - "sc03 = [r for r in json.rows if r.type == 'SC-03']; len(sc03) >= 10"
+      - "sum(r.answer_type == 'not_found' for r in sc03) / len(sc03) >= 0.90"
+    verdict: hai dòng expect đúng
+
+  - id: TC-055
+    title: Thông báo "không tìm thấy" kèm gợi ý diễn đạt lại / kiểm tra tài liệu đã tải
+    ac: [AC-US010-2]
+    req: [E-16]
+    layer: [U, E]
+    profile: FAKE
+    status: existing-unreviewed
+    target:
+      - "web/src/components/AnswerCard.test.tsx › not_found: thông điệp + 2 gợi ý, không có nút sao chép"
+      - "web/e2e/chat.spec.ts › câu hỏi tiếp nối, câu không có trong tài liệu, Hội thoại mới"
+    run:
+      - docker compose exec web npx vitest run src/components/AnswerCard.test.tsx -t "not_found"
+      - 'cd web && npx playwright test -c e2e/playwright.config.ts chat.spec.ts -g "câu không có trong tài liệu" --repeat-each=3'
+    expect:
+      - "có text 'Không tìm thấy thông tin này trong các tài liệu đã tải lên'"
+      - "có gợi ý diễn đạt lại câu hỏi và gợi ý kiểm tra tài liệu liên quan đã được tải lên chưa"
+      - "không có nút trích dẫn, không có nút Sao chép"
+    verdict: exit_code == 0 (E - với --repeat-each=3)
+
+  - id: TC-056
+    title: Câu hỏi tiếp nối dùng ngữ cảnh lượt trước
+    ac: [AC-US011-1]
+    layer: [I, E]
+    profile: FAKE
+    status: existing-unreviewed
+    target:
+      - backend/tests/qa/test_ask_api.py::test_ask_followup_uses_rewrite
+      - "web/e2e/chat.spec.ts › câu hỏi tiếp nối, câu không có trong tài liệu, Hội thoại mới"
+    run:
+      - docker compose exec api pytest tests/qa/test_ask_api.py::test_ask_followup_uses_rewrite
+      - 'cd web && npx playwright test -c e2e/playwright.config.ts chat.spec.ts -g "câu hỏi tiếp nối" --repeat-each=3'
+    given: lượt 1 "Thời hạn thanh toán trong hợp đồng khung là bao lâu?"
+    when: lượt 2 "Điều khoản đó có ngoại lệ không?"
+    expect:
+      - "I - bước viết lại câu hỏi được gọi với lịch sử lượt 1 (turn_index > 0)"
+      - "I/E - câu trả lời lượt 2 trích dẫn HopDongKhung.pdf (trang chứa ngoại lệ thanh toán)"
+    verdict: exit_code == 0 (E - với --repeat-each=3)
+
+  - id: TC-057
+    title: Claude thật — 5 câu SC-04, ≥ 4/5 hiểu đúng đối tượng tham chiếu
+    ac: [AC-US011-2]
+    layer: Q
+    profile: REAL
+    status: blocked
+    blocked_by: [OQ-TP-03 bộ câu hỏi hiện có 4 câu SC-04, cần 5]
+    target: eval/run_eval.py
+    run: docker compose exec api python /eval/run_eval.py
+    expect:
+      - "sc04 = [r for r in json.rows if r.type == 'SC-04']; len(sc04) >= 5"
+      - "sum(r.passed for r in sc04) >= 4"
+    verdict: hai dòng expect đúng
+
+  - id: TC-058
+    title: Hội thoại mới không mang ngữ cảnh cũ; danh sách tài liệu không đổi
+    ac: [AC-US016-1]
+    layer: [I, E]
+    profile: FAKE
+    status: existing-unreviewed
+    target:
+      - backend/tests/qa/test_ask_api.py::test_new_conversation_no_history
+      - "web/e2e/chat.spec.ts › câu hỏi tiếp nối, câu không có trong tài liệu, Hội thoại mới"
+    run:
+      - docker compose exec api pytest tests/qa/test_ask_api.py::test_new_conversation_no_history
+      - 'cd web && npx playwright test -c e2e/playwright.config.ts chat.spec.ts -g "Hội thoại mới" --repeat-each=3'
+    when: đang giữa hội thoại → bấm "Hội thoại mới" → hỏi câu chỉ dùng đại từ ("Điều khoản đó có ngoại lệ không?")
+    expect:
+      - "I - request tới LLM không chứa lượt nào của hội thoại cũ; không gọi bước viết lại"
+      - "E - vùng hội thoại trống trước câu hỏi mới; danh sách tài liệu giữ nguyên số dòng và tên"
+    verdict: exit_code == 0 (E - với --repeat-each=3)
+
+  - id: TC-059
+    title: API — Dừng khi đang stream → answer.stopped, giữ phần đã gửi, lượt ở trạng thái stopped
+    ac: [AC-US017-1]
+    layer: I
+    profile: FAKE
+    status: existing-unreviewed
+    target:
+      - backend/tests/qa/test_ask_api.py::test_stop_mid_stream
+      - backend/tests/qa/test_ask_api.py::test_stop_while_llm_thinking
+      - backend/tests/qa/test_ask_api.py::test_stop_other_user_ignored
+    run: docker compose exec api pytest tests/qa/test_ask_api.py -k "stop_mid_stream or stop_while_llm_thinking or stop_other_user_ignored"
+    expect:
+      - "sự kiện cuối là answer.stopped; không có answer.delta sau đó"
+      - "turn.status == 'stopped' and turn.answer == nối các answer.delta đã gửi"
+      - "người khác gọi dừng - không ảnh hưởng stream của chủ hội thoại"
+    verdict: exit_code == 0 và 3 test được chọn
+
+  - id: TC-060
+    title: UI — bấm "Dừng" → văn bản ngừng tăng trong ≤ 1 s, nhãn "đã dừng", ô nhập dùng được
+    ac: [AC-US017-1]
+    layer: [E, P]
+    profile: FAKE
+    status: existing-needs-assert
+    target: "web/e2e/chat.spec.ts › Dừng giữa chừng → nhãn đã dừng, ô nhập dùng được"
+    run: 'cd web && npx playwright test -c e2e/playwright.config.ts chat.spec.ts -g "Dừng giữa chừng" --repeat-each=3'
+    gap: "Đo t = thời điểm bấm Dừng → lần cuối textContent của lastAnswer thay đổi (MutationObserver); assert t ≤ 1000 ms"
+    expect:
+      - "t ≤ 1000 ms"
+      - "lastAnswer giữ phần văn bản đã hiện và có nhãn 'đã dừng'"
+      - "ô nhập enabled và gửi được câu mới"
+    verdict: exit_code == 0 với --repeat-each=3
+
+  - id: TC-061
+    title: Sao chép → bộ nhớ tạm có toàn bộ câu trả lời + danh sách nguồn, văn bản thuần
+    ac: [AC-US018-1]
+    layer: [U, E]
+    profile: FAKE
+    status: existing-unreviewed
+    target:
+      - web/src/components/copy.test.ts
+      - "web/e2e/chat.spec.ts › Sao chép kèm nguồn"
+    run:
+      - docker compose exec web npx vitest run src/components/copy.test.ts
+      - 'cd web && npx playwright test -c e2e/playwright.config.ts chat.spec.ts -g "Sao chép kèm nguồn" --repeat-each=3'
+    expect:
+      - "clipboard chứa toàn bộ văn bản câu trả lời đang hiển thị"
+      - "clipboard chứa mỗi nguồn với tên file và số trang, đủ mọi trích dẫn"
+      - "clipboard không chứa thẻ HTML"
+    verdict: exit_code == 0 (E - với --repeat-each=3)
+
+  - id: TC-062
+    title: Mở tài liệu gốc ở đúng trang trong tab mới; chỉ người có quyền mở được
+    ac: [AC-US019-1]
+    layer: [I, E]
+    profile: FAKE
+    status: existing-unreviewed
+    target:
+      - backend/tests/documents/test_list.py::test_open_file_ok_and_removed
+      - backend/tests/documents/test_list.py::test_open_file_forbidden_for_outsider
+      - "web/e2e/chat.spec.ts › hỏi → stream → [1] → popover → mở PDF đúng trang"
+    run:
+      - docker compose exec api pytest tests/documents/test_list.py -k "open_file_ok_and_removed or open_file_forbidden_for_outsider"
+      - 'cd web && npx playwright test -c e2e/playwright.config.ts chat.spec.ts -g "hỏi → stream" --repeat-each=3'
+    expect:
+      - "E - bấm 'Mở tài liệu gốc' mở tab mới có URL chứa '#page=N' với N = trang của trích dẫn"
+      - "I - thành viên nhận file PDF; người ngoài nhóm nhận 403; tài liệu đã gỡ nhận 410"
+    verdict: exit_code == 0 (E - với --repeat-each=3)
+
+  # ======================================================================= US-012..014 (TC-063..069)
+  - id: TC-063
+    title: Chưa đăng nhập → chuyển về đăng nhập, không trả dữ liệu tài liệu
+    ac: [AC-US012-1]
+    layer: [I, E]
+    profile: FAKE
+    status: existing-unreviewed
+    target:
+      - backend/tests/auth/test_session.py::test_unauthenticated_401
+      - "web/e2e/auth.spec.ts › chưa đăng nhập mở / → về trang đăng nhập"
+      - "web/e2e/auth.spec.ts › chưa đăng nhập mở /admin → về trang đăng nhập"
+    run:
+      - docker compose exec api pytest tests/auth/test_session.py::test_unauthenticated_401
+      - 'cd web && npx playwright test -c e2e/playwright.config.ts auth.spec.ts -g "chưa đăng nhập" --repeat-each=3'
+    expect:
+      - "I - mọi endpoint cần đăng nhập trả 401 khi không có cookie; body không chứa filename hay nội dung"
+      - "E - mở '/' và '/admin' đều kết thúc ở trang đăng nhập"
+    verdict: exit_code == 0 (E - với --repeat-each=3)
+
+  - id: TC-064
+    title: Phiên hết hạn sau 8 giờ không hoạt động; bản nháp câu hỏi được lưu
+    ac: [AC-US012-2]
+    req: [NFR-009, E-18]
+    layer: [U, I]
+    profile: FAKE
+    status: existing-unreviewed
+    target:
+      - backend/tests/auth/test_session.py::test_idle_expired_401
+      - web/src/auth/draftStore.test.ts
+      - web/src/auth/RequireAuth.test.tsx
+    run:
+      - docker compose exec api pytest tests/auth/test_session.py::test_idle_expired_401
+      - docker compose exec web npx vitest run src/auth/draftStore.test.ts src/auth/RequireAuth.test.tsx
+    expect:
+      - "last_seen_at = now - 8 giờ - 1 phút → 401; now - 7 giờ 59 phút → 200"
+      - "bản nháp lưu lại và đọc lại được sau khi đăng nhập lại"
+    verdict: exit_code == 0
+
+  - id: TC-065
+    title: UI — phiên hết hạn khi đang gõ → yêu cầu đăng nhập lại, câu đang gõ được giữ
+    ac: [AC-US012-2]
+    req: [E-18]
+    layer: E
+    profile: FAKE
+    status: to-write
+    target: "web/e2e/auth.spec.ts › hết phiên khi đang gõ → đăng nhập lại vẫn còn câu hỏi"
+    run: 'cd web && npx playwright test -c e2e/playwright.config.ts auth.spec.ts -g "hết phiên khi đang gõ" --repeat-each=3'
+    given: Lan đăng nhập, có ≥ 1 tài liệu ready; gõ câu hỏi Q chưa gửi
+    when: đặt sessions.last_seen_at của Lan về now − 8 giờ 1 phút (psql trong container db) → bấm Gửi
+    expect:
+      - "hiện thông báo 'Phiên đăng nhập đã hết hạn' và yêu cầu đăng nhập"
+      - "không có lượt hỏi đáp mới trong DB"
+      - "đăng nhập lại Lan → ô nhập chứa đúng Q"
+    verdict: exit_code == 0 với --repeat-each=3
+
+  - id: TC-066
+    title: Người ngoài nhóm — không xem được danh sách, trích dẫn, file gốc; không lộ tên
+    ac: [AC-US013-1]
+    req: [G-11, E-19]
+    layer: [I, E]
+    profile: FAKE
+    status: existing-unreviewed
+    target:
+      - backend/tests/documents/test_list.py::test_list_documents_forbidden_for_outsider_and_admin
+      - backend/tests/documents/test_list.py::test_open_file_forbidden_for_outsider
+      - backend/tests/qa/test_ask_api.py::test_get_citation_ok_removed_forbidden
+      - "web/e2e/auth.spec.ts › người ngoài nhóm → trang không có quyền, không lộ tên bộ tài liệu"
+    run:
+      - docker compose exec api pytest tests/documents/test_list.py -k "forbidden"
+      - docker compose exec api pytest tests/qa/test_ask_api.py::test_get_citation_ok_removed_forbidden
+      - 'cd web && npx playwright test -c e2e/playwright.config.ts auth.spec.ts -g "người ngoài nhóm" --repeat-each=3'
+    given: tuan@demo.local (không thuộc nhóm, không phải admin)
+    expect:
+      - "GET documents, GET /documents/{id}/file, GET /citations/{id} - đều 403; body không chứa filename, snippet"
+      - "UI - thông báo 'không có quyền truy cập'; trang không chứa tên bộ tài liệu hay tên file"
+    verdict: exit_code == 0 (E - với --repeat-each=3)
+
+  - id: TC-067
+    title: Quản trị viên ngoài nhóm — chỉ thấy thông tin mô tả, không xem trích dẫn/file, không hỏi được
+    ac: [AC-US013-2]
+    req: [G-11, BRU-007, QAS-1]
+    layer: [I, E]
+    profile: FAKE
+    status: existing-unreviewed
+    target:
+      - backend/tests/admin/test_documents_audit.py::test_admin_lists_metadata_only
+      - backend/tests/admin/test_documents_audit.py::test_admin_cannot_open_content
+      - "web/e2e/auth.spec.ts › admin không thuộc nhóm → trang quản trị"
+    run:
+      - docker compose exec api pytest tests/admin/test_documents_audit.py -k "metadata_only or cannot_open_content"
+      - 'cd web && npx playwright test -c e2e/playwright.config.ts auth.spec.ts -g "admin không thuộc nhóm" --repeat-each=3'
+    given: hung@demo.local (is_admin, không thuộc nhóm)
+    expect:
+      - "danh sách quản trị chỉ có filename, pages, size_bytes, uploaded_by, uploaded_at, status; không có trường nội dung/đoạn trích"
+      - "GET /citations/{id} và GET /documents/{id}/file - 403"
+      - "POST /conversations/{cid}/messages - 403, không có answer.delta"
+    verdict: exit_code == 0 (E - với --repeat-each=3)
+
+  - id: TC-068
+    title: Người không thuộc nhóm gửi câu hỏi → không nhận nội dung tài liệu
+    ac: [AC-US014-1]
+    req: [G-11]
+    layer: I
+    profile: FAKE
+    status: existing-unreviewed
+    target:
+      - backend/tests/qa/test_ask_api.py::test_ask_validation_and_permissions
+      - backend/tests/auth/test_policy.py::test_outsider_forbidden_by_require_member
+    run: docker compose exec api pytest tests/qa/test_ask_api.py::test_ask_validation_and_permissions tests/auth/test_policy.py::test_outsider_forbidden_by_require_member
+    expect:
+      - "người ngoài nhóm và admin - POST messages / tạo hội thoại → 403"
+      - "không có sự kiện answer.delta; LLM giả không được gọi"
+    verdict: exit_code == 0
+
+  - id: TC-069
+    title: Bị gỡ khỏi nhóm → bị từ chối ở request kế tiếp (≤ 15 phút)
+    ac: [AC-US014-2]
+    req: [NFR-011, G-11, QAS-2]
+    layer: [I, E]
+    profile: FAKE
+    status: existing-unreviewed
+    target:
+      - backend/tests/auth/test_policy.py::test_revoke_effective_next_request
+      - backend/tests/admin/test_members.py::test_remove_member_effective_next_request
+      - "web/e2e/admin.spec.ts › Anh bị gỡ → thao tác kế tiếp ra trang không có quyền"
+    run:
+      - docker compose exec api pytest tests/auth/test_policy.py::test_revoke_effective_next_request tests/admin/test_members.py::test_remove_member_effective_next_request
+      - 'cd web && npx playwright test -c e2e/playwright.config.ts admin.spec.ts -g "Anh bị gỡ" --repeat-each=3'
+    expect:
+      - "request đầu tiên sau khi gỡ (cùng phiên) → 403"
+      - "UI - thao tác kế tiếp của Anh hiện trang 'không có quyền'"
+    verdict: exit_code == 0 (E - với --repeat-each=3)
+
+  # ======================================================================= US-020..022 (TC-070..081)
+  - id: TC-070
+    title: Gỡ tài liệu X → xóa file, đoạn, trích dẫn; 5 câu về X đều "không tìm thấy"; ghi nhật ký
+    ac: [AC-US020-1]
+    req: [E-22]
+    layer: I
+    profile: FAKE
+    status: existing-needs-assert
+    target:
+      - backend/tests/admin/test_documents_audit.py::test_purge_removes_chunks_file_and_redacts_citations
+      - backend/tests/admin/test_documents_audit.py::test_purge_then_query_not_found
+      - backend/tests/admin/test_documents_audit.py::test_audit_document_filename_null_after_purge
+    run: docker compose exec api pytest tests/admin/test_documents_audit.py -k "purge_removes or purge_then_query or filename_null_after_purge"
+    gap: "test_purge_then_query_not_found phải hỏi 5 câu khác nhau, mỗi câu về nội dung chỉ có trong X"
+    expect:
+      - "DELETE /admin/documents/{X} → 202"
+      - "count(chunks where document_id = X) == 0; file của X không còn trên đĩa"
+      - "trích dẫn cũ tới X không còn snippet/filename; GET /citations/{id} → 410"
+      - "5/5 câu về nội dung chỉ có trong X → answer_type == 'not_found'"
+      - "có 1 dòng audit_log cho thao tác gỡ X"
+    verdict: exit_code == 0
+
+  - id: TC-071
+    title: UI — X biến khỏi danh sách của người dùng khác trong ≤ 10 s; trích dẫn cũ báo "đã gỡ"
+    ac: [AC-US020-1]
+    req: [E-22]
+    layer: E
+    profile: FAKE
+    status: existing-needs-assert
+    target: "web/e2e/admin.spec.ts › gỡ tài liệu → biến khỏi danh sách của Lan; trích dẫn cũ báo đã gỡ; nhật ký có các thao tác"
+    run: 'cd web && npx playwright test -c e2e/playwright.config.ts admin.spec.ts -g "gỡ tài liệu" --repeat-each=3'
+    gap: "Lan mở danh sách trong context riêng TRƯỚC khi Hùng gỡ; đo t = lúc DELETE trả 202 → lúc docRow(X) biến mất ở trang Lan, không reload"
+    expect:
+      - "t ≤ 10 s"
+      - "bấm trích dẫn cũ tới X → popover báo 'Tài liệu đã được gỡ', không có nút mở"
+    verdict: exit_code == 0 với --repeat-each=3
+
+  - id: TC-072
+    title: Người không phải quản trị viên không thấy và không thực hiện được thao tác gỡ
+    ac: [AC-US020-2]
+    req: [G-11]
+    layer: [I, E]
+    profile: FAKE
+    status: existing-needs-assert
+    target:
+      - backend/tests/admin/test_documents_audit.py::test_purge_forbidden_for_non_admin
+      - backend/tests/admin/test_members.py::test_admin_routes_forbidden_for_member_and_manager
+    run: docker compose exec api pytest tests/admin/test_documents_audit.py::test_purge_forbidden_for_non_admin tests/admin/test_members.py::test_admin_routes_forbidden_for_member_and_manager
+    gap: "Thêm E2E - Lan và Minh: không có nút/menu gỡ tài liệu ở mọi màn hình; mở /admin trực tiếp → không vào được"
+    expect:
+      - "Lan, Minh gọi DELETE /admin/documents/{id} → 403; tài liệu vẫn ready"
+      - "UI - không có phần tử nào có nhãn 'Gỡ' với Lan và Minh"
+    verdict: exit_code == 0
+
+  - id: TC-073
+    title: Thêm thành viên → xuất hiện trong danh sách, dùng được bộ tài liệu, ghi member_add
+    ac: [AC-US021-1]
+    req: [G-11]
+    layer: [I, E]
+    profile: FAKE
+    status: existing-unreviewed
+    target:
+      - backend/tests/admin/test_members.py::test_add_member_then_can_use_content
+      - "web/e2e/admin.spec.ts › Hùng thêm thành viên: email sai báo lỗi tại ô, email đúng thêm dòng mới"
+    run:
+      - docker compose exec api pytest tests/admin/test_members.py::test_add_member_then_can_use_content
+      - 'cd web && npx playwright test -c e2e/playwright.config.ts admin.spec.ts -g "Hùng thêm thành viên" --repeat-each=3'
+    expect:
+      - "POST members {email: tuan, role: member} → 201; danh sách có tuan với vai trò Thành viên"
+      - "request kế tiếp của tuan - GET documents 200 và hỏi được"
+      - "có 1 dòng audit_log action = 'member_add'"
+    verdict: exit_code == 0 (E - với --repeat-each=3)
+
+  - id: TC-074
+    title: Thêm email không có trong danh bạ → báo lỗi ngay tại ô email, nhóm không đổi
+    ac: [AC-US021-2]
+    layer: [U, I, E]
+    profile: FAKE
+    status: existing-unreviewed
+    note: "Danh bạ giả lập thay Microsoft 365 (ASM-TP-02). Mã lỗi - openapi.json ghi USER_NOT_IN_DIRECTORY, frontend dùng USER_NOT_FOUND — chờ OQ-TP-04"
+    target:
+      - backend/tests/admin/test_members.py::test_add_member_unknown_email
+      - "web/src/components/admin/admin.test.tsx › USER_NOT_FOUND hiện lỗi ngay dưới ô email"
+      - "web/e2e/admin.spec.ts › Hùng thêm thành viên: email sai báo lỗi tại ô, email đúng thêm dòng mới"
+    run:
+      - docker compose exec api pytest tests/admin/test_members.py::test_add_member_unknown_email
+      - docker compose exec web npx vitest run src/components/admin/admin.test.tsx -t "USER_NOT_FOUND"
+    expect:
+      - "r.status == 404 với mã lỗi theo OQ-TP-04"
+      - "danh sách thành viên trước và sau bằng nhau"
+      - "UI - thông báo 'Không tìm thấy tài khoản này…' nằm ngay dưới ô email"
+    verdict: exit_code == 0
+
+  - id: TC-075
+    title: Gỡ thành viên → bị từ chối ở thao tác kế tiếp; ghi member_remove
+    ac: [AC-US021-3]
+    req: [NFR-011]
+    layer: [I, E]
+    profile: FAKE
+    status: existing-unreviewed
+    target:
+      - backend/tests/admin/test_members.py::test_remove_member_effective_next_request
+      - "web/e2e/admin.spec.ts › Anh bị gỡ → thao tác kế tiếp ra trang không có quyền"
+    run:
+      - docker compose exec api pytest tests/admin/test_members.py::test_remove_member_effective_next_request
+      - 'cd web && npx playwright test -c e2e/playwright.config.ts admin.spec.ts -g "Anh bị gỡ" --repeat-each=3'
+    expect:
+      - "DELETE members/{anh} → 204; request kế tiếp của Anh → 403"
+      - "có 1 dòng audit_log action = 'member_remove'"
+    verdict: exit_code == 0 (E - với --repeat-each=3)
+
+  - id: TC-076
+    title: Đổi vai trò Lan thành Quản lý → Lan tải lô được; ghi role_change
+    ac: [AC-US021-4]
+    layer: I
+    profile: FAKE
+    status: existing-unreviewed
+    target: backend/tests/admin/test_members.py::test_role_change_enables_batch_upload
+    run: docker compose exec api pytest tests/admin/test_members.py::test_role_change_enables_batch_upload
+    expect:
+      - "trước - Lan tải 2 file một lần → 403"
+      - "PATCH members/{lan} {role: manager} → 200; sau đó Lan tải 2 file một lần → chấp nhận cả 2"
+      - "có 1 dòng audit_log action = 'role_change'"
+    verdict: exit_code == 0
+
+  - id: TC-077
+    title: Trang quản trị không có lối tắt nào tới nội dung tài liệu
+    ac: [AC-US021-5]
+    req: [BRU-007]
+    layer: E
+    profile: FAKE
+    status: to-write
+    target: "web/e2e/admin.spec.ts › trang quản trị không có lối tới nội dung"
+    run: 'cd web && npx playwright test -c e2e/playwright.config.ts admin.spec.ts -g "không có lối tới nội dung" --repeat-each=3'
+    given: Lan đã tải và hỏi 1 câu (có trích dẫn); Hùng đăng nhập
+    when: Hùng duyệt mọi tab quản trị (nhóm truy cập, tài liệu, nhật ký), bấm mọi liên kết/nút không phá hủy
+    expect:
+      - "không có request nào tới /citations/*, /documents/*/file, /conversations/*/messages (đếm bằng page.on('request'))"
+      - "không có href trỏ tới trang hỏi đáp hay '/documents/' trong các trang quản trị"
+    verdict: exit_code == 0 với --repeat-each=3
+
+  - id: TC-078
+    title: Tra cứu nhật ký theo bộ, khoảng thời gian, người, thao tác → khớp 100% các thao tác đã làm
+    ac: [AC-US022-1]
+    req: [NFR-010]
+    layer: [I, E]
+    profile: FAKE
+    status: existing-unreviewed
+    target:
+      - backend/tests/admin/test_documents_audit.py::test_audit_query_filters_and_cursor
+      - backend/tests/admin/test_documents_audit.py::test_audit_includes_member_logins_and_known_flow
+      - "web/e2e/admin.spec.ts › gỡ tài liệu → biến khỏi danh sách của Lan; trích dẫn cũ báo đã gỡ; nhật ký có các thao tác"
+    run: docker compose exec api pytest tests/admin/test_documents_audit.py -k "audit_query_filters or known_flow"
+    given: "kịch bản đã biết - đăng nhập, xác nhận phân loại, tải lên, xem, hỏi, gỡ tài liệu, thêm/gỡ thành viên, đổi vai trò"
+    expect:
+      - "tập (user_id, action) trả về trong khoảng thời gian == đúng tập thao tác của kịch bản (không thiếu, không thừa)"
+      - "lọc user_id / action chỉ trả bản ghi khớp; action không hợp lệ → 422"
+      - "phân trang bằng cursor - không trùng, không sót bản ghi"
+    verdict: exit_code == 0
+
+  - id: TC-079
+    title: Nhật ký không chứa nội dung tài liệu, đoạn trích hay câu hỏi
+    ac: [AC-US022-2]
+    req: [G-13, NFR-010]
+    layer: I
+    profile: FAKE
+    status: existing-unreviewed
+    target:
+      - backend/tests/admin/test_documents_audit.py::test_audit_meta_never_contains_content
+      - backend/tests/qa/test_ask_api.py::test_no_content_in_audit_meta
+      - backend/tests/admin/test_members.py::test_audit_meta_has_no_email
+    run: docker compose exec api pytest tests/admin/test_documents_audit.py::test_audit_meta_never_contains_content tests/qa/test_ask_api.py::test_no_content_in_audit_meta tests/admin/test_members.py::test_audit_meta_has_no_email
+    given: câu hỏi và nội dung PDF chứa chuỗi đánh dấu duy nhất M
+    expect:
+      - "M không xuất hiện trong bất kỳ cột nào của audit_log (kể cả meta JSON)"
+      - "meta không chứa email"
+    verdict: exit_code == 0
+
+  - id: TC-080
+    title: Khoảng thời gian vượt 12 tháng → chỉ trả dữ liệu còn lưu và báo rõ giới hạn
+    ac: [AC-US022-3]
+    layer: [I, E]
+    profile: FAKE
+    status: to-write
+    target:
+      - backend/tests/admin/test_documents_audit.py::test_audit_range_over_12_months
+      - "web/e2e/admin.spec.ts › nhật ký quá 12 tháng hiện cảnh báo"
+    run:
+      - docker compose exec api pytest tests/admin/test_documents_audit.py::test_audit_range_over_12_months
+      - 'cd web && npx playwright test -c e2e/playwright.config.ts admin.spec.ts -g "quá 12 tháng" --repeat-each=3'
+    given: audit_log có bản ghi lúc now − 13 tháng và now − 1 tháng (chèn trực tiếp)
+    when: tra cứu from = now − 14 tháng, to = hôm nay
+    expect:
+      - "kết quả chỉ có bản ghi trong 12 tháng gần nhất"
+      - "response có dấu hiệu giới hạn (trường hoặc thông báo); UI hiện cảnh báo như màn hình 10#range"
+    verdict: exit_code == 0
+
+  - id: TC-081
+    title: Xuất CSV đúng các bản ghi đã lọc; lượt xuất được ghi audit_export
+    ac: [AC-US022-4]
+    layer: [I, E]
+    profile: FAKE
+    status: deferred
+    blocked_by: [NT-06, OQ-TP-06]
+    target: backend/tests/admin/test_documents_audit.py::test_audit_export_csv
+    run: docker compose exec api pytest tests/admin/test_documents_audit.py::test_audit_export_csv
+    expect:
+      - "GET /admin/audit-logs:export với bộ lọc F → 200, Content-Type text/csv, UTF-8 (có BOM)"
+      - "tập dòng CSV == tập bản ghi của GET /admin/audit-logs với cùng F"
+      - "có 1 dòng audit_log action = 'audit_export'"
+    verdict: exit_code == 0
+
+  # ======================================================================= US-015 (TC-082..083)
+  - id: TC-082
+    title: Bấm 👎 → chọn lý do (Sai / Thiếu / Nguồn sai / Khác) → đánh giá được ghi, nút đánh dấu đã chọn
+    ac: [AC-US015-1]
+    layer: [I, U, E]
+    profile: FAKE
+    status: existing-unreviewed
+    target:
+      - backend/tests/qa/test_feedback.py
+      - "web/src/components/AnswerCard.test.tsx › 👎 mở 4 lý do, gửi xong đánh dấu aria-pressed"
+      - "web/e2e/chat.spec.ts › 👎 kèm lý do"
+    run:
+      - docker compose exec api pytest tests/qa/test_feedback.py
+      - 'cd web && npx playwright test -c e2e/playwright.config.ts chat.spec.ts -g "kèm lý do" --repeat-each=3'
+    expect:
+      - "bấm 👎 hiện đúng 4 lý do"
+      - "PUT /messages/{mid}/feedback {rating: down, reason} → 200; DB có đúng 1 dòng feedback cho (user, message)"
+      - "nút 👎 có aria-pressed = true"
+      - "người khác đánh giá message của Lan → 403; lượt chưa hoàn tất → lỗi"
+    verdict: exit_code == 0 (E - với --repeat-each=3)
+
+  - id: TC-083
+    title: Đánh giá lại bằng nút còn lại → thay đánh giá cũ; mỗi người 1 đánh giá / câu trả lời
+    ac: [AC-US015-2]
+    layer: I
+    profile: FAKE
+    status: existing-unreviewed
+    target: backend/tests/qa/test_feedback.py::test_feedback_upsert_replaces_previous
+    run: docker compose exec api pytest tests/qa/test_feedback.py::test_feedback_upsert_replaces_previous
+    expect:
+      - "sau 👍 rồi 👎 - count(feedback where user = lan and message = m) == 1 and rating == 'down'"
+    verdict: exit_code == 0
+
+  # ======================================================================= Trường hợp biên, NFR, bảo mật, DoD (TC-084..102)
+  - id: TC-084
+    title: Trạng thái trống và trạng thái mọi tài liệu đang xử lý
+    req: [E-01, E-02]
+    layer: E
+    profile: FAKE
+    status: to-write
+    target: "web/e2e/upload.spec.ts › trạng thái trống và đang xử lý"
+    run: 'cd web && npx playwright test -c e2e/playwright.config.ts upload.spec.ts -g "trạng thái trống" --repeat-each=3'
+    expect:
+      - "E-01 (bộ trống) - ô nhập disabled; có hướng dẫn 3 bước và vùng kéo thả; text 'Tải lên tài liệu PDF đầu tiên để bắt đầu hỏi đáp.'"
+      - "E-02 (setWorker(false), tải 1 file) - gõ được nhưng nút Gửi disabled; có thông báo đang xử lý n tài liệu"
+    verdict: exit_code == 0 với --repeat-each=3
+
+  - id: TC-085
+    title: Bộ đã có 49 file, 2 lượt tải đồng thời → đúng 1 được nhận, lượt kia DOC_SET_FULL
+    req: [E-08, NFR-007]
+    layer: I
+    profile: FAKE
+    status: existing-unreviewed
+    target: backend/tests/documents/test_upload.py::test_concurrent_last_slot
+    run: docker compose exec api pytest tests/documents/test_upload.py::test_concurrent_last_slot
+    expect:
+      - "1 response thành công và 1 response 409 code 'DOC_SET_FULL'"
+      - "count(documents) == 50"
+    verdict: exit_code == 0
+
+  - id: TC-086
+    title: Tải file trùng tên → giữ cả hai, file mới thành "<tên> (2).pdf"
+    req: [E-09]
+    layer: I
+    profile: FAKE
+    status: existing-unreviewed
+    target: backend/tests/documents/test_upload.py::test_duplicate_name_renamed
+    run: docker compose exec api pytest tests/documents/test_upload.py::test_duplicate_name_renamed
+    expect:
+      - "lần 2 tải 'HopDong.pdf' → filename == 'HopDong (2).pdf'"
+      - "tài liệu 'HopDong.pdf' cũ không đổi (id, size_bytes)"
+    verdict: exit_code == 0
+
+  - id: TC-087
+    title: Mất mạng khi tải lên → tự thử lại tối đa 3 lần rồi báo lỗi
+    req: [E-10, COM-03]
+    layer: U
+    profile: none
+    status: to-write
+    target: web/src/api/documents.test.ts
+    run: docker compose exec web npx vitest run src/api/documents.test.ts
+    expect:
+      - "lỗi mạng 4 lần liên tiếp → onRetry được gọi với 1, 2, 3; tổng số lần gửi == 4; promise reject"
+      - "lỗi ở lần 1, thành công ở lần 2 → resolve; onRetry gọi đúng 1 lần"
+      - "lỗi HTTP 4xx → không thử lại"
+    verdict: exit_code == 0
+
+  - id: TC-088
+    title: Câu trả lời bị gián đoạn → giữ phần đã hiện, nhãn "chưa hoàn tất", nút "Tạo lại câu trả lời"
+    req: [E-11]
+    layer: [I, U]
+    profile: FAKE
+    status: existing-unreviewed
+    target:
+      - backend/tests/qa/test_ask_api.py::test_llm_error_mid_stream
+      - backend/tests/qa/test_ask_api.py::test_max_tokens_is_failed
+      - "web/src/components/AnswerCard.test.tsx › failed: nhãn gián đoạn + Tạo lại, không có sao chép"
+    run:
+      - docker compose exec api pytest tests/qa/test_ask_api.py -k "llm_error_mid_stream or max_tokens_is_failed"
+      - docker compose exec web npx vitest run src/components/AnswerCard.test.tsx -t "failed"
+    expect:
+      - "sự kiện cuối là answer.failed {code}; turn.status == 'incomplete'"
+      - "UI - giữ văn bản đã hiện; có nhãn gián đoạn và nút 'Tạo lại câu trả lời'; không có nút Sao chép"
+    verdict: exit_code == 0
+
+  - id: TC-089
+    title: Dịch vụ AI không khả dụng → hỏi đáp báo E-12; xem danh sách và tải lên vẫn hoạt động
+    req: [NFR-014, E-12]
+    layer: [I, E]
+    profile: FAKE
+    status: to-write
+    target:
+      - backend/tests/qa/test_ask_api.py::test_ai_unavailable_other_features_work
+      - "web/e2e/chat.spec.ts › dịch vụ AI lỗi"
+    run: docker compose exec api pytest tests/qa/test_ask_api.py::test_ai_unavailable_other_features_work
+    given: FakeLlmClient ném anthropic.APIConnectionError trước khi stream bắt đầu
+    expect:
+      - "POST messages → sự kiện answer.failed {code: 'AI_UNAVAILABLE'}"
+      - "ngay sau đó GET documents → 200 và tải 1 PDF → được nhận"
+      - "UI - hiện 'Hệ thống đang bận, vui lòng thử lại sau ít phút.'; ô nhập vẫn chứa câu hỏi"
+    verdict: exit_code == 0
+
+  - id: TC-090
+    title: Câu hỏi vượt 2 000 ký tự bị chặn
+    req: [E-15]
+    layer: I
+    profile: FAKE
+    status: existing-unreviewed
+    target: backend/tests/qa/test_ask_api.py::test_ask_validation_and_permissions
+    run: docker compose exec api pytest tests/qa/test_ask_api.py::test_ask_validation_and_permissions
+    gap: "Nếu UI chưa có test bộ đếm ký tự thì thêm Vitest - 2 001 ký tự → nút Gửi disabled và hiện 'Câu hỏi tối đa 2.000 ký tự.'"
+    expect:
+      - "len(question) == 2000 → được chấp nhận; 2001 → 422"
+    verdict: exit_code == 0
+
+  - id: TC-091
+    title: Câu hỏi có nhiều đáp án hợp lệ → liệt kê kèm nguồn hoặc hỏi lại (clarification)
+    req: [E-17]
+    layer: [U, Q]
+    profile: [none, REAL]
+    status: existing-unreviewed
+    blocked_by: [OI-T1 clarification không có trích dẫn, OQ-TP-03 câu SC-05 — chỉ chặn phần Q]
+    target:
+      - backend/tests/qa/test_citation_filter.py::test_clarify_with_citations
+      - backend/tests/qa/test_citation_filter.py::test_clarify_without_citations_late_spans
+    run: docker compose exec api pytest tests/qa/test_citation_filter.py -k "clarify"
+    expect:
+      - "có marker làm rõ và có trích dẫn → answer_type == 'clarification', các đáp án có citation"
+      - "phần không trích dẫn - hành vi theo quyết định OI-T1"
+      - "REAL - 5 câu SC-05 - mỗi câu liệt kê đủ đáp án kèm nguồn hoặc answer_type == 'clarification'"
+    verdict: exit_code == 0 (phần U)
+
+  - id: TC-092
+    title: Hai người cùng mở bộ tài liệu, một người tải lên → danh sách người kia cập nhật ≤ 10 s
+    req: [E-20, COM-02]
+    layer: E
+    profile: FAKE
+    status: to-write
+    target: "web/e2e/upload.spec.ts › hai người cùng mở, danh sách cập nhật ≤ 10 s"
+    run: 'cd web && npx playwright test -c e2e/playwright.config.ts upload.spec.ts -g "hai người cùng mở" --repeat-each=3'
+    given: loginNewContext(lan), loginNewContext(minh), cả hai mở trang chủ
+    when: Minh tải QUOTE
+    expect:
+      - "trang của Lan hiện docRow('BaoGia_v3.pdf') trong ≤ 10 s tính từ lúc API trả kết quả cho Minh, không reload"
+    verdict: exit_code == 0 với --repeat-each=3
+
+  - id: TC-093
+    title: Claude thật — tỷ lệ đúng ≥ 80% cho từng ngôn ngữ; câu hỏi chéo ngôn ngữ được trả lời
+    req: [NFR-004, G-05, G-06]
+    layer: Q
+    profile: REAL
+    status: existing-needs-assert
+    blocked_by: [OQ-TP-03 bộ 50 câu]
+    target: eval/run_eval.py
+    run: docker compose exec api python /eval/run_eval.py
+    gap: "write_json chưa ghi trường lang cho từng câu — thêm 'lang' vào mỗi dòng"
+    expect:
+      - "với mỗi lang ∈ {vi, en} - số câu ≥ 30% tổng số câu"
+      - "với mỗi lang - sum(r.passed) / count >= 0.80"
+      - "mọi câu chéo ngôn ngữ (câu hỏi khác ngôn ngữ tài liệu nguồn) có answer_type == 'answered' và citations_ok"
+    verdict: ba dòng expect đúng
+
+  - id: TC-094
+    title: Không có nội dung câu hỏi, câu trả lời, đoạn trích trong log ứng dụng
+    req: [G-13]
+    layer: S
+    profile: FAKE
+    status: to-write
+    target: "eval/scan_logs.py (cần viết), chạy sau web/e2e/backbone.spec.ts có chuỗi đánh dấu"
+    run:
+      - 'cd web && npx playwright test -c e2e/playwright.config.ts backbone.spec.ts'
+      - docker compose logs api worker > test-results/app.log
+      - python eval/scan_logs.py test-results/app.log --marker <M>
+    given: câu hỏi E2E và nội dung PDF fixture chứa chuỗi đánh dấu M (ví dụ 'ZZMARK-' + uuid)
+    expect:
+      - "số lần M xuất hiện trong log api + worker == 0"
+      - "số lần M xuất hiện trong audit_log == 0"
+    verdict: exit_code == 0
+
+  - id: TC-095
+    title: Nội dung tài liệu chứa HTML/script được hiển thị như văn bản, không thực thi
+    req: [SAD §2.1 XSS]
+    layer: [U, E]
+    profile: FAKE
+    status: existing-needs-assert
+    target:
+      - "web/src/components/AnswerCard.test.tsx › nội dung <script>/<img onerror> hiển thị dạng chữ"
+      - "web/e2e/chat.spec.ts › nội dung HTML trong tài liệu không thực thi (cần viết)"
+    run: docker compose exec web npx vitest run src/components/AnswerCard.test.tsx -t "script"
+    gap: "Thêm E2E - PDF có '<img src=x onerror=window.__xss=1>' trên trang 1; hỏi để đoạn đó vào câu trả lời và popover"
+    expect:
+      - "U - chuỗi hiện ra dạng chữ; không có phần tử img/script được tạo"
+      - "E - window.__xss là undefined sau khi hiện câu trả lời và mở popover"
+    verdict: exit_code == 0
+
+  - id: TC-096
+    title: Quét phụ thuộc và SAST — 0 lỗ hổng Critical/High chưa xử lý
+    req: [G-15]
+    layer: S
+    profile: none
+    status: to-write
+    target: pip-audit, npm audit, semgrep
+    run:
+      - docker compose exec api pip-audit
+      - cd web && npm audit --omit=dev --audit-level=high
+      - semgrep --config p/default backend web/src
+    expect:
+      - "pip-audit - 0 lỗ hổng mức Critical/High"
+      - "npm audit --audit-level=high - exit code 0"
+      - "semgrep - 0 phát hiện ERROR chưa có quyết định chấp nhận bằng văn bản"
+    verdict: cả ba lệnh đạt
+
+  - id: TC-097
+    title: E2E chạy được trên Edge (G-04)
+    req: [G-04]
+    layer: E
+    profile: FAKE
+    status: to-write
+    target: "web/e2e/playwright.config.ts — thêm project msedge (channel: 'msedge')"
+    run: 'cd web && npx playwright test -c e2e/playwright.config.ts --project=msedge'
+    expect:
+      - "toàn bộ spec PASS trên msedge như trên chromium"
+    verdict: exit_code == 0
+
+  - id: TC-098
+    title: axe-core — 0 vi phạm serious/critical trên 11 màn hình
+    req: [DoD a11y, PCON-02]
+    layer: E
+    profile: FAKE
+    status: to-write
+    target: "web/e2e/a11y.spec.ts (dùng @axe-core/playwright)"
+    run: 'cd web && npx playwright test -c e2e/playwright.config.ts a11y.spec.ts'
+    expect:
+      - "với mỗi màn hình 01..11 và mỗi trạng thái ở TEST_PLAN.md §0A.4 - violations có impact ∈ {serious, critical} == []"
+    verdict: exit_code == 0
+
+  - id: TC-099
+    title: Dùng được bằng bàn phím — Tab tới [1], Enter mở, Esc đóng và trả focus; hộp thoại giữ focus
+    req: [DoD a11y]
+    layer: [U, E]
+    profile: FAKE
+    status: existing-unreviewed
+    target:
+      - "web/e2e/chat.spec.ts › bàn phím: Tab tới [1], Enter mở, Esc đóng và trả focus"
+      - web/src/components/ClassificationDialog.test.tsx
+    run:
+      - 'cd web && npx playwright test -c e2e/playwright.config.ts chat.spec.ts -g "bàn phím" --repeat-each=3'
+      - docker compose exec web npx vitest run src/components/ClassificationDialog.test.tsx
+    expect:
+      - "Tab tới được nút [1]; Enter mở popover; Esc đóng và focus về nút [1]"
+      - "trong hộp xác nhận, Tab không thoát ra ngoài; Esc đóng hộp"
+    verdict: exit_code == 0 (E - với --repeat-each=3)
+
+  - id: TC-100
+    title: Response của API khớp openapi.json
+    req: [DoD contract]
+    layer: I
+    profile: FAKE
+    status: blocked
+    blocked_by: [OQ-TP-04 chọn oracle khi spec và code lệch]
+    target: backend/tests/test_contract.py (validate response bằng openapi-core hoặc schemathesis)
+    run: docker compose exec api pytest tests/test_contract.py
+    expect:
+      - "mọi path + method trong openapi.json có route tương ứng (hoặc nằm trong danh sách ngoại lệ đã duyệt)"
+      - "mọi response trong test I khớp schema và mã trạng thái đã khai báo"
+    verdict: exit_code == 0
+
+  - id: TC-101
+    title: Phiên — cookie an toàn, token không lưu dạng rõ, đăng xuất vô hiệu phiên
+    req: [NFR-009, SAD §2.1]
+    layer: [I, S]
+    profile: FAKE
+    status: existing-unreviewed
+    target:
+      - backend/tests/auth/test_session.py::test_login_sets_cookie_and_me
+      - backend/tests/auth/test_session.py::test_token_not_stored_in_plaintext
+      - backend/tests/auth/test_session.py::test_logout_invalidates
+    run: docker compose exec api pytest tests/auth/test_session.py -k "sets_cookie or not_stored_in_plaintext or logout_invalidates"
+    gap: "Kiểm thuộc tính cookie HttpOnly và SameSite=Strict nếu test chưa assert"
+    expect:
+      - "Set-Cookie có HttpOnly và SameSite=Strict"
+      - "giá trị cookie không xuất hiện nguyên văn trong bảng sessions"
+      - "sau logout, cookie cũ → 401"
+    verdict: exit_code == 0
+
+  - id: TC-102
+    title: Chống CSRF và header bảo mật theo SAD §2.1
+    req: [SAD §2.1]
+    layer: S
+    profile: FAKE
+    status: blocked
+    blocked_by: [OQ-TP-04 bản thử nghiệm có làm CSRF/CSP không]
+    target: backend/tests/test_security_headers.py
+    run: docker compose exec api pytest tests/test_security_headers.py
+    expect:
+      - "request đổi dữ liệu thiếu X-CSRF-Token → bị từ chối"
+      - "response HTML có Content-Security-Policy default-src 'self' và X-Frame-Options DENY"
+    verdict: exit_code == 0
+
+  # ======================================================================= Hiệu năng (PERF-001..005)
+  - id: PERF-001
+    title: NFR-001 — 1 người dùng, p90 thời gian tới nội dung đầu tiên ≤ 5 s
+    ac: [AC-US006-1]
+    req: [NFR-001, QAS-6]
+    layer: P
+    profile: REAL
+    status: existing-unreviewed
+    blocked_by: [OI-T3 máy tham chiếu, OQ-TP-08 ngân sách]
+    target: eval/run_eval.py (trường first_token_seconds)
+    run: docker compose exec api python /eval/run_eval.py
+    expect:
+      - "x = [r.first_token_seconds for r in json.rows if r.first_token_seconds is not None]; len(x) >= 20"
+      - "p90(x) <= 5.0"
+      - "báo cáo ghi model, τ, CPU/RAM/GPU, commit"
+    verdict: hai dòng đầu đúng
+
+  - id: PERF-002
+    title: NFR-002 — 1 người dùng, p90 thời gian hoàn tất ≤ 20 s
+    req: [NFR-002]
+    layer: P
+    profile: REAL
+    status: existing-needs-assert
+    blocked_by: [OI-T3, OQ-TP-08]
+    target: eval/run_eval.py
+    run: docker compose exec api python /eval/run_eval.py
+    gap: "Outcome chưa có thời điểm answer.completed — thêm total_seconds và ghi vào JSON"
+    expect:
+      - "y = [r.total_seconds for r in json.rows if r.answer_type is not None]; len(y) >= 20"
+      - "p90(y) <= 20.0"
+    verdict: hai dòng expect đúng
+
+  - id: PERF-003
+    title: NFR-005 — 10 người dùng đồng thời, p90 ≤ 5 s / ≤ 20 s, 0 lỗi
+    req: [NFR-005, NFR-001, NFR-002, QAS-6]
+    layer: P
+    profile: REAL
+    status: blocked
+    blocked_by: [TK-12 viết eval/load_qa.py, OI-T3, OQ-TP-08]
+    target: eval/load_qa.py
+    run: docker compose exec api python /eval/load_qa.py --users 10 --questions-per-user 5 --json /eval/reports/load-10u.json
+    given: 10 tài khoản thành viên (seed thêm), bộ Eval ready
+    when: 10 người gửi đồng thời, mỗi người 5 câu tuần tự
+    expect:
+      - "50 lượt; số lượt answer.failed hoặc HTTP 5xx == 0"
+      - "p90(first_token) <= 5.0 and p90(total) <= 20.0"
+    verdict: "json.all_pass == true"
+
+  - id: PERF-004
+    title: NFR-006 — 20 câu/phút trong 10 phút vẫn đạt NFR-001/002
+    req: [NFR-006]
+    layer: P
+    profile: REAL
+    status: blocked
+    blocked_by: [TK-12, OI-T3, OQ-TP-08]
+    target: eval/load_qa.py
+    run: docker compose exec api python /eval/load_qa.py --users 10 --rate-per-minute 20 --duration-minutes 10 --json /eval/reports/load-20qpm.json
+    expect:
+      - "số câu đã gửi >= 200 (mỗi người ≤ 20 câu, dưới giới hạn 30 câu/giờ)"
+      - "lỗi == 0; p90(first_token) <= 5.0; p90(total) <= 20.0"
+    verdict: "json.all_pass == true"
+
+  - id: PERF-005
+    title: NFR-007 — bộ 50 file × tối đa 200 trang (≤ 1 GB) đều ready; NFR-001 vẫn đạt trên bộ đầy
+    ac: [AC-US002-1]
+    req: [NFR-007]
+    layer: P
+    profile: REAL
+    status: blocked
+    blocked_by: [TK-07 corpus 50 file, OI-T3]
+    target: eval/run_eval.py
+    run: docker compose exec api python /eval/run_eval.py --doc-set Eval50 --corpus /eval/corpus50
+    expect:
+      - "50 file, ≥ 5 file 200 trang, tổng dung lượng <= 1 GB; 100% ready trong READY_TIMEOUT"
+      - "p90(first_token_seconds) <= 5.0 trên bộ đầy"
+    verdict: hai dòng expect đúng

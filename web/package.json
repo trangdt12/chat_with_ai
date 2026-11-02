@@ -9,6 +9,7 @@
     "preview": "vite preview",
     "test": "vitest run",
     "e2e": "playwright test -c e2e/playwright.config.ts",
+    "e2e:fixtures": "node scripts/write-e2e-fixtures.mjs",
     "eval:corpus": "node scripts/make-eval-corpus.mjs"
   },
   "dependencies": {

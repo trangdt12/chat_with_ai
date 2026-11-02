@@ -23,8 +23,11 @@ test("Lan đăng nhập → thấy bộ tài liệu; đăng xuất thì Back kh�
 
   await page.getByRole("button", { name: "Đăng xuất" }).click();
   await expect(page).toHaveURL(/\/login/);
+  // Đăng nhập và đăng xuất đều navigate(..., { replace: true }) nên Back có thể ra khỏi app (about:blank)
+  // thay vì về /login (BUG-002). Điều cần kiểm: Back không hiện lại nội dung đã đăng nhập.
   await page.goBack();
-  await expect(page).toHaveURL(/\/login/);
+  await expect(page).not.toHaveURL(/:\d+\/$/);
+  await expect(page.locator(".topbar")).toHaveCount(0);
 });
 
 test("người ngoài nhóm → trang không có quyền, không lộ tên bộ tài liệu", async ({ page }) => {

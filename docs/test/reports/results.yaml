@@ -1,0 +1,41 @@
+# Kết quả chạy TC lớp E bằng agent-browser — file máy đọc được, agent cập nhật trong lúc chạy.
+# Định nghĩa PASS/FAIL nằm ở ../test-cases.yaml; file này chỉ ghi kết quả, không chép lại hay sửa `expect`.
+#
+# Quy tắc:
+#   - Mỗi lần chạy thêm 1 phần tử vào `rounds`; không sửa vòng đã `done`.
+#   - run.verdict: PASS ⇔ mọi expect ok: true; FAIL ⇔ có expect ok: false; BLOCKED ⇔ không chấm được.
+#   - tc.verdict: PASS ⇔ 3/3 run PASS; có run FAIL ⇒ FAIL; còn lại ⇒ BLOCKED.
+#   - expect[].line chép nguyên văn từ test-cases.yaml (cùng thứ tự); evidence là đường dẫn tương đối
+#     từ docs/test/reports/, có thể kèm #L<dòng>.
+#   - Dừng giữa chừng (môi trường chết / kết quả mơ hồ / AC mâu thuẫn): status: stopped, điền stopped_reason
+#     và questions, rồi hỏi người.
+#
+# Mẫu một vòng:
+#
+# - id: 2026-11-02-ab1
+#   method: agent-browser
+#   date: 2026-11-02
+#   commit: 20031fe
+#   profile: FAKE
+#   app_url: http://localhost:5173
+#   tool: {agent_browser: 0.41.1, chrome: 156.0.8078.80, viewport: 1440x900}
+#   status: done            # in-progress | done | stopped
+#   stopped_reason: null
+#   questions: []           # [{tc: TC-014, run: 2, kind: ambiguous|env-down|ac-conflict, text: "...", answer: null}]
+#   results:
+#     TC-004:
+#       tc_version: 1       # trường `version` của TC lúc chạy (mặc định 1)
+#       verdict: PASS
+#       runs:
+#         - n: 1
+#           session: tc-004-r1
+#           started: 2026-11-02T09:00:00+07:00
+#           verdict: PASS
+#           evidence_dir: 2026-11-02/agent-browser/TC-004/r1/
+#           expect:
+#             - line: "docRow('HopDongKhung.pdf') hiển thị"
+#               ok: true
+#               evidence: 2026-11-02/agent-browser/TC-004/r1/02-after.txt#L14
+#           notes: null
+
+rounds: []

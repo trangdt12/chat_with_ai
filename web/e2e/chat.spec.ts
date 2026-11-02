@@ -19,13 +19,18 @@ test.beforeEach(async ({ page }) => {
 test("hỏi → stream → [1] → popover → mở PDF đúng trang", async ({ page, context }) => {
   await ask(page, "Thời hạn thanh toán là bao lâu?");
   const answer = lastAnswer(page);
-  const cite = answer.getByRole("button", { name: /^Nguồn 1: HopDongKhung\.pdf trang \d+$/ });
+  // Mỗi khối có nguồn đều có nút [n]: FakeLlm trả 2 khối cùng trích nguồn 1 nên có 2 nút "Nguồn 1" (BUG-001).
+  const cite = answer.getByRole("button", { name: /^Nguồn 1: HopDongKhung\.pdf trang \d+$/ }).first();
   await expect(cite).toBeVisible();
   await expect(answer.locator(".sources")).toContainText("HopDongKhung.pdf · trang");
 
+  const citedPage = (await cite.getAttribute("aria-label"))?.match(/trang (\d+)$/)?.[1];
+  expect(citedPage).toBeDefined();
   await cite.click();
   const popover = page.getByRole("dialog");
   await expect(popover.locator(".popover-quote")).toContainText("thanh toan");
+  // AC-US009-2: phần đầu popover nêu đúng file và đúng trang của nút [1]
+  await expect(popover).toContainText(`HopDongKhung.pdf · trang ${citedPage}`);
   // Chromium headless thường biến PDF thành tải xuống nên không đọc được URL của tab mới:
   // bắt URL truyền cho window.open, rồi tự gọi URL đó.
   await page.evaluate(() => {
@@ -46,7 +51,7 @@ test("hỏi → stream → [1] → popover → mở PDF đúng trang", async ({ 
 
 test("bàn phím: Tab tới [1], Enter mở, Esc đóng và trả focus", async ({ page }) => {
   await ask(page, "Thời hạn thanh toán là bao lâu?");
-  const cite = lastAnswer(page).getByRole("button", { name: /^Nguồn 1:/ });
+  const cite = lastAnswer(page).getByRole("button", { name: /^Nguồn 1:/ }).first();
   await expect(cite).toBeVisible();
   await cite.focus();
   await page.keyboard.press("Enter");
@@ -86,7 +91,8 @@ test("Sao chép kèm nguồn", async ({ page }) => {
   await ask(page, "Thời hạn thanh toán là bao lâu?");
   await lastAnswer(page).getByRole("button", { name: /Sao chép kèm nguồn/ }).click();
   await expect(page.getByText(/Đã sao chép câu trả lời kèm nguồn/)).toBeVisible();
-  const text = await page.evaluate(() => navigator.clipboard.readText());
+  // Clipboard trên Windows đổi \n thành \r\n (BUG-004); so khớp sau khi chuẩn hóa xuống dòng.
+  const text = (await page.evaluate(() => navigator.clipboard.readText())).replace(/\r\n/g, "\n");
   expect(text).toMatch(/\[1\]/);
   expect(text).toMatch(/Nguồn:\n\[1\] HopDongKhung\.pdf, trang \d+/);
 });
@@ -95,7 +101,9 @@ test("👎 kèm lý do", async ({ page }) => {
   await ask(page, "Thời hạn thanh toán là bao lâu?");
   const answer = lastAnswer(page);
   await answer.getByRole("button", { name: "Câu trả lời chưa tốt" }).click();
-  await answer.getByLabel("Thiếu thông tin").check();
+  // Input radio ẩn (opacity 0, pointer-events none); người dùng bấm vào chip nhãn (BUG-005).
+  await answer.locator("label.chip", { hasText: "Thiếu thông tin" }).click();
+  await expect(answer.getByLabel("Thiếu thông tin")).toBeChecked();
   await answer.getByRole("button", { name: "Gửi đánh giá" }).click();
   await expect(answer.getByRole("button", { name: "Câu trả lời chưa tốt" })).toHaveAttribute("aria-pressed", "true");
 });

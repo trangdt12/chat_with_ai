@@ -9,3 +9,11 @@ node_modules/
 web/dist/
 web/test-results/
 web/playwright-report/
+
+# Có nội dung câu trả lời (eval/check_grounding.py) — chỉ dùng cục bộ
+eval/reports/*-spans.json
+eval/reports/*-grounding-review.csv
+
+# Thư mục tạm của scripts/run-tests.sh (junit được chuyển sang reports/<lượt>/)
+backend/.test-out/
+web/.test-out/

@@ -1,0 +1,5 @@
+ruff 0
+pytest 0
+vitest 0
+ingest 0
+playwright 0

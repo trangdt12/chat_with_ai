@@ -1,0 +1,1125 @@
+<testsuites id="" name="" tests="66" failures="3" skipped="12" errors="0" time="424.15568">
+<testsuite name="admin.spec.ts" timestamp="2026-11-02T15:57:23.341Z" hostname="chromium" tests="3" failures="0" skipped="0" time="20.725" errors="0">
+<testcase name="Hùng thêm thành viên: email sai báo lỗi tại ô, email đúng thêm dòng mới" classname="admin.spec.ts" time="4.447">
+<properties>
+<property name="serial" value="">
+</property>
+</properties>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\..\web\test-results\admin-Hùng-thêm-thành-viên-1ea30--ô-email-đúng-thêm-dòng-mới-chromium\test-finished-1.png]]
+
+[[ATTACHMENT|..\..\..\web\test-results\admin-Hùng-thêm-thành-viên-1ea30--ô-email-đúng-thêm-dòng-mới-chromium\video.webm]]
+
+[[ATTACHMENT|..\..\..\web\test-results\admin-Hùng-thêm-thành-viên-1ea30--ô-email-đúng-thêm-dòng-mới-chromium\trace.zip]]
+]]>
+</system-out>
+<system-err>
+<![CDATA[2026-11-02 15:57:26,408 INFO app.seed seed xong: 5 tài khoản, bộ tài liệu 'Dự án X'
+]]>
+</system-err>
+</testcase>
+<testcase name="Anh bị gỡ → thao tác kế tiếp ra trang không có quyền" classname="admin.spec.ts" time="4.211">
+<properties>
+<property name="serial" value="">
+</property>
+</properties>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\..\web\test-results\admin-Anh-bị-gỡ-→-thao-tác-kế-tiếp-ra-trang-không-có-quyền-chromium\test-finished-1.png]]
+
+[[ATTACHMENT|..\..\..\web\test-results\admin-Anh-bị-gỡ-→-thao-tác-kế-tiếp-ra-trang-không-có-quyền-chromium\video.webm]]
+
+[[ATTACHMENT|..\..\..\web\test-results\admin-Anh-bị-gỡ-→-thao-tác-kế-tiếp-ra-trang-không-có-quyền-chromium\test-finished-2.png]]
+
+[[ATTACHMENT|..\..\..\web\test-results\admin-Anh-bị-gỡ-→-thao-tác-kế-tiếp-ra-trang-không-có-quyền-chromium\trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="gỡ tài liệu → biến khỏi danh sách của Lan; trích dẫn cũ báo đã gỡ; nhật ký có các thao tác" classname="admin.spec.ts" time="12.067">
+<properties>
+<property name="serial" value="">
+</property>
+</properties>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\..\web\test-results\admin-gỡ-tài-liệu-→-biến-k-dbea0--gỡ-nhật-ký-có-các-thao-tác-chromium\test-finished-1.png]]
+
+[[ATTACHMENT|..\..\..\web\test-results\admin-gỡ-tài-liệu-→-biến-k-dbea0--gỡ-nhật-ký-có-các-thao-tác-chromium\video.webm]]
+
+[[ATTACHMENT|..\..\..\web\test-results\admin-gỡ-tài-liệu-→-biến-k-dbea0--gỡ-nhật-ký-có-các-thao-tác-chromium\test-finished-2.png]]
+
+[[ATTACHMENT|..\..\..\web\test-results\admin-gỡ-tài-liệu-→-biến-k-dbea0--gỡ-nhật-ký-có-các-thao-tác-chromium\trace.zip]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="admin.spec.ts" timestamp="2026-11-02T15:57:23.341Z" hostname="chromium" tests="3" failures="0" skipped="0" time="12.301" errors="0">
+<testcase name="Hùng thêm thành viên: email sai báo lỗi tại ô, email đúng thêm dòng mới" classname="admin.spec.ts" time="2.072">
+<properties>
+<property name="serial" value="">
+</property>
+</properties>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\..\web\test-results\admin-Hùng-thêm-thành-viên-1ea30--ô-email-đúng-thêm-dòng-mới-chromium-repeat1\test-finished-1.png]]
+
+[[ATTACHMENT|..\..\..\web\test-results\admin-Hùng-thêm-thành-viên-1ea30--ô-email-đúng-thêm-dòng-mới-chromium-repeat1\video.webm]]
+
+[[ATTACHMENT|..\..\..\web\test-results\admin-Hùng-thêm-thành-viên-1ea30--ô-email-đúng-thêm-dòng-mới-chromium-repeat1\trace.zip]]
+]]>
+</system-out>
+<system-err>
+<![CDATA[2026-11-02 15:59:59,993 INFO app.seed seed xong: 5 tài khoản, bộ tài liệu 'Dự án X'
+]]>
+</system-err>
+</testcase>
+<testcase name="Anh bị gỡ → thao tác kế tiếp ra trang không có quyền" classname="admin.spec.ts" time="2.794">
+<properties>
+<property name="serial" value="">
+</property>
+</properties>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\..\web\test-results\admin-Anh-bị-gỡ-→-thao-tác-kế-tiếp-ra-trang-không-có-quyền-chromium-repeat1\test-finished-1.png]]
+
+[[ATTACHMENT|..\..\..\web\test-results\admin-Anh-bị-gỡ-→-thao-tác-kế-tiếp-ra-trang-không-có-quyền-chromium-repeat1\video.webm]]
+
+[[ATTACHMENT|..\..\..\web\test-results\admin-Anh-bị-gỡ-→-thao-tác-kế-tiếp-ra-trang-không-có-quyền-chromium-repeat1\test-finished-2.png]]
+
+[[ATTACHMENT|..\..\..\web\test-results\admin-Anh-bị-gỡ-→-thao-tác-kế-tiếp-ra-trang-không-có-quyền-chromium-repeat1\trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="gỡ tài liệu → biến khỏi danh sách của Lan; trích dẫn cũ báo đã gỡ; nhật ký có các thao tác" classname="admin.spec.ts" time="7.435">
+<properties>
+<property name="serial" value="">
+</property>
+</properties>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\..\web\test-results\admin-gỡ-tài-liệu-→-biến-k-dbea0--gỡ-nhật-ký-có-các-thao-tác-chromium-repeat1\test-finished-1.png]]
+
+[[ATTACHMENT|..\..\..\web\test-results\admin-gỡ-tài-liệu-→-biến-k-dbea0--gỡ-nhật-ký-có-các-thao-tác-chromium-repeat1\video.webm]]
+
+[[ATTACHMENT|..\..\..\web\test-results\admin-gỡ-tài-liệu-→-biến-k-dbea0--gỡ-nhật-ký-có-các-thao-tác-chromium-repeat1\test-finished-2.png]]
+
+[[ATTACHMENT|..\..\..\web\test-results\admin-gỡ-tài-liệu-→-biến-k-dbea0--gỡ-nhật-ký-có-các-thao-tác-chromium-repeat1\trace.zip]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="admin.spec.ts" timestamp="2026-11-02T15:57:23.341Z" hostname="chromium" tests="3" failures="0" skipped="0" time="13.475" errors="0">
+<testcase name="Hùng thêm thành viên: email sai báo lỗi tại ô, email đúng thêm dòng mới" classname="admin.spec.ts" time="2.968">
+<properties>
+<property name="serial" value="">
+</property>
+</properties>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\..\web\test-results\admin-Hùng-thêm-thành-viên-1ea30--ô-email-đúng-thêm-dòng-mới-chromium-repeat2\test-finished-1.png]]
+
+[[ATTACHMENT|..\..\..\web\test-results\admin-Hùng-thêm-thành-viên-1ea30--ô-email-đúng-thêm-dòng-mới-chromium-repeat2\video.webm]]
+
+[[ATTACHMENT|..\..\..\web\test-results\admin-Hùng-thêm-thành-viên-1ea30--ô-email-đúng-thêm-dòng-mới-chromium-repeat2\trace.zip]]
+]]>
+</system-out>
+<system-err>
+<![CDATA[2026-11-02 16:02:15,551 INFO app.seed seed xong: 5 tài khoản, bộ tài liệu 'Dự án X'
+]]>
+</system-err>
+</testcase>
+<testcase name="Anh bị gỡ → thao tác kế tiếp ra trang không có quyền" classname="admin.spec.ts" time="2.93">
+<properties>
+<property name="serial" value="">
+</property>
+</properties>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\..\web\test-results\admin-Anh-bị-gỡ-→-thao-tác-kế-tiếp-ra-trang-không-có-quyền-chromium-repeat2\test-finished-1.png]]
+
+[[ATTACHMENT|..\..\..\web\test-results\admin-Anh-bị-gỡ-→-thao-tác-kế-tiếp-ra-trang-không-có-quyền-chromium-repeat2\video.webm]]
+
+[[ATTACHMENT|..\..\..\web\test-results\admin-Anh-bị-gỡ-→-thao-tác-kế-tiếp-ra-trang-không-có-quyền-chromium-repeat2\test-finished-2.png]]
+
+[[ATTACHMENT|..\..\..\web\test-results\admin-Anh-bị-gỡ-→-thao-tác-kế-tiếp-ra-trang-không-có-quyền-chromium-repeat2\trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="gỡ tài liệu → biến khỏi danh sách của Lan; trích dẫn cũ báo đã gỡ; nhật ký có các thao tác" classname="admin.spec.ts" time="7.577">
+<properties>
+<property name="serial" value="">
+</property>
+</properties>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\..\web\test-results\admin-gỡ-tài-liệu-→-biến-k-dbea0--gỡ-nhật-ký-có-các-thao-tác-chromium-repeat2\test-finished-1.png]]
+
+[[ATTACHMENT|..\..\..\web\test-results\admin-gỡ-tài-liệu-→-biến-k-dbea0--gỡ-nhật-ký-có-các-thao-tác-chromium-repeat2\video.webm]]
+
+[[ATTACHMENT|..\..\..\web\test-results\admin-gỡ-tài-liệu-→-biến-k-dbea0--gỡ-nhật-ký-có-các-thao-tác-chromium-repeat2\test-finished-2.png]]
+
+[[ATTACHMENT|..\..\..\web\test-results\admin-gỡ-tài-liệu-→-biến-k-dbea0--gỡ-nhật-ký-có-các-thao-tác-chromium-repeat2\trace.zip]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="auth.spec.ts" timestamp="2026-11-02T15:57:23.341Z" hostname="chromium" tests="5" failures="0" skipped="0" time="10.44" errors="0">
+<testcase name="chưa đăng nhập mở / → về trang đăng nhập" classname="auth.spec.ts" time="1.195">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\..\web\test-results\auth-chưa-đăng-nhập-mở-→-về-trang-đăng-nhập-chromium\test-finished-1.png]]
+
+[[ATTACHMENT|..\..\..\web\test-results\auth-chưa-đăng-nhập-mở-→-về-trang-đăng-nhập-chromium\video.webm]]
+
+[[ATTACHMENT|..\..\..\web\test-results\auth-chưa-đăng-nhập-mở-→-về-trang-đăng-nhập-chromium\trace.zip]]
+]]>
+</system-out>
+<system-err>
+<![CDATA[2026-11-02 15:57:51,291 INFO app.seed seed xong: 5 tài khoản, bộ tài liệu 'Dự án X'
+]]>
+</system-err>
+</testcase>
+<testcase name="chưa đăng nhập mở /admin → về trang đăng nhập" classname="auth.spec.ts" time="1.696">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\..\web\test-results\auth-chưa-đăng-nhập-mở-admin-→-về-trang-đăng-nhập-chromium\test-finished-1.png]]
+
+[[ATTACHMENT|..\..\..\web\test-results\auth-chưa-đăng-nhập-mở-admin-→-về-trang-đăng-nhập-chromium\video.webm]]
+
+[[ATTACHMENT|..\..\..\web\test-results\auth-chưa-đăng-nhập-mở-admin-→-về-trang-đăng-nhập-chromium\trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Lan đăng nhập → thấy bộ tài liệu; đăng xuất thì Back không vào lại được" classname="auth.spec.ts" time="2.758">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\..\web\test-results\auth-Lan-đăng-nhập-→-thấy--3c776-thì-Back-không-vào-lại-được-chromium\test-finished-1.png]]
+
+[[ATTACHMENT|..\..\..\web\test-results\auth-Lan-đăng-nhập-→-thấy--3c776-thì-Back-không-vào-lại-được-chromium\video.webm]]
+
+[[ATTACHMENT|..\..\..\web\test-results\auth-Lan-đăng-nhập-→-thấy--3c776-thì-Back-không-vào-lại-được-chromium\trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="người ngoài nhóm → trang không có quyền, không lộ tên bộ tài liệu" classname="auth.spec.ts" time="1.826">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\..\web\test-results\auth-người-ngoài-nhóm-→-tr-14881-ền-không-lộ-tên-bộ-tài-liệu-chromium\test-finished-1.png]]
+
+[[ATTACHMENT|..\..\..\web\test-results\auth-người-ngoài-nhóm-→-tr-14881-ền-không-lộ-tên-bộ-tài-liệu-chromium\video.webm]]
+
+[[ATTACHMENT|..\..\..\web\test-results\auth-người-ngoài-nhóm-→-tr-14881-ền-không-lộ-tên-bộ-tài-liệu-chromium\trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="admin không thuộc nhóm → trang quản trị" classname="auth.spec.ts" time="2.965">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\..\web\test-results\auth-admin-không-thuộc-nhóm-→-trang-quản-trị-chromium\test-finished-1.png]]
+
+[[ATTACHMENT|..\..\..\web\test-results\auth-admin-không-thuộc-nhóm-→-trang-quản-trị-chromium\video.webm]]
+
+[[ATTACHMENT|..\..\..\web\test-results\auth-admin-không-thuộc-nhóm-→-trang-quản-trị-chromium\trace.zip]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="auth.spec.ts" timestamp="2026-11-02T15:57:23.341Z" hostname="chromium" tests="5" failures="0" skipped="0" time="5.656" errors="0">
+<testcase name="chưa đăng nhập mở / → về trang đăng nhập" classname="auth.spec.ts" time="1.071">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\..\web\test-results\auth-chưa-đăng-nhập-mở-→-về-trang-đăng-nhập-chromium-repeat1\test-finished-1.png]]
+
+[[ATTACHMENT|..\..\..\web\test-results\auth-chưa-đăng-nhập-mở-→-về-trang-đăng-nhập-chromium-repeat1\video.webm]]
+
+[[ATTACHMENT|..\..\..\web\test-results\auth-chưa-đăng-nhập-mở-→-về-trang-đăng-nhập-chromium-repeat1\trace.zip]]
+]]>
+</system-out>
+<system-err>
+<![CDATA[2026-11-02 16:00:16,502 INFO app.seed seed xong: 5 tài khoản, bộ tài liệu 'Dự án X'
+]]>
+</system-err>
+</testcase>
+<testcase name="chưa đăng nhập mở /admin → về trang đăng nhập" classname="auth.spec.ts" time="1.05">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\..\web\test-results\auth-chưa-đăng-nhập-mở-admin-→-về-trang-đăng-nhập-chromium-repeat1\test-finished-1.png]]
+
+[[ATTACHMENT|..\..\..\web\test-results\auth-chưa-đăng-nhập-mở-admin-→-về-trang-đăng-nhập-chromium-repeat1\video.webm]]
+
+[[ATTACHMENT|..\..\..\web\test-results\auth-chưa-đăng-nhập-mở-admin-→-về-trang-đăng-nhập-chromium-repeat1\trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Lan đăng nhập → thấy bộ tài liệu; đăng xuất thì Back không vào lại được" classname="auth.spec.ts" time="1.219">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\..\web\test-results\auth-Lan-đăng-nhập-→-thấy--3c776-thì-Back-không-vào-lại-được-chromium-repeat1\test-finished-1.png]]
+
+[[ATTACHMENT|..\..\..\web\test-results\auth-Lan-đăng-nhập-→-thấy--3c776-thì-Back-không-vào-lại-được-chromium-repeat1\video.webm]]
+
+[[ATTACHMENT|..\..\..\web\test-results\auth-Lan-đăng-nhập-→-thấy--3c776-thì-Back-không-vào-lại-được-chromium-repeat1\trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="người ngoài nhóm → trang không có quyền, không lộ tên bộ tài liệu" classname="auth.spec.ts" time="1.102">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\..\web\test-results\auth-người-ngoài-nhóm-→-tr-14881-ền-không-lộ-tên-bộ-tài-liệu-chromium-repeat1\test-finished-1.png]]
+
+[[ATTACHMENT|..\..\..\web\test-results\auth-người-ngoài-nhóm-→-tr-14881-ền-không-lộ-tên-bộ-tài-liệu-chromium-repeat1\video.webm]]
+
+[[ATTACHMENT|..\..\..\web\test-results\auth-người-ngoài-nhóm-→-tr-14881-ền-không-lộ-tên-bộ-tài-liệu-chromium-repeat1\trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="admin không thuộc nhóm → trang quản trị" classname="auth.spec.ts" time="1.214">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\..\web\test-results\auth-admin-không-thuộc-nhóm-→-trang-quản-trị-chromium-repeat1\test-finished-1.png]]
+
+[[ATTACHMENT|..\..\..\web\test-results\auth-admin-không-thuộc-nhóm-→-trang-quản-trị-chromium-repeat1\video.webm]]
+
+[[ATTACHMENT|..\..\..\web\test-results\auth-admin-không-thuộc-nhóm-→-trang-quản-trị-chromium-repeat1\trace.zip]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="auth.spec.ts" timestamp="2026-11-02T15:57:23.341Z" hostname="chromium" tests="5" failures="0" skipped="0" time="7.451" errors="0">
+<testcase name="chưa đăng nhập mở / → về trang đăng nhập" classname="auth.spec.ts" time="1.071">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\..\web\test-results\auth-chưa-đăng-nhập-mở-→-về-trang-đăng-nhập-chromium-repeat2\test-finished-1.png]]
+
+[[ATTACHMENT|..\..\..\web\test-results\auth-chưa-đăng-nhập-mở-→-về-trang-đăng-nhập-chromium-repeat2\video.webm]]
+
+[[ATTACHMENT|..\..\..\web\test-results\auth-chưa-đăng-nhập-mở-→-về-trang-đăng-nhập-chromium-repeat2\trace.zip]]
+]]>
+</system-out>
+<system-err>
+<![CDATA[2026-11-02 16:02:33,146 INFO app.seed seed xong: 5 tài khoản, bộ tài liệu 'Dự án X'
+]]>
+</system-err>
+</testcase>
+<testcase name="chưa đăng nhập mở /admin → về trang đăng nhập" classname="auth.spec.ts" time="1.134">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\..\web\test-results\auth-chưa-đăng-nhập-mở-admin-→-về-trang-đăng-nhập-chromium-repeat2\test-finished-1.png]]
+
+[[ATTACHMENT|..\..\..\web\test-results\auth-chưa-đăng-nhập-mở-admin-→-về-trang-đăng-nhập-chromium-repeat2\video.webm]]
+
+[[ATTACHMENT|..\..\..\web\test-results\auth-chưa-đăng-nhập-mở-admin-→-về-trang-đăng-nhập-chromium-repeat2\trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Lan đăng nhập → thấy bộ tài liệu; đăng xuất thì Back không vào lại được" classname="auth.spec.ts" time="1.888">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\..\web\test-results\auth-Lan-đăng-nhập-→-thấy--3c776-thì-Back-không-vào-lại-được-chromium-repeat2\test-finished-1.png]]
+
+[[ATTACHMENT|..\..\..\web\test-results\auth-Lan-đăng-nhập-→-thấy--3c776-thì-Back-không-vào-lại-được-chromium-repeat2\video.webm]]
+
+[[ATTACHMENT|..\..\..\web\test-results\auth-Lan-đăng-nhập-→-thấy--3c776-thì-Back-không-vào-lại-được-chromium-repeat2\trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="người ngoài nhóm → trang không có quyền, không lộ tên bộ tài liệu" classname="auth.spec.ts" time="1.731">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\..\web\test-results\auth-người-ngoài-nhóm-→-tr-14881-ền-không-lộ-tên-bộ-tài-liệu-chromium-repeat2\test-finished-1.png]]
+
+[[ATTACHMENT|..\..\..\web\test-results\auth-người-ngoài-nhóm-→-tr-14881-ền-không-lộ-tên-bộ-tài-liệu-chromium-repeat2\video.webm]]
+
+[[ATTACHMENT|..\..\..\web\test-results\auth-người-ngoài-nhóm-→-tr-14881-ền-không-lộ-tên-bộ-tài-liệu-chromium-repeat2\trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="admin không thuộc nhóm → trang quản trị" classname="auth.spec.ts" time="1.627">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\..\web\test-results\auth-admin-không-thuộc-nhóm-→-trang-quản-trị-chromium-repeat2\test-finished-1.png]]
+
+[[ATTACHMENT|..\..\..\web\test-results\auth-admin-không-thuộc-nhóm-→-trang-quản-trị-chromium-repeat2\video.webm]]
+
+[[ATTACHMENT|..\..\..\web\test-results\auth-admin-không-thuộc-nhóm-→-trang-quản-trị-chromium-repeat2\trace.zip]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="backbone.spec.ts" timestamp="2026-11-02T15:57:23.341Z" hostname="chromium" tests="3" failures="0" skipped="0" time="45.011" errors="0">
+<testcase name="TC-009 câu hỏi về file vừa tải trích dẫn đúng file" classname="backbone.spec.ts" time="14.914">
+<properties>
+<property name="serial" value="">
+</property>
+</properties>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\..\web\test-results\backbone-TC-009-câu-hỏi-về-file-vừa-tải-trích-dẫn-đúng-file-chromium\test-finished-1.png]]
+
+[[ATTACHMENT|..\..\..\web\test-results\backbone-TC-009-câu-hỏi-về-file-vừa-tải-trích-dẫn-đúng-file-chromium\video.webm]]
+
+[[ATTACHMENT|..\..\..\web\test-results\backbone-TC-009-câu-hỏi-về-file-vừa-tải-trích-dẫn-đúng-file-chromium\trace.zip]]
+]]>
+</system-out>
+<system-err>
+<![CDATA[2026-11-02 15:58:06,231 INFO app.seed seed xong: 5 tài khoản, bộ tài liệu 'Dự án X'
+]]>
+</system-err>
+</testcase>
+<testcase name="TC-014 › TC-014 câu trả lời ghi chú file chưa sẵn sàng" classname="backbone.spec.ts" time="18.334">
+<properties>
+<property name="serial" value="">
+</property>
+</properties>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\..\web\test-results\backbone-TC-014-TC-014-câu-7ed84--ghi-chú-file-chưa-sẵn-sàng-chromium\test-finished-1.png]]
+
+[[ATTACHMENT|..\..\..\web\test-results\backbone-TC-014-TC-014-câu-7ed84--ghi-chú-file-chưa-sẵn-sàng-chromium\video.webm]]
+
+[[ATTACHMENT|..\..\..\web\test-results\backbone-TC-014-TC-014-câu-7ed84--ghi-chú-file-chưa-sẵn-sàng-chromium\trace.zip]]
+]]>
+</system-out>
+<system-err>
+<![CDATA[2026-11-02 15:58:20,857 INFO app.seed seed xong: 5 tài khoản, bộ tài liệu 'Dự án X'
+ Container chat_with_ai-worker-1 Stopping 
+ Container chat_with_ai-worker-1 Stopped 
+ Container chat_with_ai-db-1 Waiting 
+ Container chat_with_ai-db-1 Healthy 
+ Container chat_with_ai-worker-1 Starting 
+ Container chat_with_ai-worker-1 Started 
+]]>
+</system-err>
+</testcase>
+<testcase name="TC-018 không hỏi lại xác nhận trong cùng phiên" classname="backbone.spec.ts" time="11.763">
+<properties>
+<property name="serial" value="">
+</property>
+</properties>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\..\web\test-results\backbone-TC-018-không-hỏi-lại-xác-nhận-trong-cùng-phiên-chromium\test-finished-1.png]]
+
+[[ATTACHMENT|..\..\..\web\test-results\backbone-TC-018-không-hỏi-lại-xác-nhận-trong-cùng-phiên-chromium\video.webm]]
+
+[[ATTACHMENT|..\..\..\web\test-results\backbone-TC-018-không-hỏi-lại-xác-nhận-trong-cùng-phiên-chromium\trace.zip]]
+]]>
+</system-out>
+<system-err>
+<![CDATA[2026-11-02 15:58:39,838 INFO app.seed seed xong: 5 tài khoản, bộ tài liệu 'Dự án X'
+]]>
+</system-err>
+</testcase>
+</testsuite>
+<testsuite name="backbone.spec.ts" timestamp="2026-11-02T15:57:23.341Z" hostname="chromium" tests="3" failures="0" skipped="0" time="44.032" errors="0">
+<testcase name="TC-009 câu hỏi về file vừa tải trích dẫn đúng file" classname="backbone.spec.ts" time="12.827">
+<properties>
+<property name="serial" value="">
+</property>
+</properties>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\..\web\test-results\backbone-TC-009-câu-hỏi-về-file-vừa-tải-trích-dẫn-đúng-file-chromium-repeat1\test-finished-1.png]]
+
+[[ATTACHMENT|..\..\..\web\test-results\backbone-TC-009-câu-hỏi-về-file-vừa-tải-trích-dẫn-đúng-file-chromium-repeat1\video.webm]]
+
+[[ATTACHMENT|..\..\..\web\test-results\backbone-TC-009-câu-hỏi-về-file-vừa-tải-trích-dẫn-đúng-file-chromium-repeat1\trace.zip]]
+]]>
+</system-out>
+<system-err>
+<![CDATA[2026-11-02 16:00:25,661 INFO app.seed seed xong: 5 tài khoản, bộ tài liệu 'Dự án X'
+]]>
+</system-err>
+</testcase>
+<testcase name="TC-014 › TC-014 câu trả lời ghi chú file chưa sẵn sàng" classname="backbone.spec.ts" time="19.818">
+<properties>
+<property name="serial" value="">
+</property>
+</properties>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\..\web\test-results\backbone-TC-014-TC-014-câu-7ed84--ghi-chú-file-chưa-sẵn-sàng-chromium-repeat1\test-finished-1.png]]
+
+[[ATTACHMENT|..\..\..\web\test-results\backbone-TC-014-TC-014-câu-7ed84--ghi-chú-file-chưa-sẵn-sàng-chromium-repeat1\video.webm]]
+
+[[ATTACHMENT|..\..\..\web\test-results\backbone-TC-014-TC-014-câu-7ed84--ghi-chú-file-chưa-sẵn-sàng-chromium-repeat1\trace.zip]]
+]]>
+</system-out>
+<system-err>
+<![CDATA[2026-11-02 16:00:39,356 INFO app.seed seed xong: 5 tài khoản, bộ tài liệu 'Dự án X'
+ Container chat_with_ai-worker-1 Stopping 
+ Container chat_with_ai-worker-1 Stopped 
+ Container chat_with_ai-db-1 Waiting 
+ Container chat_with_ai-db-1 Healthy 
+ Container chat_with_ai-worker-1 Starting 
+ Container chat_with_ai-worker-1 Started 
+]]>
+</system-err>
+</testcase>
+<testcase name="TC-018 không hỏi lại xác nhận trong cùng phiên" classname="backbone.spec.ts" time="11.387">
+<properties>
+<property name="serial" value="">
+</property>
+</properties>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\..\web\test-results\backbone-TC-018-không-hỏi-lại-xác-nhận-trong-cùng-phiên-chromium-repeat1\test-finished-1.png]]
+
+[[ATTACHMENT|..\..\..\web\test-results\backbone-TC-018-không-hỏi-lại-xác-nhận-trong-cùng-phiên-chromium-repeat1\video.webm]]
+
+[[ATTACHMENT|..\..\..\web\test-results\backbone-TC-018-không-hỏi-lại-xác-nhận-trong-cùng-phiên-chromium-repeat1\trace.zip]]
+]]>
+</system-out>
+<system-err>
+<![CDATA[2026-11-02 16:00:59,559 INFO app.seed seed xong: 5 tài khoản, bộ tài liệu 'Dự án X'
+]]>
+</system-err>
+</testcase>
+</testsuite>
+<testsuite name="backbone.spec.ts" timestamp="2026-11-02T15:57:23.341Z" hostname="chromium" tests="3" failures="0" skipped="0" time="40.158" errors="0">
+<testcase name="TC-009 câu hỏi về file vừa tải trích dẫn đúng file" classname="backbone.spec.ts" time="13.333">
+<properties>
+<property name="serial" value="">
+</property>
+</properties>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\..\web\test-results\backbone-TC-009-câu-hỏi-về-file-vừa-tải-trích-dẫn-đúng-file-chromium-repeat2\test-finished-1.png]]
+
+[[ATTACHMENT|..\..\..\web\test-results\backbone-TC-009-câu-hỏi-về-file-vừa-tải-trích-dẫn-đúng-file-chromium-repeat2\video.webm]]
+
+[[ATTACHMENT|..\..\..\web\test-results\backbone-TC-009-câu-hỏi-về-file-vừa-tải-trích-dẫn-đúng-file-chromium-repeat2\trace.zip]]
+]]>
+</system-out>
+<system-err>
+<![CDATA[2026-11-02 16:02:43,497 INFO app.seed seed xong: 5 tài khoản, bộ tài liệu 'Dự án X'
+]]>
+</system-err>
+</testcase>
+<testcase name="TC-014 › TC-014 câu trả lời ghi chú file chưa sẵn sàng" classname="backbone.spec.ts" time="16.235">
+<properties>
+<property name="serial" value="">
+</property>
+</properties>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\..\web\test-results\backbone-TC-014-TC-014-câu-7ed84--ghi-chú-file-chưa-sẵn-sàng-chromium-repeat2\test-finished-1.png]]
+
+[[ATTACHMENT|..\..\..\web\test-results\backbone-TC-014-TC-014-câu-7ed84--ghi-chú-file-chưa-sẵn-sàng-chromium-repeat2\video.webm]]
+
+[[ATTACHMENT|..\..\..\web\test-results\backbone-TC-014-TC-014-câu-7ed84--ghi-chú-file-chưa-sẵn-sàng-chromium-repeat2\trace.zip]]
+]]>
+</system-out>
+<system-err>
+<![CDATA[2026-11-02 16:02:57,172 INFO app.seed seed xong: 5 tài khoản, bộ tài liệu 'Dự án X'
+ Container chat_with_ai-worker-1 Stopping 
+ Container chat_with_ai-worker-1 Stopped 
+ Container chat_with_ai-db-1 Waiting 
+ Container chat_with_ai-db-1 Healthy 
+ Container chat_with_ai-worker-1 Starting 
+ Container chat_with_ai-worker-1 Started 
+]]>
+</system-err>
+</testcase>
+<testcase name="TC-018 không hỏi lại xác nhận trong cùng phiên" classname="backbone.spec.ts" time="10.59">
+<properties>
+<property name="serial" value="">
+</property>
+</properties>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\..\web\test-results\backbone-TC-018-không-hỏi-lại-xác-nhận-trong-cùng-phiên-chromium-repeat2\test-finished-1.png]]
+
+[[ATTACHMENT|..\..\..\web\test-results\backbone-TC-018-không-hỏi-lại-xác-nhận-trong-cùng-phiên-chromium-repeat2\video.webm]]
+
+[[ATTACHMENT|..\..\..\web\test-results\backbone-TC-018-không-hỏi-lại-xác-nhận-trong-cùng-phiên-chromium-repeat2\trace.zip]]
+]]>
+</system-out>
+<system-err>
+<![CDATA[2026-11-02 16:03:14,415 INFO app.seed seed xong: 5 tài khoản, bộ tài liệu 'Dự án X'
+]]>
+</system-err>
+</testcase>
+</testsuite>
+<testsuite name="batch.spec.ts" timestamp="2026-11-02T15:57:23.341Z" hostname="chromium" tests="1" failures="0" skipped="0" time="8.272" errors="0">
+<testcase name="Minh tải 3 file một lần → 3 dòng trạng thái riêng → đều Sẵn sàng" classname="batch.spec.ts" time="8.272">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\..\web\test-results\batch-Minh-tải-3-file-một--d487c-g-thái-riêng-→-đều-Sẵn-sàng-chromium\test-finished-1.png]]
+
+[[ATTACHMENT|..\..\..\web\test-results\batch-Minh-tải-3-file-một--d487c-g-thái-riêng-→-đều-Sẵn-sàng-chromium\video.webm]]
+
+[[ATTACHMENT|..\..\..\web\test-results\batch-Minh-tải-3-file-một--d487c-g-thái-riêng-→-đều-Sẵn-sàng-chromium\trace.zip]]
+]]>
+</system-out>
+<system-err>
+<![CDATA[2026-11-02 15:58:50,977 INFO app.seed seed xong: 5 tài khoản, bộ tài liệu 'Dự án X'
+]]>
+</system-err>
+</testcase>
+</testsuite>
+<testsuite name="batch.spec.ts" timestamp="2026-11-02T15:57:23.341Z" hostname="chromium" tests="1" failures="0" skipped="0" time="5.532" errors="0">
+<testcase name="Minh tải 3 file một lần → 3 dòng trạng thái riêng → đều Sẵn sàng" classname="batch.spec.ts" time="5.532">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\..\web\test-results\batch-Minh-tải-3-file-một--d487c-g-thái-riêng-→-đều-Sẵn-sàng-chromium-repeat1\test-finished-1.png]]
+
+[[ATTACHMENT|..\..\..\web\test-results\batch-Minh-tải-3-file-một--d487c-g-thái-riêng-→-đều-Sẵn-sàng-chromium-repeat1\video.webm]]
+
+[[ATTACHMENT|..\..\..\web\test-results\batch-Minh-tải-3-file-một--d487c-g-thái-riêng-→-đều-Sẵn-sàng-chromium-repeat1\trace.zip]]
+]]>
+</system-out>
+<system-err>
+<![CDATA[2026-11-02 16:01:11,025 INFO app.seed seed xong: 5 tài khoản, bộ tài liệu 'Dự án X'
+]]>
+</system-err>
+</testcase>
+</testsuite>
+<testsuite name="batch.spec.ts" timestamp="2026-11-02T15:57:23.341Z" hostname="chromium" tests="1" failures="0" skipped="0" time="6.6" errors="0">
+<testcase name="Minh tải 3 file một lần → 3 dòng trạng thái riêng → đều Sẵn sàng" classname="batch.spec.ts" time="6.6">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\..\web\test-results\batch-Minh-tải-3-file-một--d487c-g-thái-riêng-→-đều-Sẵn-sàng-chromium-repeat2\test-finished-1.png]]
+
+[[ATTACHMENT|..\..\..\web\test-results\batch-Minh-tải-3-file-một--d487c-g-thái-riêng-→-đều-Sẵn-sàng-chromium-repeat2\video.webm]]
+
+[[ATTACHMENT|..\..\..\web\test-results\batch-Minh-tải-3-file-một--d487c-g-thái-riêng-→-đều-Sẵn-sàng-chromium-repeat2\trace.zip]]
+]]>
+</system-out>
+<system-err>
+<![CDATA[2026-11-02 16:03:24,447 INFO app.seed seed xong: 5 tài khoản, bộ tài liệu 'Dự án X'
+]]>
+</system-err>
+</testcase>
+</testsuite>
+<testsuite name="chat.spec.ts" timestamp="2026-11-02T15:57:23.341Z" hostname="chromium" tests="7" failures="1" skipped="4" time="23.801" errors="0">
+<testcase name="hỏi → stream → [1] → popover → mở PDF đúng trang" classname="chat.spec.ts" time="3.62">
+<properties>
+<property name="serial" value="">
+</property>
+</properties>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\..\web\test-results\chat-hỏi-→-stream-→-1-→-popover-→-mở-PDF-đúng-trang-chromium\test-finished-1.png]]
+
+[[ATTACHMENT|..\..\..\web\test-results\chat-hỏi-→-stream-→-1-→-popover-→-mở-PDF-đúng-trang-chromium\test-finished-2.png]]
+
+[[ATTACHMENT|..\..\..\web\test-results\chat-hỏi-→-stream-→-1-→-popover-→-mở-PDF-đúng-trang-chromium\video.webm]]
+
+[[ATTACHMENT|..\..\..\web\test-results\chat-hỏi-→-stream-→-1-→-popover-→-mở-PDF-đúng-trang-chromium\trace.zip]]
+]]>
+</system-out>
+<system-err>
+<![CDATA[2026-11-02 15:59:03,278 INFO app.seed seed xong: 5 tài khoản, bộ tài liệu 'Dự án X'
+]]>
+</system-err>
+</testcase>
+<testcase name="bàn phím: Tab tới [1], Enter mở, Esc đóng và trả focus" classname="chat.spec.ts" time="1.736">
+<properties>
+<property name="serial" value="">
+</property>
+</properties>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\..\web\test-results\chat-bàn-phím-Tab-tới-1-Enter-mở-Esc-đóng-và-trả-focus-chromium\test-finished-1.png]]
+
+[[ATTACHMENT|..\..\..\web\test-results\chat-bàn-phím-Tab-tới-1-Enter-mở-Esc-đóng-và-trả-focus-chromium\video.webm]]
+
+[[ATTACHMENT|..\..\..\web\test-results\chat-bàn-phím-Tab-tới-1-Enter-mở-Esc-đóng-và-trả-focus-chromium\trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="câu hỏi tiếp nối, câu không có trong tài liệu, Hội thoại mới" classname="chat.spec.ts" time="18.445">
+<properties>
+<property name="serial" value="">
+</property>
+</properties>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\..\web\test-results\chat-câu-hỏi-tiếp-nối-câu--6795b-rong-tài-liệu-Hội-thoại-mới-chromium\test-failed-1.png]]
+
+[[ATTACHMENT|..\..\..\web\test-results\chat-câu-hỏi-tiếp-nối-câu--6795b-rong-tài-liệu-Hội-thoại-mới-chromium\video.webm]]
+
+[[ATTACHMENT|..\..\..\web\test-results\chat-câu-hỏi-tiếp-nối-câu--6795b-rong-tài-liệu-Hội-thoại-mới-chromium\error-context.md]]
+
+[[ATTACHMENT|..\..\..\web\test-results\chat-câu-hỏi-tiếp-nối-câu--6795b-rong-tài-liệu-Hội-thoại-mới-chromium\trace.zip]]
+]]>
+</system-out>
+<failure message="expect(locator).toContainText(expected) failed" type="expect.toContainText">
+<![CDATA[  [chromium] › chat.spec.ts:64:1 › câu hỏi tiếp nối, câu không có trong tài liệu, Hội thoại mới ────
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: locator('article.msg-assistant').last()
+    Expected substring: "Không tìm thấy thông tin này trong các tài liệu đã tải lên."
+    Received string:    "AITheo tài liệu HopDongKhung.pdf, Ngoai le: khi cham giao hang, thoi han thanh toan duoc gia han them 15 ngay.1 Thông tin này nằm ở trang 3 của tài liệu.1NguồnHopDongKhung.pdf · trang 3Sao chép kèm nguồn"
+    Timeout: 15000ms
+
+    Call log:
+      - Expect "toContainText" locator('article.msg-assistant').last() with timeout 15000ms
+      - waiting for locator('article.msg-assistant').last()
+        2 × locator resolved to <article aria-busy="true" class="msg-assistant" aria-label="Câu trả lời lượt 3">…</article>
+          - unexpected value "AIĐang trả lời…"
+        2 × locator resolved to <article aria-busy="true" class="msg-assistant" aria-label="Câu trả lời lượt 3">…</article>
+          - unexpected value "AITheo tài liệu HopDongKhung.pdf, Ngoai le: khi cham giao hang, thoi han thanh toan duoc gia han them 15 ngay.1"
+        - locator resolved to <article aria-busy="true" class="msg-assistant" aria-label="Câu trả lời lượt 3">…</article>
+        - unexpected value "AITheo tài liệu HopDongKhung.pdf, Ngoai le: khi cham giao hang, thoi han thanh toan duoc gia han them 15 ngay.1 Thông tin này nằm ở trang 3 của tài liệu.1"
+        28 × locator resolved to <article aria-busy="false" class="msg-assistant" aria-label="Câu trả lời lượt 3">…</article>
+           - unexpected value "AITheo tài liệu HopDongKhung.pdf, Ngoai le: khi cham giao hang, thoi han thanh toan duoc gia han them 15 ngay.1 Thông tin này nằm ở trang 3 của tài liệu.1NguồnHopDongKhung.pdf · trang 3Sao chép kèm nguồn"
+
+
+      70 |
+      71 |   await ask(page, "Thủ đô của Pháp là gì?");
+    > 72 |   await expect(lastAnswer(page)).toContainText("Không tìm thấy thông tin này trong các tài liệu đã tải lên.");
+         |                                  ^
+      73 |
+      74 |   await page.getByRole("button", { name: "Hội thoại mới" }).click();
+      75 |   await expect(page.locator("article.msg-assistant")).toHaveCount(0);
+        at E:\Working\SDLC\chat_with_ai\web\e2e\chat.spec.ts:72:34
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\chat-câu-hỏi-tiếp-nối-câu--6795b-rong-tài-liệu-Hội-thoại-mới-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\chat-câu-hỏi-tiếp-nối-câu--6795b-rong-tài-liệu-Hội-thoại-mới-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\chat-câu-hỏi-tiếp-nối-câu--6795b-rong-tài-liệu-Hội-thoại-mới-chromium\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\test-results\chat-câu-hỏi-tiếp-nối-câu--6795b-rong-tài-liệu-Hội-thoại-mới-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\test-results\chat-câu-hỏi-tiếp-nối-câu--6795b-rong-tài-liệu-Hội-thoại-mới-chromium\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+</testcase>
+<testcase name="Dừng giữa chừng → nhãn đã dừng, ô nhập dùng được" classname="chat.spec.ts">
+<properties>
+<property name="serial" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Sao chép kèm nguồn" classname="chat.spec.ts">
+<properties>
+<property name="serial" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="👎 kèm lý do" classname="chat.spec.ts">
+<properties>
+<property name="serial" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="ô nhập rỗng: Enter không gửi" classname="chat.spec.ts">
+<properties>
+<property name="serial" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="chat.spec.ts" timestamp="2026-11-02T15:57:23.341Z" hostname="chromium" tests="7" failures="1" skipped="4" time="23.733" errors="0">
+<testcase name="hỏi → stream → [1] → popover → mở PDF đúng trang" classname="chat.spec.ts" time="2.288">
+<properties>
+<property name="serial" value="">
+</property>
+</properties>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\..\web\test-results\chat-hỏi-→-stream-→-1-→-popover-→-mở-PDF-đúng-trang-chromium-repeat1\test-finished-1.png]]
+
+[[ATTACHMENT|..\..\..\web\test-results\chat-hỏi-→-stream-→-1-→-popover-→-mở-PDF-đúng-trang-chromium-repeat1\test-finished-2.png]]
+
+[[ATTACHMENT|..\..\..\web\test-results\chat-hỏi-→-stream-→-1-→-popover-→-mở-PDF-đúng-trang-chromium-repeat1\video.webm]]
+
+[[ATTACHMENT|..\..\..\web\test-results\chat-hỏi-→-stream-→-1-→-popover-→-mở-PDF-đúng-trang-chromium-repeat1\trace.zip]]
+]]>
+</system-out>
+<system-err>
+<![CDATA[2026-11-02 16:01:19,376 INFO app.seed seed xong: 5 tài khoản, bộ tài liệu 'Dự án X'
+]]>
+</system-err>
+</testcase>
+<testcase name="bàn phím: Tab tới [1], Enter mở, Esc đóng và trả focus" classname="chat.spec.ts" time="2.526">
+<properties>
+<property name="serial" value="">
+</property>
+</properties>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\..\web\test-results\chat-bàn-phím-Tab-tới-1-Enter-mở-Esc-đóng-và-trả-focus-chromium-repeat1\test-finished-1.png]]
+
+[[ATTACHMENT|..\..\..\web\test-results\chat-bàn-phím-Tab-tới-1-Enter-mở-Esc-đóng-và-trả-focus-chromium-repeat1\video.webm]]
+
+[[ATTACHMENT|..\..\..\web\test-results\chat-bàn-phím-Tab-tới-1-Enter-mở-Esc-đóng-và-trả-focus-chromium-repeat1\trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="câu hỏi tiếp nối, câu không có trong tài liệu, Hội thoại mới" classname="chat.spec.ts" time="18.919">
+<properties>
+<property name="serial" value="">
+</property>
+</properties>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\..\web\test-results\chat-câu-hỏi-tiếp-nối-câu--6795b-rong-tài-liệu-Hội-thoại-mới-chromium-repeat1\test-failed-1.png]]
+
+[[ATTACHMENT|..\..\..\web\test-results\chat-câu-hỏi-tiếp-nối-câu--6795b-rong-tài-liệu-Hội-thoại-mới-chromium-repeat1\video.webm]]
+
+[[ATTACHMENT|..\..\..\web\test-results\chat-câu-hỏi-tiếp-nối-câu--6795b-rong-tài-liệu-Hội-thoại-mới-chromium-repeat1\error-context.md]]
+
+[[ATTACHMENT|..\..\..\web\test-results\chat-câu-hỏi-tiếp-nối-câu--6795b-rong-tài-liệu-Hội-thoại-mới-chromium-repeat1\trace.zip]]
+]]>
+</system-out>
+<failure message="expect(locator).toContainText(expected) failed" type="expect.toContainText">
+<![CDATA[  [chromium] › chat.spec.ts:64:1 › câu hỏi tiếp nối, câu không có trong tài liệu, Hội thoại mới ────
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: locator('article.msg-assistant').last()
+    Expected substring: "Không tìm thấy thông tin này trong các tài liệu đã tải lên."
+    Received string:    "AITheo tài liệu HopDongKhung.pdf, Ngoai le: khi cham giao hang, thoi han thanh toan duoc gia han them 15 ngay.1 Thông tin này nằm ở trang 3 của tài liệu.1NguồnHopDongKhung.pdf · trang 3Sao chép kèm nguồn"
+    Timeout: 15000ms
+
+    Call log:
+      - Expect "toContainText" locator('article.msg-assistant').last() with timeout 15000ms
+      - waiting for locator('article.msg-assistant').last()
+        2 × locator resolved to <article aria-busy="true" class="msg-assistant" aria-label="Câu trả lời lượt 3">…</article>
+          - unexpected value "AIĐang trả lời…"
+        2 × locator resolved to <article aria-busy="true" class="msg-assistant" aria-label="Câu trả lời lượt 3">…</article>
+          - unexpected value "AITheo tài liệu HopDongKhung.pdf, Ngoai le: khi cham giao hang, thoi han thanh toan duoc gia han them 15 ngay.1"
+        - locator resolved to <article aria-busy="true" class="msg-assistant" aria-label="Câu trả lời lượt 3">…</article>
+        - unexpected value "AITheo tài liệu HopDongKhung.pdf, Ngoai le: khi cham giao hang, thoi han thanh toan duoc gia han them 15 ngay.1 Thông tin này nằm ở trang 3 của tài liệu.1"
+        28 × locator resolved to <article aria-busy="false" class="msg-assistant" aria-label="Câu trả lời lượt 3">…</article>
+           - unexpected value "AITheo tài liệu HopDongKhung.pdf, Ngoai le: khi cham giao hang, thoi han thanh toan duoc gia han them 15 ngay.1 Thông tin này nằm ở trang 3 của tài liệu.1NguồnHopDongKhung.pdf · trang 3Sao chép kèm nguồn"
+
+
+      70 |
+      71 |   await ask(page, "Thủ đô của Pháp là gì?");
+    > 72 |   await expect(lastAnswer(page)).toContainText("Không tìm thấy thông tin này trong các tài liệu đã tải lên.");
+         |                                  ^
+      73 |
+      74 |   await page.getByRole("button", { name: "Hội thoại mới" }).click();
+      75 |   await expect(page.locator("article.msg-assistant")).toHaveCount(0);
+        at E:\Working\SDLC\chat_with_ai\web\e2e\chat.spec.ts:72:34
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\chat-câu-hỏi-tiếp-nối-câu--6795b-rong-tài-liệu-Hội-thoại-mới-chromium-repeat1\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\chat-câu-hỏi-tiếp-nối-câu--6795b-rong-tài-liệu-Hội-thoại-mới-chromium-repeat1\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\chat-câu-hỏi-tiếp-nối-câu--6795b-rong-tài-liệu-Hội-thoại-mới-chromium-repeat1\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\test-results\chat-câu-hỏi-tiếp-nối-câu--6795b-rong-tài-liệu-Hội-thoại-mới-chromium-repeat1\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\test-results\chat-câu-hỏi-tiếp-nối-câu--6795b-rong-tài-liệu-Hội-thoại-mới-chromium-repeat1\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+</testcase>
+<testcase name="Dừng giữa chừng → nhãn đã dừng, ô nhập dùng được" classname="chat.spec.ts">
+<properties>
+<property name="serial" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Sao chép kèm nguồn" classname="chat.spec.ts">
+<properties>
+<property name="serial" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="👎 kèm lý do" classname="chat.spec.ts">
+<properties>
+<property name="serial" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="ô nhập rỗng: Enter không gửi" classname="chat.spec.ts">
+<properties>
+<property name="serial" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="chat.spec.ts" timestamp="2026-11-02T15:57:23.341Z" hostname="chromium" tests="7" failures="1" skipped="4" time="23.279" errors="0">
+<testcase name="hỏi → stream → [1] → popover → mở PDF đúng trang" classname="chat.spec.ts" time="2.888">
+<properties>
+<property name="serial" value="">
+</property>
+</properties>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\..\web\test-results\chat-hỏi-→-stream-→-1-→-popover-→-mở-PDF-đúng-trang-chromium-repeat2\test-finished-1.png]]
+
+[[ATTACHMENT|..\..\..\web\test-results\chat-hỏi-→-stream-→-1-→-popover-→-mở-PDF-đúng-trang-chromium-repeat2\test-finished-2.png]]
+
+[[ATTACHMENT|..\..\..\web\test-results\chat-hỏi-→-stream-→-1-→-popover-→-mở-PDF-đúng-trang-chromium-repeat2\video.webm]]
+
+[[ATTACHMENT|..\..\..\web\test-results\chat-hỏi-→-stream-→-1-→-popover-→-mở-PDF-đúng-trang-chromium-repeat2\trace.zip]]
+]]>
+</system-out>
+<system-err>
+<![CDATA[2026-11-02 16:03:34,706 INFO app.seed seed xong: 5 tài khoản, bộ tài liệu 'Dự án X'
+]]>
+</system-err>
+</testcase>
+<testcase name="bàn phím: Tab tới [1], Enter mở, Esc đóng và trả focus" classname="chat.spec.ts" time="1.795">
+<properties>
+<property name="serial" value="">
+</property>
+</properties>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\..\web\test-results\chat-bàn-phím-Tab-tới-1-Enter-mở-Esc-đóng-và-trả-focus-chromium-repeat2\test-finished-1.png]]
+
+[[ATTACHMENT|..\..\..\web\test-results\chat-bàn-phím-Tab-tới-1-Enter-mở-Esc-đóng-và-trả-focus-chromium-repeat2\video.webm]]
+
+[[ATTACHMENT|..\..\..\web\test-results\chat-bàn-phím-Tab-tới-1-Enter-mở-Esc-đóng-và-trả-focus-chromium-repeat2\trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="câu hỏi tiếp nối, câu không có trong tài liệu, Hội thoại mới" classname="chat.spec.ts" time="18.596">
+<properties>
+<property name="serial" value="">
+</property>
+</properties>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\..\web\test-results\chat-câu-hỏi-tiếp-nối-câu--6795b-rong-tài-liệu-Hội-thoại-mới-chromium-repeat2\test-failed-1.png]]
+
+[[ATTACHMENT|..\..\..\web\test-results\chat-câu-hỏi-tiếp-nối-câu--6795b-rong-tài-liệu-Hội-thoại-mới-chromium-repeat2\video.webm]]
+
+[[ATTACHMENT|..\..\..\web\test-results\chat-câu-hỏi-tiếp-nối-câu--6795b-rong-tài-liệu-Hội-thoại-mới-chromium-repeat2\error-context.md]]
+
+[[ATTACHMENT|..\..\..\web\test-results\chat-câu-hỏi-tiếp-nối-câu--6795b-rong-tài-liệu-Hội-thoại-mới-chromium-repeat2\trace.zip]]
+]]>
+</system-out>
+<failure message="expect(locator).toContainText(expected) failed" type="expect.toContainText">
+<![CDATA[  [chromium] › chat.spec.ts:64:1 › câu hỏi tiếp nối, câu không có trong tài liệu, Hội thoại mới ────
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: locator('article.msg-assistant').last()
+    Expected substring: "Không tìm thấy thông tin này trong các tài liệu đã tải lên."
+    Received string:    "AITheo tài liệu HopDongKhung.pdf, Ngoai le: khi cham giao hang, thoi han thanh toan duoc gia han them 15 ngay.1 Thông tin này nằm ở trang 3 của tài liệu.1NguồnHopDongKhung.pdf · trang 3Sao chép kèm nguồn"
+    Timeout: 15000ms
+
+    Call log:
+      - Expect "toContainText" locator('article.msg-assistant').last() with timeout 15000ms
+      - waiting for locator('article.msg-assistant').last()
+        3 × locator resolved to <article aria-busy="true" class="msg-assistant" aria-label="Câu trả lời lượt 3">…</article>
+          - unexpected value "AITheo tài liệu HopDongKhung.pdf, Ngoai le: khi cham giao hang, thoi han thanh toan duoc gia han them 15 ngay.1"
+        2 × locator resolved to <article aria-busy="true" class="msg-assistant" aria-label="Câu trả lời lượt 3">…</article>
+          - unexpected value "AITheo tài liệu HopDongKhung.pdf, Ngoai le: khi cham giao hang, thoi han thanh toan duoc gia han them 15 ngay.1 Thông tin này nằm ở trang 3 của tài liệu.1"
+        28 × locator resolved to <article aria-busy="false" class="msg-assistant" aria-label="Câu trả lời lượt 3">…</article>
+           - unexpected value "AITheo tài liệu HopDongKhung.pdf, Ngoai le: khi cham giao hang, thoi han thanh toan duoc gia han them 15 ngay.1 Thông tin này nằm ở trang 3 của tài liệu.1NguồnHopDongKhung.pdf · trang 3Sao chép kèm nguồn"
+
+
+      70 |
+      71 |   await ask(page, "Thủ đô của Pháp là gì?");
+    > 72 |   await expect(lastAnswer(page)).toContainText("Không tìm thấy thông tin này trong các tài liệu đã tải lên.");
+         |                                  ^
+      73 |
+      74 |   await page.getByRole("button", { name: "Hội thoại mới" }).click();
+      75 |   await expect(page.locator("article.msg-assistant")).toHaveCount(0);
+        at E:\Working\SDLC\chat_with_ai\web\e2e\chat.spec.ts:72:34
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\test-results\chat-câu-hỏi-tiếp-nối-câu--6795b-rong-tài-liệu-Hội-thoại-mới-chromium-repeat2\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\test-results\chat-câu-hỏi-tiếp-nối-câu--6795b-rong-tài-liệu-Hội-thoại-mới-chromium-repeat2\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\test-results\chat-câu-hỏi-tiếp-nối-câu--6795b-rong-tài-liệu-Hội-thoại-mới-chromium-repeat2\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\test-results\chat-câu-hỏi-tiếp-nối-câu--6795b-rong-tài-liệu-Hội-thoại-mới-chromium-repeat2\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\test-results\chat-câu-hỏi-tiếp-nối-câu--6795b-rong-tài-liệu-Hội-thoại-mới-chromium-repeat2\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+</testcase>
+<testcase name="Dừng giữa chừng → nhãn đã dừng, ô nhập dùng được" classname="chat.spec.ts">
+<properties>
+<property name="serial" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Sao chép kèm nguồn" classname="chat.spec.ts">
+<properties>
+<property name="serial" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="👎 kèm lý do" classname="chat.spec.ts">
+<properties>
+<property name="serial" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+<testcase name="ô nhập rỗng: Enter không gửi" classname="chat.spec.ts">
+<properties>
+<property name="serial" value="">
+</property>
+</properties>
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="upload.spec.ts" timestamp="2026-11-02T15:57:23.341Z" hostname="chromium" tests="3" failures="0" skipped="0" time="15.747" errors="0">
+<testcase name="Lan: xác nhận phân loại → tải PDF → Đang xử lý → Sẵn sàng" classname="upload.spec.ts" time="5.593">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\..\web\test-results\upload-Lan-xác-nhận-phân-l-d7f17-PDF-→-Đang-xử-lý-→-Sẵn-sàng-chromium\test-finished-1.png]]
+
+[[ATTACHMENT|..\..\..\web\test-results\upload-Lan-xác-nhận-phân-l-d7f17-PDF-→-Đang-xử-lý-→-Sẵn-sàng-chromium\video.webm]]
+
+[[ATTACHMENT|..\..\..\web\test-results\upload-Lan-xác-nhận-phân-l-d7f17-PDF-→-Đang-xử-lý-→-Sẵn-sàng-chromium\trace.zip]]
+]]>
+</system-out>
+<system-err>
+<![CDATA[2026-11-02 15:59:38,743 INFO app.seed seed xong: 5 tài khoản, bộ tài liệu 'Dự án X'
+]]>
+</system-err>
+</testcase>
+<testcase name=".docx và PDF hỏng báo lỗi riêng từng file, PDF scan báo không trích xuất được chữ" classname="upload.spec.ts" time="9.027">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\..\web\test-results\upload--docx-và-PDF-hỏng-b-db298-o-không-trích-xuất-được-chữ-chromium\test-finished-1.png]]
+
+[[ATTACHMENT|..\..\..\web\test-results\upload--docx-và-PDF-hỏng-b-db298-o-không-trích-xuất-được-chữ-chromium\video.webm]]
+
+[[ATTACHMENT|..\..\..\web\test-results\upload--docx-và-PDF-hỏng-b-db298-o-không-trích-xuất-được-chữ-chromium\trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Lan chọn 2 file → bị từ chối, hướng dẫn tải từng file" classname="upload.spec.ts" time="1.127">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\..\web\test-results\upload-Lan-chọn-2-file-→-bị-từ-chối-hướng-dẫn-tải-từng-file-chromium\test-finished-1.png]]
+
+[[ATTACHMENT|..\..\..\web\test-results\upload-Lan-chọn-2-file-→-bị-từ-chối-hướng-dẫn-tải-từng-file-chromium\video.webm]]
+
+[[ATTACHMENT|..\..\..\web\test-results\upload-Lan-chọn-2-file-→-bị-từ-chối-hướng-dẫn-tải-từng-file-chromium\trace.zip]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="upload.spec.ts" timestamp="2026-11-02T15:57:23.341Z" hostname="chromium" tests="3" failures="0" skipped="0" time="17.034" errors="0">
+<testcase name="Lan: xác nhận phân loại → tải PDF → Đang xử lý → Sẵn sàng" classname="upload.spec.ts" time="6.32">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\..\web\test-results\upload-Lan-xác-nhận-phân-l-d7f17-PDF-→-Đang-xử-lý-→-Sẵn-sàng-chromium-repeat1\test-finished-1.png]]
+
+[[ATTACHMENT|..\..\..\web\test-results\upload-Lan-xác-nhận-phân-l-d7f17-PDF-→-Đang-xử-lý-→-Sẵn-sàng-chromium-repeat1\video.webm]]
+
+[[ATTACHMENT|..\..\..\web\test-results\upload-Lan-xác-nhận-phân-l-d7f17-PDF-→-Đang-xử-lý-→-Sẵn-sàng-chromium-repeat1\trace.zip]]
+]]>
+</system-out>
+<system-err>
+<![CDATA[2026-11-02 16:01:53,462 INFO app.seed seed xong: 5 tài khoản, bộ tài liệu 'Dự án X'
+]]>
+</system-err>
+</testcase>
+<testcase name=".docx và PDF hỏng báo lỗi riêng từng file, PDF scan báo không trích xuất được chữ" classname="upload.spec.ts" time="9.037">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\..\web\test-results\upload--docx-và-PDF-hỏng-b-db298-o-không-trích-xuất-được-chữ-chromium-repeat1\test-finished-1.png]]
+
+[[ATTACHMENT|..\..\..\web\test-results\upload--docx-và-PDF-hỏng-b-db298-o-không-trích-xuất-được-chữ-chromium-repeat1\video.webm]]
+
+[[ATTACHMENT|..\..\..\web\test-results\upload--docx-và-PDF-hỏng-b-db298-o-không-trích-xuất-được-chữ-chromium-repeat1\trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Lan chọn 2 file → bị từ chối, hướng dẫn tải từng file" classname="upload.spec.ts" time="1.677">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\..\web\test-results\upload-Lan-chọn-2-file-→-bị-từ-chối-hướng-dẫn-tải-từng-file-chromium-repeat1\test-finished-1.png]]
+
+[[ATTACHMENT|..\..\..\web\test-results\upload-Lan-chọn-2-file-→-bị-từ-chối-hướng-dẫn-tải-từng-file-chromium-repeat1\video.webm]]
+
+[[ATTACHMENT|..\..\..\web\test-results\upload-Lan-chọn-2-file-→-bị-từ-chối-hướng-dẫn-tải-từng-file-chromium-repeat1\trace.zip]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="upload.spec.ts" timestamp="2026-11-02T15:57:23.341Z" hostname="chromium" tests="3" failures="0" skipped="0" time="16.265" errors="0">
+<testcase name="Lan: xác nhận phân loại → tải PDF → Đang xử lý → Sẵn sàng" classname="upload.spec.ts" time="5.491">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\..\web\test-results\upload-Lan-xác-nhận-phân-l-d7f17-PDF-→-Đang-xử-lý-→-Sẵn-sàng-chromium-repeat2\test-finished-1.png]]
+
+[[ATTACHMENT|..\..\..\web\test-results\upload-Lan-xác-nhận-phân-l-d7f17-PDF-→-Đang-xử-lý-→-Sẵn-sàng-chromium-repeat2\video.webm]]
+
+[[ATTACHMENT|..\..\..\web\test-results\upload-Lan-xác-nhận-phân-l-d7f17-PDF-→-Đang-xử-lý-→-Sẵn-sàng-chromium-repeat2\trace.zip]]
+]]>
+</system-out>
+<system-err>
+<![CDATA[2026-11-02 16:04:08,681 INFO app.seed seed xong: 5 tài khoản, bộ tài liệu 'Dự án X'
+]]>
+</system-err>
+</testcase>
+<testcase name=".docx và PDF hỏng báo lỗi riêng từng file, PDF scan báo không trích xuất được chữ" classname="upload.spec.ts" time="9.442">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\..\web\test-results\upload--docx-và-PDF-hỏng-b-db298-o-không-trích-xuất-được-chữ-chromium-repeat2\test-finished-1.png]]
+
+[[ATTACHMENT|..\..\..\web\test-results\upload--docx-và-PDF-hỏng-b-db298-o-không-trích-xuất-được-chữ-chromium-repeat2\video.webm]]
+
+[[ATTACHMENT|..\..\..\web\test-results\upload--docx-và-PDF-hỏng-b-db298-o-không-trích-xuất-được-chữ-chromium-repeat2\trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Lan chọn 2 file → bị từ chối, hướng dẫn tải từng file" classname="upload.spec.ts" time="1.332">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\..\..\web\test-results\upload-Lan-chọn-2-file-→-bị-từ-chối-hướng-dẫn-tải-từng-file-chromium-repeat2\test-finished-1.png]]
+
+[[ATTACHMENT|..\..\..\web\test-results\upload-Lan-chọn-2-file-→-bị-từ-chối-hướng-dẫn-tải-từng-file-chromium-repeat2\video.webm]]
+
+[[ATTACHMENT|..\..\..\web\test-results\upload-Lan-chọn-2-file-→-bị-từ-chối-hướng-dẫn-tải-từng-file-chromium-repeat2\trace.zip]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+</testsuites>

@@ -1,0 +1,1382 @@
+web-1  | 2026-10-28T11:05:10.511178458Z npm warn deprecated whatwg-encoding@3.1.1: Use @exodus/bytes instead for a more spec-conformant and faster implementation
+web-1  | 2026-10-28T11:05:17.896865505Z 
+web-1  | 2026-10-28T11:05:17.896887207Z added 283 packages, and audited 284 packages in 2m
+web-1  | 2026-10-28T11:05:17.897443380Z 
+web-1  | 2026-10-28T11:05:17.897602801Z 116 packages are looking for funding
+web-1  | 2026-10-28T11:05:17.897935345Z   run `npm fund` for details
+web-1  | 2026-10-28T11:05:17.980549864Z 
+web-1  | 2026-10-28T11:05:17.980577868Z 8 vulnerabilities (5 moderate, 1 high, 2 critical)
+web-1  | 2026-10-28T11:05:17.980580668Z 
+web-1  | 2026-10-28T11:05:17.980582668Z To address all issues (including breaking changes), run:
+web-1  | 2026-10-28T11:05:17.980584568Z   npm audit fix --force
+web-1  | 2026-10-28T11:05:17.980587469Z 
+web-1  | 2026-10-28T11:05:17.980589169Z Run `npm audit` for details.
+web-1  | 2026-10-28T11:05:17.982272389Z npm notice
+web-1  | 2026-10-28T11:05:17.982282891Z npm notice New major version of npm available! 10.8.2 -> 12.2.1
+web-1  | 2026-10-28T11:05:17.982285291Z npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+web-1  | 2026-10-28T11:05:17.982287591Z npm notice To update run: npm install -g npm@12.2.1
+web-1  | 2026-10-28T11:05:17.982289292Z npm notice
+web-1  | 2026-10-28T11:05:18.547927867Z 
+web-1  | 2026-10-28T11:05:18.547962472Z > cwd-web@0.1.0 dev
+web-1  | 2026-10-28T11:05:18.547966773Z > vite --host 0.0.0.0 --port 5173
+web-1  | 2026-10-28T11:05:18.547969373Z 
+web-1  | 2026-10-28T11:05:19.277251579Z 
+web-1  | 2026-10-28T11:05:19.277276283Z   VITE v5.4.21  ready in 663 ms
+web-1  | 2026-10-28T11:05:19.277279483Z 
+web-1  | 2026-10-28T11:05:19.277481309Z   ➜  Local:   http://localhost:5173/
+web-1  | 2026-10-28T11:05:19.277720441Z   ➜  Network: http://172.18.0.5:5173/
+web-1  | 2026-11-02T15:37:22.257143104Z 
+web-1  | 2026-11-02T15:37:22.257486947Z added 1 package, and audited 285 packages in 5s
+web-1  | 2026-11-02T15:37:22.257495148Z 
+web-1  | 2026-11-02T15:37:22.257519451Z 116 packages are looking for funding
+web-1  | 2026-11-02T15:37:22.257525752Z   run `npm fund` for details
+web-1  | 2026-11-02T15:37:22.342919904Z 
+web-1  | 2026-11-02T15:37:22.342947607Z 8 vulnerabilities (5 moderate, 1 high, 2 critical)
+web-1  | 2026-11-02T15:37:22.342952908Z 
+web-1  | 2026-11-02T15:37:22.342955808Z To address all issues (including breaking changes), run:
+web-1  | 2026-11-02T15:37:22.342958509Z   npm audit fix --force
+web-1  | 2026-11-02T15:37:22.342961709Z 
+web-1  | 2026-11-02T15:37:22.342964309Z Run `npm audit` for details.
+web-1  | 2026-11-02T15:37:22.756608790Z 
+web-1  | 2026-11-02T15:37:22.756637594Z > cwd-web@0.1.0 dev
+web-1  | 2026-11-02T15:37:22.756642395Z > vite --host 0.0.0.0 --port 5173
+web-1  | 2026-11-02T15:37:22.756673098Z 
+web-1  | 2026-11-02T15:37:23.927988076Z 
+web-1  | 2026-11-02T15:37:23.928019580Z   VITE v5.4.21  ready in 1076 ms
+web-1  | 2026-11-02T15:37:23.928024081Z 
+web-1  | 2026-11-02T15:37:23.928292315Z   ➜  Local:   http://localhost:5173/
+web-1  | 2026-11-02T15:37:23.928308017Z   ➜  Network: http://172.18.0.4:5173/
+worker-1  | 2026-11-02T15:37:19.977997841Z 2026-11-02 15:37:19,977 INFO app.worker worker started (đưa 0 tài liệu kẹt về hàng đợi)
+worker-1 | 2026-11-02T15:44:55.689571340Z 2026-11-02 15:44:55,686 INFO app.worker document 288327a6-e124-4bfc-9d6b-091c28e534d0 ready: 3 trang, 3 đoạn, 0.3s
+worker-1 | 2026-11-02T15:45:19.888133827Z 2026-11-02 15:45:19,887 INFO app.worker document 2671d170-8725-4c77-b7de-05e0f81a93fa ready: 3 trang, 3 đoạn, 0.1s
+worker-1  | 2026-11-02T15:46:14.088285912Z 2026-11-02 15:46:14,088 INFO app.worker document 936d3cd1-f37a-4ee5-afb0-f0af5f829761 ready: 3 trang, 3 đoạn, 0.1s
+db-1   | 2026-10-28T11:03:37.937417164Z The files belonging to this database system will be owned by user "postgres".
+db-1      | 2026-10-28T11:03:37.937864823Z This user must also own the server process.
+db-1      | 2026-10-28T11:03:37.937870124Z 
+worker-1  | 2026-11-02T15:46:20.166481872Z 2026-11-02 15:46:20,165 INFO app.worker document 3b2526b7-c3ca-4bd5-88d0-5e7404de12dc ready: 1 trang, 1 đoạn, 0.1s
+worker-1  | 2026-11-02T15:46:30.255736939Z 2026-11-02 15:46:30,255 INFO app.worker document 35e11b62-0f62-4d0c-9b5e-e0bc0bafff84 ready: 3 trang, 3 đoạn, 0.1s
+worker-1  | 2026-11-02T15:46:46.151878598Z 2026-11-02 15:46:46,150 INFO app.worker worker started (đưa 0 tài liệu kẹt về hàng đợi)
+worker-1  | 2026-11-02T15:46:46.247742963Z 2026-11-02 15:46:46,247 INFO app.worker document b0308a92-a94b-43e2-bf5a-630c34345312 ready: 1 trang, 1 đoạn, 0.1s
+worker-1  | 2026-11-02T15:46:50.358429015Z 2026-11-02 15:46:50,357 INFO app.worker document 126ae196-3363-42aa-97f2-a4c0637cbcbe ready: 3 trang, 3 đoạn, 0.1s
+worker-1  | 2026-11-02T15:46:54.421906537Z 2026-11-02 15:46:54,421 INFO app.worker document bb0385e8-e861-49d1-b816-f24a339ef223 ready: 1 trang, 1 đoạn, 0.0s
+worker-1  | 2026-11-02T15:47:03.012981249Z 2026-11-02 15:47:03,012 INFO app.worker document a456bb27-d9fe-4ddc-8f2e-b8d342b4bc1d ready: 3 trang, 3 đoạn, 0.1s
+worker-1  | 2026-11-02T15:47:03.072503869Z 2026-11-02 15:47:03,072 INFO app.worker document fa01b5be-ef69-46c3-bce9-ee92631b1972 ready: 1 trang, 1 đoạn, 0.1s
+worker-1  | 2026-11-02T15:47:03.123960176Z 2026-11-02 15:47:03,123 INFO app.worker document acacf67c-ba70-418e-9d8e-7b63901869c6 ready: 1 trang, 1 đoạn, 0.0s
+worker-1  | 2026-11-02T15:47:13.563714068Z 2026-11-02 15:47:13,563 INFO app.worker document b748cd14-b0b0-481e-8ce3-648fc5b4d98e ready: 3 trang, 3 đoạn, 0.4s
+db-1      | 2026-10-28T11:03:37.938932364Z The database cluster will be initialized with locale "en_US.utf8".
+db-1      | 2026-10-28T11:03:37.938939864Z The default database encoding has accordingly been set to "UTF8".
+worker-1  | 2026-11-02T15:47:31.672400254Z 2026-11-02 15:47:31,672 INFO app.worker document 3757d10b-cb0c-4d01-8aee-d964eb5fbc7b ready: 3 trang, 3 đoạn, 0.1s
+worker-1  | 2026-11-02T15:47:37.808890078Z 2026-11-02 15:47:37,808 INFO app.worker document 1b234981-4625-4cba-b3c5-532ea7971bdf failed: corrupt
+worker-1  | 2026-11-02T15:47:39.891914413Z 2026-11-02 15:47:39,891 INFO app.worker document f9633450-02d1-4f1e-84af-2dbec639bdec failed: no_text
+worker-1  | 2026-11-02T15:48:04.028120078Z 2026-11-02 15:48:04,027 INFO app.worker document ed1dc85d-b112-4526-bb33-716bc70e6732 ready: 3 trang, 3 đoạn, 0.1s
+worker-1  | 2026-11-02T15:48:54.272196127Z 2026-11-02 15:48:54,271 INFO app.worker document 58469337-4244-44d2-b888-26505f9d8431 ready: 3 trang, 3 đoạn, 0.1s
+worker-1  | 2026-11-02T15:48:58.337999226Z 2026-11-02 15:48:58,337 INFO app.worker document 7a06fe4d-cb12-4b2a-be97-a61d4ebc7453 ready: 1 trang, 1 đoạn, 0.0s
+worker-1  | 2026-11-02T15:49:08.436688979Z 2026-11-02 15:49:08,436 INFO app.worker document 6971318c-0422-43e3-8532-95ec8ba0e84a ready: 3 trang, 3 đoạn, 0.1s
+worker-1  | 2026-11-02T15:49:25.777741362Z 2026-11-02 15:49:25,777 INFO app.worker worker started (đưa 0 tài liệu kẹt về hàng đợi)
+worker-1  | 2026-11-02T15:49:26.055986008Z 2026-11-02 15:49:26,055 INFO app.worker document 0be1bae0-bd45-49b9-98dc-4b7ffd1c4871 ready: 1 trang, 1 đoạn, 0.2s
+api-1     | 2026-11-02T15:37:17.565270392Z INFO:     Will watch for changes in these directories: ['/app']
+api-1     | 2026-11-02T15:37:17.565441319Z INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+worker-1  | 2026-11-02T15:49:32.416436959Z 2026-11-02 15:49:32,416 INFO app.worker document 22ed1f03-7330-4025-a826-4bc4ce46d7b4 ready: 3 trang, 3 đoạn, 0.4s
+worker-1  | 2026-11-02T15:49:34.503849179Z 2026-11-02 15:49:34,503 INFO app.worker document bcd3ada7-5d41-4b84-887b-335842eb07e4 ready: 1 trang, 1 đoạn, 0.1s
+worker-1  | 2026-11-02T15:49:45.495710497Z 2026-11-02 15:49:45,492 INFO app.worker document 456f3637-0129-47fe-9da8-d0e092cc988e ready: 3 trang, 3 đoạn, 0.9s
+worker-1  | 2026-11-02T15:49:45.604184534Z 2026-11-02 15:49:45,602 INFO app.worker document faa25ae1-7da1-4ea0-9c80-08ec7971ead4 ready: 1 trang, 1 đoạn, 0.1s
+worker-1  | 2026-11-02T15:49:45.662200297Z 2026-11-02 15:49:45,661 INFO app.worker document 98ec8622-70fa-4f44-8878-dc96babf9182 ready: 1 trang, 1 đoạn, 0.0s
+worker-1  | 2026-11-02T15:49:55.765367262Z 2026-11-02 15:49:55,765 INFO app.worker document 6f8df054-18a4-4c05-841e-919a66184cf2 ready: 3 trang, 3 đoạn, 0.1s
+worker-1  | 2026-11-02T15:50:07.930680310Z 2026-11-02 15:50:07,930 INFO app.worker document 4608bcf6-eae0-4015-9ee8-f4af2c7e0f4d ready: 3 trang, 3 đoạn, 0.1s
+worker-1  | 2026-11-02T15:50:13.970343755Z 2026-11-02 15:50:13,969 INFO app.worker document 7280f52e-0dfe-42d3-9e39-dc48ac6dcee0 failed: corrupt
+db-1      | 2026-10-28T11:03:37.938942065Z The default text search configuration will be set to "english".
+db-1      | 2026-10-28T11:03:37.938944465Z 
+db-1      | 2026-10-28T11:03:37.938946465Z Data page checksums are disabled.
+db-1      | 2026-10-28T11:03:37.938948666Z 
+db-1      | 2026-10-28T11:03:37.938950466Z fixing permissions on existing directory /var/lib/postgresql/data ... ok
+db-1      | 2026-10-28T11:03:37.946541566Z creating subdirectories ... ok
+db-1      | 2026-10-28T11:03:37.946554568Z selecting dynamic shared memory implementation ... posix
+db-1      | 2026-10-28T11:03:37.979768946Z selecting default max_connections ... 100
+db-1      | 2026-10-28T11:03:38.011130479Z selecting default shared_buffers ... 128MB
+db-1      | 2026-10-28T11:03:38.049080281Z selecting default time zone ... Etc/UTC
+db-1      | 2026-10-28T11:03:38.056453852Z creating configuration files ... ok
+db-1      | 2026-10-28T11:03:38.243086650Z running bootstrap script ... ok
+db-1      | 2026-10-28T11:03:38.914307915Z performing post-bootstrap initialization ... ok
+db-1      | 2026-10-28T11:03:39.652593718Z syncing data to disk ... ok
+db-1      | 2026-10-28T11:03:39.652625322Z 
+db-1      | 2026-10-28T11:03:39.652631423Z 
+db-1      | 2026-10-28T11:03:39.652633823Z Success. You can now start the database server using:
+db-1      | 2026-10-28T11:03:39.652636724Z 
+db-1      | 2026-10-28T11:03:39.652638924Z     pg_ctl -D /var/lib/postgresql/data -l logfile start
+db-1      | 2026-10-28T11:03:39.652642625Z 
+db-1      | 2026-10-28T11:03:39.652635824Z initdb: warning: enabling "trust" authentication for local connections
+db-1      | 2026-10-28T11:03:39.652652126Z initdb: hint: You can change this by editing pg_hba.conf or using the option -A, or --auth-local and --auth-host, the next time you run initdb.
+db-1      | 2026-10-28T11:03:39.764425857Z waiting for server to start....2026-10-28 11:03:39.764 UTC [48] LOG:  starting PostgreSQL 16.15 (Debian 16.15-1.pgdg12+2) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14+deb12u1) 12.2.0, 64-bit
+db-1      | 2026-10-28T11:03:39.772735452Z 2026-10-28 11:03:39.772 UTC [48] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+db-1      | 2026-10-28T11:03:39.800769447Z 2026-10-28 11:03:39.800 UTC [51] LOG:  database system was shut down at 2026-10-28 11:03:38 UTC
+db-1      | 2026-10-28T11:03:39.816967782Z 2026-10-28 11:03:39.816 UTC [48] LOG:  database system is ready to accept connections
+db-1      | 2026-10-28T11:03:39.907722143Z  done
+db-1      | 2026-10-28T11:03:39.907767149Z server started
+db-1      | 2026-10-28T11:03:40.312405279Z CREATE DATABASE
+db-1      | 2026-10-28T11:03:40.315135939Z 
+db-1      | 2026-10-28T11:03:40.320650066Z 
+db-1      | 2026-10-28T11:03:40.320689971Z /usr/local/bin/docker-entrypoint.sh: running /docker-entrypoint-initdb.d/01-test-db.sql
+db-1      | 2026-10-28T11:03:40.533407806Z CREATE DATABASE
+db-1      | 2026-10-28T11:03:40.538084823Z 
+db-1      | 2026-10-28T11:03:40.538112526Z 
+db-1      | 2026-10-28T11:03:40.541230637Z waiting for server to shut down....2026-10-28 11:03:40.540 UTC [48] LOG:  received fast shutdown request
+db-1      | 2026-10-28T11:03:40.554317662Z 2026-10-28 11:03:40.554 UTC [48] LOG:  aborting any active transactions
+db-1      | 2026-10-28T11:03:40.572086504Z 2026-10-28 11:03:40.569 UTC [48] LOG:  background worker "logical replication launcher" (PID 54) exited with exit code 1
+db-1      | 2026-10-28T11:03:40.574387407Z 2026-10-28 11:03:40.574 UTC [49] LOG:  shutting down
+db-1      | 2026-10-28T11:03:40.583628325Z 2026-10-28 11:03:40.583 UTC [49] LOG:  checkpoint starting: shutdown immediate
+db-1      | 2026-10-28T11:03:40.731530618Z 2026-10-28 11:03:40.731 UTC [70] FATAL:  the database system is shutting down
+db-1      | 2026-10-28T11:03:40.858636570Z 2026-10-28 11:03:40.858 UTC [49] LOG:  checkpoint complete: wrote 1838 buffers (11.2%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.087 s, sync=0.149 s, total=0.284 s; sync files=597, longest=0.026 s, average=0.001 s; distance=8510 kB, estimate=8510 kB; lsn=0/1D39B90, redo lsn=0/1D39B90
+db-1      | 2026-10-28T11:03:40.868226434Z 2026-10-28 11:03:40.867 UTC [48] LOG:  database system is shut down
+db-1      | 2026-10-28T11:03:40.942019160Z  done
+api-1     | 2026-11-02T15:37:17.566262149Z INFO:     Started reloader process [1] using WatchFiles
+api-1     | 2026-11-02T15:37:21.280541542Z INFO:     Started server process [8]
+api-1     | 2026-11-02T15:37:21.286810531Z INFO:     Waiting for application startup.
+worker-1  | 2026-11-02T15:50:18.034160686Z 2026-11-02 15:50:18,033 INFO app.worker document 3bd91f29-ed12-42bd-b639-41556042be84 failed: no_text
+worker-1  | 2026-11-02T15:50:38.124131849Z 2026-11-02 15:50:38,123 INFO app.worker document 3b99b99c-633c-4be0-abf1-961305c02b68 ready: 3 trang, 3 đoạn, 0.0s
+worker-1  | 2026-11-02T15:51:20.341946623Z 2026-11-02 15:51:20,341 INFO app.worker document dc3714d9-43d2-4ade-8675-3b4105fded8c ready: 3 trang, 3 đoạn, 0.1s
+worker-1  | 2026-11-02T15:51:24.478819526Z 2026-11-02 15:51:24,478 INFO app.worker document 582ba86d-ebdc-4743-a9f4-b790eff113b9 ready: 1 trang, 1 đoạn, 0.1s
+worker-1  | 2026-11-02T15:51:34.555003020Z 2026-11-02 15:51:34,554 INFO app.worker document c74c1bcd-7ec0-4629-89dd-a38efe424b97 ready: 3 trang, 3 đoạn, 0.0s
+worker-1  | 2026-11-02T15:51:47.517216215Z 2026-11-02 15:51:47,516 INFO app.worker worker started (đưa 0 tài liệu kẹt về hàng đợi)
+worker-1  | 2026-11-02T15:51:47.592862082Z 2026-11-02 15:51:47,592 INFO app.worker document 93b340ae-5f00-4811-831b-5aa3ebf0c219 ready: 1 trang, 1 đoạn, 0.1s
+db-1      | 2026-10-28T11:03:40.942071167Z server stopped
+db-1      | 2026-10-28T11:03:40.945073162Z 
+db-1      | 2026-10-28T11:03:40.945094965Z PostgreSQL init process complete; ready for start up.
+db-1      | 2026-10-28T11:03:40.945098266Z 
+db-1      | 2026-10-28T11:03:41.012992714Z 2026-10-28 11:03:41.012 UTC [1] LOG:  starting PostgreSQL 16.15 (Debian 16.15-1.pgdg12+2) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14+deb12u1) 12.2.0, 64-bit
+db-1      | 2026-10-28T11:03:41.016867225Z 2026-10-28 11:03:41.016 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+db-1      | 2026-10-28T11:03:41.016901729Z 2026-10-28 11:03:41.016 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+db-1      | 2026-10-28T11:03:41.039725637Z 2026-10-28 11:03:41.039 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+db-1      | 2026-10-28T11:03:41.076184142Z 2026-10-28 11:03:41.075 UTC [74] LOG:  database system was shut down at 2026-10-28 11:03:40 UTC
+db-1      | 2026-10-28T11:03:41.147850888Z 2026-10-28 11:03:41.146 UTC [1] LOG:  database system is ready to accept connections
+db-1      | 2026-10-28T11:04:19.943334599Z 2026-10-28 11:04:19.942 UTC [173] ERROR:  relation "documents" does not exist at character 8
+db-1      | 2026-10-28T11:04:19.943380505Z 2026-10-28 11:04:19.942 UTC [173] STATEMENT:  UPDATE documents SET status=$1::VARCHAR, progress=$2::INTEGER WHERE documents.status = $3::VARCHAR
+db-1      | 2026-10-28T11:06:52.954709178Z 2026-10-28 11:06:52.953 UTC [468] ERROR:  duplicate key value violates unique constraint "documents_doc_set_filename_key"
+db-1      | 2026-10-28T11:06:52.954797589Z 2026-10-28 11:06:52.953 UTC [468] DETAIL:  Key (doc_set_id, filename)=(e4aa0634-dfef-47c7-9345-1882cb11cad5, a.pdf) already exists.
+db-1      | 2026-10-28T11:06:52.954808791Z 2026-10-28 11:06:52.953 UTC [468] STATEMENT:  INSERT INTO documents (id, doc_set_id, filename, pages, size_bytes, status, progress, error_code, file_path, uploaded_by) VALUES ($1::UUID, $2::UUID, $3::VARCHAR, $4::INTEGER, $5::BIGINT, $6::VARCHAR, $7::INTEGER, $8::VARCHAR, $9::VARCHAR, $10::UUID) RETURNING documents.uploaded_at
+db-1      | 2026-10-28T11:08:11.463370335Z 2026-10-28 11:08:11.462 UTC [679] ERROR:  duplicate key value violates unique constraint "documents_doc_set_filename_key"
+db-1      | 2026-10-28T11:08:11.463406539Z 2026-10-28 11:08:11.462 UTC [679] DETAIL:  Key (doc_set_id, filename)=(feea004b-3d6b-4d38-a962-1c614c9f4259, a.pdf) already exists.
+db-1      | 2026-10-28T11:08:11.463411640Z 2026-10-28 11:08:11.462 UTC [679] STATEMENT:  INSERT INTO documents (id, doc_set_id, filename, pages, size_bytes, status, progress, error_code, file_path, uploaded_by) VALUES ($1::UUID, $2::UUID, $3::VARCHAR, $4::INTEGER, $5::BIGINT, $6::VARCHAR, $7::INTEGER, $8::VARCHAR, $9::VARCHAR, $10::UUID) RETURNING documents.uploaded_at
+db-1      | 2026-10-28T11:08:41.145985983Z 2026-10-28 11:08:41.144 UTC [72] LOG:  checkpoint starting: time
+db-1      | 2026-10-28T11:10:01.742174983Z 2026-10-28 11:10:01.741 UTC [72] LOG:  checkpoint complete: wrote 774 buffers (4.7%); 0 WAL file(s) added, 0 removed, 1 recycled; write=77.378 s, sync=3.055 s, total=80.599 s; sync files=7848, longest=0.032 s, average=0.001 s; distance=12683 kB, estimate=12683 kB; lsn=0/29C2A80, redo lsn=0/299C7C8
+db-1      | 2026-10-28T11:13:41.812742413Z 2026-10-28 11:13:41.812 UTC [72] LOG:  checkpoint starting: time
+db-1      | 2026-10-28T11:13:51.828160191Z 2026-10-28 11:13:51.827 UTC [72] LOG:  checkpoint complete: wrote 100 buffers (0.6%); 0 WAL file(s) added, 0 removed, 0 recycled; write=9.951 s, sync=0.052 s, total=10.016 s; sync files=88, longest=0.006 s, average=0.001 s; distance=309 kB, estimate=11445 kB; lsn=0/29E9ED8, redo lsn=0/29E9EA0
+db-1      | 2026-10-28T11:39:22.655579667Z 2026-10-28 11:39:22.655 UTC [72] LOG:  checkpoint starting: time
+db-1      | 2026-10-28T11:39:24.166508951Z 2026-10-28 11:39:24.166 UTC [72] LOG:  checkpoint complete: wrote 8 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.717 s, sync=0.095 s, total=1.511 s; sync files=8, longest=0.064 s, average=0.012 s; distance=3 kB, estimate=10301 kB; lsn=0/29EADB0, redo lsn=0/29EAD78
+db-1      | 2026-10-28T11:44:22.206125273Z 2026-10-28 11:44:22.205 UTC [72] LOG:  checkpoint starting: time
+db-1      | 2026-10-28T11:44:26.770578194Z 2026-10-28 11:44:26.770 UTC [72] LOG:  checkpoint complete: wrote 46 buffers (0.3%); 0 WAL file(s) added, 0 removed, 0 recycled; write=4.523 s, sync=0.016 s, total=4.566 s; sync files=29, longest=0.008 s, average=0.001 s; distance=55 kB, estimate=9276 kB; lsn=0/29F8C00, redo lsn=0/29F8BC8
+db-1      | 2026-10-28T12:12:14.531553624Z 2026-10-28 12:12:14.531 UTC [72] LOG:  checkpoint starting: time
+db-1      | 2026-10-28T12:12:15.248155598Z 2026-10-28 12:12:15.247 UTC [72] LOG:  checkpoint complete: wrote 6 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.509 s, sync=0.015 s, total=0.717 s; sync files=6, longest=0.010 s, average=0.003 s; distance=7 kB, estimate=8349 kB; lsn=0/29FA948, redo lsn=0/29FA910
+db-1      | 2026-10-28T13:22:14.866012775Z 2026-10-28 13:22:14.863 UTC [72] LOG:  checkpoint starting: time
+db-1      | 2026-10-28T13:23:00.729638684Z 2026-10-28 13:23:00.729 UTC [72] LOG:  checkpoint complete: wrote 447 buffers (2.7%); 0 WAL file(s) added, 0 removed, 1 recycled; write=45.439 s, sync=0.376 s, total=45.867 s; sync files=1210, longest=0.014 s, average=0.001 s; distance=7305 kB, estimate=8245 kB; lsn=0/3144998, redo lsn=0/311CE58
+db-1      | 2026-10-28T13:27:14.011457544Z 2026-10-28 13:27:14.011 UTC [72] LOG:  checkpoint starting: time
+db-1      | 2026-10-28T13:27:34.584994379Z 2026-10-28 13:27:34.584 UTC [19759] ERROR:  duplicate key value violates unique constraint "documents_doc_set_filename_key"
+worker-1  | 2026-11-02T15:51:51.677877902Z 2026-11-02 15:51:51,677 INFO app.worker document 4236ddc7-01d4-4966-a37d-6e3612754e41 ready: 3 trang, 3 đoạn, 0.1s
+worker-1  | 2026-11-02T15:51:55.762120447Z 2026-11-02 15:51:55,761 INFO app.worker document 4ae6b463-1220-4f61-94e6-6185b84950c2 ready: 1 trang, 1 đoạn, 0.1s
+worker-1  | 2026-11-02T15:52:02.037337353Z 2026-11-02 15:52:02,036 INFO app.worker document 4cfc4150-4ef7-49ed-a0e7-974eeff29bd1 ready: 3 trang, 3 đoạn, 0.1s
+api-1     | 2026-11-02T15:37:21.287272189Z INFO:     Application startup complete.
+api-1     | 2026-11-02T15:38:29.043328551Z INFO:     172.18.0.1:35204 - "GET /api/v1/health HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:44:54.695674940Z INFO:     127.0.0.1:51066 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T15:44:54.944706436Z INFO:     127.0.0.1:51066 - "POST /api/v1/doc-sets/da4c9f4d-5d07-4f18-9f2f-2ffcf7b3c776/classification-confirmations HTTP/1.1" 201 Created
+api-1     | 2026-11-02T15:44:55.038175012Z INFO:     127.0.0.1:51066 - "POST /api/v1/doc-sets/da4c9f4d-5d07-4f18-9f2f-2ffcf7b3c776/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:44:55.071757423Z INFO:     127.0.0.1:51066 - "GET /api/v1/doc-sets/da4c9f4d-5d07-4f18-9f2f-2ffcf7b3c776/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:44:55.297437078Z INFO:     127.0.0.1:51066 - "GET /api/v1/doc-sets/da4c9f4d-5d07-4f18-9f2f-2ffcf7b3c776/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:44:55.514620063Z INFO:     127.0.0.1:51066 - "GET /api/v1/doc-sets/da4c9f4d-5d07-4f18-9f2f-2ffcf7b3c776/documents HTTP/1.1" 200 OK
+db-1      | 2026-10-28T13:27:34.585117891Z 2026-10-28 13:27:34.584 UTC [19759] DETAIL:  Key (doc_set_id, filename)=(f2e458c6-3c3a-44e7-8ae9-05f74ea9072e, a.pdf) already exists.
+db-1      | 2026-10-28T13:27:34.585156194Z 2026-10-28 13:27:34.584 UTC [19759] STATEMENT:  INSERT INTO documents (id, doc_set_id, filename, pages, size_bytes, status, progress, error_code, file_path, uploaded_by) VALUES ($1::UUID, $2::UUID, $3::VARCHAR, $4::INTEGER, $5::BIGINT, $6::VARCHAR, $7::INTEGER, $8::VARCHAR, $9::VARCHAR, $10::UUID) RETURNING documents.uploaded_at
+db-1      | 2026-10-28T13:27:50.516705933Z 2026-10-28 13:27:50.515 UTC [72] LOG:  checkpoint complete: wrote 316 buffers (1.9%); 0 WAL file(s) added, 0 removed, 0 recycled; write=34.071 s, sync=2.381 s, total=36.505 s; sync files=4081, longest=0.020 s, average=0.001 s; distance=3292 kB, estimate=7750 kB; lsn=0/38D2B88, redo lsn=0/3453ED8
+db-1      | 2026-10-28T13:32:14.579227872Z 2026-10-28 13:32:14.578 UTC [72] LOG:  checkpoint starting: time
+worker-1  | 2026-11-02T15:52:02.083226561Z 2026-11-02 15:52:02,082 INFO app.worker document 88131f64-ce21-4e0f-aa3e-105bcfef1342 ready: 1 trang, 1 đoạn, 0.0s
+worker-1  | 2026-11-02T15:52:02.121316396Z 2026-11-02 15:52:02,120 INFO app.worker document e362c0b9-9724-43f2-b9dc-a5d96ef01598 ready: 1 trang, 1 đoạn, 0.0s
+worker-1  | 2026-11-02T15:52:12.196924314Z 2026-11-02 15:52:12,196 INFO app.worker document f57e3b21-1184-4ca4-9a4f-9a1a54e759a9 ready: 3 trang, 3 đoạn, 0.0s
+worker-1  | 2026-11-02T15:52:24.283074126Z 2026-11-02 15:52:24,282 INFO app.worker document 88599363-1191-4348-96ec-c690ec0f66d8 ready: 3 trang, 3 đoạn, 0.0s
+worker-1  | 2026-11-02T15:52:30.316426029Z 2026-11-02 15:52:30,316 INFO app.worker document 2485bdff-addd-4b92-8e01-aa6aeb3f7b66 failed: corrupt
+worker-1  | 2026-11-02T15:52:34.380851751Z 2026-11-02 15:52:34,380 INFO app.worker document 6ccbc2e0-7d88-486c-8c2d-ce4bf40b49fb failed: no_text
+worker-1  | 2026-11-02T15:57:17.315835084Z 2026-11-02 15:57:17,315 INFO app.worker document 5fab5616-3d74-455a-a48d-8a50e6bceae1 ready: 3 trang, 3 đoạn, 0.1s
+worker-1  | 2026-11-02T15:57:39.460661251Z 2026-11-02 15:57:39,460 INFO app.worker document 378d6e40-b8f2-49a9-9d04-13328173bff9 ready: 3 trang, 3 đoạn, 0.1s
+worker-1  | 2026-11-02T15:58:10.130450863Z 2026-11-02 15:58:10,130 INFO app.worker document 9662a453-02b9-43ac-9285-bba5ab1d6757 ready: 3 trang, 3 đoạn, 0.6s
+worker-1  | 2026-11-02T15:58:14.195060156Z 2026-11-02 15:58:14,194 INFO app.worker document 894a8041-5990-4eff-9709-e87a9e231b25 ready: 1 trang, 1 đoạn, 0.0s
+worker-1  | 2026-11-02T15:58:24.324613711Z 2026-11-02 15:58:24,323 INFO app.worker document f573110a-7496-46a2-bfab-4a77694843b3 ready: 3 trang, 3 đoạn, 0.1s
+db-1      | 2026-10-28T13:32:31.828437074Z 2026-10-28 13:32:31.828 UTC [72] LOG:  checkpoint complete: wrote 172 buffers (1.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=17.179 s, sync=0.027 s, total=17.250 s; sync files=49, longest=0.006 s, average=0.001 s; distance=5094 kB, estimate=7484 kB; lsn=0/394D830, redo lsn=0/394D7F8
+db-1      | 2026-11-02T15:37:11.286665521Z 
+db-1      | 2026-11-02T15:37:11.287600349Z PostgreSQL Database directory appears to contain a database; Skipping initialization
+db-1      | 2026-11-02T15:37:11.287606750Z 
+worker-1  | 2026-11-02T15:58:37.500416561Z 2026-11-02 15:58:37,500 INFO app.worker worker started (đưa 0 tài liệu kẹt về hàng đợi)
+worker-1  | 2026-11-02T15:58:37.566622956Z 2026-11-02 15:58:37,566 INFO app.worker document e33860c8-c6e1-4bc0-a99a-720615f633fb ready: 1 trang, 1 đoạn, 0.1s
+worker-1  | 2026-11-02T15:58:43.658772068Z 2026-11-02 15:58:43,658 INFO app.worker document 8209d12c-fb86-49a0-84a4-651c71d7f388 ready: 3 trang, 3 đoạn, 0.1s
+worker-1  | 2026-11-02T15:58:47.844369322Z 2026-11-02 15:58:47,843 INFO app.worker document 56a42945-3003-4d2f-af00-2a0deafad68a ready: 1 trang, 1 đoạn, 0.2s
+worker-1  | 2026-11-02T15:58:55.925214884Z 2026-11-02 15:58:55,924 INFO app.worker document 1b26de43-7f5f-47b0-a518-bec4f10db046 ready: 3 trang, 3 đoạn, 0.1s
+db-1      | 2026-11-02T15:37:11.574216620Z 2026-11-02 15:37:11.573 UTC [1] LOG:  starting PostgreSQL 16.15 (Debian 16.15-1.pgdg12+2) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14+deb12u1) 12.2.0, 64-bit
+db-1      | 2026-11-02T15:37:11.576264902Z 2026-11-02 15:37:11.575 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+db-1      | 2026-11-02T15:37:11.576278304Z 2026-11-02 15:37:11.576 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+db-1      | 2026-11-02T15:37:11.595917101Z 2026-11-02 15:37:11.595 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+db-1      | 2026-11-02T15:37:11.618352183Z 2026-11-02 15:37:11.618 UTC [29] LOG:  database system was interrupted; last known up at 2026-10-28 13:32:31 UTC
+db-1      | 2026-11-02T15:37:12.393016025Z 2026-11-02 15:37:12.392 UTC [29] LOG:  database system was not properly shut down; automatic recovery in progress
+db-1      | 2026-11-02T15:37:12.422156633Z 2026-11-02 15:37:12.421 UTC [29] LOG:  redo starts at 0/394D7F8
+db-1      | 2026-11-02T15:37:12.422182737Z 2026-11-02 15:37:12.421 UTC [29] LOG:  invalid record length at 0/394D8E0: expected at least 24, got 0
+db-1      | 2026-11-02T15:37:12.422186538Z 2026-11-02 15:37:12.421 UTC [29] LOG:  redo done at 0/394D8A8 system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s
+db-1      | 2026-11-02T15:37:12.462074345Z 2026-11-02 15:37:12.461 UTC [27] LOG:  checkpoint starting: end-of-recovery immediate wait
+db-1      | 2026-11-02T15:37:12.642269639Z 2026-11-02 15:37:12.642 UTC [27] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.033 s, sync=0.029 s, total=0.199 s; sync files=2, longest=0.018 s, average=0.015 s; distance=0 kB, estimate=0 kB; lsn=0/394D8E0, redo lsn=0/394D8E0
+db-1      | 2026-11-02T15:37:12.843547666Z 2026-11-02 15:37:12.843 UTC [1] LOG:  database system is ready to accept connections
+db-1      | 2026-11-02T15:42:10.086092825Z 2026-11-02 15:42:10.085 UTC [661] ERROR:  duplicate key value violates unique constraint "documents_doc_set_filename_key"
+db-1      | 2026-11-02T15:42:10.086122331Z 2026-11-02 15:42:10.085 UTC [661] DETAIL:  Key (doc_set_id, filename)=(b63460b9-9274-4d2f-9ae4-fcd519634871, a.pdf) already exists.
+worker-1  | 2026-11-02T15:58:55.979582967Z 2026-11-02 15:58:55,979 INFO app.worker document ab08d1f2-0679-448d-8489-b4a9e2217f94 ready: 1 trang, 1 đoạn, 0.0s
+worker-1  | 2026-11-02T15:58:56.034468800Z 2026-11-02 15:58:56,034 INFO app.worker document fe4b37fb-4e8e-477e-a421-057d33e3b050 ready: 1 trang, 1 đoạn, 0.0s
+worker-1  | 2026-11-02T15:59:06.140814894Z 2026-11-02 15:59:06,140 INFO app.worker document 20530da6-ba18-4bb1-bc08-86f93b8742ac ready: 3 trang, 3 đoạn, 0.1s
+worker-1  | 2026-11-02T15:59:42.296677400Z 2026-11-02 15:59:42,296 INFO app.worker document b5af748a-b210-4dde-8e39-419518112628 ready: 3 trang, 3 đoạn, 0.0s
+worker-1  | 2026-11-02T15:59:48.355849983Z 2026-11-02 15:59:48,355 INFO app.worker document c1ed71d4-89dd-4c99-b0b6-ae139ebb7363 failed: corrupt
+worker-1  | 2026-11-02T15:59:50.408220667Z 2026-11-02 15:59:50,407 INFO app.worker document 0bb752cc-8b22-4cae-9f55-e355b8a5c8cb failed: no_text
+worker-1  | 2026-11-02T16:00:08.511142425Z 2026-11-02 16:00:08,510 INFO app.worker document d76239e2-5500-4719-8e55-b58ea65dde9f ready: 3 trang, 3 đoạn, 0.1s
+worker-1  | 2026-11-02T16:00:28.626349330Z 2026-11-02 16:00:28,626 INFO app.worker document 8684b1b8-9313-4df7-9825-f441f0ed50cc ready: 3 trang, 3 đoạn, 0.1s
+worker-1  | 2026-11-02T16:00:32.693476045Z 2026-11-02 16:00:32,693 INFO app.worker document e3c1efdf-7644-4e0d-ab34-a9eab6c27f39 ready: 1 trang, 1 đoạn, 0.1s
+worker-1  | 2026-11-02T16:00:42.769000194Z 2026-11-02 16:00:42,768 INFO app.worker document 1145b6ee-0efd-4bb5-8c4f-33d5a588df40 ready: 3 trang, 3 đoạn, 0.0s
+worker-1  | 2026-11-02T16:00:58.286608903Z 2026-11-02 16:00:58,286 INFO app.worker worker started (đưa 0 tài liệu kẹt về hàng đợi)
+worker-1  | 2026-11-02T16:00:58.358384810Z 2026-11-02 16:00:58,358 INFO app.worker document 75081f29-629e-4072-8eb3-6a4dff1d802a ready: 1 trang, 1 đoạn, 0.1s
+worker-1  | 2026-11-02T16:01:02.436974325Z 2026-11-02 16:01:02,436 INFO app.worker document 7b048b0b-8a40-4555-8ac1-d5c159834e8a ready: 3 trang, 3 đoạn, 0.1s
+worker-1  | 2026-11-02T16:01:06.505479421Z 2026-11-02 16:01:06,505 INFO app.worker document eb7496d8-ca7b-4998-affb-f6b1078c5961 ready: 1 trang, 1 đoạn, 0.1s
+worker-1  | 2026-11-02T16:01:14.585253126Z 2026-11-02 16:01:14,584 INFO app.worker document dc10b194-2ad6-46ff-b2ca-1ffbff11b7db ready: 3 trang, 3 đoạn, 0.0s
+worker-1  | 2026-11-02T16:01:14.626874386Z 2026-11-02 16:01:14,626 INFO app.worker document cd4823d6-76bf-4951-94af-7fc94e71f01f ready: 1 trang, 1 đoạn, 0.0s
+worker-1  | 2026-11-02T16:01:14.688438447Z 2026-11-02 16:01:14,688 INFO app.worker document 65cbaddf-7e69-458f-b30f-56d8403fae43 ready: 1 trang, 1 đoạn, 0.1s
+worker-1  | 2026-11-02T16:01:22.771585620Z 2026-11-02 16:01:22,771 INFO app.worker document 40936845-dd8d-4a6a-b18c-89ddd8934761 ready: 3 trang, 3 đoạn, 0.1s
+worker-1  | 2026-11-02T16:01:57.056626602Z 2026-11-02 16:01:57,056 INFO app.worker document 18d42424-3d0e-4b4e-ab50-6f7c00018b0f ready: 3 trang, 3 đoạn, 0.2s
+worker-1  | 2026-11-02T16:02:03.101475983Z 2026-11-02 16:02:03,097 INFO app.worker document c9a19dd6-7058-4a90-94b6-b6f583aace80 failed: corrupt
+worker-1  | 2026-11-02T16:02:07.146242589Z 2026-11-02 16:02:07,145 INFO app.worker document 1d8257f8-9028-4a2e-a6e9-526c7a1cad9b failed: no_text
+worker-1  | 2026-11-02T16:02:25.254731485Z 2026-11-02 16:02:25,254 INFO app.worker document 96569e36-4a7c-4193-94df-39965a264f5f ready: 3 trang, 3 đoạn, 0.1s
+worker-1  | 2026-11-02T16:02:47.462166451Z 2026-11-02 16:02:47,461 INFO app.worker document 3d63c064-9791-4a3a-ab34-591af69dbed7 ready: 3 trang, 3 đoạn, 0.1s
+db-1      | 2026-11-02T15:42:10.086126231Z 2026-11-02 15:42:10.085 UTC [661] STATEMENT:  INSERT INTO documents (id, doc_set_id, filename, pages, size_bytes, status, progress, error_code, file_path, uploaded_by) VALUES ($1::UUID, $2::UUID, $3::VARCHAR, $4::INTEGER, $5::BIGINT, $6::VARCHAR, $7::INTEGER, $8::VARCHAR, $9::VARCHAR, $10::UUID) RETURNING documents.uploaded_at
+db-1      | 2026-11-02T15:42:12.450416686Z 2026-11-02 15:42:12.448 UTC [27] LOG:  checkpoint starting: time
+worker-1  | 2026-11-02T16:02:49.537053180Z 2026-11-02 16:02:49,536 INFO app.worker document e1be561d-0370-46dd-989e-bd3fe8000193 ready: 1 trang, 1 đoạn, 0.1s
+worker-1  | 2026-11-02T16:02:59.634980927Z 2026-11-02 16:02:59,634 INFO app.worker document 5aa074b8-e5da-4696-8cdd-a591119ee7c8 ready: 3 trang, 3 đoạn, 0.1s
+worker-1  | 2026-11-02T16:03:12.273249443Z 2026-11-02 16:03:12,272 INFO app.worker worker started (đưa 0 tài liệu kẹt về hàng đợi)
+worker-1  | 2026-11-02T16:03:12.434714835Z 2026-11-02 16:03:12,434 INFO app.worker document 74cc64a7-db36-4700-8c42-cddff9b2526b ready: 1 trang, 1 đoạn, 0.1s
+worker-1  | 2026-11-02T16:03:16.508747784Z 2026-11-02 16:03:16,508 INFO app.worker document 7c66fbaa-0c6d-4882-a177-7ebd48a29f96 ready: 3 trang, 3 đoạn, 0.1s
+worker-1  | 2026-11-02T16:03:20.584637096Z 2026-11-02 16:03:20,584 INFO app.worker document b834241d-d150-49f0-a3c9-6704f8cc5851 ready: 1 trang, 1 đoạn, 0.1s
+worker-1  | 2026-11-02T16:03:28.662225762Z 2026-11-02 16:03:28,661 INFO app.worker document 05413eaa-1707-4759-a896-e4c599171c02 ready: 3 trang, 3 đoạn, 0.1s
+worker-1  | 2026-11-02T16:03:28.700568517Z 2026-11-02 16:03:28,700 INFO app.worker document 7cc0813e-8110-4b5b-8073-3df40ea7d933 ready: 1 trang, 1 đoạn, 0.0s
+worker-1  | 2026-11-02T16:03:28.741078763Z 2026-11-02 16:03:28,740 INFO app.worker document 8ee6b651-211d-4bc0-8078-0f6c7978204a ready: 1 trang, 1 đoạn, 0.0s
+db-1      | 2026-11-02T15:42:44.659921487Z 2026-11-02 15:42:44.659 UTC [27] LOG:  checkpoint complete: wrote 307 buffers (1.9%); 0 WAL file(s) added, 0 removed, 1 recycled; write=30.944 s, sync=0.998 s, total=32.213 s; sync files=4107, longest=0.023 s, average=0.001 s; distance=7732 kB, estimate=7732 kB; lsn=0/4158B90, redo lsn=0/40DACC0
+db-1      | 2026-11-02T15:44:13.127390491Z 2026-11-02 15:44:13.126 UTC [1105] LOG:  skipping analyze of "audit_log" --- lock not available
+db-1      | 2026-11-02T15:44:26.984074785Z 2026-11-02 15:44:26.983 UTC [1046] ERROR:  duplicate key value violates unique constraint "documents_doc_set_filename_key"
+db-1      | 2026-11-02T15:44:26.984101189Z 2026-11-02 15:44:26.983 UTC [1046] DETAIL:  Key (doc_set_id, filename)=(c5730a6e-7ce2-4d1f-b269-ce84b106893e, a.pdf) already exists.
+db-1      | 2026-11-02T15:44:26.984143095Z 2026-11-02 15:44:26.983 UTC [1046] STATEMENT:  INSERT INTO documents (id, doc_set_id, filename, pages, size_bytes, status, progress, error_code, file_path, uploaded_by) VALUES ($1::UUID, $2::UUID, $3::VARCHAR, $4::INTEGER, $5::BIGINT, $6::VARCHAR, $7::INTEGER, $8::VARCHAR, $9::VARCHAR, $10::UUID) RETURNING documents.uploaded_at
+db-1      | 2026-11-02T15:47:12.990019037Z 2026-11-02 15:47:12.989 UTC [27] LOG:  checkpoint starting: time
+worker-1  | 2026-11-02T16:03:36.819212131Z 2026-11-02 16:03:36,818 INFO app.worker document d1d8319c-e38c-4605-a320-10d98303ba25 ready: 3 trang, 3 đoạn, 0.0s
+worker-1  | 2026-11-02T16:04:13.026319227Z 2026-11-02 16:04:13,025 INFO app.worker document 1716dcdb-c12a-4cf2-8007-3a38f7cc4988 ready: 3 trang, 3 đoạn, 0.1s
+worker-1  | 2026-11-02T16:04:17.058577816Z 2026-11-02 16:04:17,058 INFO app.worker document dd3727f1-ed8b-4308-85b1-7f949cb55064 failed: corrupt
+worker-1  | 2026-11-02T16:04:21.114071419Z 2026-11-02 16:04:21,113 INFO app.worker document b21b7df1-500a-40ed-98d9-cc911c1055df failed: no_text
+db-1      | 2026-11-02T15:48:03.611017088Z 2026-11-02 15:48:03.610 UTC [27] LOG:  checkpoint complete: wrote 385 buffers (2.3%); 0 WAL file(s) added, 0 removed, 0 recycled; write=41.808 s, sync=8.580 s, total=50.621 s; sync files=4535, longest=0.111 s, average=0.002 s; distance=8839 kB, estimate=8839 kB; lsn=0/49BD360, redo lsn=0/497C9E8
+db-1      | 2026-11-02T15:52:12.674106293Z 2026-11-02 15:52:12.673 UTC [27] LOG:  checkpoint starting: time
+db-1      | 2026-11-02T15:52:21.123043312Z 2026-11-02 15:52:21.122 UTC [27] LOG:  checkpoint complete: wrote 82 buffers (0.5%); 0 WAL file(s) added, 0 removed, 0 recycled; write=8.152 s, sync=0.243 s, total=8.449 s; sync files=735, longest=0.007 s, average=0.001 s; distance=1422 kB, estimate=8097 kB; lsn=0/4AF88F8, redo lsn=0/4AE04B8
+db-1      | 2026-11-02T15:56:47.180430544Z 2026-11-02 15:56:47.179 UTC [3043] ERROR:  duplicate key value violates unique constraint "documents_doc_set_filename_key"
+db-1      | 2026-11-02T15:56:47.180476748Z 2026-11-02 15:56:47.179 UTC [3043] DETAIL:  Key (doc_set_id, filename)=(16f3bcbb-c03c-496c-8617-61791a91b7ef, a.pdf) already exists.
+api-1     | 2026-11-02T15:44:55.730428210Z INFO:     127.0.0.1:51066 - "GET /api/v1/doc-sets/da4c9f4d-5d07-4f18-9f2f-2ffcf7b3c776/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:45:09.099396419Z INFO:     172.18.0.4:46148 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T15:45:09.184472589Z INFO:     172.18.0.4:46150 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:45:09.346665335Z INFO:     172.18.0.4:46158 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T15:45:09.412824953Z INFO:     172.18.0.4:46164 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:45:09.553946043Z INFO:     172.18.0.4:46166 - "GET /api/v1/admin/doc-sets HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:45:10.504837436Z INFO:     172.18.0.4:46168 - "GET /api/v1/admin/doc-sets/9a10f6ce-9956-4107-bbf3-36b515437ead/members HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:45:10.615664340Z INFO:     172.18.0.4:46176 - "POST /api/v1/admin/doc-sets/9a10f6ce-9956-4107-bbf3-36b515437ead/members HTTP/1.1" 404 Not Found
+api-1     | 2026-11-02T15:45:11.159976413Z INFO:     172.18.0.4:46178 - "POST /api/v1/admin/doc-sets/9a10f6ce-9956-4107-bbf3-36b515437ead/members HTTP/1.1" 201 Created
+api-1     | 2026-11-02T15:45:11.246654384Z INFO:     172.18.0.4:46182 - "GET /api/v1/admin/doc-sets/9a10f6ce-9956-4107-bbf3-36b515437ead/members HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:45:11.306155953Z INFO:     172.18.0.4:46192 - "GET /api/v1/admin/doc-sets HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:45:13.519079421Z INFO:     172.18.0.4:58594 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T15:45:13.597132146Z INFO:     172.18.0.4:58598 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:45:13.825031866Z INFO:     172.18.0.4:58602 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T15:45:13.860561532Z INFO:     172.18.0.4:58604 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:45:13.905491736Z INFO:     172.18.0.4:58606 - "GET /api/v1/doc-sets/9a10f6ce-9956-4107-bbf3-36b515437ead/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:45:14.610877203Z INFO:     172.18.0.4:58620 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T15:45:15.027676635Z INFO:     172.18.0.4:58636 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:45:15.142459448Z INFO:     172.18.0.4:58644 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T15:45:15.193828842Z INFO:     172.18.0.4:58648 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:45:15.270809870Z INFO:     172.18.0.4:58656 - "GET /api/v1/admin/doc-sets HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:45:15.324170532Z INFO:     172.18.0.4:58670 - "GET /api/v1/admin/doc-sets/9a10f6ce-9956-4107-bbf3-36b515437ead/members HTTP/1.1" 200 OK
+db-1      | 2026-11-02T15:56:47.180480649Z 2026-11-02 15:56:47.179 UTC [3043] STATEMENT:  INSERT INTO documents (id, doc_set_id, filename, pages, size_bytes, status, progress, error_code, file_path, uploaded_by) VALUES ($1::UUID, $2::UUID, $3::VARCHAR, $4::INTEGER, $5::BIGINT, $6::VARCHAR, $7::INTEGER, $8::VARCHAR, $9::VARCHAR, $10::UUID) RETURNING documents.uploaded_at
+db-1      | 2026-11-02T15:57:12.390300417Z 2026-11-02 15:57:12.390 UTC [27] LOG:  checkpoint starting: time
+db-1      | 2026-11-02T15:57:50.233478561Z 2026-11-02 15:57:50.232 UTC [27] LOG:  checkpoint complete: wrote 272 buffers (1.7%); 0 WAL file(s) added, 0 removed, 1 recycled; write=31.865 s, sync=5.902 s, total=37.843 s; sync files=4154, longest=0.268 s, average=0.002 s; distance=7545 kB, estimate=8042 kB; lsn=0/5302E58, redo lsn=0/523EB20
+db-1      | 2026-11-02T16:02:12.286812206Z 2026-11-02 16:02:12.286 UTC [27] LOG:  checkpoint starting: time
+db-1      | 2026-11-02T16:02:25.952824738Z 2026-11-02 16:02:25.952 UTC [27] LOG:  checkpoint complete: wrote 86 buffers (0.5%); 0 WAL file(s) added, 0 removed, 0 recycled; write=13.205 s, sync=0.384 s, total=13.667 s; sync files=733, longest=0.028 s, average=0.001 s; distance=1927 kB, estimate=7430 kB; lsn=0/54411D0, redo lsn=0/5420790
+api-1     | 2026-11-02T15:45:15.750521628Z INFO:     172.18.0.4:58682 - "DELETE /api/v1/admin/doc-sets/9a10f6ce-9956-4107-bbf3-36b515437ead/members/39bb32bf-2138-48e7-a582-35c8036eba49 HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T15:45:15.792729929Z INFO:     172.18.0.4:58698 - "GET /api/v1/admin/doc-sets/9a10f6ce-9956-4107-bbf3-36b515437ead/members HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:45:15.799073502Z INFO:     172.18.0.4:58704 - "GET /api/v1/admin/doc-sets HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:45:16.106636444Z INFO:     172.18.0.4:58718 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:45:17.684678893Z INFO:     172.18.0.4:58728 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T15:45:17.743342435Z INFO:     172.18.0.4:58736 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:45:17.843031959Z INFO:     172.18.0.4:58750 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T15:45:17.884839886Z INFO:     172.18.0.4:58758 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:45:17.921060880Z INFO:     172.18.0.4:58774 - "GET /api/v1/doc-sets/9a10f6ce-9956-4107-bbf3-36b515437ead/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:45:18.252558846Z INFO:     172.18.0.4:58786 - "POST /api/v1/doc-sets/9a10f6ce-9956-4107-bbf3-36b515437ead/documents HTTP/1.1" 409 Conflict
+api-1     | 2026-11-02T15:45:18.334281150Z INFO:     172.18.0.4:58790 - "GET /api/v1/doc-sets/9a10f6ce-9956-4107-bbf3-36b515437ead/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:45:18.475501350Z INFO:     172.18.0.4:58796 - "POST /api/v1/doc-sets/9a10f6ce-9956-4107-bbf3-36b515437ead/classification-confirmations HTTP/1.1" 201 Created
+api-1     | 2026-11-02T15:45:18.575206277Z INFO:     172.18.0.4:58806 - "POST /api/v1/doc-sets/9a10f6ce-9956-4107-bbf3-36b515437ead/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:45:18.609091439Z INFO:     172.18.0.4:58814 - "GET /api/v1/doc-sets/9a10f6ce-9956-4107-bbf3-36b515437ead/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:45:21.664792466Z INFO:     172.18.0.4:58816 - "GET /api/v1/doc-sets/9a10f6ce-9956-4107-bbf3-36b515437ead/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:45:22.067778524Z INFO:     172.18.0.4:58824 - "POST /api/v1/doc-sets/9a10f6ce-9956-4107-bbf3-36b515437ead/conversations HTTP/1.1" 201 Created
+api-1     | 2026-11-02T15:45:22.427158841Z INFO:     172.18.0.4:58826 - "POST /api/v1/conversations/ee233dbb-78b0-45f3-8ad0-85b0ac40cf55/messages HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:45:32.233486046Z INFO:     172.18.0.4:53060 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T15:45:32.291684387Z INFO:     172.18.0.4:53072 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:45:33.935647094Z INFO:     172.18.0.4:54396 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T15:45:33.995554339Z INFO:     172.18.0.4:54404 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:45:37.486301086Z INFO:     172.18.0.4:54410 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T15:45:37.552413502Z INFO:     172.18.0.4:54420 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:45:37.930268321Z INFO:     172.18.0.4:54422 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T15:45:38.002168207Z INFO:     172.18.0.4:54434 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:45:38.384667885Z INFO:     172.18.0.4:54438 - "GET /api/v1/doc-sets/ee18b7b2-ceaf-4cb5-9a97-495a6239127e/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:45:38.699940241Z INFO:     172.18.0.4:54450 - "POST /api/v1/auth/logout HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T15:45:38.780278586Z INFO:     172.18.0.4:54452 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:46:02.438144096Z INFO:     172.18.0.4:37936 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T15:46:02.513372844Z INFO:     172.18.0.4:37940 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:46:02.663210728Z INFO:     172.18.0.4:37944 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T15:46:02.716505726Z INFO:     172.18.0.4:37946 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:46:05.421847627Z INFO:     172.18.0.4:52056 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T15:46:05.485406374Z INFO:     172.18.0.4:52070 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:46:05.783148194Z INFO:     172.18.0.4:52076 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T15:46:05.859524248Z INFO:     172.18.0.4:52078 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:46:05.942896162Z INFO:     172.18.0.4:52084 - "GET /api/v1/admin/doc-sets HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:46:06.017717337Z INFO:     172.18.0.4:52086 - "GET /api/v1/admin/doc-sets/0e3225b5-5d5b-47d7-95d3-18b2f4644bef/members HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:46:12.616106820Z INFO:     172.18.0.4:52090 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T15:46:12.703728954Z INFO:     172.18.0.4:52096 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:46:12.946146813Z INFO:     172.18.0.4:52102 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T15:46:12.984110960Z INFO:     172.18.0.4:52114 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:46:13.078805488Z INFO:     172.18.0.4:52124 - "GET /api/v1/doc-sets/700382c7-a722-4928-b4c0-425cb4a3bab3/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:46:13.122438273Z INFO:     172.18.0.4:52132 - "POST /api/v1/doc-sets/700382c7-a722-4928-b4c0-425cb4a3bab3/documents HTTP/1.1" 409 Conflict
+api-1     | 2026-11-02T15:46:13.208037536Z INFO:     172.18.0.4:52146 - "GET /api/v1/doc-sets/700382c7-a722-4928-b4c0-425cb4a3bab3/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:46:13.469518584Z INFO:     172.18.0.4:50394 - "POST /api/v1/doc-sets/700382c7-a722-4928-b4c0-425cb4a3bab3/classification-confirmations HTTP/1.1" 201 Created
+api-1     | 2026-11-02T15:46:13.627928271Z INFO:     172.18.0.4:50410 - "POST /api/v1/doc-sets/700382c7-a722-4928-b4c0-425cb4a3bab3/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:46:13.678684459Z INFO:     172.18.0.4:50418 - "GET /api/v1/doc-sets/700382c7-a722-4928-b4c0-425cb4a3bab3/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:46:16.729492122Z INFO:     172.18.0.4:50424 - "GET /api/v1/doc-sets/700382c7-a722-4928-b4c0-425cb4a3bab3/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:46:18.397081522Z INFO:     172.18.0.4:50428 - "POST /api/v1/doc-sets/700382c7-a722-4928-b4c0-425cb4a3bab3/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:46:18.464203405Z INFO:     172.18.0.4:50436 - "GET /api/v1/doc-sets/700382c7-a722-4928-b4c0-425cb4a3bab3/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:46:21.497012425Z INFO:     172.18.0.4:50448 - "GET /api/v1/doc-sets/700382c7-a722-4928-b4c0-425cb4a3bab3/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:46:21.852528065Z INFO:     172.18.0.4:50452 - "POST /api/v1/doc-sets/700382c7-a722-4928-b4c0-425cb4a3bab3/conversations HTTP/1.1" 201 Created
+api-1     | 2026-11-02T15:46:22.013596380Z INFO:     172.18.0.4:50462 - "POST /api/v1/conversations/3fbb6f39-3742-4390-8677-fa6205a066b5/messages HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:46:28.520663274Z INFO:     172.18.0.4:45300 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T15:46:28.653525665Z INFO:     172.18.0.4:45314 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:46:28.830543300Z INFO:     172.18.0.4:45330 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T15:46:28.883688596Z INFO:     172.18.0.4:45342 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:46:28.958818600Z INFO:     172.18.0.4:45346 - "GET /api/v1/doc-sets/4a4d6de5-a484-4722-8fad-5194b78d5d3e/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:46:29.083570371Z INFO:     172.18.0.4:45358 - "POST /api/v1/doc-sets/4a4d6de5-a484-4722-8fad-5194b78d5d3e/documents HTTP/1.1" 409 Conflict
+api-1     | 2026-11-02T15:46:29.209288187Z INFO:     172.18.0.4:45368 - "GET /api/v1/doc-sets/4a4d6de5-a484-4722-8fad-5194b78d5d3e/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:46:29.443828177Z INFO:     172.18.0.4:45376 - "POST /api/v1/doc-sets/4a4d6de5-a484-4722-8fad-5194b78d5d3e/classification-confirmations HTTP/1.1" 201 Created
+api-1     | 2026-11-02T15:46:29.661472524Z INFO:     172.18.0.4:45390 - "POST /api/v1/doc-sets/4a4d6de5-a484-4722-8fad-5194b78d5d3e/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:46:29.712551710Z INFO:     172.18.0.4:45394 - "GET /api/v1/doc-sets/4a4d6de5-a484-4722-8fad-5194b78d5d3e/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:46:32.740708838Z INFO:     172.18.0.4:45406 - "GET /api/v1/doc-sets/4a4d6de5-a484-4722-8fad-5194b78d5d3e/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:46:38.231189872Z INFO:     172.18.0.4:34116 - "POST /api/v1/doc-sets/4a4d6de5-a484-4722-8fad-5194b78d5d3e/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:46:38.297785164Z INFO:     172.18.0.4:34128 - "GET /api/v1/doc-sets/4a4d6de5-a484-4722-8fad-5194b78d5d3e/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:46:38.961377959Z INFO:     172.18.0.4:34136 - "POST /api/v1/doc-sets/4a4d6de5-a484-4722-8fad-5194b78d5d3e/conversations HTTP/1.1" 201 Created
+api-1     | 2026-11-02T15:46:39.108324642Z INFO:     172.18.0.4:34142 - "POST /api/v1/conversations/cb89ed72-52bf-4232-b910-625f35e27345/messages HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:46:41.361143707Z INFO:     172.18.0.4:34154 - "GET /api/v1/doc-sets/4a4d6de5-a484-4722-8fad-5194b78d5d3e/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:46:48.391536789Z INFO:     172.18.0.4:39842 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T15:46:48.463028242Z INFO:     172.18.0.4:39848 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:46:48.552205151Z INFO:     172.18.0.4:39864 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T15:46:48.577897591Z INFO:     172.18.0.4:39878 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:46:48.614613635Z INFO:     172.18.0.4:39892 - "GET /api/v1/doc-sets/fd80737e-853a-44d0-808e-4c6223b9d162/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:46:48.717029231Z INFO:     172.18.0.4:39904 - "POST /api/v1/doc-sets/fd80737e-853a-44d0-808e-4c6223b9d162/documents HTTP/1.1" 409 Conflict
+api-1     | 2026-11-02T15:46:48.801147766Z INFO:     172.18.0.4:39906 - "GET /api/v1/doc-sets/fd80737e-853a-44d0-808e-4c6223b9d162/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:46:48.909713525Z INFO:     172.18.0.4:39918 - "POST /api/v1/doc-sets/fd80737e-853a-44d0-808e-4c6223b9d162/classification-confirmations HTTP/1.1" 201 Created
+api-1     | 2026-11-02T15:46:49.143902091Z INFO:     172.18.0.4:39930 - "POST /api/v1/doc-sets/fd80737e-853a-44d0-808e-4c6223b9d162/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:46:49.209286188Z INFO:     172.18.0.4:39934 - "GET /api/v1/doc-sets/fd80737e-853a-44d0-808e-4c6223b9d162/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:46:52.243700739Z INFO:     172.18.0.4:39950 - "GET /api/v1/doc-sets/fd80737e-853a-44d0-808e-4c6223b9d162/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:46:53.046822885Z INFO:     172.18.0.4:39962 - "POST /api/v1/doc-sets/fd80737e-853a-44d0-808e-4c6223b9d162/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:46:53.098466050Z INFO:     172.18.0.4:39968 - "GET /api/v1/doc-sets/fd80737e-853a-44d0-808e-4c6223b9d162/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:47:00.457307888Z INFO:     172.18.0.4:58164 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T15:47:00.521840488Z INFO:     172.18.0.4:58168 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:47:00.664994758Z INFO:     172.18.0.4:58174 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T15:47:00.714541421Z INFO:     172.18.0.4:58180 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:47:00.833520755Z INFO:     172.18.0.4:58188 - "GET /api/v1/doc-sets/344adaba-8c9f-4896-b4b5-10f16e16947d/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:47:01.001706326Z INFO:     172.18.0.4:58192 - "POST /api/v1/doc-sets/344adaba-8c9f-4896-b4b5-10f16e16947d/documents HTTP/1.1" 409 Conflict
+api-1     | 2026-11-02T15:47:01.097401293Z INFO:     172.18.0.4:58208 - "GET /api/v1/doc-sets/344adaba-8c9f-4896-b4b5-10f16e16947d/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:47:01.477154429Z INFO:     172.18.0.4:58220 - "POST /api/v1/doc-sets/344adaba-8c9f-4896-b4b5-10f16e16947d/classification-confirmations HTTP/1.1" 201 Created
+api-1     | 2026-11-02T15:47:02.345769286Z INFO:     172.18.0.4:58228 - "POST /api/v1/doc-sets/344adaba-8c9f-4896-b4b5-10f16e16947d/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:47:02.430963355Z INFO:     172.18.0.4:58238 - "GET /api/v1/doc-sets/344adaba-8c9f-4896-b4b5-10f16e16947d/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:47:05.503424686Z INFO:     172.18.0.4:37318 - "GET /api/v1/doc-sets/344adaba-8c9f-4896-b4b5-10f16e16947d/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:47:11.335574715Z INFO:     172.18.0.4:37330 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T15:47:11.430196778Z INFO:     172.18.0.4:37344 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:47:11.580664157Z INFO:     172.18.0.4:37346 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T15:47:11.614913012Z INFO:     172.18.0.4:37358 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:47:11.664129619Z INFO:     172.18.0.4:37360 - "GET /api/v1/doc-sets/d6b37384-e1ea-4e23-92b5-6173de4e037d/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:47:11.764355688Z INFO:     172.18.0.4:37364 - "POST /api/v1/doc-sets/d6b37384-e1ea-4e23-92b5-6173de4e037d/documents HTTP/1.1" 409 Conflict
+api-1     | 2026-11-02T15:47:11.803217953Z INFO:     172.18.0.4:37366 - "GET /api/v1/doc-sets/d6b37384-e1ea-4e23-92b5-6173de4e037d/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:47:12.268011328Z INFO:     172.18.0.4:37368 - "POST /api/v1/doc-sets/d6b37384-e1ea-4e23-92b5-6173de4e037d/classification-confirmations HTTP/1.1" 201 Created
+api-1     | 2026-11-02T15:47:12.978891842Z INFO:     172.18.0.4:37372 - "POST /api/v1/doc-sets/d6b37384-e1ea-4e23-92b5-6173de4e037d/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:47:13.054489853Z INFO:     172.18.0.4:37380 - "GET /api/v1/doc-sets/d6b37384-e1ea-4e23-92b5-6173de4e037d/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:47:16.206950998Z INFO:     172.18.0.4:60798 - "GET /api/v1/doc-sets/d6b37384-e1ea-4e23-92b5-6173de4e037d/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:47:17.542475824Z INFO:     172.18.0.4:60800 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T15:47:17.612536425Z INFO:     172.18.0.4:60816 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:47:17.905336642Z INFO:     172.18.0.4:60832 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T15:47:17.956915339Z INFO:     172.18.0.4:60846 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:47:18.007063874Z INFO:     172.18.0.4:60848 - "GET /api/v1/doc-sets/d6b37384-e1ea-4e23-92b5-6173de4e037d/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:47:18.177960243Z INFO:     172.18.0.4:60850 - "POST /api/v1/doc-sets/d6b37384-e1ea-4e23-92b5-6173de4e037d/conversations HTTP/1.1" 201 Created
+api-1     | 2026-11-02T15:47:18.246262720Z INFO:     172.18.0.4:60856 - "POST /api/v1/conversations/6da60b4f-a9ec-48f2-9421-0ec059bf25f6/messages HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:47:28.005123708Z INFO:     172.18.0.4:48338 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T15:47:28.074847643Z INFO:     172.18.0.4:48346 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:47:28.227524862Z INFO:     172.18.0.4:48352 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T15:47:28.281411863Z INFO:     172.18.0.4:48364 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:47:28.526016549Z INFO:     172.18.0.4:48366 - "GET /api/v1/doc-sets/1d50deba-8dcb-4db7-9b3e-91d0fe2a7fab/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:47:28.760820662Z INFO:     172.18.0.4:48382 - "POST /api/v1/doc-sets/1d50deba-8dcb-4db7-9b3e-91d0fe2a7fab/documents HTTP/1.1" 409 Conflict
+api-1     | 2026-11-02T15:47:28.856661558Z INFO:     172.18.0.4:48390 - "GET /api/v1/doc-sets/1d50deba-8dcb-4db7-9b3e-91d0fe2a7fab/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:47:29.101152138Z INFO:     172.18.0.4:48402 - "POST /api/v1/doc-sets/1d50deba-8dcb-4db7-9b3e-91d0fe2a7fab/classification-confirmations HTTP/1.1" 201 Created
+api-1     | 2026-11-02T15:47:29.744897642Z INFO:     172.18.0.4:48408 - "POST /api/v1/doc-sets/1d50deba-8dcb-4db7-9b3e-91d0fe2a7fab/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:47:29.810026805Z INFO:     172.18.0.4:48412 - "GET /api/v1/doc-sets/1d50deba-8dcb-4db7-9b3e-91d0fe2a7fab/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:47:32.854977810Z INFO:     172.18.0.4:48420 - "GET /api/v1/doc-sets/1d50deba-8dcb-4db7-9b3e-91d0fe2a7fab/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:47:34.768890609Z INFO:     172.18.0.4:40778 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T15:47:34.844468027Z INFO:     172.18.0.4:40784 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:47:35.014688248Z INFO:     172.18.0.4:40792 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T15:47:35.079986641Z INFO:     172.18.0.4:40804 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:47:35.120947314Z INFO:     172.18.0.4:40808 - "GET /api/v1/doc-sets/1d50deba-8dcb-4db7-9b3e-91d0fe2a7fab/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:47:35.456558499Z INFO:     172.18.0.4:40824 - "POST /api/v1/doc-sets/1d50deba-8dcb-4db7-9b3e-91d0fe2a7fab/documents HTTP/1.1" 409 Conflict
+api-1     | 2026-11-02T15:47:35.561257187Z INFO:     172.18.0.4:40828 - "GET /api/v1/doc-sets/1d50deba-8dcb-4db7-9b3e-91d0fe2a7fab/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:47:35.801317708Z INFO:     172.18.0.4:40830 - "POST /api/v1/doc-sets/1d50deba-8dcb-4db7-9b3e-91d0fe2a7fab/classification-confirmations HTTP/1.1" 201 Created
+api-1     | 2026-11-02T15:47:36.397306920Z INFO:     172.18.0.4:40844 - "POST /api/v1/doc-sets/1d50deba-8dcb-4db7-9b3e-91d0fe2a7fab/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:47:36.443349395Z INFO:     172.18.0.4:40858 - "GET /api/v1/doc-sets/1d50deba-8dcb-4db7-9b3e-91d0fe2a7fab/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:47:39.472418250Z INFO:     172.18.0.4:40860 - "GET /api/v1/doc-sets/1d50deba-8dcb-4db7-9b3e-91d0fe2a7fab/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:47:39.647248750Z INFO:     172.18.0.4:40870 - "POST /api/v1/doc-sets/1d50deba-8dcb-4db7-9b3e-91d0fe2a7fab/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:47:39.693156243Z INFO:     172.18.0.4:40886 - "GET /api/v1/doc-sets/1d50deba-8dcb-4db7-9b3e-91d0fe2a7fab/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:47:42.733833181Z INFO:     172.18.0.4:40892 - "GET /api/v1/doc-sets/1d50deba-8dcb-4db7-9b3e-91d0fe2a7fab/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:47:45.092651035Z INFO:     172.18.0.4:50460 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T15:47:45.129430799Z INFO:     172.18.0.4:50464 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:47:45.337595248Z INFO:     172.18.0.4:50466 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T15:47:45.416603047Z INFO:     172.18.0.4:50476 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:47:45.479244026Z INFO:     172.18.0.4:50478 - "GET /api/v1/doc-sets/1d50deba-8dcb-4db7-9b3e-91d0fe2a7fab/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:47:53.106220579Z INFO:     172.18.0.4:50486 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T15:47:53.150515313Z INFO:     172.18.0.4:50490 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:47:53.320107747Z INFO:     172.18.0.4:50506 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T15:47:53.356857986Z INFO:     172.18.0.4:50518 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:47:53.465937330Z INFO:     172.18.0.4:59736 - "GET /api/v1/admin/doc-sets HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:47:53.527892630Z INFO:     172.18.0.4:59742 - "GET /api/v1/admin/doc-sets/5e51ad64-92c8-4bc7-b9ed-736a66df9e4e/members HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:47:53.788512177Z INFO:     172.18.0.4:59750 - "POST /api/v1/admin/doc-sets/5e51ad64-92c8-4bc7-b9ed-736a66df9e4e/members HTTP/1.1" 404 Not Found
+api-1     | 2026-11-02T15:47:54.123085603Z INFO:     172.18.0.4:59762 - "POST /api/v1/admin/doc-sets/5e51ad64-92c8-4bc7-b9ed-736a66df9e4e/members HTTP/1.1" 201 Created
+api-1     | 2026-11-02T15:47:54.226211894Z INFO:     172.18.0.4:59766 - "GET /api/v1/admin/doc-sets/5e51ad64-92c8-4bc7-b9ed-736a66df9e4e/members HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:47:54.291755639Z INFO:     172.18.0.4:59778 - "GET /api/v1/admin/doc-sets HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:47:56.428061729Z INFO:     172.18.0.4:59790 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T15:47:56.488510054Z INFO:     172.18.0.4:59798 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:47:56.619751268Z INFO:     172.18.0.4:59812 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T15:47:56.652010858Z INFO:     172.18.0.4:59826 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:47:56.713515453Z INFO:     172.18.0.4:59832 - "GET /api/v1/doc-sets/5e51ad64-92c8-4bc7-b9ed-736a66df9e4e/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:47:57.500318668Z INFO:     172.18.0.4:59844 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T15:47:57.559674517Z INFO:     172.18.0.4:59848 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:47:57.643650927Z INFO:     172.18.0.4:59850 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T15:47:57.683689168Z INFO:     172.18.0.4:59852 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:47:57.736390647Z INFO:     172.18.0.4:59864 - "GET /api/v1/admin/doc-sets HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:47:57.876451580Z INFO:     172.18.0.4:59872 - "GET /api/v1/admin/doc-sets/5e51ad64-92c8-4bc7-b9ed-736a66df9e4e/members HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:47:58.146561935Z INFO:     172.18.0.4:59882 - "DELETE /api/v1/admin/doc-sets/5e51ad64-92c8-4bc7-b9ed-736a66df9e4e/members/3ad4cc07-fd06-436c-bdb2-fca1447b9e5f HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T15:47:58.197434019Z INFO:     172.18.0.4:59906 - "GET /api/v1/admin/doc-sets HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:47:58.255062291Z INFO:     172.18.0.4:59892 - "GET /api/v1/admin/doc-sets/5e51ad64-92c8-4bc7-b9ed-736a66df9e4e/members HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:47:58.396459139Z INFO:     172.18.0.4:59918 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:48:00.728510719Z INFO:     172.18.0.4:59920 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T15:48:00.780225939Z INFO:     172.18.0.4:59936 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:48:00.916711797Z INFO:     172.18.0.4:59952 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T15:48:00.960080374Z INFO:     172.18.0.4:59960 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:48:01.061432079Z INFO:     172.18.0.4:59964 - "GET /api/v1/doc-sets/5e51ad64-92c8-4bc7-b9ed-736a66df9e4e/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:48:01.103834101Z INFO:     172.18.0.4:59980 - "POST /api/v1/doc-sets/5e51ad64-92c8-4bc7-b9ed-736a66df9e4e/documents HTTP/1.1" 409 Conflict
+api-1     | 2026-11-02T15:48:01.253325351Z INFO:     172.18.0.4:59984 - "GET /api/v1/doc-sets/5e51ad64-92c8-4bc7-b9ed-736a66df9e4e/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:48:01.564222068Z INFO:     172.18.0.4:59996 - "POST /api/v1/doc-sets/5e51ad64-92c8-4bc7-b9ed-736a66df9e4e/classification-confirmations HTTP/1.1" 201 Created
+api-1     | 2026-11-02T15:48:01.998400778Z INFO:     172.18.0.4:60002 - "POST /api/v1/doc-sets/5e51ad64-92c8-4bc7-b9ed-736a66df9e4e/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:48:02.076583688Z INFO:     172.18.0.4:60012 - "GET /api/v1/doc-sets/5e51ad64-92c8-4bc7-b9ed-736a66df9e4e/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:48:05.118746354Z INFO:     172.18.0.4:59838 - "GET /api/v1/doc-sets/5e51ad64-92c8-4bc7-b9ed-736a66df9e4e/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:48:05.717684107Z INFO:     172.18.0.4:59848 - "POST /api/v1/doc-sets/5e51ad64-92c8-4bc7-b9ed-736a66df9e4e/conversations HTTP/1.1" 201 Created
+api-1     | 2026-11-02T15:48:05.777891930Z INFO:     172.18.0.4:59856 - "POST /api/v1/conversations/8373795e-f81a-4ca5-a793-252cc829289b/messages HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:48:06.433634828Z INFO:     172.18.0.4:59862 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T15:48:06.518068499Z INFO:     172.18.0.4:59872 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:48:06.617258379Z INFO:     172.18.0.4:59884 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T15:48:06.683609463Z INFO:     172.18.0.4:59896 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:48:06.751631438Z INFO:     172.18.0.4:59902 - "GET /api/v1/admin/doc-sets HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:48:06.790741293Z INFO:     172.18.0.4:59914 - "GET /api/v1/admin/doc-sets/5e51ad64-92c8-4bc7-b9ed-736a66df9e4e/members HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:48:06.872201484Z INFO:     172.18.0.4:59918 - "GET /api/v1/admin/doc-sets/5e51ad64-92c8-4bc7-b9ed-736a66df9e4e/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:48:07.348219842Z INFO:     172.18.0.4:59932 - "DELETE /api/v1/admin/documents/ed1dc85d-b112-4526-bb33-716bc70e6732 HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:48:07.398058472Z INFO:     172.18.0.4:59948 - "GET /api/v1/admin/doc-sets/5e51ad64-92c8-4bc7-b9ed-736a66df9e4e/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:48:07.609629932Z INFO:     172.18.0.4:59950 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:48:07.661146256Z INFO:     172.18.0.4:59966 - "GET /api/v1/doc-sets/5e51ad64-92c8-4bc7-b9ed-736a66df9e4e/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:48:07.782367290Z INFO:     172.18.0.4:59976 - "GET /api/v1/admin/doc-sets/5e51ad64-92c8-4bc7-b9ed-736a66df9e4e/members HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:48:07.811858356Z INFO:     172.18.0.4:59978 - "GET /api/v1/admin/audit-logs?doc_set_id=5e51ad64-92c8-4bc7-b9ed-736a66df9e4e&from=2026-10-27&to=2026-11-02&limit=50 HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:48:14.248834892Z INFO:     172.18.0.4:45456 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T15:48:14.309381453Z INFO:     172.18.0.4:45472 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:48:15.476627269Z INFO:     172.18.0.4:45476 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T15:48:15.595731954Z INFO:     172.18.0.4:45486 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:48:17.410809660Z INFO:     172.18.0.4:45488 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T15:48:17.487036578Z INFO:     172.18.0.4:45496 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:48:17.633645886Z INFO:     172.18.0.4:45502 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T15:48:17.675572346Z INFO:     172.18.0.4:45514 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:48:17.914945484Z INFO:     172.18.0.4:45526 - "GET /api/v1/doc-sets/f7f8b178-a308-4210-af53-bd343fb1f0e8/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:48:17.929415886Z INFO:     172.18.0.4:45536 - "POST /api/v1/auth/logout HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T15:48:18.007675978Z INFO:     172.18.0.4:45548 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:48:41.141942957Z INFO:     172.18.0.4:56870 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T15:48:41.189164551Z INFO:     172.18.0.4:56880 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:48:41.549253924Z INFO:     172.18.0.4:56882 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T15:48:41.586401477Z INFO:     172.18.0.4:56886 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:48:43.291531525Z INFO:     172.18.0.4:56898 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T15:48:43.363819833Z INFO:     172.18.0.4:45516 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:48:43.567541566Z INFO:     172.18.0.4:45524 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T15:48:43.634563636Z INFO:     172.18.0.4:45530 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:48:43.870001518Z INFO:     172.18.0.4:45538 - "GET /api/v1/admin/doc-sets HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:48:43.915852618Z INFO:     172.18.0.4:45542 - "GET /api/v1/admin/doc-sets/a871876d-1315-4b67-851e-99d92d5d6ebd/members HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:48:51.323032075Z INFO:     172.18.0.4:45544 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T15:48:51.427521352Z INFO:     172.18.0.4:45558 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:48:51.633706376Z INFO:     172.18.0.4:45568 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T15:48:51.668096481Z INFO:     172.18.0.4:45574 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:48:51.720605932Z INFO:     172.18.0.4:45590 - "GET /api/v1/doc-sets/543cc90b-f272-4403-8f11-fcb9ad82cb1b/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:48:51.848943422Z INFO:     172.18.0.4:45594 - "POST /api/v1/doc-sets/543cc90b-f272-4403-8f11-fcb9ad82cb1b/documents HTTP/1.1" 409 Conflict
+api-1     | 2026-11-02T15:48:52.014870367Z INFO:     172.18.0.4:45608 - "GET /api/v1/doc-sets/543cc90b-f272-4403-8f11-fcb9ad82cb1b/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:48:52.142719934Z INFO:     172.18.0.4:45614 - "POST /api/v1/doc-sets/543cc90b-f272-4403-8f11-fcb9ad82cb1b/classification-confirmations HTTP/1.1" 201 Created
+api-1     | 2026-11-02T15:48:52.244839400Z INFO:     172.18.0.4:45622 - "POST /api/v1/doc-sets/543cc90b-f272-4403-8f11-fcb9ad82cb1b/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:48:52.286768557Z INFO:     172.18.0.4:45626 - "GET /api/v1/doc-sets/543cc90b-f272-4403-8f11-fcb9ad82cb1b/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:48:55.392310108Z INFO:     172.18.0.4:37020 - "GET /api/v1/doc-sets/543cc90b-f272-4403-8f11-fcb9ad82cb1b/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:48:56.956345709Z INFO:     172.18.0.4:37032 - "POST /api/v1/doc-sets/543cc90b-f272-4403-8f11-fcb9ad82cb1b/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:48:56.994613285Z INFO:     172.18.0.4:37040 - "GET /api/v1/doc-sets/543cc90b-f272-4403-8f11-fcb9ad82cb1b/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:49:00.045161038Z INFO:     172.18.0.4:37050 - "GET /api/v1/doc-sets/543cc90b-f272-4403-8f11-fcb9ad82cb1b/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:49:00.659630805Z INFO:     172.18.0.4:37052 - "POST /api/v1/doc-sets/543cc90b-f272-4403-8f11-fcb9ad82cb1b/conversations HTTP/1.1" 201 Created
+api-1     | 2026-11-02T15:49:00.706627226Z INFO:     172.18.0.4:37058 - "POST /api/v1/conversations/75293799-6de2-459a-a790-b81e5408fe7c/messages HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:49:07.153999428Z INFO:     172.18.0.4:60748 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T15:49:07.234094560Z INFO:     172.18.0.4:60760 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:49:07.496619736Z INFO:     172.18.0.4:60770 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T15:49:07.522416132Z INFO:     172.18.0.4:60778 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:49:07.553867667Z INFO:     172.18.0.4:60788 - "GET /api/v1/doc-sets/c4fb1c10-6463-4d94-adc1-5936d4a6ef65/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:49:07.667587371Z INFO:     172.18.0.4:60796 - "POST /api/v1/doc-sets/c4fb1c10-6463-4d94-adc1-5936d4a6ef65/documents HTTP/1.1" 409 Conflict
+api-1     | 2026-11-02T15:49:07.714774376Z INFO:     172.18.0.4:60798 - "GET /api/v1/doc-sets/c4fb1c10-6463-4d94-adc1-5936d4a6ef65/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:49:07.858553335Z INFO:     172.18.0.4:60812 - "POST /api/v1/doc-sets/c4fb1c10-6463-4d94-adc1-5936d4a6ef65/classification-confirmations HTTP/1.1" 201 Created
+api-1     | 2026-11-02T15:49:08.143875902Z INFO:     172.18.0.4:60828 - "POST /api/v1/doc-sets/c4fb1c10-6463-4d94-adc1-5936d4a6ef65/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:49:08.180195418Z INFO:     172.18.0.4:60838 - "GET /api/v1/doc-sets/c4fb1c10-6463-4d94-adc1-5936d4a6ef65/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:49:11.248666549Z INFO:     172.18.0.4:60850 - "GET /api/v1/doc-sets/c4fb1c10-6463-4d94-adc1-5936d4a6ef65/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:49:18.391635960Z INFO:     172.18.0.4:55704 - "POST /api/v1/doc-sets/c4fb1c10-6463-4d94-adc1-5936d4a6ef65/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:49:18.504513279Z INFO:     172.18.0.4:55712 - "GET /api/v1/doc-sets/c4fb1c10-6463-4d94-adc1-5936d4a6ef65/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:49:19.127807648Z INFO:     172.18.0.4:55716 - "POST /api/v1/doc-sets/c4fb1c10-6463-4d94-adc1-5936d4a6ef65/conversations HTTP/1.1" 201 Created
+api-1     | 2026-11-02T15:49:19.194355264Z INFO:     172.18.0.4:55730 - "POST /api/v1/conversations/c9d5ddd3-ff6c-4e20-8a04-c50cca60c4d8/messages HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:49:21.561108104Z INFO:     172.18.0.4:55734 - "GET /api/v1/doc-sets/c4fb1c10-6463-4d94-adc1-5936d4a6ef65/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:49:28.808613069Z INFO:     172.18.0.4:55316 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T15:49:28.868357173Z INFO:     172.18.0.4:55320 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:49:29.244277855Z INFO:     172.18.0.4:55332 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T15:49:29.307616318Z INFO:     172.18.0.4:55342 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:49:29.451920414Z INFO:     172.18.0.4:55352 - "GET /api/v1/doc-sets/12413b6f-2331-433e-b1ab-e6938702f0e8/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:49:29.547521584Z INFO:     172.18.0.4:55360 - "POST /api/v1/doc-sets/12413b6f-2331-433e-b1ab-e6938702f0e8/documents HTTP/1.1" 409 Conflict
+api-1     | 2026-11-02T15:49:29.609252620Z INFO:     172.18.0.4:55362 - "GET /api/v1/doc-sets/12413b6f-2331-433e-b1ab-e6938702f0e8/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:49:29.999272082Z INFO:     172.18.0.4:55376 - "POST /api/v1/doc-sets/12413b6f-2331-433e-b1ab-e6938702f0e8/classification-confirmations HTTP/1.1" 201 Created
+api-1     | 2026-11-02T15:49:30.413817538Z INFO:     172.18.0.4:55390 - "POST /api/v1/doc-sets/12413b6f-2331-433e-b1ab-e6938702f0e8/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:49:30.456113523Z INFO:     172.18.0.4:55394 - "GET /api/v1/doc-sets/12413b6f-2331-433e-b1ab-e6938702f0e8/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:49:33.512034185Z INFO:     172.18.0.4:50434 - "GET /api/v1/doc-sets/12413b6f-2331-433e-b1ab-e6938702f0e8/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:49:34.064823616Z INFO:     172.18.0.4:50446 - "POST /api/v1/doc-sets/12413b6f-2331-433e-b1ab-e6938702f0e8/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:49:34.102053372Z INFO:     172.18.0.4:50462 - "GET /api/v1/doc-sets/12413b6f-2331-433e-b1ab-e6938702f0e8/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:49:41.487565412Z INFO:     172.18.0.4:50468 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T15:49:41.584860437Z INFO:     172.18.0.4:50470 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:49:41.864234310Z INFO:     172.18.0.4:50486 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T15:49:41.947571323Z INFO:     172.18.0.4:50492 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:49:42.238318035Z INFO:     172.18.0.4:50510 - "POST /api/v1/doc-sets/04a6b392-e521-4c68-bc7a-42bd3d8c66ff/documents HTTP/1.1" 409 Conflict
+api-1     | 2026-11-02T15:49:42.295823825Z INFO:     172.18.0.4:50498 - "GET /api/v1/doc-sets/04a6b392-e521-4c68-bc7a-42bd3d8c66ff/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:49:42.613785260Z INFO:     172.18.0.4:50518 - "POST /api/v1/doc-sets/04a6b392-e521-4c68-bc7a-42bd3d8c66ff/classification-confirmations HTTP/1.1" 201 Created
+api-1     | 2026-11-02T15:49:45.093309690Z INFO:     172.18.0.4:50528 - "POST /api/v1/doc-sets/04a6b392-e521-4c68-bc7a-42bd3d8c66ff/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:49:45.168873783Z INFO:     172.18.0.4:41052 - "GET /api/v1/doc-sets/04a6b392-e521-4c68-bc7a-42bd3d8c66ff/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:49:48.199043748Z INFO:     172.18.0.4:41054 - "GET /api/v1/doc-sets/04a6b392-e521-4c68-bc7a-42bd3d8c66ff/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:49:53.337435309Z INFO:     172.18.0.4:53984 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T15:49:53.362562066Z INFO:     172.18.0.4:53988 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:49:53.489822085Z INFO:     172.18.0.4:53998 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T15:49:53.517678339Z INFO:     172.18.0.4:54002 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:49:53.547128124Z INFO:     172.18.0.4:54008 - "GET /api/v1/doc-sets/dad68db9-ebf5-4cc2-b419-4c4045536cd5/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:49:53.652860211Z INFO:     172.18.0.4:54020 - "POST /api/v1/doc-sets/dad68db9-ebf5-4cc2-b419-4c4045536cd5/documents HTTP/1.1" 409 Conflict
+api-1     | 2026-11-02T15:49:53.704583138Z INFO:     172.18.0.4:54024 - "GET /api/v1/doc-sets/dad68db9-ebf5-4cc2-b419-4c4045536cd5/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:49:53.898989429Z INFO:     172.18.0.4:54036 - "POST /api/v1/doc-sets/dad68db9-ebf5-4cc2-b419-4c4045536cd5/classification-confirmations HTTP/1.1" 201 Created
+api-1     | 2026-11-02T15:49:53.992548244Z INFO:     172.18.0.4:54048 - "POST /api/v1/doc-sets/dad68db9-ebf5-4cc2-b419-4c4045536cd5/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:49:54.028642997Z INFO:     172.18.0.4:54058 - "GET /api/v1/doc-sets/dad68db9-ebf5-4cc2-b419-4c4045536cd5/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:49:57.082621430Z INFO:     172.18.0.4:54072 - "GET /api/v1/doc-sets/dad68db9-ebf5-4cc2-b419-4c4045536cd5/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:49:58.434795980Z INFO:     172.18.0.4:54084 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T15:49:58.507635194Z INFO:     172.18.0.4:54086 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:49:58.615628527Z INFO:     172.18.0.4:54090 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T15:49:58.658488990Z INFO:     172.18.0.4:54102 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:49:58.684241714Z INFO:     172.18.0.4:54108 - "GET /api/v1/doc-sets/dad68db9-ebf5-4cc2-b419-4c4045536cd5/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:49:58.780389188Z INFO:     172.18.0.4:54116 - "POST /api/v1/doc-sets/dad68db9-ebf5-4cc2-b419-4c4045536cd5/conversations HTTP/1.1" 201 Created
+api-1     | 2026-11-02T15:49:58.850524701Z INFO:     172.18.0.4:54120 - "POST /api/v1/conversations/d132abd0-8e47-4fe0-84be-dba1d21c3c0b/messages HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:50:06.229581077Z INFO:     172.18.0.4:45540 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T15:50:06.285886543Z INFO:     172.18.0.4:45546 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:50:06.393761805Z INFO:     172.18.0.4:45554 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T15:50:06.431007168Z INFO:     172.18.0.4:45558 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:50:06.456932589Z INFO:     172.18.0.4:45566 - "GET /api/v1/doc-sets/b408b0be-751e-4be8-b372-df0edd50a408/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:50:06.643297528Z INFO:     172.18.0.4:45576 - "POST /api/v1/doc-sets/b408b0be-751e-4be8-b372-df0edd50a408/documents HTTP/1.1" 409 Conflict
+api-1     | 2026-11-02T15:50:06.678354036Z INFO:     172.18.0.4:45580 - "GET /api/v1/doc-sets/b408b0be-751e-4be8-b372-df0edd50a408/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:50:06.901271026Z INFO:     172.18.0.4:45594 - "POST /api/v1/doc-sets/b408b0be-751e-4be8-b372-df0edd50a408/classification-confirmations HTTP/1.1" 201 Created
+api-1     | 2026-11-02T15:50:07.004786278Z INFO:     172.18.0.4:45602 - "POST /api/v1/doc-sets/b408b0be-751e-4be8-b372-df0edd50a408/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:50:07.041851812Z INFO:     172.18.0.4:45606 - "GET /api/v1/doc-sets/b408b0be-751e-4be8-b372-df0edd50a408/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:50:10.085008728Z INFO:     172.18.0.4:45616 - "GET /api/v1/doc-sets/b408b0be-751e-4be8-b372-df0edd50a408/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:50:11.672335423Z INFO:     172.18.0.4:45624 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T15:50:11.710998433Z INFO:     172.18.0.4:45640 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:50:11.825346909Z INFO:     172.18.0.4:45656 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T15:50:11.869954944Z INFO:     172.18.0.4:45670 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:50:11.904490912Z INFO:     172.18.0.4:45672 - "GET /api/v1/doc-sets/b408b0be-751e-4be8-b372-df0edd50a408/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:50:12.013958329Z INFO:     172.18.0.4:45678 - "POST /api/v1/doc-sets/b408b0be-751e-4be8-b372-df0edd50a408/documents HTTP/1.1" 409 Conflict
+api-1     | 2026-11-02T15:50:12.066503198Z INFO:     172.18.0.4:45684 - "GET /api/v1/doc-sets/b408b0be-751e-4be8-b372-df0edd50a408/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:50:12.249006368Z INFO:     172.18.0.4:45690 - "POST /api/v1/doc-sets/b408b0be-751e-4be8-b372-df0edd50a408/classification-confirmations HTTP/1.1" 201 Created
+api-1     | 2026-11-02T15:50:12.320347458Z INFO:     172.18.0.4:45698 - "POST /api/v1/doc-sets/b408b0be-751e-4be8-b372-df0edd50a408/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:50:12.356874337Z INFO:     172.18.0.4:45708 - "GET /api/v1/doc-sets/b408b0be-751e-4be8-b372-df0edd50a408/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:50:15.381132566Z INFO:     172.18.0.4:35444 - "GET /api/v1/doc-sets/b408b0be-751e-4be8-b372-df0edd50a408/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:50:16.068656143Z INFO:     172.18.0.4:35452 - "POST /api/v1/doc-sets/b408b0be-751e-4be8-b372-df0edd50a408/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:50:16.136090526Z INFO:     172.18.0.4:35464 - "GET /api/v1/doc-sets/b408b0be-751e-4be8-b372-df0edd50a408/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:50:19.158231742Z INFO:     172.18.0.4:35476 - "GET /api/v1/doc-sets/b408b0be-751e-4be8-b372-df0edd50a408/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:50:20.968865592Z INFO:     172.18.0.4:35490 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T15:50:21.044245802Z INFO:     172.18.0.4:35496 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:50:21.197409287Z INFO:     172.18.0.4:35512 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T15:50:21.254870960Z INFO:     172.18.0.4:35526 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:50:21.293279624Z INFO:     172.18.0.4:35540 - "GET /api/v1/doc-sets/b408b0be-751e-4be8-b372-df0edd50a408/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:50:28.870884034Z INFO:     172.18.0.4:39394 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T15:50:28.959863578Z INFO:     172.18.0.4:39400 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:50:29.142735509Z INFO:     172.18.0.4:39408 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T15:50:29.178249874Z INFO:     172.18.0.4:39422 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:50:29.277437261Z INFO:     172.18.0.4:39430 - "GET /api/v1/admin/doc-sets HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:50:29.450364188Z INFO:     172.18.0.4:39446 - "GET /api/v1/admin/doc-sets/215ae8b2-e859-4994-995f-444c26b86729/members HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:50:29.681764751Z INFO:     172.18.0.4:39460 - "POST /api/v1/admin/doc-sets/215ae8b2-e859-4994-995f-444c26b86729/members HTTP/1.1" 404 Not Found
+api-1     | 2026-11-02T15:50:29.939000316Z INFO:     172.18.0.4:39476 - "POST /api/v1/admin/doc-sets/215ae8b2-e859-4994-995f-444c26b86729/members HTTP/1.1" 201 Created
+api-1     | 2026-11-02T15:50:30.034994520Z INFO:     172.18.0.4:39488 - "GET /api/v1/admin/doc-sets/215ae8b2-e859-4994-995f-444c26b86729/members HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:50:30.059065657Z INFO:     172.18.0.4:39494 - "GET /api/v1/admin/doc-sets HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:50:32.494475123Z INFO:     172.18.0.4:39510 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T15:50:32.561756889Z INFO:     172.18.0.4:39512 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:50:32.657294324Z INFO:     172.18.0.4:39526 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T15:50:32.697465693Z INFO:     172.18.0.4:39542 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:50:32.777788929Z INFO:     172.18.0.4:39556 - "GET /api/v1/doc-sets/215ae8b2-e859-4994-995f-444c26b86729/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:50:33.425908554Z INFO:     172.18.0.4:33768 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T15:50:33.490144259Z INFO:     172.18.0.4:33772 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:50:33.571629471Z INFO:     172.18.0.4:33776 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T15:50:33.596672555Z INFO:     172.18.0.4:33780 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:50:33.650302958Z INFO:     172.18.0.4:33784 - "GET /api/v1/admin/doc-sets HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:50:33.718055895Z INFO:     172.18.0.4:33794 - "GET /api/v1/admin/doc-sets/215ae8b2-e859-4994-995f-444c26b86729/members HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:50:33.876071569Z INFO:     172.18.0.4:33802 - "DELETE /api/v1/admin/doc-sets/215ae8b2-e859-4994-995f-444c26b86729/members/6e8f05d9-f519-464d-b8ee-140de0b92a88 HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T15:50:33.934063931Z INFO:     172.18.0.4:33812 - "GET /api/v1/admin/doc-sets/215ae8b2-e859-4994-995f-444c26b86729/members HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:50:33.992354438Z INFO:     172.18.0.4:33818 - "GET /api/v1/admin/doc-sets HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:50:34.133883822Z INFO:     172.18.0.4:33820 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:50:35.626290954Z INFO:     172.18.0.4:33836 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T15:50:35.690518519Z INFO:     172.18.0.4:33840 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:50:35.808269439Z INFO:     172.18.0.4:33842 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T15:50:35.851249808Z INFO:     172.18.0.4:33856 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:50:35.897661092Z INFO:     172.18.0.4:33870 - "GET /api/v1/doc-sets/215ae8b2-e859-4994-995f-444c26b86729/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:50:36.015366105Z INFO:     172.18.0.4:33874 - "POST /api/v1/doc-sets/215ae8b2-e859-4994-995f-444c26b86729/documents HTTP/1.1" 409 Conflict
+api-1     | 2026-11-02T15:50:36.126621948Z INFO:     172.18.0.4:33878 - "GET /api/v1/doc-sets/215ae8b2-e859-4994-995f-444c26b86729/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:50:36.288435999Z INFO:     172.18.0.4:33890 - "POST /api/v1/doc-sets/215ae8b2-e859-4994-995f-444c26b86729/classification-confirmations HTTP/1.1" 201 Created
+api-1     | 2026-11-02T15:50:36.367907058Z INFO:     172.18.0.4:33898 - "POST /api/v1/doc-sets/215ae8b2-e859-4994-995f-444c26b86729/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:50:36.404145412Z INFO:     172.18.0.4:33914 - "GET /api/v1/doc-sets/215ae8b2-e859-4994-995f-444c26b86729/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:50:39.457610422Z INFO:     172.18.0.4:33926 - "GET /api/v1/doc-sets/215ae8b2-e859-4994-995f-444c26b86729/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:50:39.959082688Z INFO:     172.18.0.4:33940 - "POST /api/v1/doc-sets/215ae8b2-e859-4994-995f-444c26b86729/conversations HTTP/1.1" 201 Created
+api-1     | 2026-11-02T15:50:40.021926645Z INFO:     172.18.0.4:33946 - "POST /api/v1/conversations/b13c766b-3a5d-4369-8ab8-a6770abc3e9b/messages HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:50:40.564546603Z INFO:     172.18.0.4:33952 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T15:50:40.602092954Z INFO:     172.18.0.4:33964 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:50:40.888499954Z INFO:     172.18.0.4:33968 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T15:50:40.928851127Z INFO:     172.18.0.4:33982 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:50:41.010662939Z INFO:     172.18.0.4:33994 - "GET /api/v1/admin/doc-sets HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:50:41.052935200Z INFO:     172.18.0.4:33996 - "GET /api/v1/admin/doc-sets/215ae8b2-e859-4994-995f-444c26b86729/members HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:50:41.258576647Z INFO:     172.18.0.4:34000 - "GET /api/v1/admin/doc-sets/215ae8b2-e859-4994-995f-444c26b86729/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:50:41.586879553Z INFO:     172.18.0.4:34004 - "DELETE /api/v1/admin/documents/3b99b99c-633c-4be0-abf1-961305c02b68 HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:50:41.629375848Z INFO:     172.18.0.4:34020 - "GET /api/v1/admin/doc-sets/215ae8b2-e859-4994-995f-444c26b86729/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:50:41.848426312Z INFO:     172.18.0.4:34032 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:50:41.903822249Z INFO:     172.18.0.4:34044 - "GET /api/v1/doc-sets/215ae8b2-e859-4994-995f-444c26b86729/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:50:42.046413207Z INFO:     172.18.0.4:34056 - "GET /api/v1/admin/doc-sets/215ae8b2-e859-4994-995f-444c26b86729/members HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:50:42.092659467Z INFO:     172.18.0.4:34070 - "GET /api/v1/admin/audit-logs?doc_set_id=215ae8b2-e859-4994-995f-444c26b86729&from=2026-10-27&to=2026-11-02&limit=50 HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:50:47.188751306Z INFO:     172.18.0.4:48404 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T15:50:47.229185571Z INFO:     172.18.0.4:48406 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:50:48.382898320Z INFO:     172.18.0.4:48418 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T15:50:48.411313582Z INFO:     172.18.0.4:48434 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:50:49.515351180Z INFO:     172.18.0.4:48444 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T15:50:49.598991526Z INFO:     172.18.0.4:48456 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:50:49.676753290Z INFO:     172.18.0.4:48458 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T15:50:49.724030081Z INFO:     172.18.0.4:48460 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:50:49.752470147Z INFO:     172.18.0.4:48470 - "GET /api/v1/doc-sets/e574684a-1a58-4b4f-bb4e-f5204bb056a4/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:50:49.877977172Z INFO:     172.18.0.4:48476 - "POST /api/v1/auth/logout HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T15:50:49.920516052Z INFO:     172.18.0.4:48486 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:51:12.221960665Z INFO:     172.18.0.4:58968 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T15:51:12.282676285Z INFO:     172.18.0.4:58974 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:51:12.371364761Z INFO:     172.18.0.4:58978 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T15:51:12.413815768Z INFO:     172.18.0.4:58992 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:51:13.482654361Z INFO:     172.18.0.4:47264 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T15:51:13.517451330Z INFO:     172.18.0.4:47274 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:51:13.742649487Z INFO:     172.18.0.4:47288 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T15:51:13.771785915Z INFO:     172.18.0.4:47296 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:51:13.815235271Z INFO:     172.18.0.4:47310 - "GET /api/v1/admin/doc-sets HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:51:13.882613281Z INFO:     172.18.0.4:47316 - "GET /api/v1/admin/doc-sets/5f0b56a4-85d9-43bf-8c01-582a12003a80/members HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:51:18.648354686Z INFO:     172.18.0.4:47320 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T15:51:18.675004138Z INFO:     172.18.0.4:47328 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:51:18.847920479Z INFO:     172.18.0.4:47342 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T15:51:18.885650774Z INFO:     172.18.0.4:47350 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:51:18.919727627Z INFO:     172.18.0.4:47352 - "GET /api/v1/doc-sets/82dc1a54-ebc3-41b5-bd7f-253915b3e01f/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:51:19.027006535Z INFO:     172.18.0.4:47358 - "POST /api/v1/doc-sets/82dc1a54-ebc3-41b5-bd7f-253915b3e01f/documents HTTP/1.1" 409 Conflict
+api-1     | 2026-11-02T15:51:19.066513894Z INFO:     172.18.0.4:47370 - "GET /api/v1/doc-sets/82dc1a54-ebc3-41b5-bd7f-253915b3e01f/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:51:19.337447069Z INFO:     172.18.0.4:47386 - "POST /api/v1/doc-sets/82dc1a54-ebc3-41b5-bd7f-253915b3e01f/classification-confirmations HTTP/1.1" 201 Created
+api-1     | 2026-11-02T15:51:19.433737848Z INFO:     172.18.0.4:47390 - "POST /api/v1/doc-sets/82dc1a54-ebc3-41b5-bd7f-253915b3e01f/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:51:19.459485966Z INFO:     172.18.0.4:47406 - "GET /api/v1/doc-sets/82dc1a54-ebc3-41b5-bd7f-253915b3e01f/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:51:22.496982974Z INFO:     172.18.0.4:47408 - "GET /api/v1/doc-sets/82dc1a54-ebc3-41b5-bd7f-253915b3e01f/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:51:23.241268018Z INFO:     172.18.0.4:47418 - "POST /api/v1/doc-sets/82dc1a54-ebc3-41b5-bd7f-253915b3e01f/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:51:23.290310863Z INFO:     172.18.0.4:47432 - "GET /api/v1/doc-sets/82dc1a54-ebc3-41b5-bd7f-253915b3e01f/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:51:26.326318133Z INFO:     172.18.0.4:40856 - "GET /api/v1/doc-sets/82dc1a54-ebc3-41b5-bd7f-253915b3e01f/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:51:26.554695368Z INFO:     172.18.0.4:40864 - "POST /api/v1/doc-sets/82dc1a54-ebc3-41b5-bd7f-253915b3e01f/conversations HTTP/1.1" 201 Created
+api-1     | 2026-11-02T15:51:26.600430324Z INFO:     172.18.0.4:40872 - "POST /api/v1/conversations/161121aa-edc5-4cc6-9b37-939e408225c2/messages HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:51:32.784365495Z INFO:     172.18.0.4:40878 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T15:51:32.856651227Z INFO:     172.18.0.4:40882 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:51:32.969504425Z INFO:     172.18.0.4:40890 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T15:51:32.998214248Z INFO:     172.18.0.4:40898 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:51:33.026961976Z INFO:     172.18.0.4:40910 - "GET /api/v1/doc-sets/fd3c7e62-a9c1-4ec5-8a36-0d77535a8c86/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:51:33.128734545Z INFO:     172.18.0.4:40926 - "POST /api/v1/doc-sets/fd3c7e62-a9c1-4ec5-8a36-0d77535a8c86/documents HTTP/1.1" 409 Conflict
+api-1     | 2026-11-02T15:51:33.155598596Z INFO:     172.18.0.4:40940 - "GET /api/v1/doc-sets/fd3c7e62-a9c1-4ec5-8a36-0d77535a8c86/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:51:33.324703868Z INFO:     172.18.0.4:40942 - "POST /api/v1/doc-sets/fd3c7e62-a9c1-4ec5-8a36-0d77535a8c86/classification-confirmations HTTP/1.1" 201 Created
+api-1     | 2026-11-02T15:51:33.387533809Z INFO:     172.18.0.4:53298 - "POST /api/v1/doc-sets/fd3c7e62-a9c1-4ec5-8a36-0d77535a8c86/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:51:33.442612310Z INFO:     172.18.0.4:53302 - "GET /api/v1/doc-sets/fd3c7e62-a9c1-4ec5-8a36-0d77535a8c86/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:51:36.453771290Z INFO:     172.18.0.4:53308 - "GET /api/v1/doc-sets/fd3c7e62-a9c1-4ec5-8a36-0d77535a8c86/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:51:41.697915123Z INFO:     172.18.0.4:53318 - "POST /api/v1/doc-sets/fd3c7e62-a9c1-4ec5-8a36-0d77535a8c86/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:51:41.741139896Z INFO:     172.18.0.4:53324 - "GET /api/v1/doc-sets/fd3c7e62-a9c1-4ec5-8a36-0d77535a8c86/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:51:42.009955032Z INFO:     172.18.0.4:53330 - "POST /api/v1/doc-sets/fd3c7e62-a9c1-4ec5-8a36-0d77535a8c86/conversations HTTP/1.1" 201 Created
+api-1     | 2026-11-02T15:51:42.111172255Z INFO:     172.18.0.4:53346 - "POST /api/v1/conversations/d5072a87-d216-4055-a4c2-7c8e8ce004b5/messages HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:51:44.808126104Z INFO:     172.18.0.4:44548 - "GET /api/v1/doc-sets/fd3c7e62-a9c1-4ec5-8a36-0d77535a8c86/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:51:49.807978043Z INFO:     172.18.0.4:44552 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T15:51:49.832998304Z INFO:     172.18.0.4:44558 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:51:49.959762449Z INFO:     172.18.0.4:44564 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T15:51:49.995616194Z INFO:     172.18.0.4:44568 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:51:50.122724389Z INFO:     172.18.0.4:44584 - "GET /api/v1/doc-sets/c18f0725-d702-4eef-ba95-9f4322b8702c/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:51:50.143012558Z INFO:     172.18.0.4:44594 - "POST /api/v1/doc-sets/c18f0725-d702-4eef-ba95-9f4322b8702c/documents HTTP/1.1" 409 Conflict
+api-1     | 2026-11-02T15:51:50.233003823Z INFO:     172.18.0.4:44600 - "GET /api/v1/doc-sets/c18f0725-d702-4eef-ba95-9f4322b8702c/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:51:50.420106495Z INFO:     172.18.0.4:44608 - "POST /api/v1/doc-sets/c18f0725-d702-4eef-ba95-9f4322b8702c/classification-confirmations HTTP/1.1" 201 Created
+api-1     | 2026-11-02T15:51:50.607891968Z INFO:     172.18.0.4:44618 - "POST /api/v1/doc-sets/c18f0725-d702-4eef-ba95-9f4322b8702c/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:51:50.641709415Z INFO:     172.18.0.4:44624 - "GET /api/v1/doc-sets/c18f0725-d702-4eef-ba95-9f4322b8702c/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:51:53.694306298Z INFO:     172.18.0.4:39026 - "GET /api/v1/doc-sets/c18f0725-d702-4eef-ba95-9f4322b8702c/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:51:53.983359785Z INFO:     172.18.0.4:39032 - "POST /api/v1/doc-sets/c18f0725-d702-4eef-ba95-9f4322b8702c/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:51:54.016428823Z INFO:     172.18.0.4:39048 - "GET /api/v1/doc-sets/c18f0725-d702-4eef-ba95-9f4322b8702c/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:52:01.154777439Z INFO:     172.18.0.4:39060 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T15:52:01.184361506Z INFO:     172.18.0.4:39066 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:52:01.298773732Z INFO:     172.18.0.4:39076 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T15:52:01.323940592Z INFO:     172.18.0.4:39086 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:52:01.351800921Z INFO:     172.18.0.4:39100 - "GET /api/v1/doc-sets/dd859ea9-95f6-4de2-b13c-1e159f06821f/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:52:01.463530679Z INFO:     172.18.0.4:39116 - "POST /api/v1/doc-sets/dd859ea9-95f6-4de2-b13c-1e159f06821f/documents HTTP/1.1" 409 Conflict
+api-1     | 2026-11-02T15:52:01.503111820Z INFO:     172.18.0.4:39124 - "GET /api/v1/doc-sets/dd859ea9-95f6-4de2-b13c-1e159f06821f/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:52:01.715065054Z INFO:     172.18.0.4:39126 - "POST /api/v1/doc-sets/dd859ea9-95f6-4de2-b13c-1e159f06821f/classification-confirmations HTTP/1.1" 201 Created
+api-1     | 2026-11-02T15:52:01.931382789Z INFO:     172.18.0.4:39142 - "POST /api/v1/doc-sets/dd859ea9-95f6-4de2-b13c-1e159f06821f/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:52:01.989290649Z INFO:     172.18.0.4:39154 - "GET /api/v1/doc-sets/dd859ea9-95f6-4de2-b13c-1e159f06821f/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:52:05.024720923Z INFO:     172.18.0.4:48804 - "GET /api/v1/doc-sets/dd859ea9-95f6-4de2-b13c-1e159f06821f/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:52:09.751879350Z INFO:     172.18.0.4:48820 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T15:52:09.775632804Z INFO:     172.18.0.4:48830 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:52:09.926387189Z INFO:     172.18.0.4:48834 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T15:52:09.966282522Z INFO:     172.18.0.4:48842 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:52:10.083400858Z INFO:     172.18.0.4:48854 - "GET /api/v1/doc-sets/fcf3eb2c-565f-4960-a297-b9a0275c9bc0/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:52:10.126421632Z INFO:     172.18.0.4:48856 - "POST /api/v1/doc-sets/fcf3eb2c-565f-4960-a297-b9a0275c9bc0/documents HTTP/1.1" 409 Conflict
+api-1     | 2026-11-02T15:52:10.215150260Z INFO:     172.18.0.4:48866 - "GET /api/v1/doc-sets/fcf3eb2c-565f-4960-a297-b9a0275c9bc0/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:52:10.432407353Z INFO:     172.18.0.4:48876 - "POST /api/v1/doc-sets/fcf3eb2c-565f-4960-a297-b9a0275c9bc0/classification-confirmations HTTP/1.1" 201 Created
+api-1     | 2026-11-02T15:52:10.556508854Z INFO:     172.18.0.4:48880 - "POST /api/v1/doc-sets/fcf3eb2c-565f-4960-a297-b9a0275c9bc0/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:52:10.596059163Z INFO:     172.18.0.4:48882 - "GET /api/v1/doc-sets/fcf3eb2c-565f-4960-a297-b9a0275c9bc0/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:52:13.645535771Z INFO:     172.18.0.4:60924 - "GET /api/v1/doc-sets/fcf3eb2c-565f-4960-a297-b9a0275c9bc0/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:52:14.759913923Z INFO:     172.18.0.4:60930 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T15:52:14.822054936Z INFO:     172.18.0.4:60940 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:52:14.932236663Z INFO:     172.18.0.4:60942 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T15:52:14.970584602Z INFO:     172.18.0.4:60948 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:52:14.999300275Z INFO:     172.18.0.4:60960 - "GET /api/v1/doc-sets/fcf3eb2c-565f-4960-a297-b9a0275c9bc0/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:52:15.134279019Z INFO:     172.18.0.4:60972 - "POST /api/v1/doc-sets/fcf3eb2c-565f-4960-a297-b9a0275c9bc0/conversations HTTP/1.1" 201 Created
+api-1     | 2026-11-02T15:52:15.201869605Z INFO:     172.18.0.4:60980 - "POST /api/v1/conversations/457e4717-3d0a-494f-86dd-0c3d08ca8833/messages HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:52:22.503105088Z INFO:     172.18.0.4:60996 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T15:52:22.539131541Z INFO:     172.18.0.4:60998 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:52:22.704733790Z INFO:     172.18.0.4:32768 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T15:52:22.749916351Z INFO:     172.18.0.4:32780 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:52:22.773068205Z INFO:     172.18.0.4:32784 - "GET /api/v1/doc-sets/3b227191-03a7-4c8d-83a8-028038a65911/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:52:22.895335737Z INFO:     172.18.0.4:32788 - "POST /api/v1/doc-sets/3b227191-03a7-4c8d-83a8-028038a65911/documents HTTP/1.1" 409 Conflict
+api-1     | 2026-11-02T15:52:22.940088341Z INFO:     172.18.0.4:32804 - "GET /api/v1/doc-sets/3b227191-03a7-4c8d-83a8-028038a65911/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:52:23.146257342Z INFO:     172.18.0.4:32808 - "POST /api/v1/doc-sets/3b227191-03a7-4c8d-83a8-028038a65911/classification-confirmations HTTP/1.1" 201 Created
+api-1     | 2026-11-02T15:52:23.232198180Z INFO:     172.18.0.4:32814 - "POST /api/v1/doc-sets/3b227191-03a7-4c8d-83a8-028038a65911/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:52:23.260253281Z INFO:     172.18.0.4:32816 - "GET /api/v1/doc-sets/3b227191-03a7-4c8d-83a8-028038a65911/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:52:26.292282908Z INFO:     172.18.0.4:56080 - "GET /api/v1/doc-sets/3b227191-03a7-4c8d-83a8-028038a65911/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:52:27.882267822Z INFO:     172.18.0.4:56092 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T15:52:27.945738679Z INFO:     172.18.0.4:56098 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:52:28.063556843Z INFO:     172.18.0.4:56102 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T15:52:28.097555484Z INFO:     172.18.0.4:56118 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:52:28.132391612Z INFO:     172.18.0.4:56120 - "GET /api/v1/doc-sets/3b227191-03a7-4c8d-83a8-028038a65911/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:52:28.271705923Z INFO:     172.18.0.4:56126 - "POST /api/v1/doc-sets/3b227191-03a7-4c8d-83a8-028038a65911/documents HTTP/1.1" 409 Conflict
+api-1     | 2026-11-02T15:52:28.343207848Z INFO:     172.18.0.4:56142 - "GET /api/v1/doc-sets/3b227191-03a7-4c8d-83a8-028038a65911/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:52:28.602058196Z INFO:     172.18.0.4:56154 - "POST /api/v1/doc-sets/3b227191-03a7-4c8d-83a8-028038a65911/classification-confirmations HTTP/1.1" 201 Created
+api-1     | 2026-11-02T15:52:28.764599825Z INFO:     172.18.0.4:56168 - "POST /api/v1/doc-sets/3b227191-03a7-4c8d-83a8-028038a65911/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:52:28.809756483Z INFO:     172.18.0.4:56178 - "GET /api/v1/doc-sets/3b227191-03a7-4c8d-83a8-028038a65911/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:52:31.842723052Z INFO:     172.18.0.4:56182 - "GET /api/v1/doc-sets/3b227191-03a7-4c8d-83a8-028038a65911/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:52:32.666456618Z INFO:     172.18.0.4:56192 - "POST /api/v1/doc-sets/3b227191-03a7-4c8d-83a8-028038a65911/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:52:32.725971640Z INFO:     172.18.0.4:56196 - "GET /api/v1/doc-sets/3b227191-03a7-4c8d-83a8-028038a65911/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:52:35.763751597Z INFO:     172.18.0.4:45102 - "GET /api/v1/doc-sets/3b227191-03a7-4c8d-83a8-028038a65911/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:52:37.879824354Z INFO:     172.18.0.4:45118 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T15:52:37.905887282Z INFO:     172.18.0.4:45120 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:52:38.179410210Z INFO:     172.18.0.4:45132 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T15:52:38.234057247Z INFO:     172.18.0.4:45148 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:52:38.284235211Z INFO:     172.18.0.4:45160 - "GET /api/v1/doc-sets/3b227191-03a7-4c8d-83a8-028038a65911/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:57:16.599424122Z INFO:     127.0.0.1:49014 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T15:57:16.699754385Z INFO:     127.0.0.1:49014 - "POST /api/v1/doc-sets/b78ce3be-4e6d-4379-acf3-331df1181af6/classification-confirmations HTTP/1.1" 201 Created
+api-1     | 2026-11-02T15:57:16.731971967Z INFO:     127.0.0.1:49014 - "POST /api/v1/doc-sets/b78ce3be-4e6d-4379-acf3-331df1181af6/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:57:16.745994078Z INFO:     127.0.0.1:49014 - "GET /api/v1/doc-sets/b78ce3be-4e6d-4379-acf3-331df1181af6/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:57:16.960704819Z INFO:     127.0.0.1:49014 - "GET /api/v1/doc-sets/b78ce3be-4e6d-4379-acf3-331df1181af6/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:57:17.176194226Z INFO:     127.0.0.1:49014 - "GET /api/v1/doc-sets/b78ce3be-4e6d-4379-acf3-331df1181af6/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:57:17.392374494Z INFO:     127.0.0.1:49014 - "GET /api/v1/doc-sets/b78ce3be-4e6d-4379-acf3-331df1181af6/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:57:28.639950845Z INFO:     172.18.0.4:51542 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T15:57:28.748185096Z INFO:     172.18.0.4:51546 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:57:29.079592248Z INFO:     172.18.0.4:51558 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T15:57:29.161393424Z INFO:     172.18.0.4:51568 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:57:29.271600392Z INFO:     172.18.0.4:51582 - "GET /api/v1/admin/doc-sets HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:57:29.409431607Z INFO:     172.18.0.4:51596 - "GET /api/v1/admin/doc-sets/093931fd-9b7e-49f0-8065-028ee87bf827/members HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:57:29.926457223Z INFO:     172.18.0.4:51604 - "POST /api/v1/admin/doc-sets/093931fd-9b7e-49f0-8065-028ee87bf827/members HTTP/1.1" 404 Not Found
+api-1     | 2026-11-02T15:57:30.548461696Z INFO:     172.18.0.4:51618 - "POST /api/v1/admin/doc-sets/093931fd-9b7e-49f0-8065-028ee87bf827/members HTTP/1.1" 201 Created
+api-1     | 2026-11-02T15:57:30.653301744Z INFO:     172.18.0.4:51628 - "GET /api/v1/admin/doc-sets HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:57:30.677227370Z INFO:     172.18.0.4:51624 - "GET /api/v1/admin/doc-sets/093931fd-9b7e-49f0-8065-028ee87bf827/members HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:57:33.038548874Z INFO:     172.18.0.4:51638 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T15:57:33.174779420Z INFO:     172.18.0.4:51642 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:57:33.465829497Z INFO:     172.18.0.4:55854 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T15:57:33.522913270Z INFO:     172.18.0.4:55856 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:57:33.617539545Z INFO:     172.18.0.4:55862 - "GET /api/v1/doc-sets/093931fd-9b7e-49f0-8065-028ee87bf827/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:57:34.131453719Z INFO:     172.18.0.4:55868 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T15:57:34.170505158Z INFO:     172.18.0.4:55884 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:57:34.399394401Z INFO:     172.18.0.4:55892 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T15:57:34.436460761Z INFO:     172.18.0.4:55894 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:57:34.483208397Z INFO:     172.18.0.4:55904 - "GET /api/v1/admin/doc-sets HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:57:34.531881208Z INFO:     172.18.0.4:55912 - "GET /api/v1/admin/doc-sets/093931fd-9b7e-49f0-8065-028ee87bf827/members HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:57:34.702244447Z INFO:     172.18.0.4:55922 - "DELETE /api/v1/admin/doc-sets/093931fd-9b7e-49f0-8065-028ee87bf827/members/8d02e738-718c-4098-a79c-9cc4e843bbd7 HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T15:57:34.767278541Z INFO:     172.18.0.4:55932 - "GET /api/v1/admin/doc-sets HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:57:34.792605236Z INFO:     172.18.0.4:55940 - "GET /api/v1/admin/doc-sets/093931fd-9b7e-49f0-8065-028ee87bf827/members HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:57:35.068804267Z INFO:     172.18.0.4:55948 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:57:37.137826573Z INFO:     172.18.0.4:55952 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T15:57:37.197083243Z INFO:     172.18.0.4:55968 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:57:37.317436150Z INFO:     172.18.0.4:55976 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T15:57:37.352969670Z INFO:     172.18.0.4:55978 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:57:37.425347830Z INFO:     172.18.0.4:55990 - "GET /api/v1/doc-sets/093931fd-9b7e-49f0-8065-028ee87bf827/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:57:37.499451045Z INFO:     172.18.0.4:56006 - "POST /api/v1/doc-sets/093931fd-9b7e-49f0-8065-028ee87bf827/documents HTTP/1.1" 409 Conflict
+api-1     | 2026-11-02T15:57:37.650161504Z INFO:     172.18.0.4:56014 - "GET /api/v1/doc-sets/093931fd-9b7e-49f0-8065-028ee87bf827/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:57:37.806551676Z INFO:     172.18.0.4:56020 - "POST /api/v1/doc-sets/093931fd-9b7e-49f0-8065-028ee87bf827/classification-confirmations HTTP/1.1" 201 Created
+api-1     | 2026-11-02T15:57:37.999647976Z INFO:     172.18.0.4:56030 - "POST /api/v1/doc-sets/093931fd-9b7e-49f0-8065-028ee87bf827/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:57:38.045984375Z INFO:     172.18.0.4:56038 - "GET /api/v1/doc-sets/093931fd-9b7e-49f0-8065-028ee87bf827/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:57:41.094383300Z INFO:     172.18.0.4:56044 - "GET /api/v1/doc-sets/093931fd-9b7e-49f0-8065-028ee87bf827/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:57:41.391224782Z INFO:     172.18.0.4:56056 - "POST /api/v1/doc-sets/093931fd-9b7e-49f0-8065-028ee87bf827/conversations HTTP/1.1" 201 Created
+api-1     | 2026-11-02T15:57:41.431999001Z INFO:     172.18.0.4:56066 - "POST /api/v1/conversations/3205b54e-abc3-44fe-a568-54c32de2e2e9/messages HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:57:42.010811408Z INFO:     172.18.0.4:56070 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T15:57:42.102016529Z INFO:     172.18.0.4:56082 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:57:42.273921312Z INFO:     172.18.0.4:56094 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T15:57:42.332599166Z INFO:     172.18.0.4:56104 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:57:42.414231613Z INFO:     172.18.0.4:56120 - "GET /api/v1/admin/doc-sets HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:57:42.543050866Z INFO:     172.18.0.4:56128 - "GET /api/v1/admin/doc-sets/093931fd-9b7e-49f0-8065-028ee87bf827/members HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:57:42.835273526Z INFO:     172.18.0.4:56134 - "GET /api/v1/admin/doc-sets/093931fd-9b7e-49f0-8065-028ee87bf827/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:57:43.324495759Z INFO:     172.18.0.4:56140 - "DELETE /api/v1/admin/documents/378d6e40-b8f2-49a9-9d04-13328173bff9 HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:57:43.383741664Z INFO:     172.18.0.4:55910 - "GET /api/v1/admin/doc-sets/093931fd-9b7e-49f0-8065-028ee87bf827/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:57:43.799243171Z INFO:     172.18.0.4:55922 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:57:43.862486141Z INFO:     172.18.0.4:55924 - "GET /api/v1/doc-sets/093931fd-9b7e-49f0-8065-028ee87bf827/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:57:44.117564613Z INFO:     172.18.0.4:55926 - "GET /api/v1/admin/doc-sets/093931fd-9b7e-49f0-8065-028ee87bf827/members HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:57:44.172497324Z INFO:     172.18.0.4:55940 - "GET /api/v1/admin/audit-logs?doc_set_id=093931fd-9b7e-49f0-8065-028ee87bf827&from=2026-10-27&to=2026-11-02&limit=50 HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:57:52.438492026Z INFO:     172.18.0.4:55954 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T15:57:52.519874777Z INFO:     172.18.0.4:55962 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:57:53.990428702Z INFO:     172.18.0.4:56850 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T15:57:54.050225430Z INFO:     172.18.0.4:56864 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:57:55.605024675Z INFO:     172.18.0.4:56872 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T15:57:55.671206128Z INFO:     172.18.0.4:56874 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:57:55.952247065Z INFO:     172.18.0.4:56888 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T15:57:56.015806138Z INFO:     172.18.0.4:56898 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:57:56.138874105Z INFO:     172.18.0.4:56910 - "GET /api/v1/doc-sets/9e4dfeef-fe1d-4334-91a8-3541ce3fb737/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:57:56.406310806Z INFO:     172.18.0.4:56916 - "POST /api/v1/auth/logout HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T15:57:56.575308334Z INFO:     172.18.0.4:56932 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:57:58.717063540Z INFO:     172.18.0.4:56944 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T15:57:58.769665459Z INFO:     172.18.0.4:56946 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:57:58.887894794Z INFO:     172.18.0.4:56956 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T15:57:58.941448979Z INFO:     172.18.0.4:56972 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:58:00.831908249Z INFO:     172.18.0.4:56986 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T15:58:00.910649867Z INFO:     172.18.0.4:56988 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:58:01.119368528Z INFO:     172.18.0.4:56990 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T15:58:01.183420335Z INFO:     172.18.0.4:57000 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:58:01.251274603Z INFO:     172.18.0.4:57004 - "GET /api/v1/admin/doc-sets HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:58:01.359664361Z INFO:     172.18.0.4:57006 - "GET /api/v1/admin/doc-sets/9e4dfeef-fe1d-4334-91a8-3541ce3fb737/members HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:58:07.971709079Z INFO:     172.18.0.4:37490 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T15:58:08.058915367Z INFO:     172.18.0.4:37504 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:58:08.149354644Z INFO:     172.18.0.4:37518 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T15:58:08.181194887Z INFO:     172.18.0.4:37524 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:58:08.224660369Z INFO:     172.18.0.4:37528 - "GET /api/v1/doc-sets/e7aae2a4-0aec-45a9-a29a-f0b32c862197/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:58:08.394522038Z INFO:     172.18.0.4:37544 - "POST /api/v1/doc-sets/e7aae2a4-0aec-45a9-a29a-f0b32c862197/documents HTTP/1.1" 409 Conflict
+api-1     | 2026-11-02T15:58:08.479385116Z INFO:     172.18.0.4:37550 - "GET /api/v1/doc-sets/e7aae2a4-0aec-45a9-a29a-f0b32c862197/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:58:08.601085085Z INFO:     172.18.0.4:37562 - "POST /api/v1/doc-sets/e7aae2a4-0aec-45a9-a29a-f0b32c862197/classification-confirmations HTTP/1.1" 201 Created
+api-1     | 2026-11-02T15:58:08.685139891Z INFO:     172.18.0.4:37568 - "POST /api/v1/doc-sets/e7aae2a4-0aec-45a9-a29a-f0b32c862197/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:58:08.724865939Z INFO:     172.18.0.4:37570 - "GET /api/v1/doc-sets/e7aae2a4-0aec-45a9-a29a-f0b32c862197/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:58:11.916237596Z INFO:     172.18.0.4:37576 - "GET /api/v1/doc-sets/e7aae2a4-0aec-45a9-a29a-f0b32c862197/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:58:12.735379522Z INFO:     172.18.0.4:37578 - "POST /api/v1/doc-sets/e7aae2a4-0aec-45a9-a29a-f0b32c862197/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:58:12.772745094Z INFO:     172.18.0.4:37586 - "GET /api/v1/doc-sets/e7aae2a4-0aec-45a9-a29a-f0b32c862197/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:58:15.820090212Z INFO:     172.18.0.4:50586 - "GET /api/v1/doc-sets/e7aae2a4-0aec-45a9-a29a-f0b32c862197/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:58:16.332265535Z INFO:     172.18.0.4:50588 - "POST /api/v1/doc-sets/e7aae2a4-0aec-45a9-a29a-f0b32c862197/conversations HTTP/1.1" 201 Created
+api-1     | 2026-11-02T15:58:16.393311344Z INFO:     172.18.0.4:50596 - "POST /api/v1/conversations/32fd1000-b4e0-4a23-a5c2-8ed58a089ef1/messages HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:58:21.896934953Z INFO:     172.18.0.4:50598 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T15:58:21.961456867Z INFO:     172.18.0.4:50608 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:58:22.055828871Z INFO:     172.18.0.4:50610 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T15:58:22.099156276Z INFO:     172.18.0.4:50622 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:58:22.137655245Z INFO:     172.18.0.4:50626 - "GET /api/v1/doc-sets/964e08a9-0a97-4fe3-ac2b-ed720fc721a5/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:58:22.309409921Z INFO:     172.18.0.4:50640 - "POST /api/v1/doc-sets/964e08a9-0a97-4fe3-ac2b-ed720fc721a5/documents HTTP/1.1" 409 Conflict
+api-1     | 2026-11-02T15:58:22.355274154Z INFO:     172.18.0.4:50642 - "GET /api/v1/doc-sets/964e08a9-0a97-4fe3-ac2b-ed720fc721a5/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:58:22.555047556Z INFO:     172.18.0.4:50646 - "POST /api/v1/doc-sets/964e08a9-0a97-4fe3-ac2b-ed720fc721a5/classification-confirmations HTTP/1.1" 201 Created
+api-1     | 2026-11-02T15:58:22.751609968Z INFO:     172.18.0.4:50662 - "POST /api/v1/doc-sets/964e08a9-0a97-4fe3-ac2b-ed720fc721a5/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:58:22.793798370Z INFO:     172.18.0.4:50678 - "GET /api/v1/doc-sets/964e08a9-0a97-4fe3-ac2b-ed720fc721a5/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:58:25.898101798Z INFO:     172.18.0.4:53672 - "GET /api/v1/doc-sets/964e08a9-0a97-4fe3-ac2b-ed720fc721a5/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:58:30.752046698Z INFO:     172.18.0.4:53680 - "POST /api/v1/doc-sets/964e08a9-0a97-4fe3-ac2b-ed720fc721a5/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:58:30.798100562Z INFO:     172.18.0.4:53690 - "GET /api/v1/doc-sets/964e08a9-0a97-4fe3-ac2b-ed720fc721a5/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:58:30.976962657Z INFO:     172.18.0.4:53692 - "POST /api/v1/doc-sets/964e08a9-0a97-4fe3-ac2b-ed720fc721a5/conversations HTTP/1.1" 201 Created
+api-1     | 2026-11-02T15:58:31.033013781Z INFO:     172.18.0.4:53694 - "POST /api/v1/conversations/61411cbe-1f0b-4d18-898d-9c65ab8cd045/messages HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:58:33.866451552Z INFO:     172.18.0.4:48514 - "GET /api/v1/doc-sets/964e08a9-0a97-4fe3-ac2b-ed720fc721a5/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:58:41.298852451Z INFO:     172.18.0.4:48528 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T15:58:41.326319729Z INFO:     172.18.0.4:48536 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:58:41.451814618Z INFO:     172.18.0.4:48544 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T15:58:41.492024284Z INFO:     172.18.0.4:48560 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:58:41.526549075Z INFO:     172.18.0.4:48570 - "GET /api/v1/doc-sets/bb6cd0e7-1356-475a-a4c4-40a9953bafea/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:58:41.640802528Z INFO:     172.18.0.4:48572 - "POST /api/v1/doc-sets/bb6cd0e7-1356-475a-a4c4-40a9953bafea/documents HTTP/1.1" 409 Conflict
+api-1     | 2026-11-02T15:58:41.693402147Z INFO:     172.18.0.4:48580 - "GET /api/v1/doc-sets/bb6cd0e7-1356-475a-a4c4-40a9953bafea/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:58:41.871946601Z INFO:     172.18.0.4:48594 - "POST /api/v1/doc-sets/bb6cd0e7-1356-475a-a4c4-40a9953bafea/classification-confirmations HTTP/1.1" 201 Created
+api-1     | 2026-11-02T15:58:41.953469545Z INFO:     172.18.0.4:48608 - "POST /api/v1/doc-sets/bb6cd0e7-1356-475a-a4c4-40a9953bafea/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:58:41.990723712Z INFO:     172.18.0.4:48624 - "GET /api/v1/doc-sets/bb6cd0e7-1356-475a-a4c4-40a9953bafea/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:58:45.164375676Z INFO:     172.18.0.4:57060 - "GET /api/v1/doc-sets/bb6cd0e7-1356-475a-a4c4-40a9953bafea/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:58:46.065484621Z INFO:     172.18.0.4:57062 - "POST /api/v1/doc-sets/bb6cd0e7-1356-475a-a4c4-40a9953bafea/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:58:46.248840351Z INFO:     172.18.0.4:57064 - "GET /api/v1/doc-sets/bb6cd0e7-1356-475a-a4c4-40a9953bafea/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:58:52.134830311Z INFO:     172.18.0.4:57066 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T15:58:52.249322727Z INFO:     172.18.0.4:57068 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:58:52.390144853Z INFO:     172.18.0.4:57082 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T15:58:52.453225567Z INFO:     172.18.0.4:57092 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:58:52.490776347Z INFO:     172.18.0.4:57098 - "GET /api/v1/doc-sets/4030acc8-c899-497d-8a5f-1ba37d4307c6/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:58:52.652893203Z INFO:     172.18.0.4:57108 - "POST /api/v1/doc-sets/4030acc8-c899-497d-8a5f-1ba37d4307c6/documents HTTP/1.1" 409 Conflict
+api-1     | 2026-11-02T15:58:52.962958565Z INFO:     172.18.0.4:57120 - "GET /api/v1/doc-sets/4030acc8-c899-497d-8a5f-1ba37d4307c6/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:58:53.347896064Z INFO:     172.18.0.4:44322 - "POST /api/v1/doc-sets/4030acc8-c899-497d-8a5f-1ba37d4307c6/classification-confirmations HTTP/1.1" 201 Created
+api-1     | 2026-11-02T15:58:55.335422954Z INFO:     172.18.0.4:44326 - "POST /api/v1/doc-sets/4030acc8-c899-497d-8a5f-1ba37d4307c6/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:58:55.374353465Z INFO:     172.18.0.4:44330 - "GET /api/v1/doc-sets/4030acc8-c899-497d-8a5f-1ba37d4307c6/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:58:58.432875950Z INFO:     172.18.0.4:44344 - "GET /api/v1/doc-sets/4030acc8-c899-497d-8a5f-1ba37d4307c6/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:59:05.148062843Z INFO:     172.18.0.4:38988 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T15:59:05.189062370Z INFO:     172.18.0.4:38990 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:59:05.302998703Z INFO:     172.18.0.4:38996 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T15:59:05.342008244Z INFO:     172.18.0.4:39000 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:59:05.371115960Z INFO:     172.18.0.4:39004 - "GET /api/v1/doc-sets/a6f42c6c-91af-45f8-99e5-671fc002acb7/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:59:05.480480667Z INFO:     172.18.0.4:39020 - "POST /api/v1/doc-sets/a6f42c6c-91af-45f8-99e5-671fc002acb7/documents HTTP/1.1" 409 Conflict
+api-1     | 2026-11-02T15:59:05.516065388Z INFO:     172.18.0.4:39026 - "GET /api/v1/doc-sets/a6f42c6c-91af-45f8-99e5-671fc002acb7/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:59:05.690682785Z INFO:     172.18.0.4:39030 - "POST /api/v1/doc-sets/a6f42c6c-91af-45f8-99e5-671fc002acb7/classification-confirmations HTTP/1.1" 201 Created
+api-1     | 2026-11-02T15:59:05.744265986Z INFO:     172.18.0.4:39034 - "POST /api/v1/doc-sets/a6f42c6c-91af-45f8-99e5-671fc002acb7/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:59:05.771516629Z INFO:     172.18.0.4:39046 - "GET /api/v1/doc-sets/a6f42c6c-91af-45f8-99e5-671fc002acb7/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:59:08.814193684Z INFO:     172.18.0.4:39048 - "GET /api/v1/doc-sets/a6f42c6c-91af-45f8-99e5-671fc002acb7/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:59:10.230315418Z INFO:     172.18.0.4:39058 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T15:59:10.304033884Z INFO:     172.18.0.4:39072 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:59:10.653670996Z INFO:     172.18.0.4:39082 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T15:59:10.689715151Z INFO:     172.18.0.4:39098 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:59:10.738851361Z INFO:     172.18.0.4:39114 - "GET /api/v1/doc-sets/a6f42c6c-91af-45f8-99e5-671fc002acb7/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:59:11.185038828Z INFO:     172.18.0.4:39126 - "POST /api/v1/doc-sets/a6f42c6c-91af-45f8-99e5-671fc002acb7/conversations HTTP/1.1" 201 Created
+api-1     | 2026-11-02T15:59:11.346966848Z INFO:     172.18.0.4:39132 - "POST /api/v1/conversations/906cada7-6d32-4d5b-9c2a-669c03302803/messages HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:59:12.385577798Z INFO:     172.18.0.4:39140 - "GET /api/v1/citations/d1954c17-1856-4c44-a0b4-582b794aad1d HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:59:12.532290661Z INFO:     172.18.0.4:39150 - "GET /api/v1/documents/20530da6-ba18-4bb1-bc08-86f93b8742ac/file?page=2 HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:59:13.912652667Z INFO:     172.18.0.4:41864 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T15:59:14.003113238Z INFO:     172.18.0.4:41880 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:59:14.134442326Z INFO:     172.18.0.4:41886 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T15:59:14.173953313Z INFO:     172.18.0.4:41902 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:59:14.200404948Z INFO:     172.18.0.4:41908 - "GET /api/v1/doc-sets/a6f42c6c-91af-45f8-99e5-671fc002acb7/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:59:14.284722330Z INFO:     172.18.0.4:41914 - "POST /api/v1/doc-sets/a6f42c6c-91af-45f8-99e5-671fc002acb7/conversations HTTP/1.1" 201 Created
+api-1     | 2026-11-02T15:59:14.332563015Z INFO:     172.18.0.4:41926 - "POST /api/v1/conversations/fa894df5-fd88-44ff-aac1-e87b854e18d1/messages HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:59:14.504006748Z INFO:     172.18.0.4:41934 - "GET /api/v1/citations/b3ad066e-98ff-4f73-8466-55ad0e6be0c4 HTTP/1.1" 404 Not Found
+api-1     | 2026-11-02T15:59:15.680349541Z INFO:     172.18.0.4:41944 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T15:59:15.745178768Z INFO:     172.18.0.4:41950 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:59:15.833824908Z INFO:     172.18.0.4:41964 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T15:59:15.864391350Z INFO:     172.18.0.4:41970 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:59:15.891661485Z INFO:     172.18.0.4:41978 - "GET /api/v1/doc-sets/a6f42c6c-91af-45f8-99e5-671fc002acb7/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:59:15.981677253Z INFO:     172.18.0.4:41994 - "POST /api/v1/doc-sets/a6f42c6c-91af-45f8-99e5-671fc002acb7/conversations HTTP/1.1" 201 Created
+api-1     | 2026-11-02T15:59:16.032379366Z INFO:     172.18.0.4:41996 - "POST /api/v1/conversations/21a9f67c-1444-44da-a2fc-acb3adc61195/messages HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:59:16.899042531Z INFO:     172.18.0.4:42000 - "POST /api/v1/conversations/21a9f67c-1444-44da-a2fc-acb3adc61195/messages HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:59:17.926870877Z INFO:     172.18.0.4:42016 - "POST /api/v1/conversations/21a9f67c-1444-44da-a2fc-acb3adc61195/messages HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:59:40.232255831Z INFO:     172.18.0.4:45428 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T15:59:40.294914376Z INFO:     172.18.0.4:45436 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:59:40.381125480Z INFO:     172.18.0.4:45438 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T15:59:40.423139932Z INFO:     172.18.0.4:45442 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:59:40.452961066Z INFO:     172.18.0.4:45454 - "GET /api/v1/doc-sets/8b640eaa-b2b8-477e-a8d2-211fe21c71f8/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:59:40.616210533Z INFO:     172.18.0.4:45462 - "POST /api/v1/doc-sets/8b640eaa-b2b8-477e-a8d2-211fe21c71f8/documents HTTP/1.1" 409 Conflict
+api-1     | 2026-11-02T15:59:40.693120984Z INFO:     172.18.0.4:45470 - "GET /api/v1/doc-sets/8b640eaa-b2b8-477e-a8d2-211fe21c71f8/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:59:40.864387986Z INFO:     172.18.0.4:45480 - "POST /api/v1/doc-sets/8b640eaa-b2b8-477e-a8d2-211fe21c71f8/classification-confirmations HTTP/1.1" 201 Created
+api-1     | 2026-11-02T15:59:40.917912093Z INFO:     172.18.0.4:45482 - "POST /api/v1/doc-sets/8b640eaa-b2b8-477e-a8d2-211fe21c71f8/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:59:40.965419449Z INFO:     172.18.0.4:45490 - "GET /api/v1/doc-sets/8b640eaa-b2b8-477e-a8d2-211fe21c71f8/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:59:44.026167962Z INFO:     172.18.0.4:36262 - "GET /api/v1/doc-sets/8b640eaa-b2b8-477e-a8d2-211fe21c71f8/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:59:45.808380757Z INFO:     172.18.0.4:36278 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T15:59:45.853688311Z INFO:     172.18.0.4:36288 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:59:45.962690605Z INFO:     172.18.0.4:36298 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T15:59:45.985236172Z INFO:     172.18.0.4:36302 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:59:46.008777030Z INFO:     172.18.0.4:36306 - "GET /api/v1/doc-sets/8b640eaa-b2b8-477e-a8d2-211fe21c71f8/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:59:46.170465854Z INFO:     172.18.0.4:36320 - "POST /api/v1/doc-sets/8b640eaa-b2b8-477e-a8d2-211fe21c71f8/documents HTTP/1.1" 409 Conflict
+api-1     | 2026-11-02T15:59:46.239612693Z INFO:     172.18.0.4:36330 - "GET /api/v1/doc-sets/8b640eaa-b2b8-477e-a8d2-211fe21c71f8/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:59:46.488152380Z INFO:     172.18.0.4:36344 - "POST /api/v1/doc-sets/8b640eaa-b2b8-477e-a8d2-211fe21c71f8/classification-confirmations HTTP/1.1" 201 Created
+api-1     | 2026-11-02T15:59:46.586701815Z INFO:     172.18.0.4:36360 - "POST /api/v1/doc-sets/8b640eaa-b2b8-477e-a8d2-211fe21c71f8/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:59:46.620350100Z INFO:     172.18.0.4:36370 - "GET /api/v1/doc-sets/8b640eaa-b2b8-477e-a8d2-211fe21c71f8/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:59:49.652158785Z INFO:     172.18.0.4:36386 - "GET /api/v1/doc-sets/8b640eaa-b2b8-477e-a8d2-211fe21c71f8/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:59:50.224183130Z INFO:     172.18.0.4:36388 - "POST /api/v1/doc-sets/8b640eaa-b2b8-477e-a8d2-211fe21c71f8/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:59:50.272203149Z INFO:     172.18.0.4:36390 - "GET /api/v1/doc-sets/8b640eaa-b2b8-477e-a8d2-211fe21c71f8/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:59:53.315661043Z INFO:     172.18.0.4:60650 - "GET /api/v1/doc-sets/8b640eaa-b2b8-477e-a8d2-211fe21c71f8/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:59:54.819342029Z INFO:     172.18.0.4:60660 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T15:59:54.843089214Z INFO:     172.18.0.4:60676 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:59:54.967890500Z INFO:     172.18.0.4:60684 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T15:59:55.008987082Z INFO:     172.18.0.4:60692 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T15:59:55.042247143Z INFO:     172.18.0.4:60700 - "GET /api/v1/doc-sets/8b640eaa-b2b8-477e-a8d2-211fe21c71f8/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:00:01.574899139Z INFO:     172.18.0.4:60716 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T16:00:01.613919625Z INFO:     172.18.0.4:60722 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:00:01.739386257Z INFO:     172.18.0.4:60726 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T16:00:01.814143328Z INFO:     172.18.0.4:60742 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:00:01.852250530Z INFO:     172.18.0.4:60744 - "GET /api/v1/admin/doc-sets HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:00:01.891706257Z INFO:     172.18.0.4:60752 - "GET /api/v1/admin/doc-sets/841f6feb-54da-49f3-a6fe-bf0e2f69c7c6/members HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:00:02.128430715Z INFO:     172.18.0.4:60766 - "POST /api/v1/admin/doc-sets/841f6feb-54da-49f3-a6fe-bf0e2f69c7c6/members HTTP/1.1" 404 Not Found
+api-1     | 2026-11-02T16:00:02.270847204Z INFO:     172.18.0.4:60770 - "POST /api/v1/admin/doc-sets/841f6feb-54da-49f3-a6fe-bf0e2f69c7c6/members HTTP/1.1" 201 Created
+api-1     | 2026-11-02T16:00:02.329512696Z INFO:     172.18.0.4:60774 - "GET /api/v1/admin/doc-sets/841f6feb-54da-49f3-a6fe-bf0e2f69c7c6/members HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:00:02.343158551Z INFO:     172.18.0.4:60790 - "GET /api/v1/admin/doc-sets HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:00:03.691934419Z INFO:     172.18.0.4:47134 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T16:00:03.744002176Z INFO:     172.18.0.4:47136 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:00:03.880070267Z INFO:     172.18.0.4:47144 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T16:00:03.909962455Z INFO:     172.18.0.4:47154 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:00:03.948928790Z INFO:     172.18.0.4:47160 - "GET /api/v1/doc-sets/841f6feb-54da-49f3-a6fe-bf0e2f69c7c6/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:00:04.367802660Z INFO:     172.18.0.4:47168 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T16:00:04.428787548Z INFO:     172.18.0.4:47180 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:00:04.509465673Z INFO:     172.18.0.4:47182 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T16:00:04.534463505Z INFO:     172.18.0.4:47184 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:00:04.573900683Z INFO:     172.18.0.4:47196 - "GET /api/v1/admin/doc-sets HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:00:04.606843856Z INFO:     172.18.0.4:47206 - "GET /api/v1/admin/doc-sets/841f6feb-54da-49f3-a6fe-bf0e2f69c7c6/members HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:00:04.879700406Z INFO:     172.18.0.4:47222 - "DELETE /api/v1/admin/doc-sets/841f6feb-54da-49f3-a6fe-bf0e2f69c7c6/members/19c56fe0-9142-45e7-8fa8-4181919caf16 HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T16:00:04.951612314Z INFO:     172.18.0.4:47238 - "GET /api/v1/admin/doc-sets/841f6feb-54da-49f3-a6fe-bf0e2f69c7c6/members HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:00:04.971805497Z INFO:     172.18.0.4:47240 - "GET /api/v1/admin/doc-sets HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:00:05.167743473Z INFO:     172.18.0.4:47252 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:00:06.649496782Z INFO:     172.18.0.4:47254 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T16:00:06.677671510Z INFO:     172.18.0.4:47258 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:00:06.802190724Z INFO:     172.18.0.4:47262 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T16:00:06.826171661Z INFO:     172.18.0.4:47272 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:00:06.855829327Z INFO:     172.18.0.4:47276 - "GET /api/v1/doc-sets/841f6feb-54da-49f3-a6fe-bf0e2f69c7c6/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:00:06.958586012Z INFO:     172.18.0.4:47282 - "POST /api/v1/doc-sets/841f6feb-54da-49f3-a6fe-bf0e2f69c7c6/documents HTTP/1.1" 409 Conflict
+api-1     | 2026-11-02T16:00:06.988167271Z INFO:     172.18.0.4:47292 - "GET /api/v1/doc-sets/841f6feb-54da-49f3-a6fe-bf0e2f69c7c6/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:00:07.159671168Z INFO:     172.18.0.4:47298 - "POST /api/v1/doc-sets/841f6feb-54da-49f3-a6fe-bf0e2f69c7c6/classification-confirmations HTTP/1.1" 201 Created
+api-1     | 2026-11-02T16:00:07.207449024Z INFO:     172.18.0.4:47312 - "POST /api/v1/doc-sets/841f6feb-54da-49f3-a6fe-bf0e2f69c7c6/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:00:07.234501748Z INFO:     172.18.0.4:47320 - "GET /api/v1/doc-sets/841f6feb-54da-49f3-a6fe-bf0e2f69c7c6/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:00:10.277844711Z INFO:     172.18.0.4:47334 - "GET /api/v1/doc-sets/841f6feb-54da-49f3-a6fe-bf0e2f69c7c6/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:00:10.802885083Z INFO:     172.18.0.4:47342 - "POST /api/v1/doc-sets/841f6feb-54da-49f3-a6fe-bf0e2f69c7c6/conversations HTTP/1.1" 201 Created
+api-1     | 2026-11-02T16:00:10.877503943Z INFO:     172.18.0.4:47358 - "POST /api/v1/conversations/b33773c4-6522-40d9-bd07-82046aebd356/messages HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:00:11.428202150Z INFO:     172.18.0.4:47368 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T16:00:11.470769593Z INFO:     172.18.0.4:47382 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:00:11.597058391Z INFO:     172.18.0.4:47384 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T16:00:11.630955931Z INFO:     172.18.0.4:47390 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:00:11.682363093Z INFO:     172.18.0.4:47402 - "GET /api/v1/admin/doc-sets HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:00:11.756469557Z INFO:     172.18.0.4:47414 - "GET /api/v1/admin/doc-sets/841f6feb-54da-49f3-a6fe-bf0e2f69c7c6/members HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:00:11.795545677Z INFO:     172.18.0.4:47426 - "GET /api/v1/admin/doc-sets/841f6feb-54da-49f3-a6fe-bf0e2f69c7c6/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:00:12.095738084Z INFO:     172.18.0.4:47436 - "DELETE /api/v1/admin/documents/d76239e2-5500-4719-8e55-b58ea65dde9f HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:00:12.161643188Z INFO:     172.18.0.4:47452 - "GET /api/v1/admin/doc-sets/841f6feb-54da-49f3-a6fe-bf0e2f69c7c6/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:00:12.329908075Z INFO:     172.18.0.4:47460 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:00:12.381094416Z INFO:     172.18.0.4:47464 - "GET /api/v1/doc-sets/841f6feb-54da-49f3-a6fe-bf0e2f69c7c6/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:00:12.474686186Z INFO:     172.18.0.4:47472 - "GET /api/v1/admin/doc-sets/841f6feb-54da-49f3-a6fe-bf0e2f69c7c6/members HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:00:12.486903117Z INFO:     172.18.0.4:47476 - "GET /api/v1/admin/audit-logs?doc_set_id=841f6feb-54da-49f3-a6fe-bf0e2f69c7c6&from=2026-10-27&to=2026-11-02&limit=50 HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:00:17.783854977Z INFO:     172.18.0.4:50622 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T16:00:17.842018764Z INFO:     172.18.0.4:50634 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:00:18.894058515Z INFO:     172.18.0.4:50638 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T16:00:18.952045787Z INFO:     172.18.0.4:50648 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:00:19.869981405Z INFO:     172.18.0.4:50652 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T16:00:19.911429946Z INFO:     172.18.0.4:50658 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:00:20.014953889Z INFO:     172.18.0.4:50668 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T16:00:20.053021524Z INFO:     172.18.0.4:50684 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:00:20.081103559Z INFO:     172.18.0.4:50686 - "GET /api/v1/doc-sets/750e9cf8-428c-450b-8928-23981c2d70e9/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:00:20.168135513Z INFO:     172.18.0.4:50688 - "POST /api/v1/auth/logout HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T16:00:20.190649045Z INFO:     172.18.0.4:50700 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:00:21.169348371Z INFO:     172.18.0.4:50712 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T16:00:21.231570886Z INFO:     172.18.0.4:50722 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:00:21.315177132Z INFO:     172.18.0.4:50726 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T16:00:21.345888903Z INFO:     172.18.0.4:50742 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:00:22.295812432Z INFO:     172.18.0.4:50758 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T16:00:22.357482298Z INFO:     172.18.0.4:50762 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:00:22.449885037Z INFO:     172.18.0.4:50778 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T16:00:22.487762755Z INFO:     172.18.0.4:50786 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:00:22.536534357Z INFO:     172.18.0.4:50794 - "GET /api/v1/admin/doc-sets HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:00:22.586419759Z INFO:     172.18.0.4:50806 - "GET /api/v1/admin/doc-sets/750e9cf8-428c-450b-8928-23981c2d70e9/members HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:00:27.009900270Z INFO:     172.18.0.4:53272 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T16:00:27.037441456Z INFO:     172.18.0.4:53278 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:00:27.253862582Z INFO:     172.18.0.4:53288 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T16:00:27.306564038Z INFO:     172.18.0.4:53294 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:00:27.338153889Z INFO:     172.18.0.4:53298 - "GET /api/v1/doc-sets/db55c9ac-744f-4bf0-b338-77c48a38fadd/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:00:27.432676190Z INFO:     172.18.0.4:53302 - "POST /api/v1/doc-sets/db55c9ac-744f-4bf0-b338-77c48a38fadd/documents HTTP/1.1" 409 Conflict
+api-1     | 2026-11-02T16:00:27.471285992Z INFO:     172.18.0.4:53308 - "GET /api/v1/doc-sets/db55c9ac-744f-4bf0-b338-77c48a38fadd/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:00:27.699345768Z INFO:     172.18.0.4:53310 - "POST /api/v1/doc-sets/db55c9ac-744f-4bf0-b338-77c48a38fadd/classification-confirmations HTTP/1.1" 201 Created
+api-1     | 2026-11-02T16:00:27.784075458Z INFO:     172.18.0.4:53326 - "POST /api/v1/doc-sets/db55c9ac-744f-4bf0-b338-77c48a38fadd/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:00:27.832210777Z INFO:     172.18.0.4:53330 - "GET /api/v1/doc-sets/db55c9ac-744f-4bf0-b338-77c48a38fadd/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:00:30.861835470Z INFO:     172.18.0.4:53334 - "GET /api/v1/doc-sets/db55c9ac-744f-4bf0-b338-77c48a38fadd/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:00:31.329282857Z INFO:     172.18.0.4:53348 - "POST /api/v1/doc-sets/db55c9ac-744f-4bf0-b338-77c48a38fadd/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:00:31.371021161Z INFO:     172.18.0.4:53362 - "GET /api/v1/doc-sets/db55c9ac-744f-4bf0-b338-77c48a38fadd/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:00:34.431061725Z INFO:     172.18.0.4:46320 - "GET /api/v1/doc-sets/db55c9ac-744f-4bf0-b338-77c48a38fadd/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:00:34.735248834Z INFO:     172.18.0.4:46322 - "POST /api/v1/doc-sets/db55c9ac-744f-4bf0-b338-77c48a38fadd/conversations HTTP/1.1" 201 Created
+api-1     | 2026-11-02T16:00:34.809275230Z INFO:     172.18.0.4:46330 - "POST /api/v1/conversations/89e038db-2320-4865-80e5-0dde7c778a8f/messages HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:00:41.030662995Z INFO:     172.18.0.4:46332 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T16:00:41.056437964Z INFO:     172.18.0.4:46340 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:00:41.217965113Z INFO:     172.18.0.4:46344 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T16:00:41.293514358Z INFO:     172.18.0.4:46346 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:00:41.363454987Z INFO:     172.18.0.4:46354 - "GET /api/v1/doc-sets/3c967c25-fc09-41cf-b583-790ddeeb7f07/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:00:41.538790705Z INFO:     172.18.0.4:46358 - "POST /api/v1/doc-sets/3c967c25-fc09-41cf-b583-790ddeeb7f07/documents HTTP/1.1" 409 Conflict
+api-1     | 2026-11-02T16:00:41.565739682Z INFO:     172.18.0.4:46370 - "GET /api/v1/doc-sets/3c967c25-fc09-41cf-b583-790ddeeb7f07/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:00:41.742653745Z INFO:     172.18.0.4:46386 - "POST /api/v1/doc-sets/3c967c25-fc09-41cf-b583-790ddeeb7f07/classification-confirmations HTTP/1.1" 201 Created
+api-1     | 2026-11-02T16:00:41.901151215Z INFO:     172.18.0.4:46388 - "POST /api/v1/doc-sets/3c967c25-fc09-41cf-b583-790ddeeb7f07/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:00:41.960285351Z INFO:     172.18.0.4:46394 - "GET /api/v1/doc-sets/3c967c25-fc09-41cf-b583-790ddeeb7f07/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:00:45.011463534Z INFO:     172.18.0.4:55840 - "GET /api/v1/doc-sets/3c967c25-fc09-41cf-b583-790ddeeb7f07/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:00:51.201655412Z INFO:     172.18.0.4:55850 - "POST /api/v1/doc-sets/3c967c25-fc09-41cf-b583-790ddeeb7f07/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:00:51.241351214Z INFO:     172.18.0.4:55862 - "GET /api/v1/doc-sets/3c967c25-fc09-41cf-b583-790ddeeb7f07/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:00:51.548023552Z INFO:     172.18.0.4:55876 - "POST /api/v1/doc-sets/3c967c25-fc09-41cf-b583-790ddeeb7f07/conversations HTTP/1.1" 201 Created
+api-1     | 2026-11-02T16:00:51.755764708Z INFO:     172.18.0.4:55884 - "POST /api/v1/conversations/92fa9fa1-34b4-4ac2-8a39-575aaa82a989/messages HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:00:54.277043124Z INFO:     172.18.0.4:33036 - "GET /api/v1/doc-sets/3c967c25-fc09-41cf-b583-790ddeeb7f07/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:01:00.598479304Z INFO:     172.18.0.4:33052 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T16:01:00.628880350Z INFO:     172.18.0.4:33062 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:01:00.763431200Z INFO:     172.18.0.4:33064 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T16:01:00.816902228Z INFO:     172.18.0.4:33074 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:01:00.878029848Z INFO:     172.18.0.4:33088 - "GET /api/v1/doc-sets/bfb5144a-5f8d-4863-819d-b1ca88fffbd5/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:01:01.002538492Z INFO:     172.18.0.4:33102 - "POST /api/v1/doc-sets/bfb5144a-5f8d-4863-819d-b1ca88fffbd5/documents HTTP/1.1" 409 Conflict
+api-1     | 2026-11-02T16:01:01.115666708Z INFO:     172.18.0.4:33118 - "GET /api/v1/doc-sets/bfb5144a-5f8d-4863-819d-b1ca88fffbd5/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:01:01.337848271Z INFO:     172.18.0.4:33128 - "POST /api/v1/doc-sets/bfb5144a-5f8d-4863-819d-b1ca88fffbd5/classification-confirmations HTTP/1.1" 201 Created
+api-1     | 2026-11-02T16:01:01.644343648Z INFO:     172.18.0.4:33130 - "POST /api/v1/doc-sets/bfb5144a-5f8d-4863-819d-b1ca88fffbd5/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:01:01.708584750Z INFO:     172.18.0.4:33144 - "GET /api/v1/doc-sets/bfb5144a-5f8d-4863-819d-b1ca88fffbd5/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:01:04.731783552Z INFO:     172.18.0.4:34354 - "GET /api/v1/doc-sets/bfb5144a-5f8d-4863-819d-b1ca88fffbd5/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:01:04.950694920Z INFO:     172.18.0.4:34360 - "POST /api/v1/doc-sets/bfb5144a-5f8d-4863-819d-b1ca88fffbd5/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:01:04.987432437Z INFO:     172.18.0.4:34370 - "GET /api/v1/doc-sets/bfb5144a-5f8d-4863-819d-b1ca88fffbd5/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:01:12.056880443Z INFO:     172.18.0.4:34386 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T16:01:12.081608077Z INFO:     172.18.0.4:34398 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:01:12.208672654Z INFO:     172.18.0.4:34406 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T16:01:12.236483967Z INFO:     172.18.0.4:34412 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:01:12.272005875Z INFO:     172.18.0.4:34424 - "GET /api/v1/doc-sets/c9107cfa-aebb-442c-b715-ceebde35cd00/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:01:12.374016790Z INFO:     172.18.0.4:34434 - "POST /api/v1/doc-sets/c9107cfa-aebb-442c-b715-ceebde35cd00/documents HTTP/1.1" 409 Conflict
+api-1     | 2026-11-02T16:01:12.420292470Z INFO:     172.18.0.4:34438 - "GET /api/v1/doc-sets/c9107cfa-aebb-442c-b715-ceebde35cd00/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:01:12.612476429Z INFO:     172.18.0.4:34448 - "POST /api/v1/doc-sets/c9107cfa-aebb-442c-b715-ceebde35cd00/classification-confirmations HTTP/1.1" 201 Created
+api-1     | 2026-11-02T16:01:12.892441418Z INFO:     172.18.0.4:34454 - "POST /api/v1/doc-sets/c9107cfa-aebb-442c-b715-ceebde35cd00/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:01:12.944921758Z INFO:     172.18.0.4:34464 - "GET /api/v1/doc-sets/c9107cfa-aebb-442c-b715-ceebde35cd00/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:01:15.987081144Z INFO:     172.18.0.4:44084 - "GET /api/v1/doc-sets/c9107cfa-aebb-442c-b715-ceebde35cd00/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:01:20.350971927Z INFO:     172.18.0.4:44094 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T16:01:20.377302510Z INFO:     172.18.0.4:44098 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:01:20.500152029Z INFO:     172.18.0.4:44104 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T16:01:20.526747637Z INFO:     172.18.0.4:44106 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:01:20.553479556Z INFO:     172.18.0.4:44120 - "GET /api/v1/doc-sets/d016f46f-145c-44f3-b708-6ea9aa984f0a/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:01:20.657751094Z INFO:     172.18.0.4:44134 - "POST /api/v1/doc-sets/d016f46f-145c-44f3-b708-6ea9aa984f0a/documents HTTP/1.1" 409 Conflict
+api-1     | 2026-11-02T16:01:20.689653881Z INFO:     172.18.0.4:44136 - "GET /api/v1/doc-sets/d016f46f-145c-44f3-b708-6ea9aa984f0a/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:01:20.893681548Z INFO:     172.18.0.4:44138 - "POST /api/v1/doc-sets/d016f46f-145c-44f3-b708-6ea9aa984f0a/classification-confirmations HTTP/1.1" 201 Created
+api-1     | 2026-11-02T16:01:20.943855290Z INFO:     172.18.0.4:44154 - "POST /api/v1/doc-sets/d016f46f-145c-44f3-b708-6ea9aa984f0a/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:01:20.988851662Z INFO:     172.18.0.4:44158 - "GET /api/v1/doc-sets/d016f46f-145c-44f3-b708-6ea9aa984f0a/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:01:24.032841275Z INFO:     172.18.0.4:56314 - "GET /api/v1/doc-sets/d016f46f-145c-44f3-b708-6ea9aa984f0a/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:01:25.143320878Z INFO:     172.18.0.4:56322 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T16:01:25.201495643Z INFO:     172.18.0.4:56332 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:01:25.347976500Z INFO:     172.18.0.4:56340 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T16:01:25.377475370Z INFO:     172.18.0.4:56356 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:01:25.409846500Z INFO:     172.18.0.4:56358 - "GET /api/v1/doc-sets/d016f46f-145c-44f3-b708-6ea9aa984f0a/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:01:25.603959768Z INFO:     172.18.0.4:56374 - "POST /api/v1/doc-sets/d016f46f-145c-44f3-b708-6ea9aa984f0a/conversations HTTP/1.1" 201 Created
+api-1     | 2026-11-02T16:01:25.696841974Z INFO:     172.18.0.4:56384 - "POST /api/v1/conversations/f595c794-cf1b-4e71-b1ff-e7f32f6934c6/messages HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:01:26.272974517Z INFO:     172.18.0.4:56394 - "GET /api/v1/citations/d0bbd05b-13af-460f-ba11-56d0943b2e19 HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:01:26.393994270Z INFO:     172.18.0.4:56408 - "GET /api/v1/documents/40936845-dd8d-4a6a-b18c-89ddd8934761/file?page=2 HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:01:27.584875597Z INFO:     172.18.0.4:56418 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T16:01:27.648612866Z INFO:     172.18.0.4:56420 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:01:27.754633161Z INFO:     172.18.0.4:56436 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T16:01:27.784093727Z INFO:     172.18.0.4:56444 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:01:27.920307855Z INFO:     172.18.0.4:56460 - "GET /api/v1/doc-sets/d016f46f-145c-44f3-b708-6ea9aa984f0a/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:01:28.434529594Z INFO:     172.18.0.4:56472 - "POST /api/v1/doc-sets/d016f46f-145c-44f3-b708-6ea9aa984f0a/conversations HTTP/1.1" 201 Created
+api-1     | 2026-11-02T16:01:28.604903214Z INFO:     172.18.0.4:56486 - "POST /api/v1/conversations/a161bd92-69c7-4058-a221-e7eae429c74f/messages HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:01:28.773766797Z INFO:     172.18.0.4:56488 - "GET /api/v1/citations/695a3af4-790b-4bc3-9e5b-6277d57238c1 HTTP/1.1" 404 Not Found
+api-1     | 2026-11-02T16:01:30.404456980Z INFO:     172.18.0.4:56494 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T16:01:30.479347958Z INFO:     172.18.0.4:56504 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:01:30.589819256Z INFO:     172.18.0.4:56512 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T16:01:30.641204607Z INFO:     172.18.0.4:56518 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:01:30.713724270Z INFO:     172.18.0.4:56534 - "GET /api/v1/doc-sets/d016f46f-145c-44f3-b708-6ea9aa984f0a/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:01:30.853744343Z INFO:     172.18.0.4:56548 - "POST /api/v1/doc-sets/d016f46f-145c-44f3-b708-6ea9aa984f0a/conversations HTTP/1.1" 201 Created
+api-1     | 2026-11-02T16:01:30.956380732Z INFO:     172.18.0.4:56562 - "POST /api/v1/conversations/f974a0d3-6460-4db0-abbf-d10468f87573/messages HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:01:31.787446519Z INFO:     172.18.0.4:56568 - "POST /api/v1/conversations/f974a0d3-6460-4db0-abbf-d10468f87573/messages HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:01:32.784112552Z INFO:     172.18.0.4:56584 - "POST /api/v1/conversations/f974a0d3-6460-4db0-abbf-d10468f87573/messages HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:01:54.991105579Z INFO:     172.18.0.4:56794 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T16:01:55.060816347Z INFO:     172.18.0.4:56808 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:01:55.249678427Z INFO:     172.18.0.4:56812 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T16:01:55.287067489Z INFO:     172.18.0.4:56818 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:01:55.401949118Z INFO:     172.18.0.4:56824 - "GET /api/v1/doc-sets/9e942931-bba6-4850-8066-21017bce2831/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:01:55.536606425Z INFO:     172.18.0.4:56834 - "POST /api/v1/doc-sets/9e942931-bba6-4850-8066-21017bce2831/documents HTTP/1.1" 409 Conflict
+api-1     | 2026-11-02T16:01:55.615067667Z INFO:     172.18.0.4:56840 - "GET /api/v1/doc-sets/9e942931-bba6-4850-8066-21017bce2831/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:01:55.937517638Z INFO:     172.18.0.4:56852 - "POST /api/v1/doc-sets/9e942931-bba6-4850-8066-21017bce2831/classification-confirmations HTTP/1.1" 201 Created
+api-1     | 2026-11-02T16:01:56.793984493Z INFO:     172.18.0.4:56860 - "POST /api/v1/doc-sets/9e942931-bba6-4850-8066-21017bce2831/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:01:56.851191927Z INFO:     172.18.0.4:56866 - "GET /api/v1/doc-sets/9e942931-bba6-4850-8066-21017bce2831/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:01:59.891810982Z INFO:     172.18.0.4:56882 - "GET /api/v1/doc-sets/9e942931-bba6-4850-8066-21017bce2831/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:02:01.286774717Z INFO:     172.18.0.4:56890 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T16:02:01.375667939Z INFO:     172.18.0.4:56894 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:02:01.495665197Z INFO:     172.18.0.4:56910 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T16:02:01.527931536Z INFO:     172.18.0.4:56916 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:02:01.555989704Z INFO:     172.18.0.4:56920 - "GET /api/v1/doc-sets/9e942931-bba6-4850-8066-21017bce2831/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:02:01.646527370Z INFO:     172.18.0.4:56936 - "POST /api/v1/doc-sets/9e942931-bba6-4850-8066-21017bce2831/documents HTTP/1.1" 409 Conflict
+api-1     | 2026-11-02T16:02:01.691433721Z INFO:     172.18.0.4:56942 - "GET /api/v1/doc-sets/9e942931-bba6-4850-8066-21017bce2831/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:02:01.905506956Z INFO:     172.18.0.4:56952 - "POST /api/v1/doc-sets/9e942931-bba6-4850-8066-21017bce2831/classification-confirmations HTTP/1.1" 201 Created
+api-1     | 2026-11-02T16:02:02.083157487Z INFO:     172.18.0.4:56968 - "POST /api/v1/doc-sets/9e942931-bba6-4850-8066-21017bce2831/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:02:02.122940687Z INFO:     172.18.0.4:56970 - "GET /api/v1/doc-sets/9e942931-bba6-4850-8066-21017bce2831/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:02:05.163235768Z INFO:     172.18.0.4:60682 - "GET /api/v1/doc-sets/9e942931-bba6-4850-8066-21017bce2831/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:02:05.531741141Z INFO:     172.18.0.4:60686 - "POST /api/v1/doc-sets/9e942931-bba6-4850-8066-21017bce2831/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:02:05.562159538Z INFO:     172.18.0.4:60690 - "GET /api/v1/doc-sets/9e942931-bba6-4850-8066-21017bce2831/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:02:08.607893184Z INFO:     172.18.0.4:60704 - "GET /api/v1/doc-sets/9e942931-bba6-4850-8066-21017bce2831/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:02:10.647864855Z INFO:     172.18.0.4:60720 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T16:02:10.715268231Z INFO:     172.18.0.4:60730 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:02:10.857002798Z INFO:     172.18.0.4:60734 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T16:02:10.892391836Z INFO:     172.18.0.4:60740 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:02:10.982536028Z INFO:     172.18.0.4:60756 - "GET /api/v1/doc-sets/9e942931-bba6-4850-8066-21017bce2831/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:02:17.327338056Z INFO:     172.18.0.4:59934 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T16:02:17.391586001Z INFO:     172.18.0.4:59942 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:02:17.518860883Z INFO:     172.18.0.4:59958 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T16:02:17.572611090Z INFO:     172.18.0.4:59972 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:02:17.642739661Z INFO:     172.18.0.4:59988 - "GET /api/v1/admin/doc-sets HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:02:17.685511186Z INFO:     172.18.0.4:60000 - "GET /api/v1/admin/doc-sets/1a3fb53b-51cd-4a49-80ea-792bb6ac7e80/members HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:02:18.020154311Z INFO:     172.18.0.4:60014 - "POST /api/v1/admin/doc-sets/1a3fb53b-51cd-4a49-80ea-792bb6ac7e80/members HTTP/1.1" 404 Not Found
+api-1     | 2026-11-02T16:02:18.273668882Z INFO:     172.18.0.4:60030 - "POST /api/v1/admin/doc-sets/1a3fb53b-51cd-4a49-80ea-792bb6ac7e80/members HTTP/1.1" 201 Created
+api-1     | 2026-11-02T16:02:18.355092863Z INFO:     172.18.0.4:60040 - "GET /api/v1/admin/doc-sets/1a3fb53b-51cd-4a49-80ea-792bb6ac7e80/members HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:02:18.380849766Z INFO:     172.18.0.4:60042 - "GET /api/v1/admin/doc-sets HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:02:20.273854671Z INFO:     172.18.0.4:60052 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T16:02:20.332870359Z INFO:     172.18.0.4:60062 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:02:20.498014157Z INFO:     172.18.0.4:60074 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T16:02:20.533389526Z INFO:     172.18.0.4:60088 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:02:20.582421920Z INFO:     172.18.0.4:60104 - "GET /api/v1/doc-sets/1a3fb53b-51cd-4a49-80ea-792bb6ac7e80/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:02:20.975549947Z INFO:     172.18.0.4:60108 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T16:02:21.043900071Z INFO:     172.18.0.4:60116 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:02:21.122519916Z INFO:     172.18.0.4:60122 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T16:02:21.146767889Z INFO:     172.18.0.4:60132 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:02:21.203260451Z INFO:     172.18.0.4:60140 - "GET /api/v1/admin/doc-sets HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:02:21.229204876Z INFO:     172.18.0.4:60144 - "GET /api/v1/admin/doc-sets/1a3fb53b-51cd-4a49-80ea-792bb6ac7e80/members HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:02:21.465874783Z INFO:     172.18.0.4:60150 - "DELETE /api/v1/admin/doc-sets/1a3fb53b-51cd-4a49-80ea-792bb6ac7e80/members/c91ef5dd-57e5-42bd-8a83-d9e2eaa040b3 HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T16:02:21.504444139Z INFO:     172.18.0.4:60160 - "GET /api/v1/admin/doc-sets/1a3fb53b-51cd-4a49-80ea-792bb6ac7e80/members HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:02:21.578949615Z INFO:     172.18.0.4:60174 - "GET /api/v1/admin/doc-sets HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:02:21.718539723Z INFO:     172.18.0.4:60182 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:02:23.184356168Z INFO:     172.18.0.4:60188 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T16:02:23.258062473Z INFO:     172.18.0.4:60202 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:02:23.351764869Z INFO:     172.18.0.4:38402 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T16:02:23.382744445Z INFO:     172.18.0.4:38416 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:02:23.416119935Z INFO:     172.18.0.4:38432 - "GET /api/v1/doc-sets/1a3fb53b-51cd-4a49-80ea-792bb6ac7e80/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:02:23.517990463Z INFO:     172.18.0.4:38446 - "POST /api/v1/doc-sets/1a3fb53b-51cd-4a49-80ea-792bb6ac7e80/documents HTTP/1.1" 409 Conflict
+api-1     | 2026-11-02T16:02:23.570753391Z INFO:     172.18.0.4:38456 - "GET /api/v1/doc-sets/1a3fb53b-51cd-4a49-80ea-792bb6ac7e80/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:02:23.791458668Z INFO:     172.18.0.4:38462 - "POST /api/v1/doc-sets/1a3fb53b-51cd-4a49-80ea-792bb6ac7e80/classification-confirmations HTTP/1.1" 201 Created
+api-1     | 2026-11-02T16:02:23.973343466Z INFO:     172.18.0.4:38472 - "POST /api/v1/doc-sets/1a3fb53b-51cd-4a49-80ea-792bb6ac7e80/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:02:24.008880350Z INFO:     172.18.0.4:38486 - "GET /api/v1/doc-sets/1a3fb53b-51cd-4a49-80ea-792bb6ac7e80/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:02:27.046767061Z INFO:     172.18.0.4:38498 - "GET /api/v1/doc-sets/1a3fb53b-51cd-4a49-80ea-792bb6ac7e80/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:02:27.435097249Z INFO:     172.18.0.4:38508 - "POST /api/v1/doc-sets/1a3fb53b-51cd-4a49-80ea-792bb6ac7e80/conversations HTTP/1.1" 201 Created
+api-1     | 2026-11-02T16:02:27.478755561Z INFO:     172.18.0.4:38516 - "POST /api/v1/conversations/dac3c689-0003-4c14-9f10-a8284f4e6fc3/messages HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:02:27.927868219Z INFO:     172.18.0.4:38532 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T16:02:27.993990184Z INFO:     172.18.0.4:38538 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:02:28.097744388Z INFO:     172.18.0.4:38540 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T16:02:28.130219169Z INFO:     172.18.0.4:38550 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:02:28.170004598Z INFO:     172.18.0.4:38564 - "GET /api/v1/admin/doc-sets HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:02:28.233240208Z INFO:     172.18.0.4:38572 - "GET /api/v1/admin/doc-sets/1a3fb53b-51cd-4a49-80ea-792bb6ac7e80/members HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:02:28.338618656Z INFO:     172.18.0.4:38578 - "GET /api/v1/admin/doc-sets/1a3fb53b-51cd-4a49-80ea-792bb6ac7e80/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:02:28.620436855Z INFO:     172.18.0.4:38590 - "DELETE /api/v1/admin/documents/96569e36-4a7c-4193-94df-39965a264f5f HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:02:28.652072362Z INFO:     172.18.0.4:38598 - "GET /api/v1/admin/doc-sets/1a3fb53b-51cd-4a49-80ea-792bb6ac7e80/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:02:28.909538601Z INFO:     172.18.0.4:38604 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:02:28.967001398Z INFO:     172.18.0.4:38614 - "GET /api/v1/doc-sets/1a3fb53b-51cd-4a49-80ea-792bb6ac7e80/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:02:29.059889438Z INFO:     172.18.0.4:38624 - "GET /api/v1/admin/doc-sets/1a3fb53b-51cd-4a49-80ea-792bb6ac7e80/members HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:02:29.077618411Z INFO:     172.18.0.4:38632 - "GET /api/v1/admin/audit-logs?doc_set_id=1a3fb53b-51cd-4a49-80ea-792bb6ac7e80&from=2026-10-27&to=2026-11-02&limit=50 HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:02:34.247288204Z INFO:     172.18.0.4:48542 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T16:02:34.315687571Z INFO:     172.18.0.4:48554 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:02:35.345921061Z INFO:     172.18.0.4:48558 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T16:02:35.424298914Z INFO:     172.18.0.4:48570 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:02:36.669346885Z INFO:     172.18.0.4:48574 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T16:02:36.711052105Z INFO:     172.18.0.4:48590 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:02:36.861705945Z INFO:     172.18.0.4:48606 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T16:02:36.904202136Z INFO:     172.18.0.4:48612 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:02:37.037352314Z INFO:     172.18.0.4:48618 - "GET /api/v1/doc-sets/81bd3048-e1b7-4e69-b5a8-e13ad907799c/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:02:37.131577020Z INFO:     172.18.0.4:48626 - "POST /api/v1/auth/logout HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T16:02:37.222195604Z INFO:     172.18.0.4:48628 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:02:38.549497611Z INFO:     172.18.0.4:48644 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T16:02:38.625565997Z INFO:     172.18.0.4:48660 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:02:38.779637942Z INFO:     172.18.0.4:48666 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T16:02:38.830839909Z INFO:     172.18.0.4:48682 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:02:40.274275376Z INFO:     172.18.0.4:48690 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T16:02:40.342347249Z INFO:     172.18.0.4:48706 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:02:40.466975167Z INFO:     172.18.0.4:48714 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T16:02:40.508130838Z INFO:     172.18.0.4:48726 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:02:40.548521442Z INFO:     172.18.0.4:48732 - "GET /api/v1/admin/doc-sets HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:02:40.609814410Z INFO:     172.18.0.4:48738 - "GET /api/v1/admin/doc-sets/81bd3048-e1b7-4e69-b5a8-e13ad907799c/members HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:02:44.570636281Z INFO:     172.18.0.4:43990 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T16:02:44.631875066Z INFO:     172.18.0.4:43992 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:02:44.736908473Z INFO:     172.18.0.4:43994 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T16:02:44.763324739Z INFO:     172.18.0.4:43998 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:02:44.789765807Z INFO:     172.18.0.4:44012 - "GET /api/v1/doc-sets/80bb3bfb-9c9c-4ae3-9a31-ec1f3da3ca01/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:02:44.906086925Z INFO:     172.18.0.4:44026 - "POST /api/v1/doc-sets/80bb3bfb-9c9c-4ae3-9a31-ec1f3da3ca01/documents HTTP/1.1" 409 Conflict
+api-1     | 2026-11-02T16:02:44.946776269Z INFO:     172.18.0.4:44032 - "GET /api/v1/doc-sets/80bb3bfb-9c9c-4ae3-9a31-ec1f3da3ca01/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:02:45.153761107Z INFO:     172.18.0.4:44036 - "POST /api/v1/doc-sets/80bb3bfb-9c9c-4ae3-9a31-ec1f3da3ca01/classification-confirmations HTTP/1.1" 201 Created
+api-1     | 2026-11-02T16:02:45.691914505Z INFO:     172.18.0.4:44038 - "POST /api/v1/doc-sets/80bb3bfb-9c9c-4ae3-9a31-ec1f3da3ca01/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:02:45.731559555Z INFO:     172.18.0.4:44046 - "GET /api/v1/doc-sets/80bb3bfb-9c9c-4ae3-9a31-ec1f3da3ca01/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:02:48.782498001Z INFO:     172.18.0.4:44062 - "GET /api/v1/doc-sets/80bb3bfb-9c9c-4ae3-9a31-ec1f3da3ca01/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:02:49.328077564Z INFO:     172.18.0.4:44072 - "POST /api/v1/doc-sets/80bb3bfb-9c9c-4ae3-9a31-ec1f3da3ca01/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:02:49.378011036Z INFO:     172.18.0.4:44080 - "GET /api/v1/doc-sets/80bb3bfb-9c9c-4ae3-9a31-ec1f3da3ca01/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:02:52.448030957Z INFO:     172.18.0.4:44084 - "GET /api/v1/doc-sets/80bb3bfb-9c9c-4ae3-9a31-ec1f3da3ca01/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:02:52.845137705Z INFO:     172.18.0.4:44090 - "POST /api/v1/doc-sets/80bb3bfb-9c9c-4ae3-9a31-ec1f3da3ca01/conversations HTTP/1.1" 201 Created
+api-1     | 2026-11-02T16:02:52.917541668Z INFO:     172.18.0.4:44100 - "POST /api/v1/conversations/8e956024-64c1-40b5-ae9f-bc26cb92005f/messages HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:02:58.159800244Z INFO:     172.18.0.4:52144 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T16:02:58.186369815Z INFO:     172.18.0.4:52158 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:02:58.309232983Z INFO:     172.18.0.4:52164 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T16:02:58.338888630Z INFO:     172.18.0.4:52178 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:02:58.366589103Z INFO:     172.18.0.4:52184 - "GET /api/v1/doc-sets/8db30b6e-b984-4b4a-81d3-ea3b77917845/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:02:58.472235934Z INFO:     172.18.0.4:52200 - "POST /api/v1/doc-sets/8db30b6e-b984-4b4a-81d3-ea3b77917845/documents HTTP/1.1" 409 Conflict
+api-1     | 2026-11-02T16:02:58.518808191Z INFO:     172.18.0.4:52212 - "GET /api/v1/doc-sets/8db30b6e-b984-4b4a-81d3-ea3b77917845/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:02:58.745612337Z INFO:     172.18.0.4:52226 - "POST /api/v1/doc-sets/8db30b6e-b984-4b4a-81d3-ea3b77917845/classification-confirmations HTTP/1.1" 201 Created
+api-1     | 2026-11-02T16:02:59.266594043Z INFO:     172.18.0.4:52228 - "POST /api/v1/doc-sets/8db30b6e-b984-4b4a-81d3-ea3b77917845/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:02:59.345313970Z INFO:     172.18.0.4:52236 - "GET /api/v1/doc-sets/8db30b6e-b984-4b4a-81d3-ea3b77917845/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:03:02.404136576Z INFO:     172.18.0.4:52242 - "GET /api/v1/doc-sets/8db30b6e-b984-4b4a-81d3-ea3b77917845/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:03:07.408136584Z INFO:     172.18.0.4:40538 - "POST /api/v1/doc-sets/8db30b6e-b984-4b4a-81d3-ea3b77917845/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:03:07.447080067Z INFO:     172.18.0.4:40544 - "GET /api/v1/doc-sets/8db30b6e-b984-4b4a-81d3-ea3b77917845/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:03:07.796008703Z INFO:     172.18.0.4:40554 - "POST /api/v1/doc-sets/8db30b6e-b984-4b4a-81d3-ea3b77917845/conversations HTTP/1.1" 201 Created
+api-1     | 2026-11-02T16:03:07.854628164Z INFO:     172.18.0.4:40568 - "POST /api/v1/conversations/61ea57e6-3cbc-4f40-8858-213cf28baade/messages HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:03:10.491100092Z INFO:     172.18.0.4:40576 - "GET /api/v1/doc-sets/8db30b6e-b984-4b4a-81d3-ea3b77917845/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:03:15.428723552Z INFO:     172.18.0.4:37256 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T16:03:15.456019302Z INFO:     172.18.0.4:37258 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:03:15.579162355Z INFO:     172.18.0.4:37266 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T16:03:15.616575812Z INFO:     172.18.0.4:37282 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:03:15.663431618Z INFO:     172.18.0.4:37296 - "GET /api/v1/doc-sets/92b8417a-5971-4345-823a-f7adf5192fc2/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:03:15.755191975Z INFO:     172.18.0.4:37300 - "POST /api/v1/doc-sets/92b8417a-5971-4345-823a-f7adf5192fc2/documents HTTP/1.1" 409 Conflict
+api-1     | 2026-11-02T16:03:15.797327672Z INFO:     172.18.0.4:37316 - "GET /api/v1/doc-sets/92b8417a-5971-4345-823a-f7adf5192fc2/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:03:15.978838030Z INFO:     172.18.0.4:37330 - "POST /api/v1/doc-sets/92b8417a-5971-4345-823a-f7adf5192fc2/classification-confirmations HTTP/1.1" 201 Created
+api-1     | 2026-11-02T16:03:16.029322079Z INFO:     172.18.0.4:37342 - "POST /api/v1/doc-sets/92b8417a-5971-4345-823a-f7adf5192fc2/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:03:16.058745131Z INFO:     172.18.0.4:37346 - "GET /api/v1/doc-sets/92b8417a-5971-4345-823a-f7adf5192fc2/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:03:19.093362505Z INFO:     172.18.0.4:37356 - "GET /api/v1/doc-sets/92b8417a-5971-4345-823a-f7adf5192fc2/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:03:19.615629171Z INFO:     172.18.0.4:37364 - "POST /api/v1/doc-sets/92b8417a-5971-4345-823a-f7adf5192fc2/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:03:19.683527990Z INFO:     172.18.0.4:37374 - "GET /api/v1/doc-sets/92b8417a-5971-4345-823a-f7adf5192fc2/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:03:25.647029075Z INFO:     172.18.0.4:56872 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T16:03:25.702081193Z INFO:     172.18.0.4:56886 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:03:25.890834413Z INFO:     172.18.0.4:56890 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T16:03:25.934559940Z INFO:     172.18.0.4:56892 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:03:26.009253977Z INFO:     172.18.0.4:56898 - "GET /api/v1/doc-sets/f80d744b-a4a0-43d4-9bd6-1f9a76fc7d38/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:03:26.124178135Z INFO:     172.18.0.4:56914 - "POST /api/v1/doc-sets/f80d744b-a4a0-43d4-9bd6-1f9a76fc7d38/documents HTTP/1.1" 409 Conflict
+api-1     | 2026-11-02T16:03:26.202971331Z INFO:     172.18.0.4:56928 - "GET /api/v1/doc-sets/f80d744b-a4a0-43d4-9bd6-1f9a76fc7d38/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:03:26.500051832Z INFO:     172.18.0.4:56936 - "POST /api/v1/doc-sets/f80d744b-a4a0-43d4-9bd6-1f9a76fc7d38/classification-confirmations HTTP/1.1" 201 Created
+api-1     | 2026-11-02T16:03:27.371311581Z INFO:     172.18.0.4:56948 - "POST /api/v1/doc-sets/f80d744b-a4a0-43d4-9bd6-1f9a76fc7d38/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:03:27.437778998Z INFO:     172.18.0.4:56962 - "GET /api/v1/doc-sets/f80d744b-a4a0-43d4-9bd6-1f9a76fc7d38/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:03:30.464752219Z INFO:     172.18.0.4:56968 - "GET /api/v1/doc-sets/f80d744b-a4a0-43d4-9bd6-1f9a76fc7d38/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:03:35.802120283Z INFO:     172.18.0.4:52226 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T16:03:35.826319016Z INFO:     172.18.0.4:52238 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:03:35.974935215Z INFO:     172.18.0.4:52250 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T16:03:36.000818997Z INFO:     172.18.0.4:52260 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:03:36.031489300Z INFO:     172.18.0.4:52266 - "GET /api/v1/doc-sets/3d268e8a-cd28-48f9-8e45-0b62d28559df/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:03:36.133383581Z INFO:     172.18.0.4:52280 - "POST /api/v1/doc-sets/3d268e8a-cd28-48f9-8e45-0b62d28559df/documents HTTP/1.1" 409 Conflict
+api-1     | 2026-11-02T16:03:36.188332324Z INFO:     172.18.0.4:52296 - "GET /api/v1/doc-sets/3d268e8a-cd28-48f9-8e45-0b62d28559df/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:03:36.407550747Z INFO:     172.18.0.4:52304 - "POST /api/v1/doc-sets/3d268e8a-cd28-48f9-8e45-0b62d28559df/classification-confirmations HTTP/1.1" 201 Created
+api-1     | 2026-11-02T16:03:36.583028214Z INFO:     172.18.0.4:52310 - "POST /api/v1/doc-sets/3d268e8a-cd28-48f9-8e45-0b62d28559df/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:03:36.610049795Z INFO:     172.18.0.4:52322 - "GET /api/v1/doc-sets/3d268e8a-cd28-48f9-8e45-0b62d28559df/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:03:39.644758679Z INFO:     172.18.0.4:52326 - "GET /api/v1/doc-sets/3d268e8a-cd28-48f9-8e45-0b62d28559df/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:03:40.960640333Z INFO:     172.18.0.4:52338 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T16:03:41.046841162Z INFO:     172.18.0.4:52348 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:03:41.165341088Z INFO:     172.18.0.4:52362 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T16:03:41.199935790Z INFO:     172.18.0.4:52366 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:03:41.247880189Z INFO:     172.18.0.4:52372 - "GET /api/v1/doc-sets/3d268e8a-cd28-48f9-8e45-0b62d28559df/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:03:41.460983897Z INFO:     172.18.0.4:52376 - "POST /api/v1/doc-sets/3d268e8a-cd28-48f9-8e45-0b62d28559df/conversations HTTP/1.1" 201 Created
+api-1     | 2026-11-02T16:03:41.527396152Z INFO:     172.18.0.4:52388 - "POST /api/v1/conversations/d634ad99-1e64-4f91-945a-92801f94faec/messages HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:03:42.528776341Z INFO:     172.18.0.4:52398 - "GET /api/v1/citations/3788f400-e4b0-4c3b-ab5e-bf3fba71ebea HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:03:42.668577177Z INFO:     172.18.0.4:52414 - "GET /api/v1/documents/d1d8319c-e38c-4605-a320-10d98303ba25/file?page=2 HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:03:43.877679192Z INFO:     172.18.0.4:56304 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T16:03:43.959932467Z INFO:     172.18.0.4:56318 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:03:44.119694893Z INFO:     172.18.0.4:56324 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T16:03:44.152573641Z INFO:     172.18.0.4:56326 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:03:44.185976236Z INFO:     172.18.0.4:56336 - "GET /api/v1/doc-sets/3d268e8a-cd28-48f9-8e45-0b62d28559df/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:03:44.365824362Z INFO:     172.18.0.4:56348 - "POST /api/v1/doc-sets/3d268e8a-cd28-48f9-8e45-0b62d28559df/conversations HTTP/1.1" 201 Created
+api-1     | 2026-11-02T16:03:44.412438842Z INFO:     172.18.0.4:56364 - "POST /api/v1/conversations/9a1f3c60-8189-42f1-b800-239476cafd30/messages HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:03:44.584125136Z INFO:     172.18.0.4:56372 - "GET /api/v1/citations/e07ecd56-5a9d-4e61-8d03-4ffc5d3979a5 HTTP/1.1" 404 Not Found
+api-1     | 2026-11-02T16:03:45.852219741Z INFO:     172.18.0.4:56382 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T16:03:45.913298417Z INFO:     172.18.0.4:56396 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:03:46.018839381Z INFO:     172.18.0.4:56412 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T16:03:46.064903311Z INFO:     172.18.0.4:56422 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:03:46.093984218Z INFO:     172.18.0.4:56434 - "GET /api/v1/doc-sets/3d268e8a-cd28-48f9-8e45-0b62d28559df/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:03:46.199216754Z INFO:     172.18.0.4:56448 - "POST /api/v1/doc-sets/3d268e8a-cd28-48f9-8e45-0b62d28559df/conversations HTTP/1.1" 201 Created
+api-1     | 2026-11-02T16:03:46.250108717Z INFO:     172.18.0.4:56450 - "POST /api/v1/conversations/90d19307-4a40-4c01-89bb-c4314d897fd7/messages HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:03:47.156319473Z INFO:     172.18.0.4:56462 - "POST /api/v1/conversations/90d19307-4a40-4c01-89bb-c4314d897fd7/messages HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:03:48.171067171Z INFO:     172.18.0.4:56466 - "POST /api/v1/conversations/90d19307-4a40-4c01-89bb-c4314d897fd7/messages HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:04:10.186916048Z INFO:     172.18.0.4:35650 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T16:04:10.272094199Z INFO:     172.18.0.4:35660 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:04:10.362196192Z INFO:     172.18.0.4:35670 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T16:04:10.406025629Z INFO:     172.18.0.4:35676 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:04:10.434823116Z INFO:     172.18.0.4:35692 - "GET /api/v1/doc-sets/b2f8c970-f8f9-42cd-b6a5-584f4791fb19/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:04:10.576508443Z INFO:     172.18.0.4:35704 - "POST /api/v1/doc-sets/b2f8c970-f8f9-42cd-b6a5-584f4791fb19/documents HTTP/1.1" 409 Conflict
+api-1     | 2026-11-02T16:04:10.665073198Z INFO:     172.18.0.4:35710 - "GET /api/v1/doc-sets/b2f8c970-f8f9-42cd-b6a5-584f4791fb19/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:04:10.783387826Z INFO:     172.18.0.4:35716 - "POST /api/v1/doc-sets/b2f8c970-f8f9-42cd-b6a5-584f4791fb19/classification-confirmations HTTP/1.1" 201 Created
+api-1     | 2026-11-02T16:04:10.950958977Z INFO:     172.18.0.4:35720 - "POST /api/v1/doc-sets/b2f8c970-f8f9-42cd-b6a5-584f4791fb19/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:04:10.994067650Z INFO:     172.18.0.4:35722 - "GET /api/v1/doc-sets/b2f8c970-f8f9-42cd-b6a5-584f4791fb19/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:04:14.031364949Z INFO:     172.18.0.4:52072 - "GET /api/v1/doc-sets/b2f8c970-f8f9-42cd-b6a5-584f4791fb19/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:04:15.833751480Z INFO:     172.18.0.4:52088 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T16:04:15.900820087Z INFO:     172.18.0.4:52098 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:04:16.013332633Z INFO:     172.18.0.4:52100 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T16:04:16.051308491Z INFO:     172.18.0.4:52116 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:04:16.082604941Z INFO:     172.18.0.4:52122 - "GET /api/v1/doc-sets/b2f8c970-f8f9-42cd-b6a5-584f4791fb19/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:04:16.174933949Z INFO:     172.18.0.4:52130 - "POST /api/v1/doc-sets/b2f8c970-f8f9-42cd-b6a5-584f4791fb19/documents HTTP/1.1" 409 Conflict
+api-1     | 2026-11-02T16:04:16.219045766Z INFO:     172.18.0.4:52138 - "GET /api/v1/doc-sets/b2f8c970-f8f9-42cd-b6a5-584f4791fb19/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:04:16.635701808Z INFO:     172.18.0.4:52142 - "POST /api/v1/doc-sets/b2f8c970-f8f9-42cd-b6a5-584f4791fb19/classification-confirmations HTTP/1.1" 201 Created
+api-1     | 2026-11-02T16:04:16.940872497Z INFO:     172.18.0.4:52150 - "POST /api/v1/doc-sets/b2f8c970-f8f9-42cd-b6a5-584f4791fb19/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:04:17.005890518Z INFO:     172.18.0.4:52154 - "GET /api/v1/doc-sets/b2f8c970-f8f9-42cd-b6a5-584f4791fb19/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:04:20.029196338Z INFO:     172.18.0.4:52162 - "GET /api/v1/doc-sets/b2f8c970-f8f9-42cd-b6a5-584f4791fb19/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:04:20.397626109Z INFO:     172.18.0.4:52172 - "POST /api/v1/doc-sets/b2f8c970-f8f9-42cd-b6a5-584f4791fb19/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:04:20.469198734Z INFO:     172.18.0.4:52188 - "GET /api/v1/doc-sets/b2f8c970-f8f9-42cd-b6a5-584f4791fb19/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:04:23.492295595Z INFO:     172.18.0.4:48936 - "GET /api/v1/doc-sets/b2f8c970-f8f9-42cd-b6a5-584f4791fb19/documents HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:04:25.347999667Z INFO:     172.18.0.4:48940 - "GET /api/v1/me HTTP/1.1" 401 Unauthorized
+api-1     | 2026-11-02T16:04:25.378919943Z INFO:     172.18.0.4:48956 - "GET /api/v1/auth/dev-users HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:04:25.522930070Z INFO:     172.18.0.4:48964 - "POST /api/v1/auth/login HTTP/1.1" 204 No Content
+api-1     | 2026-11-02T16:04:25.583299188Z INFO:     172.18.0.4:48976 - "GET /api/v1/me HTTP/1.1" 200 OK
+api-1     | 2026-11-02T16:04:25.616478967Z INFO:     172.18.0.4:48988 - "GET /api/v1/doc-sets/b2f8c970-f8f9-42cd-b6a5-584f4791fb19/documents HTTP/1.1" 200 OK
