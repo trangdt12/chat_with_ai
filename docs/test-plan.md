@@ -43,13 +43,13 @@ Test hiện có của các phần trên **vẫn chạy như regression** trong m
 
 | Lớp | Công cụ | Hồ sơ | Kiểm cái gì | Số TC |
 |---|---|---|---|---|
-| **U** Unit | pytest (`CitationFilter`), Vitest (component React) | — | Quy tắc lọc trích dẫn; hiển thị `[n]`, popover, ghi chú; hộp xác nhận | 9 |
-| **I** API tích hợp | pytest + httpx + DB `cwd_test`, LLM giả có kịch bản | FAKE | Hợp đồng SSE, `pending_documents`, mã 409, worker → `ready`, đoạn trích nằm trên trang | 15 |
+| **U** Unit | pytest (`CitationFilter`), Vitest (component React) | — | Quy tắc lọc trích dẫn; hiển thị `[n]`, popover, ghi chú; hộp xác nhận | 8 |
+| **I** API tích hợp | pytest + httpx + DB `cwd_test`, LLM giả có kịch bản | FAKE | Hợp đồng SSE, `pending_documents`, mã 409, worker → `ready`, đoạn trích nằm trên trang | 14 |
 | **E** End-to-end | **Playwright**, Chromium 1440×900, `--repeat-each=3` | FAKE | Người dùng thấy đúng: "Sẵn sàng" không cần tải lại trang, nút "Nguồn n", popover, ghi chú | 7 |
 | **Q** Chất lượng | `eval/run_eval.py`, `eval/check_grounding.py`, CSV người chấm | REAL | Trích dẫn đúng với Claude thật; đoạn trích có trên trang; ngữ nghĩa | 4 |
 | **P** Hiệu năng | `eval/measure_ingest.py` | REAL | NFR-003: 50 trang ≤ 120 s, 200 trang ≤ 480 s, đạt cả 3/3 lần | 2 |
 
-(Một số TC thuộc 2 lớp, nên tổng số theo lớp lớn hơn 35.)
+Tổng 35 TC: 29 TC chạy được ở hồ sơ FAKE (U, I, E) và chạy tự động mỗi lượt; 6 TC cần hồ sơ REAL (Q, P).
 
 **Thực thi tự động:** [`.github/workflows/tests.yml`](../.github/workflows/tests.yml) chạy [`scripts/run-tests.sh`](../scripts/run-tests.sh) trên GitHub Actions ở mỗi lần push hoặc pull request. Script chạy theo thứ tự `ruff` → `pytest` → `vitest` → TC-005 → `playwright`. Mỗi bước được chạy đến hết để có đủ bằng chứng, kể cả khi bước trước lỗi.
 

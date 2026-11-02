@@ -11,6 +11,8 @@
 # Không dừng ở bước lỗi: mọi bước đều chạy để có đủ bằng chứng; exit code ≠ 0 nếu có bước lỗi.
 # Lớp Q, P (TC-006, 007, 010, 023, 028, 030) cần Claude và bge-m3 thật — không chạy ở đây.
 set -uo pipefail
+# Git Bash trên Windows tự đổi "/app/…" thành "C:/Program Files/Git/app/…" khi gọi docker; tắt việc đó.
+export MSYS_NO_PATHCONV=1
 
 RUN="${1:?thiếu tên lượt chạy, ví dụ: scripts/run-tests.sh run-1}"
 # `pwd -W` (Git Bash trên Windows) cho dạng E:/… để node hiểu được PW_REPORT_DIR; Linux dùng pwd.

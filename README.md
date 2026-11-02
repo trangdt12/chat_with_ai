@@ -4,6 +4,42 @@ Hỏi đáp có dẫn nguồn trên tài liệu dự án (PDF). Chạy local b�
 
 Tài liệu: yêu cầu ở [docs/requirements](docs/requirements/UserStories.md), thiết kế ở [docs/design](docs/design), task triển khai ở [docs/implements/tasks](docs/implements/tasks/README.md).
 
+## Kiểm thử chu kỳ 1 — đối chiếu yêu cầu
+
+| Yêu cầu | Ở đâu |
+|---|---|
+| Test plan đủ 8 mục | [docs/test-plan.md](docs/test-plan.md) |
+| Test case, ma trận AC ↔ TC, định nghĩa PASS/FAIL viết trước khi chạy | [docs/test-cases.md](docs/test-cases.md) (sinh từ [docs/test/test-cases.yaml](docs/test/test-cases.yaml); lịch sử git cho thấy định nghĩa được commit trước lượt chạy) |
+| 100% AC của US-001, US-009 có TC; không TC nào thiếu AC | [docs/test-cases.md](docs/test-cases.md) §2, dòng "Kiểm tra độ phủ (máy)" |
+| Chạy toàn bộ TC bằng Playwright trong CI | [.github/workflows/tests.yml](.github/workflows/tests.yml) → [scripts/run-tests.sh](scripts/run-tests.sh) |
+| Bằng chứng: trace, log, ảnh chụp | [playwright-report/](playwright-report/) (HTML có trace, ảnh, video) · [reports/](reports/) (log, junit, môi trường) |
+| Mọi FAIL có bug ticket; PASS lặp lại ≥ 2 lần | [docs/bugs/](docs/bugs/) · 2 lượt `run-1`, `run-2` trên cùng commit, Playwright `--repeat-each=3` |
+| Truy vết US ↔ AC ↔ TC ↔ bằng chứng | [docs/traceability.md](docs/traceability.md) |
+
+Cấu trúc thư mục:
+
+```
+.github/workflows/tests.yml   CI: 2 lượt độc lập, lưu bằng chứng làm artifact
+backend/                      FastAPI + worker; backend/tests/ (pytest: unit + API)
+web/                          React; src/**/*.test.tsx (Vitest), e2e/*.spec.ts (Playwright)
+eval/                         Đánh giá với Claude thật (lớp Q) và đo thời gian xử lý (lớp P)
+scripts/                      run-tests.sh (chạy + gom bằng chứng), build_test_docs.py (sinh docs từ kết quả)
+docs/
+  requirements/ design/ plan/ implements/   BRD, PRD, user story, SAD, thiết kế, kế hoạch triển khai
+  test-plan.md test-cases.md traceability.md bugs/
+  test/                       nguồn: AC đã chốt, test-cases.yaml, kế hoạch IEEE 829 tổng thể
+  prompts/ checklists/        prompt và checklist IEEE dùng để soạn tài liệu
+reports/<lượt>/               bằng chứng từng lượt chạy
+playwright-report/<lượt>/     báo cáo HTML Playwright từng lượt
+```
+
+Chạy lại toàn bộ và sinh lại tài liệu truy vết (hồ sơ FAKE, xem mục Kiểm thử bên dưới để dựng stack):
+
+```bash
+bash scripts/run-tests.sh run-1
+docker compose run --rm --no-deps -v "$PWD:/repo" -w /repo api python scripts/build_test_docs.py
+```
+
 ## Chạy
 
 ```bash

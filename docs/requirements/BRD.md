@@ -517,9 +517,9 @@ Mọi câu hỏi đã được trả lời bằng **giả định bài tập** n
 
 | ID | Tên | Phiên bản | Vị trí | Ngày truy cập |
 |---|---|---|---|---|
-| SRC-001 | Yêu cầu của quản lý: MVP công cụ "Chat với tài liệu" | Không có phiên bản | [docs/BRD_Prompt_IEEE_standard.md](../BRD_Prompt_IEEE_standard.md) §2.1 | 2026-10-19 |
+| SRC-001 | Yêu cầu của quản lý: MVP công cụ "Chat với tài liệu" | Không có phiên bản | [docs/prompts/BRD_Prompt_IEEE_standard.md](../prompts/BRD_Prompt_IEEE_standard.md) §2.1 | 2026-10-19 |
 | REF-001 | IEEE 29148-2018, Systems and software engineering — Life cycle processes — Requirements engineering | 2018 | IEEE | 2026-10-19 |
-| REF-002 | BRD Prompt (IEEE 29148) | 1.0 | [docs/BRD_Prompt_IEEE_standard.md](../BRD_Prompt_IEEE_standard.md) | 2026-10-19 |
+| REF-002 | BRD Prompt (IEEE 29148) | 1.0 | [docs/prompts/BRD_Prompt_IEEE_standard.md](../prompts/BRD_Prompt_IEEE_standard.md) | 2026-10-19 |
 | REF-003 | PRD — Công cụ "Chat với tài liệu" | 0.4 | [PRD.md](PRD.md) | 2026-10-21 |
 | REF-005 | Đặc tả Use Case (UCS-CWD-001) và sơ đồ Use Case | 0.2 | [UseCase_Specification.md](UseCase_Specification.md), [UseCase_ChatVoiTaiLieu.drawio](UseCase_ChatVoiTaiLieu.drawio) | 2026-10-21 |
 | REF-004 | Checklist IEEE 29148 cho BRD | — | [BRD_IEEE_29148_Checklist.xlsx](BRD_IEEE_29148_Checklist.xlsx) | 2026-10-20 |

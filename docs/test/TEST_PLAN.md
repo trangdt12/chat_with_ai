@@ -1,7 +1,7 @@
 # Master Test Plan (IEEE 829-2008) — Công cụ "Chat với tài liệu" (MVP, bản thử nghiệm)
 
 > **Chuẩn:** IEEE 829-2008 (Software and System Test Documentation) · tham chiếu IEEE 29119, ISO/IEC 25010
-> **Prompt dùng để soạn:** `docs/TestPlan_IEEE 829-2008_prompt.md` v2.0 · **Checklist tự kiểm:** [Test_Plan_IEEE_829_Checklist.xlsx](Test_Plan_IEEE_829_Checklist.xlsx)
+> **Prompt dùng để soạn:** `docs/prompts/TestPlan_IEEE 829-2008_prompt.md` v2.0 · **Checklist tự kiểm:** [Test_Plan_IEEE_829_Checklist.xlsx](Test_Plan_IEEE_829_Checklist.xlsx)
 > **Kế hoạch con (đợt "đường xương sống"):** [02-test-plan.md](02-test-plan.md) · AC đã chốt: [01-pham-vi-va-ac.md](01-pham-vi-va-ac.md) · Ma trận: [03-ma-tran-ac-tc.md](03-ma-tran-ac-tc.md) · PASS/FAIL máy đọc: [test-cases.yaml](test-cases.yaml)
 > ⚠️ Tài liệu bài tập. Mọi số liệu [GĐ] kế thừa giả định bài tập của BRD/PRD. Kế hoạch này **không chứa kết quả chạy**; kết quả nằm ở `docs/test/reports/` và RTM.
 
