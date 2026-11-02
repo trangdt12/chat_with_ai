@@ -23,9 +23,13 @@ test("hỏi → stream → [1] → popover → mở PDF đúng trang", async ({ 
   await expect(cite).toBeVisible();
   await expect(answer.locator(".sources")).toContainText("HopDongKhung.pdf · trang");
 
+  const citedPage = (await cite.getAttribute("aria-label"))?.match(/trang (\d+)$/)?.[1];
+  expect(citedPage).toBeDefined();
   await cite.click();
   const popover = page.getByRole("dialog");
   await expect(popover.locator(".popover-quote")).toContainText("thanh toan");
+  // AC-US009-2: phần đầu popover nêu đúng file và đúng trang của nút [1]
+  await expect(popover).toContainText(`HopDongKhung.pdf · trang ${citedPage}`);
   // Chromium headless thường biến PDF thành tải xuống nên không đọc được URL của tab mới:
   // bắt URL truyền cho window.open, rồi tự gọi URL đó.
   await page.evaluate(() => {

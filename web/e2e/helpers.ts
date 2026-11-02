@@ -11,6 +11,13 @@ export function resetDb(): void {
   execSync(cmd, { cwd: REPO_ROOT, stdio: "inherit" });
 }
 
+/** Tắt/bật worker để giữ tài liệu ở trạng thái "Đã tải lên" (AC-US001-3). Đổi lệnh qua E2E_WORKER_CMD (nhận "stop"/"start"). */
+export function setWorker(running: boolean): void {
+  const action = running ? "start" : "stop";
+  const cmd = process.env.E2E_WORKER_CMD ? `${process.env.E2E_WORKER_CMD} ${action}` : `docker compose ${action} worker`;
+  execSync(cmd, { cwd: REPO_ROOT, stdio: "inherit" });
+}
+
 export const USERS = {
   lan: "Nguyễn Thị Lan",
   minh: "Trần Văn Minh",

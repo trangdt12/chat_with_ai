@@ -5,8 +5,10 @@ from pathlib import Path
 from sqlalchemy import func, select
 
 from app.config import get_settings
+from app.ingestion.embeddings import FakeEmbedder
+from app.ingestion.worker import process_document
 from app.models import AuditLog, Document
-from tests.pdf_factory import DOCX_BYTES, sample_pdf
+from tests.pdf_factory import DOCX_BYTES, SAMPLE_PAGES, make_pdf, make_pdf_of_size, sample_pdf
 
 
 def _pdf(name: str = "a.pdf", data: bytes | None = None):
@@ -28,8 +30,19 @@ async def test_requires_classification(db, login_as, seeded):
     r = await lan.post(url, files=[_pdf()])
     assert r.status_code == 409
     assert r.json()["code"] == "CLASSIFICATION_REQUIRED"
+    assert await _count_docs(db) == 0  # bị chặn ở API thì không có tài liệu nào được tạo (AC-US001-4d)
 
     await _confirm(lan, seeded.doc_set_id)
+    confirms = await db.scalar(
+        select(func.count())
+        .select_from(AuditLog)
+        .where(
+            AuditLog.action == "classification_confirm",
+            AuditLog.user_id == seeded.users["lan@demo.local"],
+            AuditLog.doc_set_id == seeded.doc_set_id,
+        )
+    )
+    assert confirms == 1
     assert (await lan.post(url, files=[_pdf()])).status_code == 200
     actions = set(await db.scalars(select(AuditLog.action)))
     assert {"classification_confirm", "upload"} <= actions
@@ -130,3 +143,26 @@ async def test_admin_not_member_forbidden(login_as, seeded):
     r = await hung.post(f"/api/v1/doc-sets/{seeded.doc_set_id}/classification-confirmations")
     assert r.status_code == 403
 
+
+async def test_upper_bounds_accepted(db, login_as, seeded):
+    """AC-US001-1a: biên trên (đúng 200 trang, đúng 20 MiB = 20 971 520 byte) vẫn được nhận và tới ready."""
+    lan = await login_as("lan@demo.local")
+    await _confirm(lan, seeded.doc_set_id)
+    pdf_200 = make_pdf([f"Trang {i}: noi dung kiem thu bien tren so trang toi da." for i in range(1, 201)])
+    pdf_20m = make_pdf_of_size(SAMPLE_PAGES, 20_971_520)
+
+    ids = {}
+    for name, data in (("200trang.pdf", pdf_200), ("20MiB.pdf", pdf_20m)):
+        r = await lan.post(f"/api/v1/doc-sets/{seeded.doc_set_id}/documents", files=[_pdf(name, data)])
+        assert r.status_code == 200, r.text
+        [res] = r.json()
+        assert res["status"] == "uploaded" and res["error_code"] is None, res
+        ids[name] = uuid.UUID(res["id"])
+
+    for doc_id in ids.values():
+        await process_document(doc_id, FakeEmbedder())
+    db.expire_all()
+    big = await db.get(Document, ids["200trang.pdf"])
+    assert (big.status, big.pages) == ("ready", 200)
+    padded = await db.get(Document, ids["20MiB.pdf"])
+    assert (padded.status, padded.size_bytes) == ("ready", 20_971_520)

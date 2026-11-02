@@ -6,6 +6,10 @@ Chạy trong container api (thư mục eval/ được mount vào /eval):
 
 Trước đó sinh PDF corpus trên máy host: cd web && npm run eval:corpus
 Báo cáo ghi ra eval/reports/YYYY-MM-DD.md — chỉ ghi đạt/không và các ý bị thiếu, KHÔNG ghi câu trả lời đầy đủ.
+Kèm theo:
+- YYYY-MM-DD.json: kết quả máy đọc (docs/test/test-cases.yaml TC-010, TC-023), không có câu trả lời.
+- YYYY-MM-DD-spans.json: từng đoạn câu trả lời + citation_id, chỉ để người chấm dùng (check_grounding.py
+  --export-review). File này CÓ nội dung câu trả lời trên corpus tự soạn — không commit (.gitignore).
 """
 
 import argparse
@@ -81,6 +85,8 @@ class Outcome:
     citations: list[dict] = field(default_factory=list)
     failed: str | None = None
     first_token_seconds: float | None = None
+    message_id: str | None = None
+    spans: list[dict] = field(default_factory=list)  # {text, citation_ids}
 
 
 @dataclass
@@ -136,8 +142,11 @@ def ask(client: httpx.Client, cid: str, question: str) -> Outcome:
                 out.first_token_seconds = time.monotonic() - started
             lines.append(line)
     for name, data in parse_sse_lines(lines):
-        if name == "answer.delta":
+        if name == "answer.started":
+            out.message_id = data["message_id"]
+        elif name == "answer.delta":
             out.answer += data["text"]
+            out.spans.append({"text": data["text"], "citation_ids": [c["citation_id"] for c in data["citations"]]})
         elif name == "answer.completed":
             out.answer_type = data["answer_type"]
             out.citations = data["citations"]
@@ -258,6 +267,52 @@ def write_report(path: Path, rows: list[tuple[dict, Outcome, Score]], tau: float
     return text
 
 
+def write_json(path: Path, rows: list[tuple[dict, Outcome, Score]], tau: float, model: str, fake: bool) -> dict:
+    """Kết quả máy đọc — KHÔNG chứa câu trả lời, chỉ id, loại, đạt/không và trích dẫn (file, trang)."""
+    out_rows = {
+        q["id"]: {
+            "type": q["type"],
+            "message_id": o.message_id,
+            "answer_type": o.answer_type,
+            "failed": o.failed,
+            "passed": s.passed,
+            "citations_ok": s.citations_ok,
+            "missing": s.missing,
+            "first_token_seconds": o.first_token_seconds,
+            "citations": [
+                {"citation_id": c["citation_id"], "file": c["filename"], "page": c["page"]} for c in o.citations
+            ],
+        }
+        for q, o, s in rows
+    }
+    answered = [r for r in out_rows.values() if r["answer_type"] == "answered"]
+    result = {
+        "date": date.today().isoformat(),
+        "model": model,
+        "llm_fake": fake,
+        "tau": tau,
+        "rows": out_rows,
+        "checks": {
+            "answered_count": len(answered),
+            # AC-US009-1: mọi câu answered có ≥ 1 trích dẫn đủ tên file và số trang
+            "citation_present_all": bool(answered)
+            and all(r["citations"] and all(c["file"] and c["page"] >= 1 for c in r["citations"]) for r in answered),
+        },
+    }
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(result, ensure_ascii=False, indent=2), encoding="utf-8")
+    return result
+
+
+def write_spans(path: Path, rows: list[tuple[dict, Outcome, Score]]) -> None:
+    spans = [
+        {"question_id": q["id"], "message_id": o.message_id, "spans": o.spans}
+        for q, o, _ in rows
+        if o.answer_type == "answered"
+    ]
+    path.write_text(json.dumps(spans, ensure_ascii=False, indent=2), encoding="utf-8")
+
+
 # ---------------------------------------------------------------- main
 
 
@@ -300,8 +355,12 @@ def main() -> int:
             rows.append((q, out, s))
             print(f"{q['id']} {q['type']}: {'ĐẠT' if s.passed else 'KHÔNG ĐẠT'} ({out.answer_type or out.failed})")
 
-    write_report(args.out, rows, settings.retrieval_not_found_tau, settings.llm_model, settings.llm_fake)
-    print(f"Đã ghi báo cáo: {args.out}")
+    meta = (settings.retrieval_not_found_tau, settings.llm_model, settings.llm_fake)
+    write_report(args.out, rows, *meta)
+    json_path = args.out.with_suffix(".json")
+    write_json(json_path, rows, *meta)
+    write_spans(args.out.with_name(f"{args.out.stem}-spans.json"), rows)
+    print(f"Đã ghi báo cáo: {args.out}, {json_path}")
     return 0
 
 

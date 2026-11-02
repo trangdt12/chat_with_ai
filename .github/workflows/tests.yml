@@ -1,0 +1,67 @@
+# Chạy mọi TC hồ sơ FAKE (U, I, E, TC-005) và lưu bằng chứng làm artifact.
+# Định nghĩa PASS/FAIL: docs/test-cases.md (sinh từ docs/test/test-cases.yaml). Truy vết: docs/traceability.md.
+# "PASS lặp lại được": job chạy cùng commit 2 lượt độc lập (matrix run-1, run-2), mỗi lượt dựng stack mới.
+name: tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  tests:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    strategy:
+      fail-fast: false
+      max-parallel: 1
+      matrix:
+        run: [run-1, run-2]
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Hồ sơ FAKE (không gọi Claude, không tải bge-m3)
+        run: |
+          cp .env.example .env
+          sed -i 's/^LLM_FAKE=.*/LLM_FAKE=1/; s/^EMBED_FAKE=.*/EMBED_FAKE=1/' .env
+          echo "RETRIEVAL_NOT_FOUND_TAU=0.25" >> .env
+          mkdir -p data/files models
+
+      - name: Dựng stack
+        run: |
+          docker compose up -d --build --wait db api worker web
+          docker compose exec -T api alembic upgrade head
+          docker compose exec -T api python -m app.seed --reset
+          for i in $(seq 1 60); do
+            curl -sf http://localhost:5173 >/dev/null && curl -sf http://localhost:8000/api/v1/health >/dev/null && break
+            sleep 5
+          done
+
+      - name: Cài Playwright
+        working-directory: web
+        run: |
+          npm ci
+          npx playwright install --with-deps chromium
+
+      - name: Chạy toàn bộ TC
+        run: bash scripts/run-tests.sh ${{ matrix.run }}
+
+      - name: Tóm tắt verdict
+        if: always()
+        run: |
+          cat reports/${{ matrix.run }}/exit-codes.txt >> "$GITHUB_STEP_SUMMARY" || true
+
+      - name: Lưu bằng chứng
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: evidence-${{ matrix.run }}
+          path: |
+            reports/${{ matrix.run }}/
+            playwright-report/${{ matrix.run }}/
+          retention-days: 90
