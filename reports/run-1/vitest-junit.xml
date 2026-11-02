@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites name="vitest tests" tests="41" failures="0" errors="0" time="18.111">
+    <testsuite name="src/api/client.test.ts" timestamp="2026-11-02T15:44:50.418Z" hostname="3847d0317eaa" tests="6" failures="0" errors="0" skipped="0" time="0.048811071">
+        <testcase classname="src/api/client.test.ts" name="apiFetch &gt; thêm /api/v1, gửi cookie và trả JSON" time="0.024553913">
+        </testcase>
+        <testcase classname="src/api/client.test.ts" name="apiFetch &gt; 401 gọi onUnauthenticated và ném ApiError" time="0.006445158">
+        </testcase>
+        <testcase classname="src/api/client.test.ts" name="apiFetch &gt; handleAuth=false không gọi handler" time="0.001570282">
+        </testcase>
+        <testcase classname="src/api/client.test.ts" name="apiFetch &gt; 403 FORBIDDEN gọi onForbidden" time="0.001205816">
+        </testcase>
+        <testcase classname="src/api/client.test.ts" name="apiFetch &gt; lỗi JSON → ApiError mang đúng code" time="0.009608927">
+        </testcase>
+        <testcase classname="src/api/client.test.ts" name="apiFetch &gt; 204 trả undefined" time="0.003291691">
+        </testcase>
+    </testsuite>
+    <testsuite name="src/api/sse.test.ts" timestamp="2026-11-02T15:44:50.440Z" hostname="3847d0317eaa" tests="3" failures="0" errors="0" skipped="0" time="0.015205675">
+        <testcase classname="src/api/sse.test.ts" name="createSseParser &gt; parse đúng thứ tự, bỏ dòng keep-alive" time="0.007693604">
+        </testcase>
+        <testcase classname="src/api/sse.test.ts" name="createSseParser &gt; chuỗi bị cắt giữa khung (kể cả giữa \r và \n) vẫn parse đúng" time="0.001864041">
+        </testcase>
+        <testcase classname="src/api/sse.test.ts" name="createSseParser &gt; chấp nhận xuống dòng \n" time="0.001517477">
+        </testcase>
+    </testsuite>
+    <testsuite name="src/auth/RequireAuth.test.tsx" timestamp="2026-11-02T15:44:50.452Z" hostname="3847d0317eaa" tests="5" failures="0" errors="0" skipped="0" time="0.505898813">
+        <testcase classname="src/auth/RequireAuth.test.tsx" name="RequireAuth &gt; chưa đăng nhập → /login?next=" time="0.209268006">
+            <system-err>
+⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition.
+⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath.
+
+Warning: An update to RequireAuth inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() =&gt; {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you&apos;re testing the behavior the user would see in the browser. Learn more at https://reactjs.org/link/wrap-tests-with-act
+    at RequireAuth (/web/src/auth/RequireAuth.tsx:9:24)
+    at RenderedRoute (/web/node_modules/react-router/dist/umd/react-router.development.js:535:7)
+    at Routes (/web/node_modules/react-router/dist/umd/react-router.development.js:1269:7)
+    at Router (/web/node_modules/react-router/dist/umd/react-router.development.js:1203:17)
+    at MemoryRouter (/web/node_modules/react-router/dist/umd/react-router.development.js:1097:7)
+    at ToastProvider (/web/src/components/Toasts.tsx:10:26)
+    at QueryClientProvider (file:///web/node_modules/@tanstack/react-query/build/modern/QueryClientProvider.js:41:32)
+Warning: An update to MemoryRouter inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() =&gt; {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you&apos;re testing the behavior the user would see in the browser. Learn more at https://reactjs.org/link/wrap-tests-with-act
+    at MemoryRouter (/web/node_modules/react-router/dist/umd/react-router.development.js:1097:7)
+    at ToastProvider (/web/src/components/Toasts.tsx:10:26)
+    at QueryClientProvider (file:///web/node_modules/@tanstack/react-query/build/modern/QueryClientProvider.js:41:32)
+
+            </system-err>
+        </testcase>
+        <testcase classname="src/auth/RequireAuth.test.tsx" name="RequireAuth &gt; không thuộc nhóm nào → /no-access" time="0.062842494">
+            <system-err>
+Warning: An update to RequireAuth inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() =&gt; {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you&apos;re testing the behavior the user would see in the browser. Learn more at https://reactjs.org/link/wrap-tests-with-act
+    at RequireAuth (/web/src/auth/RequireAuth.tsx:9:24)
+    at RenderedRoute (/web/node_modules/react-router/dist/umd/react-router.development.js:535:7)
+    at Routes (/web/node_modules/react-router/dist/umd/react-router.development.js:1269:7)
+    at Router (/web/node_modules/react-router/dist/umd/react-router.development.js:1203:17)
+    at MemoryRouter (/web/node_modules/react-router/dist/umd/react-router.development.js:1097:7)
+    at ToastProvider (/web/src/components/Toasts.tsx:10:26)
+    at QueryClientProvider (file:///web/node_modules/@tanstack/react-query/build/modern/QueryClientProvider.js:41:32)
+Warning: An update to MemoryRouter inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() =&gt; {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you&apos;re testing the behavior the user would see in the browser. Learn more at https://reactjs.org/link/wrap-tests-with-act
+    at MemoryRouter (/web/node_modules/react-router/dist/umd/react-router.development.js:1097:7)
+    at ToastProvider (/web/src/components/Toasts.tsx:10:26)
+    at QueryClientProvider (file:///web/node_modules/@tanstack/react-query/build/modern/QueryClientProvider.js:41:32)
+
+            </system-err>
+        </testcase>
+        <testcase classname="src/auth/RequireAuth.test.tsx" name="RequireAuth &gt; admin không thuộc nhóm vào / → /admin" time="0.075482365">
+            <system-err>
+Warning: An update to RequireAuth inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() =&gt; {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you&apos;re testing the behavior the user would see in the browser. Learn more at https://reactjs.org/link/wrap-tests-with-act
+    at RequireAuth (/web/src/auth/RequireAuth.tsx:9:24)
+    at RenderedRoute (/web/node_modules/react-router/dist/umd/react-router.development.js:535:7)
+    at Routes (/web/node_modules/react-router/dist/umd/react-router.development.js:1269:7)
+    at Router (/web/node_modules/react-router/dist/umd/react-router.development.js:1203:17)
+    at MemoryRouter (/web/node_modules/react-router/dist/umd/react-router.development.js:1097:7)
+    at ToastProvider (/web/src/components/Toasts.tsx:10:26)
+    at QueryClientProvider (file:///web/node_modules/@tanstack/react-query/build/modern/QueryClientProvider.js:41:32)
+Warning: An update to MemoryRouter inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() =&gt; {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you&apos;re testing the behavior the user would see in the browser. Learn more at https://reactjs.org/link/wrap-tests-with-act
+    at MemoryRouter (/web/node_modules/react-router/dist/umd/react-router.development.js:1097:7)
+    at ToastProvider (/web/src/components/Toasts.tsx:10:26)
+    at QueryClientProvider (file:///web/node_modules/@tanstack/react-query/build/modern/QueryClientProvider.js:41:32)
+
+            </system-err>
+        </testcase>
+        <testcase classname="src/auth/RequireAuth.test.tsx" name="RequireAuth &gt; thành viên vào trang quản trị → /" time="0.067147167">
+            <system-err>
+Warning: An update to RequireAuth inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() =&gt; {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you&apos;re testing the behavior the user would see in the browser. Learn more at https://reactjs.org/link/wrap-tests-with-act
+    at RequireAuth (/web/src/auth/RequireAuth.tsx:9:24)
+    at RenderedRoute (/web/node_modules/react-router/dist/umd/react-router.development.js:535:7)
+    at Routes (/web/node_modules/react-router/dist/umd/react-router.development.js:1269:7)
+    at Router (/web/node_modules/react-router/dist/umd/react-router.development.js:1203:17)
+    at MemoryRouter (/web/node_modules/react-router/dist/umd/react-router.development.js:1097:7)
+    at ToastProvider (/web/src/components/Toasts.tsx:10:26)
+    at QueryClientProvider (file:///web/node_modules/@tanstack/react-query/build/modern/QueryClientProvider.js:41:32)
+Warning: An update to MemoryRouter inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() =&gt; {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you&apos;re testing the behavior the user would see in the browser. Learn more at https://reactjs.org/link/wrap-tests-with-act
+    at MemoryRouter (/web/node_modules/react-router/dist/umd/react-router.development.js:1097:7)
+    at ToastProvider (/web/src/components/Toasts.tsx:10:26)
+    at QueryClientProvider (file:///web/node_modules/@tanstack/react-query/build/modern/QueryClientProvider.js:41:32)
+
+            </system-err>
+        </testcase>
+        <testcase classname="src/auth/RequireAuth.test.tsx" name="RequireAuth &gt; thành viên vào / thấy nội dung" time="0.087691059">
+        </testcase>
+    </testsuite>
+    <testsuite name="src/auth/draftStore.test.ts" timestamp="2026-11-02T15:44:50.484Z" hostname="3847d0317eaa" tests="2" failures="0" errors="0" skipped="0" time="0.011571612">
+        <testcase classname="src/auth/draftStore.test.ts" name="draftStore &gt; saveDraft rồi takeDraft trả nội dung, lần 2 rỗng" time="0.005246257">
+        </testcase>
+        <testcase classname="src/auth/draftStore.test.ts" name="draftStore &gt; không lưu bản nháp rỗng" time="0.003323607">
+        </testcase>
+    </testsuite>
+    <testsuite name="src/hooks/useDocuments.test.tsx" timestamp="2026-11-02T15:44:50.493Z" hostname="3847d0317eaa" tests="2" failures="0" errors="0" skipped="0" time="9.691706571">
+        <testcase classname="src/hooks/useDocuments.test.tsx" name="pollInterval &gt; có file processing → 3 s; hết → dừng" time="0.004187853">
+        </testcase>
+        <testcase classname="src/hooks/useDocuments.test.tsx" name="useDocuments &gt; polling tới khi tài liệu sẵn sàng rồi dừng" time="9.682086347">
+        </testcase>
+    </testsuite>
+    <testsuite name="src/components/AnswerCard.test.tsx" timestamp="2026-11-02T15:44:50.501Z" hostname="3847d0317eaa" tests="9" failures="0" errors="0" skipped="0" time="1.677824715">
+        <testcase classname="src/components/AnswerCard.test.tsx" name="AnswerCard &gt; answered: nội dung, [1], nguồn, sao chép, đánh giá" time="0.31746245">
+            <system-err>
+⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition.
+⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath.
+
+            </system-err>
+        </testcase>
+        <testcase classname="src/components/AnswerCard.test.tsx" name="AnswerCard &gt; not_found: thông điệp + 2 gợi ý, không có nút sao chép" time="0.065260927">
+        </testcase>
+        <testcase classname="src/components/AnswerCard.test.tsx" name="AnswerCard &gt; pending_documents → ghi chú tài liệu chưa dùng" time="0.066199196">
+        </testcase>
+        <testcase classname="src/components/AnswerCard.test.tsx" name="AnswerCard &gt; stopped: giữ nội dung + nhãn đã dừng, không có đánh giá" time="0.046158495">
+        </testcase>
+        <testcase classname="src/components/AnswerCard.test.tsx" name="AnswerCard &gt; failed: nhãn gián đoạn + Tạo lại, không có sao chép" time="0.210946809">
+        </testcase>
+        <testcase classname="src/components/AnswerCard.test.tsx" name="AnswerCard &gt; nội dung &lt;script&gt;/&lt;img onerror&gt; hiển thị dạng chữ" time="0.045805531">
+        </testcase>
+        <testcase classname="src/components/AnswerCard.test.tsx" name="AnswerCard &gt; bấm [1] mở popover có đoạn trích; Esc đóng và trả focus" time="0.303133475">
+        </testcase>
+        <testcase classname="src/components/AnswerCard.test.tsx" name="AnswerCard &gt; trích dẫn tới tài liệu đã gỡ (410) → popover báo đã gỡ, không có nút mở" time="0.219781896">
+        </testcase>
+        <testcase classname="src/components/AnswerCard.test.tsx" name="AnswerCard &gt; 👎 mở 4 lý do, gửi xong đánh dấu aria-pressed" time="0.400841534">
+        </testcase>
+    </testsuite>
+    <testsuite name="src/components/ClassificationDialog.test.tsx" timestamp="2026-11-02T15:44:50.538Z" hostname="3847d0317eaa" tests="3" failures="0" errors="0" skipped="0" time="0.405294843">
+        <testcase classname="src/components/ClassificationDialog.test.tsx" name="ClassificationDialog &gt; nút chính bị vô hiệu tới khi tích xác nhận" time="0.285106613">
+        </testcase>
+        <testcase classname="src/components/ClassificationDialog.test.tsx" name="ClassificationDialog &gt; Esc đóng hộp thoại; focus mặc định ở ô xác nhận" time="0.038715166">
+        </testcase>
+        <testcase classname="src/components/ClassificationDialog.test.tsx" name="ClassificationDialog &gt; Tab không thoát khỏi hộp thoại" time="0.078054445">
+        </testcase>
+    </testsuite>
+    <testsuite name="src/components/UploadDropzone.test.tsx" timestamp="2026-11-02T15:44:50.546Z" hostname="3847d0317eaa" tests="6" failures="0" errors="0" skipped="0" time="0.329023528">
+        <testcase classname="src/components/UploadDropzone.test.tsx" name="validateSelection &gt; chặn .docx" time="0.015488384">
+        </testcase>
+        <testcase classname="src/components/UploadDropzone.test.tsx" name="validateSelection &gt; chặn file &gt; 20 MB" time="0.001235322">
+        </testcase>
+        <testcase classname="src/components/UploadDropzone.test.tsx" name="validateSelection &gt; member chọn nhiều file → không gửi, hướng dẫn tải từng file" time="0.001034386">
+        </testcase>
+        <testcase classname="src/components/UploadDropzone.test.tsx" name="validateSelection &gt; manager tải lô; vượt 50 file thì phần dư bị từ chối" time="0.0016694">
+        </testcase>
+        <testcase classname="src/components/UploadDropzone.test.tsx" name="UploadDropzone &gt; chọn file qua input gọi onFiles; member không có thuộc tính multiple" time="0.136571843">
+        </testcase>
+        <testcase classname="src/components/UploadDropzone.test.tsx" name="UploadDropzone &gt; kéo thả file" time="0.169819718">
+        </testcase>
+    </testsuite>
+    <testsuite name="src/components/copy.test.ts" timestamp="2026-11-02T15:44:50.571Z" hostname="3847d0317eaa" tests="2" failures="0" errors="0" skipped="0" time="0.005447094">
+        <testcase classname="src/components/copy.test.ts" name="answerToPlainText &gt; bỏ markdown, chỉ số dạng [n], danh sách nguồn văn bản thuần" time="0.002828316">
+        </testcase>
+        <testcase classname="src/components/copy.test.ts" name="answerToPlainText &gt; trích dẫn đã gỡ" time="0.000700928">
+        </testcase>
+    </testsuite>
+    <testsuite name="src/components/admin/admin.test.tsx" timestamp="2026-11-02T15:44:50.578Z" hostname="3847d0317eaa" tests="3" failures="0" errors="0" skipped="0" time="1.184308727">
+        <testcase classname="src/components/admin/admin.test.tsx" name="auditNote &gt; dựng ghi chú từ meta, không có nội dung" time="0.003711867">
+        </testcase>
+        <testcase classname="src/components/admin/admin.test.tsx" name="PurgeDialog &gt; focus ở Hủy; nút Gỡ vĩnh viễn chỉ bật khi đủ 2 ô và đã tích" time="0.707660971">
+            <system-err>
+⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition.
+⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath.
+
+            </system-err>
+        </testcase>
+        <testcase classname="src/components/admin/admin.test.tsx" name="AddMemberDialog &gt; USER_NOT_FOUND hiện lỗi ngay dưới ô email" time="0.469093699">
+        </testcase>
+    </testsuite>
+</testsuites>

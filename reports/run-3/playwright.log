@@ -1,0 +1,266 @@
+
+Running 66 tests using 1 worker
+
+2026-11-02 16:05:45,311 INFO app.seed seed xong: 5 tài khoản, bộ tài liệu 'Dự án X'
+  ok  1 [chromium] › e2e\admin.spec.ts:8:1 › Hùng thêm thành viên: email sai báo lỗi tại ô, email đúng thêm dòng mới (2.5s)
+  ok  2 [chromium] › e2e\admin.spec.ts:23:1 › Anh bị gỡ → thao tác kế tiếp ra trang không có quyền (2.7s)
+  ok  3 [chromium] › e2e\admin.spec.ts:38:1 › gỡ tài liệu → biến khỏi danh sách của Lan; trích dẫn cũ báo đã gỡ; nhật ký có các thao tác (7.4s)
+2026-11-02 16:06:01,634 INFO app.seed seed xong: 5 tài khoản, bộ tài liệu 'Dự án X'
+  ok  4 [chromium] › e2e\auth.spec.ts:6:1 › chưa đăng nhập mở / → về trang đăng nhập (1.0s)
+  ok  5 [chromium] › e2e\auth.spec.ts:13:1 › chưa đăng nhập mở /admin → về trang đăng nhập (1.0s)
+  ok  6 [chromium] › e2e\auth.spec.ts:18:1 › Lan đăng nhập → thấy bộ tài liệu; đăng xuất thì Back không vào lại được (1.3s)
+  ok  7 [chromium] › e2e\auth.spec.ts:33:1 › người ngoài nhóm → trang không có quyền, không lộ tên bộ tài liệu (1.2s)
+  ok  8 [chromium] › e2e\auth.spec.ts:40:1 › admin không thuộc nhóm → trang quản trị (1.2s)
+2026-11-02 16:06:10,665 INFO app.seed seed xong: 5 tài khoản, bộ tài liệu 'Dự án X'
+  ok  9 [chromium] › e2e\backbone.spec.ts:10:1 › TC-009 câu hỏi về file vừa tải trích dẫn đúng file (12.8s)
+2026-11-02 16:06:23,629 INFO app.seed seed xong: 5 tài khoản, bộ tài liệu 'Dự án X'
+ Container chat_with_ai-worker-1 Stopping 
+ Container chat_with_ai-worker-1 Stopped 
+ Container chat_with_ai-db-1 Waiting 
+ Container chat_with_ai-db-1 Healthy 
+ Container chat_with_ai-worker-1 Starting 
+ Container chat_with_ai-worker-1 Started 
+  ok 10 [chromium] › e2e\backbone.spec.ts:23:3 › TC-014 › TC-014 câu trả lời ghi chú file chưa sẵn sàng (16.4s)
+2026-11-02 16:06:39,944 INFO app.seed seed xong: 5 tài khoản, bộ tài liệu 'Dự án X'
+  ok 11 [chromium] › e2e\backbone.spec.ts:39:1 › TC-018 không hỏi lại xác nhận trong cùng phiên (9.9s)
+2026-11-02 16:06:50,187 INFO app.seed seed xong: 5 tài khoản, bộ tài liệu 'Dự án X'
+  ok 12 [chromium] › e2e\batch.spec.ts:7:1 › Minh tải 3 file một lần → 3 dòng trạng thái riêng → đều Sẵn sàng (5.7s)
+2026-11-02 16:06:59,033 INFO app.seed seed xong: 5 tài khoản, bộ tài liệu 'Dự án X'
+  ok 13 [chromium] › e2e\chat.spec.ts:19:1 › hỏi → stream → [1] → popover → mở PDF đúng trang (2.7s)
+  ok 14 [chromium] › e2e\chat.spec.ts:52:1 › bàn phím: Tab tới [1], Enter mở, Esc đóng và trả focus (1.5s)
+  x  15 [chromium] › e2e\chat.spec.ts:64:1 › câu hỏi tiếp nối, câu không có trong tài liệu, Hội thoại mới (18.4s)
+  -  16 [chromium] › e2e\chat.spec.ts:79:1 › Dừng giữa chừng → nhãn đã dừng, ô nhập dùng được
+  -  17 [chromium] › e2e\chat.spec.ts:90:1 › Sao chép kèm nguồn
+  -  18 [chromium] › e2e\chat.spec.ts:99:1 › 👎 kèm lý do
+  -  19 [chromium] › e2e\chat.spec.ts:108:1 › ô nhập rỗng: Enter không gửi
+2026-11-02 16:07:31,886 INFO app.seed seed xong: 5 tài khoản, bộ tài liệu 'Dự án X'
+  ok 20 [chromium] › e2e\upload.spec.ts:7:1 › Lan: xác nhận phân loại → tải PDF → Đang xử lý → Sẵn sàng (5.8s)
+  ok 21 [chromium] › e2e\upload.spec.ts:18:1 › .docx và PDF hỏng báo lỗi riêng từng file, PDF scan báo không trích xuất được chữ (8.6s)
+  ok 22 [chromium] › e2e\upload.spec.ts:36:1 › Lan chọn 2 file → bị từ chối, hướng dẫn tải từng file (1.2s)
+2026-11-02 16:07:52,999 INFO app.seed seed xong: 5 tài khoản, bộ tài liệu 'Dự án X'
+  ok 23 [chromium] › e2e\admin.spec.ts:8:1 › Hùng thêm thành viên: email sai báo lỗi tại ô, email đúng thêm dòng mới (2.3s)
+  ok 24 [chromium] › e2e\admin.spec.ts:23:1 › Anh bị gỡ → thao tác kế tiếp ra trang không có quyền (2.7s)
+  ok 25 [chromium] › e2e\admin.spec.ts:38:1 › gỡ tài liệu → biến khỏi danh sách của Lan; trích dẫn cũ báo đã gỡ; nhật ký có các thao tác (7.4s)
+2026-11-02 16:08:09,806 INFO app.seed seed xong: 5 tài khoản, bộ tài liệu 'Dự án X'
+  ok 26 [chromium] › e2e\auth.spec.ts:6:1 › chưa đăng nhập mở / → về trang đăng nhập (1.0s)
+  ok 27 [chromium] › e2e\auth.spec.ts:13:1 › chưa đăng nhập mở /admin → về trang đăng nhập (1.1s)
+  ok 28 [chromium] › e2e\auth.spec.ts:18:1 › Lan đăng nhập → thấy bộ tài liệu; đăng xuất thì Back không vào lại được (1.3s)
+  ok 29 [chromium] › e2e\auth.spec.ts:33:1 › người ngoài nhóm → trang không có quyền, không lộ tên bộ tài liệu (1.2s)
+  ok 30 [chromium] › e2e\auth.spec.ts:40:1 › admin không thuộc nhóm → trang quản trị (1.2s)
+2026-11-02 16:08:19,022 INFO app.seed seed xong: 5 tài khoản, bộ tài liệu 'Dự án X'
+  ok 31 [chromium] › e2e\backbone.spec.ts:10:1 › TC-009 câu hỏi về file vừa tải trích dẫn đúng file (13.7s)
+2026-11-02 16:08:32,835 INFO app.seed seed xong: 5 tài khoản, bộ tài liệu 'Dự án X'
+ Container chat_with_ai-worker-1 Stopping 
+ Container chat_with_ai-worker-1 Stopped 
+ Container chat_with_ai-db-1 Waiting 
+ Container chat_with_ai-db-1 Healthy 
+ Container chat_with_ai-worker-1 Starting 
+ Container chat_with_ai-worker-1 Started 
+  ok 32 [chromium] › e2e\backbone.spec.ts:23:3 › TC-014 › TC-014 câu trả lời ghi chú file chưa sẵn sàng (17.2s)
+2026-11-02 16:08:49,941 INFO app.seed seed xong: 5 tài khoản, bộ tài liệu 'Dự án X'
+  ok 33 [chromium] › e2e\backbone.spec.ts:39:1 › TC-018 không hỏi lại xác nhận trong cùng phiên (9.9s)
+2026-11-02 16:09:00,358 INFO app.seed seed xong: 5 tài khoản, bộ tài liệu 'Dự án X'
+  ok 34 [chromium] › e2e\batch.spec.ts:7:1 › Minh tải 3 file một lần → 3 dòng trạng thái riêng → đều Sẵn sàng (5.6s)
+2026-11-02 16:09:09,090 INFO app.seed seed xong: 5 tài khoản, bộ tài liệu 'Dự án X'
+  ok 35 [chromium] › e2e\chat.spec.ts:19:1 › hỏi → stream → [1] → popover → mở PDF đúng trang (2.4s)
+  ok 36 [chromium] › e2e\chat.spec.ts:52:1 › bàn phím: Tab tới [1], Enter mở, Esc đóng và trả focus (1.8s)
+  x  37 [chromium] › e2e\chat.spec.ts:64:1 › câu hỏi tiếp nối, câu không có trong tài liệu, Hội thoại mới (18.8s)
+  -  38 [chromium] › e2e\chat.spec.ts:79:1 › Dừng giữa chừng → nhãn đã dừng, ô nhập dùng được
+  -  39 [chromium] › e2e\chat.spec.ts:90:1 › Sao chép kèm nguồn
+  -  40 [chromium] › e2e\chat.spec.ts:99:1 › 👎 kèm lý do
+  -  41 [chromium] › e2e\chat.spec.ts:108:1 › ô nhập rỗng: Enter không gửi
+2026-11-02 16:09:42,338 INFO app.seed seed xong: 5 tài khoản, bộ tài liệu 'Dự án X'
+  ok 42 [chromium] › e2e\upload.spec.ts:7:1 › Lan: xác nhận phân loại → tải PDF → Đang xử lý → Sẵn sàng (5.7s)
+  ok 43 [chromium] › e2e\upload.spec.ts:18:1 › .docx và PDF hỏng báo lỗi riêng từng file, PDF scan báo không trích xuất được chữ (8.6s)
+  ok 44 [chromium] › e2e\upload.spec.ts:36:1 › Lan chọn 2 file → bị từ chối, hướng dẫn tải từng file (1.6s)
+2026-11-02 16:10:03,084 INFO app.seed seed xong: 5 tài khoản, bộ tài liệu 'Dự án X'
+  ok 45 [chromium] › e2e\admin.spec.ts:8:1 › Hùng thêm thành viên: email sai báo lỗi tại ô, email đúng thêm dòng mới (2.6s)
+  ok 46 [chromium] › e2e\admin.spec.ts:23:1 › Anh bị gỡ → thao tác kế tiếp ra trang không có quyền (2.9s)
+  ok 47 [chromium] › e2e\admin.spec.ts:38:1 › gỡ tài liệu → biến khỏi danh sách của Lan; trích dẫn cũ báo đã gỡ; nhật ký có các thao tác (7.5s)
+2026-11-02 16:10:19,934 INFO app.seed seed xong: 5 tài khoản, bộ tài liệu 'Dự án X'
+  ok 48 [chromium] › e2e\auth.spec.ts:6:1 › chưa đăng nhập mở / → về trang đăng nhập (1.1s)
+  ok 49 [chromium] › e2e\auth.spec.ts:13:1 › chưa đăng nhập mở /admin → về trang đăng nhập (1.0s)
+  ok 50 [chromium] › e2e\auth.spec.ts:18:1 › Lan đăng nhập → thấy bộ tài liệu; đăng xuất thì Back không vào lại được (1.2s)
+  ok 51 [chromium] › e2e\auth.spec.ts:33:1 › người ngoài nhóm → trang không có quyền, không lộ tên bộ tài liệu (1.2s)
+  ok 52 [chromium] › e2e\auth.spec.ts:40:1 › admin không thuộc nhóm → trang quản trị (1.2s)
+2026-11-02 16:10:28,987 INFO app.seed seed xong: 5 tài khoản, bộ tài liệu 'Dự án X'
+  ok 53 [chromium] › e2e\backbone.spec.ts:10:1 › TC-009 câu hỏi về file vừa tải trích dẫn đúng file (13.7s)
+2026-11-02 16:10:42,811 INFO app.seed seed xong: 5 tài khoản, bộ tài liệu 'Dự án X'
+ Container chat_with_ai-worker-1 Stopping 
+ Container chat_with_ai-worker-1 Stopped 
+ Container chat_with_ai-db-1 Waiting 
+ Container chat_with_ai-db-1 Healthy 
+ Container chat_with_ai-worker-1 Starting 
+ Container chat_with_ai-worker-1 Started 
+  ok 54 [chromium] › e2e\backbone.spec.ts:23:3 › TC-014 › TC-014 câu trả lời ghi chú file chưa sẵn sàng (16.5s)
+2026-11-02 16:10:59,154 INFO app.seed seed xong: 5 tài khoản, bộ tài liệu 'Dự án X'
+  ok 55 [chromium] › e2e\backbone.spec.ts:39:1 › TC-018 không hỏi lại xác nhận trong cùng phiên (9.9s)
+2026-11-02 16:11:09,493 INFO app.seed seed xong: 5 tài khoản, bộ tài liệu 'Dự án X'
+  ok 56 [chromium] › e2e\batch.spec.ts:7:1 › Minh tải 3 file một lần → 3 dòng trạng thái riêng → đều Sẵn sàng (5.5s)
+2026-11-02 16:11:18,170 INFO app.seed seed xong: 5 tài khoản, bộ tài liệu 'Dự án X'
+  ok 57 [chromium] › e2e\chat.spec.ts:19:1 › hỏi → stream → [1] → popover → mở PDF đúng trang (2.6s)
+  ok 58 [chromium] › e2e\chat.spec.ts:52:1 › bàn phím: Tab tới [1], Enter mở, Esc đóng và trả focus (1.7s)
+  x  59 [chromium] › e2e\chat.spec.ts:64:1 › câu hỏi tiếp nối, câu không có trong tài liệu, Hội thoại mới (18.4s)
+  -  60 [chromium] › e2e\chat.spec.ts:79:1 › Dừng giữa chừng → nhãn đã dừng, ô nhập dùng được
+  -  61 [chromium] › e2e\chat.spec.ts:90:1 › Sao chép kèm nguồn
+  -  62 [chromium] › e2e\chat.spec.ts:99:1 › 👎 kèm lý do
+  -  63 [chromium] › e2e\chat.spec.ts:108:1 › ô nhập rỗng: Enter không gửi
+2026-11-02 16:11:51,018 INFO app.seed seed xong: 5 tài khoản, bộ tài liệu 'Dự án X'
+  ok 64 [chromium] › e2e\upload.spec.ts:7:1 › Lan: xác nhận phân loại → tải PDF → Đang xử lý → Sẵn sàng (5.5s)
+  ok 65 [chromium] › e2e\upload.spec.ts:18:1 › .docx và PDF hỏng báo lỗi riêng từng file, PDF scan báo không trích xuất được chữ (8.8s)
+  ok 66 [chromium] › e2e\upload.spec.ts:36:1 › Lan chọn 2 file → bị từ chối, hướng dẫn tải từng file (1.2s)
+
+
+  1) [chromium] › e2e\chat.spec.ts:64:1 › câu hỏi tiếp nối, câu không có trong tài liệu, Hội thoại mới 
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: locator('article.msg-assistant').last()
+    Expected substring: "Không tìm thấy thông tin này trong các tài liệu đã tải lên."
+    Received string:    "AITheo tài liệu HopDongKhung.pdf, Ngoai le: khi cham giao hang, thoi han thanh toan duoc gia han them 15 ngay.1 Thông tin này nằm ở trang 3 của tài liệu.1NguồnHopDongKhung.pdf · trang 3Sao chép kèm nguồn"
+    Timeout: 15000ms
+
+    Call log:
+      - Expect "toContainText" locator('article.msg-assistant').last() with timeout 15000ms
+      - waiting for locator('article.msg-assistant').last()
+        2 × locator resolved to <article aria-busy="true" class="msg-assistant" aria-label="Câu trả lời lượt 3">…</article>
+          - unexpected value "AIĐang trả lời…"
+        2 × locator resolved to <article aria-busy="true" class="msg-assistant" aria-label="Câu trả lời lượt 3">…</article>
+          - unexpected value "AITheo tài liệu HopDongKhung.pdf, Ngoai le: khi cham giao hang, thoi han thanh toan duoc gia han them 15 ngay.1"
+        - locator resolved to <article aria-busy="true" class="msg-assistant" aria-label="Câu trả lời lượt 3">…</article>
+        - unexpected value "AITheo tài liệu HopDongKhung.pdf, Ngoai le: khi cham giao hang, thoi han thanh toan duoc gia han them 15 ngay.1 Thông tin này nằm ở trang 3 của tài liệu.1"
+        28 × locator resolved to <article aria-busy="false" class="msg-assistant" aria-label="Câu trả lời lượt 3">…</article>
+           - unexpected value "AITheo tài liệu HopDongKhung.pdf, Ngoai le: khi cham giao hang, thoi han thanh toan duoc gia han them 15 ngay.1 Thông tin này nằm ở trang 3 của tài liệu.1NguồnHopDongKhung.pdf · trang 3Sao chép kèm nguồn"
+
+
+      70 |
+      71 |   await ask(page, "Thủ đô của Pháp là gì?");
+    > 72 |   await expect(lastAnswer(page)).toContainText("Không tìm thấy thông tin này trong các tài liệu đã tải lên.");
+         |                                  ^
+      73 |
+      74 |   await page.getByRole("button", { name: "Hội thoại mới" }).click();
+      75 |   await expect(page.locator("article.msg-assistant")).toHaveCount(0);
+        at E:\Working\SDLC\chat_with_ai\web\e2e\chat.spec.ts:72:34
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\chat-câu-hỏi-tiếp-nối-câu--6795b-rong-tài-liệu-Hội-thoại-mới-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\chat-câu-hỏi-tiếp-nối-câu--6795b-rong-tài-liệu-Hội-thoại-mới-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\chat-câu-hỏi-tiếp-nối-câu--6795b-rong-tài-liệu-Hội-thoại-mới-chromium\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\chat-câu-hỏi-tiếp-nối-câu--6795b-rong-tài-liệu-Hội-thoại-mới-chromium\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\chat-câu-hỏi-tiếp-nối-câu--6795b-rong-tài-liệu-Hội-thoại-mới-chromium\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [chromium] › e2e\chat.spec.ts:64:1 › câu hỏi tiếp nối, câu không có trong tài liệu, Hội thoại mới 
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: locator('article.msg-assistant').last()
+    Expected substring: "Không tìm thấy thông tin này trong các tài liệu đã tải lên."
+    Received string:    "AITheo tài liệu HopDongKhung.pdf, Ngoai le: khi cham giao hang, thoi han thanh toan duoc gia han them 15 ngay.1 Thông tin này nằm ở trang 3 của tài liệu.1NguồnHopDongKhung.pdf · trang 3Sao chép kèm nguồn"
+    Timeout: 15000ms
+
+    Call log:
+      - Expect "toContainText" locator('article.msg-assistant').last() with timeout 15000ms
+      - waiting for locator('article.msg-assistant').last()
+        - locator resolved to <article aria-busy="true" class="msg-assistant" aria-label="Câu trả lời lượt 3">…</article>
+        - unexpected value "AIĐang trả lời…"
+        3 × locator resolved to <article aria-busy="true" class="msg-assistant" aria-label="Câu trả lời lượt 3">…</article>
+          - unexpected value "AITheo tài liệu HopDongKhung.pdf, Ngoai le: khi cham giao hang, thoi han thanh toan duoc gia han them 15 ngay.1"
+        - locator resolved to <article aria-busy="true" class="msg-assistant" aria-label="Câu trả lời lượt 3">…</article>
+        - unexpected value "AITheo tài liệu HopDongKhung.pdf, Ngoai le: khi cham giao hang, thoi han thanh toan duoc gia han them 15 ngay.1 Thông tin này nằm ở trang 3 của tài liệu.1"
+        28 × locator resolved to <article aria-busy="false" class="msg-assistant" aria-label="Câu trả lời lượt 3">…</article>
+           - unexpected value "AITheo tài liệu HopDongKhung.pdf, Ngoai le: khi cham giao hang, thoi han thanh toan duoc gia han them 15 ngay.1 Thông tin này nằm ở trang 3 của tài liệu.1NguồnHopDongKhung.pdf · trang 3Sao chép kèm nguồn"
+
+
+      70 |
+      71 |   await ask(page, "Thủ đô của Pháp là gì?");
+    > 72 |   await expect(lastAnswer(page)).toContainText("Không tìm thấy thông tin này trong các tài liệu đã tải lên.");
+         |                                  ^
+      73 |
+      74 |   await page.getByRole("button", { name: "Hội thoại mới" }).click();
+      75 |   await expect(page.locator("article.msg-assistant")).toHaveCount(0);
+        at E:\Working\SDLC\chat_with_ai\web\e2e\chat.spec.ts:72:34
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\chat-câu-hỏi-tiếp-nối-câu--6795b-rong-tài-liệu-Hội-thoại-mới-chromium-repeat1\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\chat-câu-hỏi-tiếp-nối-câu--6795b-rong-tài-liệu-Hội-thoại-mới-chromium-repeat1\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\chat-câu-hỏi-tiếp-nối-câu--6795b-rong-tài-liệu-Hội-thoại-mới-chromium-repeat1\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\chat-câu-hỏi-tiếp-nối-câu--6795b-rong-tài-liệu-Hội-thoại-mới-chromium-repeat1\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\chat-câu-hỏi-tiếp-nối-câu--6795b-rong-tài-liệu-Hội-thoại-mới-chromium-repeat1\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) [chromium] › e2e\chat.spec.ts:64:1 › câu hỏi tiếp nối, câu không có trong tài liệu, Hội thoại mới 
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: locator('article.msg-assistant').last()
+    Expected substring: "Không tìm thấy thông tin này trong các tài liệu đã tải lên."
+    Received string:    "AITheo tài liệu HopDongKhung.pdf, Ngoai le: khi cham giao hang, thoi han thanh toan duoc gia han them 15 ngay.1 Thông tin này nằm ở trang 3 của tài liệu.1NguồnHopDongKhung.pdf · trang 3Sao chép kèm nguồn"
+    Timeout: 15000ms
+
+    Call log:
+      - Expect "toContainText" locator('article.msg-assistant').last() with timeout 15000ms
+      - waiting for locator('article.msg-assistant').last()
+        2 × locator resolved to <article aria-busy="true" class="msg-assistant" aria-label="Câu trả lời lượt 3">…</article>
+          - unexpected value "AIĐang trả lời…"
+        2 × locator resolved to <article aria-busy="true" class="msg-assistant" aria-label="Câu trả lời lượt 3">…</article>
+          - unexpected value "AITheo tài liệu HopDongKhung.pdf, Ngoai le: khi cham giao hang, thoi han thanh toan duoc gia han them 15 ngay.1"
+        - locator resolved to <article aria-busy="true" class="msg-assistant" aria-label="Câu trả lời lượt 3">…</article>
+        - unexpected value "AITheo tài liệu HopDongKhung.pdf, Ngoai le: khi cham giao hang, thoi han thanh toan duoc gia han them 15 ngay.1 Thông tin này nằm ở trang 3 của tài liệu.1"
+        28 × locator resolved to <article aria-busy="false" class="msg-assistant" aria-label="Câu trả lời lượt 3">…</article>
+           - unexpected value "AITheo tài liệu HopDongKhung.pdf, Ngoai le: khi cham giao hang, thoi han thanh toan duoc gia han them 15 ngay.1 Thông tin này nằm ở trang 3 của tài liệu.1NguồnHopDongKhung.pdf · trang 3Sao chép kèm nguồn"
+
+
+      70 |
+      71 |   await ask(page, "Thủ đô của Pháp là gì?");
+    > 72 |   await expect(lastAnswer(page)).toContainText("Không tìm thấy thông tin này trong các tài liệu đã tải lên.");
+         |                                  ^
+      73 |
+      74 |   await page.getByRole("button", { name: "Hội thoại mới" }).click();
+      75 |   await expect(page.locator("article.msg-assistant")).toHaveCount(0);
+        at E:\Working\SDLC\chat_with_ai\web\e2e\chat.spec.ts:72:34
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\chat-câu-hỏi-tiếp-nối-câu--6795b-rong-tài-liệu-Hội-thoại-mới-chromium-repeat2\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\chat-câu-hỏi-tiếp-nối-câu--6795b-rong-tài-liệu-Hội-thoại-mới-chromium-repeat2\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\chat-câu-hỏi-tiếp-nối-câu--6795b-rong-tài-liệu-Hội-thoại-mới-chromium-repeat2\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\chat-câu-hỏi-tiếp-nối-câu--6795b-rong-tài-liệu-Hội-thoại-mới-chromium-repeat2\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\chat-câu-hỏi-tiếp-nối-câu--6795b-rong-tài-liệu-Hội-thoại-mới-chromium-repeat2\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3 failed
+    [chromium] › e2e\chat.spec.ts:64:1 › câu hỏi tiếp nối, câu không có trong tài liệu, Hội thoại mới 
+    [chromium] › e2e\chat.spec.ts:64:1 › câu hỏi tiếp nối, câu không có trong tài liệu, Hội thoại mới 
+    [chromium] › e2e\chat.spec.ts:64:1 › câu hỏi tiếp nối, câu không có trong tài liệu, Hội thoại mới 
+  12 did not run
+  51 passed (6.5m)

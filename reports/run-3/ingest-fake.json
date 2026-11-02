@@ -1,0 +1,32 @@
+{
+  "measured_at": "2026-11-02T16:05:37+00:00",
+  "commit": "",
+  "pages": 3,
+  "pdf_bytes": 6038,
+  "limit_seconds": 120,
+  "embed_fake": true,
+  "embed_model": "BAAI/bge-m3",
+  "machine": {
+    "cpu_count": 4,
+    "mem_gb": 3.8,
+    "platform": "Linux-6.18.54.1-microsoft-standard-WSL2-x86_64-with-glibc2.41"
+  },
+  "runs": [
+    {
+      "final": "ready",
+      "error_code": null,
+      "pages": 3,
+      "seconds_to_ready": 0.48,
+      "sequence": [
+        "uploaded",
+        "ready"
+      ],
+      "sequence_ok": true,
+      "progress_monotonic": true,
+      "final_progress": 100,
+      "pages_ok": true,
+      "pass": true
+    }
+  ],
+  "all_pass": true
+}

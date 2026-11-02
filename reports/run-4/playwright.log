@@ -1,0 +1,113 @@
+
+Running 66 tests using 1 worker
+
+2026-11-02 16:21:36,494 INFO app.seed seed xong: 5 tài khoản, bộ tài liệu 'Dự án X'
+  ok  1 [chromium] › e2e\admin.spec.ts:8:1 › Hùng thêm thành viên: email sai báo lỗi tại ô, email đúng thêm dòng mới (3.1s)
+  ok  2 [chromium] › e2e\admin.spec.ts:23:1 › Anh bị gỡ → thao tác kế tiếp ra trang không có quyền (3.4s)
+  ok  3 [chromium] › e2e\admin.spec.ts:38:1 › gỡ tài liệu → biến khỏi danh sách của Lan; trích dẫn cũ báo đã gỡ; nhật ký có các thao tác (7.6s)
+2026-11-02 16:21:55,646 INFO app.seed seed xong: 5 tài khoản, bộ tài liệu 'Dự án X'
+  ok  4 [chromium] › e2e\auth.spec.ts:6:1 › chưa đăng nhập mở / → về trang đăng nhập (1.2s)
+  ok  5 [chromium] › e2e\auth.spec.ts:13:1 › chưa đăng nhập mở /admin → về trang đăng nhập (1.0s)
+  ok  6 [chromium] › e2e\auth.spec.ts:18:1 › Lan đăng nhập → thấy bộ tài liệu; đăng xuất thì Back không vào lại được (1.5s)
+  ok  7 [chromium] › e2e\auth.spec.ts:33:1 › người ngoài nhóm → trang không có quyền, không lộ tên bộ tài liệu (1.4s)
+  ok  8 [chromium] › e2e\auth.spec.ts:40:1 › admin không thuộc nhóm → trang quản trị (1.7s)
+2026-11-02 16:22:05,746 INFO app.seed seed xong: 5 tài khoản, bộ tài liệu 'Dự án X'
+  ok  9 [chromium] › e2e\backbone.spec.ts:10:1 › TC-009 câu hỏi về file vừa tải trích dẫn đúng file (14.3s)
+2026-11-02 16:22:20,040 INFO app.seed seed xong: 5 tài khoản, bộ tài liệu 'Dự án X'
+ Container chat_with_ai-worker-1 Stopping 
+ Container chat_with_ai-worker-1 Stopped 
+ Container chat_with_ai-db-1 Waiting 
+ Container chat_with_ai-db-1 Healthy 
+ Container chat_with_ai-worker-1 Starting 
+ Container chat_with_ai-worker-1 Started 
+  ok 10 [chromium] › e2e\backbone.spec.ts:23:3 › TC-014 › TC-014 câu trả lời ghi chú file chưa sẵn sàng (15.7s)
+2026-11-02 16:22:36,702 INFO app.seed seed xong: 5 tài khoản, bộ tài liệu 'Dự án X'
+  ok 11 [chromium] › e2e\backbone.spec.ts:39:1 › TC-018 không hỏi lại xác nhận trong cùng phiên (12.8s)
+2026-11-02 16:22:50,459 INFO app.seed seed xong: 5 tài khoản, bộ tài liệu 'Dự án X'
+  ok 12 [chromium] › e2e\batch.spec.ts:7:1 › Minh tải 3 file một lần → 3 dòng trạng thái riêng → đều Sẵn sàng (5.8s)
+2026-11-02 16:22:59,267 INFO app.seed seed xong: 5 tài khoản, bộ tài liệu 'Dự án X'
+  ok 13 [chromium] › e2e\chat.spec.ts:19:1 › hỏi → stream → [1] → popover → mở PDF đúng trang (2.5s)
+  ok 14 [chromium] › e2e\chat.spec.ts:52:1 › bàn phím: Tab tới [1], Enter mở, Esc đóng và trả focus (2.0s)
+  ok 15 [chromium] › e2e\chat.spec.ts:64:1 › câu hỏi tiếp nối, câu không có trong tài liệu, Hội thoại mới (6.0s)
+  ok 16 [chromium] › e2e\chat.spec.ts:79:1 › Dừng giữa chừng → nhãn đã dừng, ô nhập dùng được (3.7s)
+  ok 17 [chromium] › e2e\chat.spec.ts:90:1 › Sao chép kèm nguồn (2.5s)
+  ok 18 [chromium] › e2e\chat.spec.ts:100:1 › 👎 kèm lý do (3.6s)
+  ok 19 [chromium] › e2e\chat.spec.ts:111:1 › ô nhập rỗng: Enter không gửi (2.3s)
+2026-11-02 16:23:30,365 INFO app.seed seed xong: 5 tài khoản, bộ tài liệu 'Dự án X'
+  ok 20 [chromium] › e2e\upload.spec.ts:7:1 › Lan: xác nhận phân loại → tải PDF → Đang xử lý → Sẵn sàng (5.8s)
+  ok 21 [chromium] › e2e\upload.spec.ts:18:1 › .docx và PDF hỏng báo lỗi riêng từng file, PDF scan báo không trích xuất được chữ (8.9s)
+  ok 22 [chromium] › e2e\upload.spec.ts:36:1 › Lan chọn 2 file → bị từ chối, hướng dẫn tải từng file (1.6s)
+2026-11-02 16:23:51,934 INFO app.seed seed xong: 5 tài khoản, bộ tài liệu 'Dự án X'
+  ok 23 [chromium] › e2e\admin.spec.ts:8:1 › Hùng thêm thành viên: email sai báo lỗi tại ô, email đúng thêm dòng mới (3.4s)
+  ok 24 [chromium] › e2e\admin.spec.ts:23:1 › Anh bị gỡ → thao tác kế tiếp ra trang không có quyền (4.0s)
+  ok 25 [chromium] › e2e\admin.spec.ts:38:1 › gỡ tài liệu → biến khỏi danh sách của Lan; trích dẫn cũ báo đã gỡ; nhật ký có các thao tác (8.7s)
+2026-11-02 16:24:13,352 INFO app.seed seed xong: 5 tài khoản, bộ tài liệu 'Dự án X'
+  ok 26 [chromium] › e2e\auth.spec.ts:6:1 › chưa đăng nhập mở / → về trang đăng nhập (1.1s)
+  ok 27 [chromium] › e2e\auth.spec.ts:13:1 › chưa đăng nhập mở /admin → về trang đăng nhập (1.2s)
+  ok 28 [chromium] › e2e\auth.spec.ts:18:1 › Lan đăng nhập → thấy bộ tài liệu; đăng xuất thì Back không vào lại được (2.5s)
+  ok 29 [chromium] › e2e\auth.spec.ts:33:1 › người ngoài nhóm → trang không có quyền, không lộ tên bộ tài liệu (1.8s)
+  ok 30 [chromium] › e2e\auth.spec.ts:40:1 › admin không thuộc nhóm → trang quản trị (2.1s)
+2026-11-02 16:24:27,064 INFO app.seed seed xong: 5 tài khoản, bộ tài liệu 'Dự án X'
+  ok 31 [chromium] › e2e\backbone.spec.ts:10:1 › TC-009 câu hỏi về file vừa tải trích dẫn đúng file (15.0s)
+2026-11-02 16:24:41,006 INFO app.seed seed xong: 5 tài khoản, bộ tài liệu 'Dự án X'
+ Container chat_with_ai-worker-1 Stopping 
+ Container chat_with_ai-worker-1 Stopped 
+ Container chat_with_ai-db-1 Waiting 
+ Container chat_with_ai-db-1 Healthy 
+ Container chat_with_ai-worker-1 Starting 
+ Container chat_with_ai-worker-1 Started 
+  ok 32 [chromium] › e2e\backbone.spec.ts:23:3 › TC-014 › TC-014 câu trả lời ghi chú file chưa sẵn sàng (17.6s)
+2026-11-02 16:24:58,385 INFO app.seed seed xong: 5 tài khoản, bộ tài liệu 'Dự án X'
+  ok 33 [chromium] › e2e\backbone.spec.ts:39:1 › TC-018 không hỏi lại xác nhận trong cùng phiên (10.1s)
+2026-11-02 16:25:09,144 INFO app.seed seed xong: 5 tài khoản, bộ tài liệu 'Dự án X'
+  ok 34 [chromium] › e2e\batch.spec.ts:7:1 › Minh tải 3 file một lần → 3 dòng trạng thái riêng → đều Sẵn sàng (5.3s)
+2026-11-02 16:25:17,704 INFO app.seed seed xong: 5 tài khoản, bộ tài liệu 'Dự án X'
+  ok 35 [chromium] › e2e\chat.spec.ts:19:1 › hỏi → stream → [1] → popover → mở PDF đúng trang (2.4s)
+  ok 36 [chromium] › e2e\chat.spec.ts:52:1 › bàn phím: Tab tới [1], Enter mở, Esc đóng và trả focus (1.9s)
+  ok 37 [chromium] › e2e\chat.spec.ts:64:1 › câu hỏi tiếp nối, câu không có trong tài liệu, Hội thoại mới (4.0s)
+  ok 38 [chromium] › e2e\chat.spec.ts:79:1 › Dừng giữa chừng → nhãn đã dừng, ô nhập dùng được (1.5s)
+  ok 39 [chromium] › e2e\chat.spec.ts:90:1 › Sao chép kèm nguồn (2.5s)
+  ok 40 [chromium] › e2e\chat.spec.ts:100:1 › 👎 kèm lý do (2.7s)
+  ok 41 [chromium] › e2e\chat.spec.ts:111:1 › ô nhập rỗng: Enter không gửi (1.1s)
+2026-11-02 16:25:42,401 INFO app.seed seed xong: 5 tài khoản, bộ tài liệu 'Dự án X'
+  ok 42 [chromium] › e2e\upload.spec.ts:7:1 › Lan: xác nhận phân loại → tải PDF → Đang xử lý → Sẵn sàng (5.5s)
+  ok 43 [chromium] › e2e\upload.spec.ts:18:1 › .docx và PDF hỏng báo lỗi riêng từng file, PDF scan báo không trích xuất được chữ (9.2s)
+  ok 44 [chromium] › e2e\upload.spec.ts:36:1 › Lan chọn 2 file → bị từ chối, hướng dẫn tải từng file (1.1s)
+2026-11-02 16:26:03,867 INFO app.seed seed xong: 5 tài khoản, bộ tài liệu 'Dự án X'
+  ok 45 [chromium] › e2e\admin.spec.ts:8:1 › Hùng thêm thành viên: email sai báo lỗi tại ô, email đúng thêm dòng mới (2.3s)
+  ok 46 [chromium] › e2e\admin.spec.ts:23:1 › Anh bị gỡ → thao tác kế tiếp ra trang không có quyền (3.5s)
+  ok 47 [chromium] › e2e\admin.spec.ts:38:1 › gỡ tài liệu → biến khỏi danh sách của Lan; trích dẫn cũ báo đã gỡ; nhật ký có các thao tác (8.7s)
+2026-11-02 16:26:21,785 INFO app.seed seed xong: 5 tài khoản, bộ tài liệu 'Dự án X'
+  ok 48 [chromium] › e2e\auth.spec.ts:6:1 › chưa đăng nhập mở / → về trang đăng nhập (939ms)
+  ok 49 [chromium] › e2e\auth.spec.ts:13:1 › chưa đăng nhập mở /admin → về trang đăng nhập (1.1s)
+  ok 50 [chromium] › e2e\auth.spec.ts:18:1 › Lan đăng nhập → thấy bộ tài liệu; đăng xuất thì Back không vào lại được (1.7s)
+  ok 51 [chromium] › e2e\auth.spec.ts:33:1 › người ngoài nhóm → trang không có quyền, không lộ tên bộ tài liệu (1.4s)
+  ok 52 [chromium] › e2e\auth.spec.ts:40:1 › admin không thuộc nhóm → trang quản trị (1.4s)
+2026-11-02 16:26:31,255 INFO app.seed seed xong: 5 tài khoản, bộ tài liệu 'Dự án X'
+  ok 53 [chromium] › e2e\backbone.spec.ts:10:1 › TC-009 câu hỏi về file vừa tải trích dẫn đúng file (13.0s)
+2026-11-02 16:26:44,400 INFO app.seed seed xong: 5 tài khoản, bộ tài liệu 'Dự án X'
+ Container chat_with_ai-worker-1 Stopping 
+ Container chat_with_ai-worker-1 Stopped 
+ Container chat_with_ai-db-1 Waiting 
+ Container chat_with_ai-db-1 Healthy 
+ Container chat_with_ai-worker-1 Starting 
+ Container chat_with_ai-worker-1 Started 
+  ok 54 [chromium] › e2e\backbone.spec.ts:23:3 › TC-014 › TC-014 câu trả lời ghi chú file chưa sẵn sàng (16.1s)
+2026-11-02 16:27:01,476 INFO app.seed seed xong: 5 tài khoản, bộ tài liệu 'Dự án X'
+  ok 55 [chromium] › e2e\backbone.spec.ts:39:1 › TC-018 không hỏi lại xác nhận trong cùng phiên (10.6s)
+2026-11-02 16:27:11,478 INFO app.seed seed xong: 5 tài khoản, bộ tài liệu 'Dự án X'
+  ok 56 [chromium] › e2e\batch.spec.ts:7:1 › Minh tải 3 file một lần → 3 dòng trạng thái riêng → đều Sẵn sàng (5.6s)
+2026-11-02 16:27:20,885 INFO app.seed seed xong: 5 tài khoản, bộ tài liệu 'Dự án X'
+  ok 57 [chromium] › e2e\chat.spec.ts:19:1 › hỏi → stream → [1] → popover → mở PDF đúng trang (2.7s)
+  ok 58 [chromium] › e2e\chat.spec.ts:52:1 › bàn phím: Tab tới [1], Enter mở, Esc đóng và trả focus (1.5s)
+  ok 59 [chromium] › e2e\chat.spec.ts:64:1 › câu hỏi tiếp nối, câu không có trong tài liệu, Hội thoại mới (3.5s)
+  ok 60 [chromium] › e2e\chat.spec.ts:79:1 › Dừng giữa chừng → nhãn đã dừng, ô nhập dùng được (1.5s)
+  ok 61 [chromium] › e2e\chat.spec.ts:90:1 › Sao chép kèm nguồn (2.2s)
+  ok 62 [chromium] › e2e\chat.spec.ts:100:1 › 👎 kèm lý do (2.4s)
+  ok 63 [chromium] › e2e\chat.spec.ts:111:1 › ô nhập rỗng: Enter không gửi (1.3s)
+2026-11-02 16:27:44,579 INFO app.seed seed xong: 5 tài khoản, bộ tài liệu 'Dự án X'
+  ok 64 [chromium] › e2e\upload.spec.ts:7:1 › Lan: xác nhận phân loại → tải PDF → Đang xử lý → Sẵn sàng (5.6s)
+  ok 65 [chromium] › e2e\upload.spec.ts:18:1 › .docx và PDF hỏng báo lỗi riêng từng file, PDF scan báo không trích xuất được chữ (9.1s)
+  ok 66 [chromium] › e2e\upload.spec.ts:36:1 › Lan chọn 2 file → bị từ chối, hướng dẫn tải từng file (1.1s)
+
+  66 passed (6.5m)

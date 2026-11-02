@@ -49,4 +49,4 @@ Không phải lỗi sản phẩm. Không sửa mệnh đề `expect` nào trong 
 ## Cách sửa và xác nhận
 
 - Thêm `.first()` vào 3 locator: `chat.spec.ts` (2 chỗ) và `admin.spec.ts` (1 chỗ).
-- Xác nhận: 2 lượt chạy sau khi sửa, cùng commit, PASS 3/3 lần lặp mỗi lượt (xem [traceability.md](../traceability.md) §1).
+- Commit sửa: `2dac54d`. Xác nhận: run-2, run-3 (`2dac54d`) — TC-022, TC-027 PASS 3/3 mỗi lượt; run-4, run-5 (`5ec5abd`) — PASS 3/3 mỗi lượt, toàn bộ Playwright 66/66 (xem [traceability.md](../traceability.md) §1).

@@ -1,0 +1,1145 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.16, pytest-9.2.0, pluggy-1.7.0
+rootdir: /app
+configfile: pyproject.toml
+testpaths: tests
+plugins: asyncio-1.4.1.post1, anyio-4.16.0
+asyncio: mode=Mode.AUTO, debug=False, asyncio_default_fixture_loop_scope=session, asyncio_default_test_loop_scope=session
+collected 142 items
+
+tests/admin/test_documents_audit.py ...........                          [  7%]
+tests/admin/test_members.py ........                                     [ 13%]
+tests/auth/test_policy.py .......                                        [ 18%]
+tests/auth/test_session.py ........                                      [ 23%]
+tests/documents/test_list.py ......                                      [ 28%]
+tests/documents/test_upload.py ..........                                [ 35%]
+tests/ingestion/test_chunker.py .......                                  [ 40%]
+tests/ingestion/test_pdf.py .....                                        [ 43%]
+tests/ingestion/test_worker.py ......                                    [ 47%]
+tests/qa/test_ask_api.py ....................                            [ 61%]
+tests/qa/test_citation_filter.py ......................                  [ 77%]
+tests/qa/test_feedback.py .....                                          [ 80%]
+tests/qa/test_llm_request.py .....                                       [ 84%]
+tests/qa/test_retriever.py ..........                                    [ 91%]
+tests/test_config.py ..                                                  [ 92%]
+tests/test_errors.py ...                                                 [ 95%]
+tests/test_health.py .                                                   [ 95%]
+tests/test_models.py ....                                                [ 98%]
+tests/test_seed.py ..                                                    [100%]
+
+=============================== warnings summary ===============================
+tests/admin/test_documents_audit.py::test_admin_lists_metadata_only
+tests/admin/test_documents_audit.py::test_admin_lists_metadata_only
+  /usr/local/lib/python3.12/site-packages/alembic/config.py:604: DeprecationWarning: No path_separator found in configuration; falling back to legacy splitting on spaces, commas, and colons for prepend_sys_path.  Consider adding path_separator=os to Alembic config.
+    util.warn_deprecated(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+==================================== PASSES ====================================
+________________________ test_admin_lists_metadata_only ________________________
+---------------------------- Captured stderr setup -----------------------------
+2026-11-02 16:20:33,782 INFO alembic.runtime.migration Context impl PostgresqlImpl.
+2026-11-02 16:20:33,783 INFO alembic.runtime.migration Will assume transactional DDL.
+2026-11-02 16:20:33,907 INFO alembic.runtime.migration Running downgrade 0001 -> , init: extension, 11 bảng, chỉ mục vector và full-text
+2026-11-02 16:20:34,088 INFO alembic.runtime.migration Context impl PostgresqlImpl.
+2026-11-02 16:20:34,088 INFO alembic.runtime.migration Will assume transactional DDL.
+2026-11-02 16:20:34,117 INFO alembic.runtime.migration Running upgrade  -> 0001, init: extension, 11 bảng, chỉ mục vector và full-text
+------------------------------ Captured log setup ------------------------------
+INFO     alembic.runtime.migration:migration.py:205 Context impl PostgresqlImpl.
+INFO     alembic.runtime.migration:migration.py:208 Will assume transactional DDL.
+INFO     alembic.runtime.migration:migration.py:611 Running downgrade 0001 -> , init: extension, 11 bảng, chỉ mục vector và full-text
+INFO     alembic.runtime.migration:migration.py:205 Context impl PostgresqlImpl.
+INFO     alembic.runtime.migration:migration.py:208 Will assume transactional DDL.
+INFO     alembic.runtime.migration:migration.py:611 Running upgrade  -> 0001, init: extension, 11 bảng, chỉ mục vector và full-text
+----------------------------- Captured stderr call -----------------------------
+2026-11-02 16:20:34,794 INFO httpx HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+2026-11-02 16:20:34,925 INFO httpx HTTP Request: GET http://test/api/v1/admin/doc-sets/3d62b9ed-4ab8-446b-b11e-b173229d887f/documents "HTTP/1.1 200 OK"
+2026-11-02 16:20:34,965 INFO httpx HTTP Request: GET http://test/api/v1/admin/doc-sets/3d62b9ed-4ab8-446b-b11e-b173229d887f/documents?q=100%25 "HTTP/1.1 200 OK"
+------------------------------ Captured log call -------------------------------
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+INFO     httpx:_client.py:1740 HTTP Request: GET http://test/api/v1/admin/doc-sets/3d62b9ed-4ab8-446b-b11e-b173229d887f/documents "HTTP/1.1 200 OK"
+INFO     httpx:_client.py:1740 HTTP Request: GET http://test/api/v1/admin/doc-sets/3d62b9ed-4ab8-446b-b11e-b173229d887f/documents?q=100%25 "HTTP/1.1 200 OK"
+________________________ test_admin_cannot_open_content ________________________
+----------------------------- Captured stderr call -----------------------------
+2026-11-02 16:20:35,426 INFO httpx HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+2026-11-02 16:20:35,458 INFO httpx HTTP Request: GET http://test/api/v1/documents/de97ae5a-41e4-4c4a-9695-e03dc8c2a642/file "HTTP/1.1 403 Forbidden"
+------------------------------ Captured log call -------------------------------
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+INFO     httpx:_client.py:1740 HTTP Request: GET http://test/api/v1/documents/de97ae5a-41e4-4c4a-9695-e03dc8c2a642/file "HTTP/1.1 403 Forbidden"
+_____________ test_purge_removes_chunks_file_and_redacts_citations _____________
+----------------------------- Captured stderr call -----------------------------
+2026-11-02 16:20:35,669 INFO httpx HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+2026-11-02 16:20:35,709 INFO httpx HTTP Request: POST http://test/api/v1/doc-sets/20be52f3-63f2-4923-89d7-fc7c187bced6/conversations "HTTP/1.1 201 Created"
+2026-11-02 16:20:35,779 INFO httpx HTTP Request: POST http://test/api/v1/conversations/a4166cec-4d8a-499d-9a50-5f902bf06cd6/messages "HTTP/1.1 200 OK"
+2026-11-02 16:20:35,789 INFO httpx HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+2026-11-02 16:20:35,828 INFO httpx HTTP Request: DELETE http://test/api/v1/admin/documents/9cf5320b-1d72-46a5-b381-eb7ee1b978cc "HTTP/1.1 200 OK"
+2026-11-02 16:20:35,876 INFO httpx HTTP Request: GET http://test/api/v1/doc-sets/20be52f3-63f2-4923-89d7-fc7c187bced6/documents "HTTP/1.1 200 OK"
+2026-11-02 16:20:35,894 INFO httpx HTTP Request: GET http://test/api/v1/citations/2e22f274-2c83-4823-8221-9f15198c920d "HTTP/1.1 410 Gone"
+------------------------------ Captured log call -------------------------------
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/doc-sets/20be52f3-63f2-4923-89d7-fc7c187bced6/conversations "HTTP/1.1 201 Created"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/conversations/a4166cec-4d8a-499d-9a50-5f902bf06cd6/messages "HTTP/1.1 200 OK"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+INFO     httpx:_client.py:1740 HTTP Request: DELETE http://test/api/v1/admin/documents/9cf5320b-1d72-46a5-b381-eb7ee1b978cc "HTTP/1.1 200 OK"
+INFO     httpx:_client.py:1740 HTTP Request: GET http://test/api/v1/doc-sets/20be52f3-63f2-4923-89d7-fc7c187bced6/documents "HTTP/1.1 200 OK"
+INFO     httpx:_client.py:1740 HTTP Request: GET http://test/api/v1/citations/2e22f274-2c83-4823-8221-9f15198c920d "HTTP/1.1 410 Gone"
+_______________________ test_purge_then_query_not_found ________________________
+----------------------------- Captured stderr call -----------------------------
+2026-11-02 16:20:36,082 INFO httpx HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+2026-11-02 16:20:36,128 INFO httpx HTTP Request: DELETE http://test/api/v1/admin/documents/39c54a07-d3fe-4576-b550-a2002e3838cf "HTTP/1.1 200 OK"
+2026-11-02 16:20:36,135 INFO httpx HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+2026-11-02 16:20:36,150 INFO httpx HTTP Request: POST http://test/api/v1/doc-sets/af9658f4-1928-4f95-8eb0-3abff5fb6354/conversations "HTTP/1.1 201 Created"
+2026-11-02 16:20:36,189 INFO httpx HTTP Request: POST http://test/api/v1/conversations/bfe4d3a3-5b90-44dc-997d-cf4ffc7e45a6/messages "HTTP/1.1 200 OK"
+2026-11-02 16:20:36,219 INFO httpx HTTP Request: POST http://test/api/v1/conversations/bfe4d3a3-5b90-44dc-997d-cf4ffc7e45a6/messages "HTTP/1.1 200 OK"
+------------------------------ Captured log call -------------------------------
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+INFO     httpx:_client.py:1740 HTTP Request: DELETE http://test/api/v1/admin/documents/39c54a07-d3fe-4576-b550-a2002e3838cf "HTTP/1.1 200 OK"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/doc-sets/af9658f4-1928-4f95-8eb0-3abff5fb6354/conversations "HTTP/1.1 201 Created"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/conversations/bfe4d3a3-5b90-44dc-997d-cf4ffc7e45a6/messages "HTTP/1.1 200 OK"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/conversations/bfe4d3a3-5b90-44dc-997d-cf4ffc7e45a6/messages "HTTP/1.1 200 OK"
+______________________ test_purge_forbidden_for_non_admin ______________________
+----------------------------- Captured stderr call -----------------------------
+2026-11-02 16:20:36,376 INFO httpx HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+2026-11-02 16:20:36,406 INFO httpx HTTP Request: DELETE http://test/api/v1/admin/documents/8881e89a-2e0a-48c3-857d-fb21d75266cb "HTTP/1.1 403 Forbidden"
+------------------------------ Captured log call -------------------------------
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+INFO     httpx:_client.py:1740 HTTP Request: DELETE http://test/api/v1/admin/documents/8881e89a-2e0a-48c3-857d-fb21d75266cb "HTTP/1.1 403 Forbidden"
+____________________________ test_purge_validation _____________________________
+----------------------------- Captured stderr call -----------------------------
+2026-11-02 16:20:36,556 INFO httpx HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+2026-11-02 16:20:36,587 INFO httpx HTTP Request: DELETE http://test/api/v1/admin/documents/a0370789-2db3-4de0-970c-a4cae06a07ca "HTTP/1.1 422 Unprocessable Entity"
+2026-11-02 16:20:36,596 INFO httpx HTTP Request: DELETE http://test/api/v1/admin/documents/a0370789-2db3-4de0-970c-a4cae06a07ca "HTTP/1.1 422 Unprocessable Entity"
+2026-11-02 16:20:36,605 INFO httpx HTTP Request: DELETE http://test/api/v1/admin/documents/a0370789-2db3-4de0-970c-a4cae06a07ca "HTTP/1.1 422 Unprocessable Entity"
+------------------------------ Captured log call -------------------------------
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+INFO     httpx:_client.py:1740 HTTP Request: DELETE http://test/api/v1/admin/documents/a0370789-2db3-4de0-970c-a4cae06a07ca "HTTP/1.1 422 Unprocessable Entity"
+INFO     httpx:_client.py:1740 HTTP Request: DELETE http://test/api/v1/admin/documents/a0370789-2db3-4de0-970c-a4cae06a07ca "HTTP/1.1 422 Unprocessable Entity"
+INFO     httpx:_client.py:1740 HTTP Request: DELETE http://test/api/v1/admin/documents/a0370789-2db3-4de0-970c-a4cae06a07ca "HTTP/1.1 422 Unprocessable Entity"
+___________________ test_purge_file_missing_on_disk_still_ok ___________________
+----------------------------- Captured stderr call -----------------------------
+2026-11-02 16:20:36,761 INFO httpx HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+2026-11-02 16:20:36,823 INFO httpx HTTP Request: DELETE http://test/api/v1/admin/documents/cec0e393-ea39-49e3-835e-1d781d200ea0 "HTTP/1.1 200 OK"
+------------------------------ Captured log call -------------------------------
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+INFO     httpx:_client.py:1740 HTTP Request: DELETE http://test/api/v1/admin/documents/cec0e393-ea39-49e3-835e-1d781d200ea0 "HTTP/1.1 200 OK"
+_____________________ test_audit_query_filters_and_cursor ______________________
+----------------------------- Captured stderr call -----------------------------
+2026-11-02 16:20:37,066 INFO httpx HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+2026-11-02 16:20:37,109 INFO httpx HTTP Request: GET http://test/api/v1/admin/audit-logs?doc_set_id=1291c9c9-de6b-444f-8c57-57a78527bccb "HTTP/1.1 200 OK"
+2026-11-02 16:20:37,124 INFO httpx HTTP Request: GET http://test/api/v1/admin/audit-logs?doc_set_id=1291c9c9-de6b-444f-8c57-57a78527bccb&user_id=15643500-8d80-4253-9b15-2f215d0ca810&action=view_file "HTTP/1.1 200 OK"
+2026-11-02 16:20:37,142 INFO httpx HTTP Request: GET http://test/api/v1/admin/audit-logs?doc_set_id=1291c9c9-de6b-444f-8c57-57a78527bccb&action=view_file&limit=3 "HTTP/1.1 200 OK"
+2026-11-02 16:20:37,158 INFO httpx HTTP Request: GET http://test/api/v1/admin/audit-logs?doc_set_id=1291c9c9-de6b-444f-8c57-57a78527bccb&action=view_file&limit=3&cursor=2026-11-02T16%3A18%3A37.045378%2B00%3A00%7C3 "HTTP/1.1 200 OK"
+2026-11-02 16:20:37,174 INFO httpx HTTP Request: GET http://test/api/v1/admin/audit-logs?doc_set_id=1291c9c9-de6b-444f-8c57-57a78527bccb&from=2026-10-03&to=2026-10-03&action=view_file "HTTP/1.1 200 OK"
+------------------------------ Captured log call -------------------------------
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+INFO     httpx:_client.py:1740 HTTP Request: GET http://test/api/v1/admin/audit-logs?doc_set_id=1291c9c9-de6b-444f-8c57-57a78527bccb "HTTP/1.1 200 OK"
+INFO     httpx:_client.py:1740 HTTP Request: GET http://test/api/v1/admin/audit-logs?doc_set_id=1291c9c9-de6b-444f-8c57-57a78527bccb&user_id=15643500-8d80-4253-9b15-2f215d0ca810&action=view_file "HTTP/1.1 200 OK"
+INFO     httpx:_client.py:1740 HTTP Request: GET http://test/api/v1/admin/audit-logs?doc_set_id=1291c9c9-de6b-444f-8c57-57a78527bccb&action=view_file&limit=3 "HTTP/1.1 200 OK"
+INFO     httpx:_client.py:1740 HTTP Request: GET http://test/api/v1/admin/audit-logs?doc_set_id=1291c9c9-de6b-444f-8c57-57a78527bccb&action=view_file&limit=3&cursor=2026-11-02T16%3A18%3A37.045378%2B00%3A00%7C3 "HTTP/1.1 200 OK"
+INFO     httpx:_client.py:1740 HTTP Request: GET http://test/api/v1/admin/audit-logs?doc_set_id=1291c9c9-de6b-444f-8c57-57a78527bccb&from=2026-10-03&to=2026-10-03&action=view_file "HTTP/1.1 200 OK"
+_______________ test_audit_includes_member_logins_and_known_flow _______________
+----------------------------- Captured stderr call -----------------------------
+2026-11-02 16:20:37,517 INFO httpx HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+2026-11-02 16:20:37,546 INFO httpx HTTP Request: POST http://test/api/v1/doc-sets/abe73530-d3af-4186-9c81-e9e0dca3c677/classification-confirmations "HTTP/1.1 201 Created"
+2026-11-02 16:20:37,567 INFO httpx HTTP Request: POST http://test/api/v1/doc-sets/abe73530-d3af-4186-9c81-e9e0dca3c677/conversations "HTTP/1.1 201 Created"
+2026-11-02 16:20:37,627 INFO httpx HTTP Request: POST http://test/api/v1/conversations/c10a5e3b-59fb-4024-ad0f-a752bbe15324/messages "HTTP/1.1 200 OK"
+2026-11-02 16:20:37,645 INFO httpx HTTP Request: GET http://test/api/v1/citations/e51282b1-1c86-4088-809f-3b8f0bac8eb5 "HTTP/1.1 200 OK"
+2026-11-02 16:20:37,653 INFO httpx HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+2026-11-02 16:20:37,683 INFO httpx HTTP Request: GET http://test/api/v1/admin/audit-logs?doc_set_id=abe73530-d3af-4186-9c81-e9e0dca3c677 "HTTP/1.1 200 OK"
+------------------------------ Captured log call -------------------------------
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/doc-sets/abe73530-d3af-4186-9c81-e9e0dca3c677/classification-confirmations "HTTP/1.1 201 Created"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/doc-sets/abe73530-d3af-4186-9c81-e9e0dca3c677/conversations "HTTP/1.1 201 Created"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/conversations/c10a5e3b-59fb-4024-ad0f-a752bbe15324/messages "HTTP/1.1 200 OK"
+INFO     httpx:_client.py:1740 HTTP Request: GET http://test/api/v1/citations/e51282b1-1c86-4088-809f-3b8f0bac8eb5 "HTTP/1.1 200 OK"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+INFO     httpx:_client.py:1740 HTTP Request: GET http://test/api/v1/admin/audit-logs?doc_set_id=abe73530-d3af-4186-9c81-e9e0dca3c677 "HTTP/1.1 200 OK"
+____________________ test_audit_meta_never_contains_content ____________________
+----------------------------- Captured stderr call -----------------------------
+2026-11-02 16:20:37,847 INFO httpx HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+2026-11-02 16:20:37,874 INFO httpx HTTP Request: POST http://test/api/v1/doc-sets/d4e0ebab-9d3a-4512-a362-1b94697ca90d/conversations "HTTP/1.1 201 Created"
+2026-11-02 16:20:37,926 INFO httpx HTTP Request: POST http://test/api/v1/conversations/ec656ad0-4074-4462-802a-28c3fe055fdc/messages "HTTP/1.1 200 OK"
+2026-11-02 16:20:37,941 INFO httpx HTTP Request: GET http://test/api/v1/citations/95a4b5bf-e275-46e2-97b1-e2ec1673e7ea "HTTP/1.1 200 OK"
+------------------------------ Captured log call -------------------------------
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/doc-sets/d4e0ebab-9d3a-4512-a362-1b94697ca90d/conversations "HTTP/1.1 201 Created"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/conversations/ec656ad0-4074-4462-802a-28c3fe055fdc/messages "HTTP/1.1 200 OK"
+INFO     httpx:_client.py:1740 HTTP Request: GET http://test/api/v1/citations/95a4b5bf-e275-46e2-97b1-e2ec1673e7ea "HTTP/1.1 200 OK"
+________________ test_audit_document_filename_null_after_purge _________________
+----------------------------- Captured stderr call -----------------------------
+2026-11-02 16:20:38,098 INFO httpx HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+2026-11-02 16:20:38,121 INFO httpx HTTP Request: GET http://test/api/v1/documents/66ca0d47-33b6-45b9-b916-746a05f4019f/file "HTTP/1.1 200 OK"
+2026-11-02 16:20:38,130 INFO httpx HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+2026-11-02 16:20:38,158 INFO httpx HTTP Request: GET http://test/api/v1/admin/audit-logs?doc_set_id=e0bc3ac0-94ec-4be9-8f04-0a7e4267f0bf&action=view_file "HTTP/1.1 200 OK"
+2026-11-02 16:20:38,175 INFO httpx HTTP Request: DELETE http://test/api/v1/admin/documents/66ca0d47-33b6-45b9-b916-746a05f4019f "HTTP/1.1 200 OK"
+2026-11-02 16:20:38,187 INFO httpx HTTP Request: GET http://test/api/v1/admin/audit-logs?doc_set_id=e0bc3ac0-94ec-4be9-8f04-0a7e4267f0bf&action=view_file "HTTP/1.1 200 OK"
+------------------------------ Captured log call -------------------------------
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+INFO     httpx:_client.py:1740 HTTP Request: GET http://test/api/v1/documents/66ca0d47-33b6-45b9-b916-746a05f4019f/file "HTTP/1.1 200 OK"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+INFO     httpx:_client.py:1740 HTTP Request: GET http://test/api/v1/admin/audit-logs?doc_set_id=e0bc3ac0-94ec-4be9-8f04-0a7e4267f0bf&action=view_file "HTTP/1.1 200 OK"
+INFO     httpx:_client.py:1740 HTTP Request: DELETE http://test/api/v1/admin/documents/66ca0d47-33b6-45b9-b916-746a05f4019f "HTTP/1.1 200 OK"
+INFO     httpx:_client.py:1740 HTTP Request: GET http://test/api/v1/admin/audit-logs?doc_set_id=e0bc3ac0-94ec-4be9-8f04-0a7e4267f0bf&action=view_file "HTTP/1.1 200 OK"
+______________ test_admin_routes_forbidden_for_member_and_manager ______________
+----------------------------- Captured stderr call -----------------------------
+2026-11-02 16:20:38,326 INFO httpx HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+2026-11-02 16:20:38,357 INFO httpx HTTP Request: GET http://test/api/v1/admin/doc-sets "HTTP/1.1 403 Forbidden"
+2026-11-02 16:20:38,369 INFO httpx HTTP Request: GET http://test/api/v1/admin/doc-sets/3fb3e720-f47e-4ab9-8b61-0f53623fc0d2/members "HTTP/1.1 403 Forbidden"
+2026-11-02 16:20:38,381 INFO httpx HTTP Request: POST http://test/api/v1/admin/doc-sets/3fb3e720-f47e-4ab9-8b61-0f53623fc0d2/members "HTTP/1.1 403 Forbidden"
+2026-11-02 16:20:38,393 INFO httpx HTTP Request: PATCH http://test/api/v1/admin/doc-sets/3fb3e720-f47e-4ab9-8b61-0f53623fc0d2/members/c132ec01-9958-416e-8635-078be3db203a "HTTP/1.1 403 Forbidden"
+2026-11-02 16:20:38,404 INFO httpx HTTP Request: DELETE http://test/api/v1/admin/doc-sets/3fb3e720-f47e-4ab9-8b61-0f53623fc0d2/members/c132ec01-9958-416e-8635-078be3db203a "HTTP/1.1 403 Forbidden"
+2026-11-02 16:20:38,413 INFO httpx HTTP Request: GET http://test/api/v1/admin/doc-sets/3fb3e720-f47e-4ab9-8b61-0f53623fc0d2/documents "HTTP/1.1 403 Forbidden"
+2026-11-02 16:20:38,421 INFO httpx HTTP Request: DELETE http://test/api/v1/admin/documents/1c09d049-5138-4d71-b56b-c3a6d6e25032 "HTTP/1.1 403 Forbidden"
+2026-11-02 16:20:38,428 INFO httpx HTTP Request: GET http://test/api/v1/admin/audit-logs?doc_set_id=3fb3e720-f47e-4ab9-8b61-0f53623fc0d2 "HTTP/1.1 403 Forbidden"
+2026-11-02 16:20:38,435 INFO httpx HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+2026-11-02 16:20:38,443 INFO httpx HTTP Request: GET http://test/api/v1/admin/doc-sets "HTTP/1.1 403 Forbidden"
+2026-11-02 16:20:38,450 INFO httpx HTTP Request: GET http://test/api/v1/admin/doc-sets/3fb3e720-f47e-4ab9-8b61-0f53623fc0d2/members "HTTP/1.1 403 Forbidden"
+2026-11-02 16:20:38,457 INFO httpx HTTP Request: POST http://test/api/v1/admin/doc-sets/3fb3e720-f47e-4ab9-8b61-0f53623fc0d2/members "HTTP/1.1 403 Forbidden"
+2026-11-02 16:20:38,464 INFO httpx HTTP Request: PATCH http://test/api/v1/admin/doc-sets/3fb3e720-f47e-4ab9-8b61-0f53623fc0d2/members/c132ec01-9958-416e-8635-078be3db203a "HTTP/1.1 403 Forbidden"
+2026-11-02 16:20:38,472 INFO httpx HTTP Request: DELETE http://test/api/v1/admin/doc-sets/3fb3e720-f47e-4ab9-8b61-0f53623fc0d2/members/c132ec01-9958-416e-8635-078be3db203a "HTTP/1.1 403 Forbidden"
+2026-11-02 16:20:38,482 INFO httpx HTTP Request: GET http://test/api/v1/admin/doc-sets/3fb3e720-f47e-4ab9-8b61-0f53623fc0d2/documents "HTTP/1.1 403 Forbidden"
+2026-11-02 16:20:38,491 INFO httpx HTTP Request: DELETE http://test/api/v1/admin/documents/1c09d049-5138-4d71-b56b-c3a6d6e25032 "HTTP/1.1 403 Forbidden"
+2026-11-02 16:20:38,499 INFO httpx HTTP Request: GET http://test/api/v1/admin/audit-logs?doc_set_id=3fb3e720-f47e-4ab9-8b61-0f53623fc0d2 "HTTP/1.1 403 Forbidden"
+------------------------------ Captured log call -------------------------------
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+INFO     httpx:_client.py:1740 HTTP Request: GET http://test/api/v1/admin/doc-sets "HTTP/1.1 403 Forbidden"
+INFO     httpx:_client.py:1740 HTTP Request: GET http://test/api/v1/admin/doc-sets/3fb3e720-f47e-4ab9-8b61-0f53623fc0d2/members "HTTP/1.1 403 Forbidden"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/admin/doc-sets/3fb3e720-f47e-4ab9-8b61-0f53623fc0d2/members "HTTP/1.1 403 Forbidden"
+INFO     httpx:_client.py:1740 HTTP Request: PATCH http://test/api/v1/admin/doc-sets/3fb3e720-f47e-4ab9-8b61-0f53623fc0d2/members/c132ec01-9958-416e-8635-078be3db203a "HTTP/1.1 403 Forbidden"
+INFO     httpx:_client.py:1740 HTTP Request: DELETE http://test/api/v1/admin/doc-sets/3fb3e720-f47e-4ab9-8b61-0f53623fc0d2/members/c132ec01-9958-416e-8635-078be3db203a "HTTP/1.1 403 Forbidden"
+INFO     httpx:_client.py:1740 HTTP Request: GET http://test/api/v1/admin/doc-sets/3fb3e720-f47e-4ab9-8b61-0f53623fc0d2/documents "HTTP/1.1 403 Forbidden"
+INFO     httpx:_client.py:1740 HTTP Request: DELETE http://test/api/v1/admin/documents/1c09d049-5138-4d71-b56b-c3a6d6e25032 "HTTP/1.1 403 Forbidden"
+INFO     httpx:_client.py:1740 HTTP Request: GET http://test/api/v1/admin/audit-logs?doc_set_id=3fb3e720-f47e-4ab9-8b61-0f53623fc0d2 "HTTP/1.1 403 Forbidden"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+INFO     httpx:_client.py:1740 HTTP Request: GET http://test/api/v1/admin/doc-sets "HTTP/1.1 403 Forbidden"
+INFO     httpx:_client.py:1740 HTTP Request: GET http://test/api/v1/admin/doc-sets/3fb3e720-f47e-4ab9-8b61-0f53623fc0d2/members "HTTP/1.1 403 Forbidden"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/admin/doc-sets/3fb3e720-f47e-4ab9-8b61-0f53623fc0d2/members "HTTP/1.1 403 Forbidden"
+INFO     httpx:_client.py:1740 HTTP Request: PATCH http://test/api/v1/admin/doc-sets/3fb3e720-f47e-4ab9-8b61-0f53623fc0d2/members/c132ec01-9958-416e-8635-078be3db203a "HTTP/1.1 403 Forbidden"
+INFO     httpx:_client.py:1740 HTTP Request: DELETE http://test/api/v1/admin/doc-sets/3fb3e720-f47e-4ab9-8b61-0f53623fc0d2/members/c132ec01-9958-416e-8635-078be3db203a "HTTP/1.1 403 Forbidden"
+INFO     httpx:_client.py:1740 HTTP Request: GET http://test/api/v1/admin/doc-sets/3fb3e720-f47e-4ab9-8b61-0f53623fc0d2/documents "HTTP/1.1 403 Forbidden"
+INFO     httpx:_client.py:1740 HTTP Request: DELETE http://test/api/v1/admin/documents/1c09d049-5138-4d71-b56b-c3a6d6e25032 "HTTP/1.1 403 Forbidden"
+INFO     httpx:_client.py:1740 HTTP Request: GET http://test/api/v1/admin/audit-logs?doc_set_id=3fb3e720-f47e-4ab9-8b61-0f53623fc0d2 "HTTP/1.1 403 Forbidden"
+________________________ test_list_doc_sets_and_members ________________________
+----------------------------- Captured stderr call -----------------------------
+2026-11-02 16:20:38,648 INFO httpx HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+2026-11-02 16:20:38,685 INFO httpx HTTP Request: GET http://test/api/v1/admin/doc-sets "HTTP/1.1 200 OK"
+2026-11-02 16:20:38,699 INFO httpx HTTP Request: GET http://test/api/v1/admin/doc-sets/b744dc7b-6d45-494d-98de-39bc91c83246/members "HTTP/1.1 200 OK"
+------------------------------ Captured log call -------------------------------
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+INFO     httpx:_client.py:1740 HTTP Request: GET http://test/api/v1/admin/doc-sets "HTTP/1.1 200 OK"
+INFO     httpx:_client.py:1740 HTTP Request: GET http://test/api/v1/admin/doc-sets/b744dc7b-6d45-494d-98de-39bc91c83246/members "HTTP/1.1 200 OK"
+_____________________ test_add_member_then_can_use_content _____________________
+----------------------------- Captured stderr call -----------------------------
+2026-11-02 16:20:38,848 INFO httpx HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+2026-11-02 16:20:38,892 INFO httpx HTTP Request: POST http://test/api/v1/admin/doc-sets/290d817e-2f1c-44ad-ba82-c12ecf17149c/members "HTTP/1.1 201 Created"
+2026-11-02 16:20:38,901 INFO httpx HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+2026-11-02 16:20:38,918 INFO httpx HTTP Request: GET http://test/api/v1/doc-sets/290d817e-2f1c-44ad-ba82-c12ecf17149c/documents "HTTP/1.1 200 OK"
+------------------------------ Captured log call -------------------------------
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/admin/doc-sets/290d817e-2f1c-44ad-ba82-c12ecf17149c/members "HTTP/1.1 201 Created"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+INFO     httpx:_client.py:1740 HTTP Request: GET http://test/api/v1/doc-sets/290d817e-2f1c-44ad-ba82-c12ecf17149c/documents "HTTP/1.1 200 OK"
+________________________ test_add_member_unknown_email _________________________
+----------------------------- Captured stderr call -----------------------------
+2026-11-02 16:20:39,065 INFO httpx HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+2026-11-02 16:20:39,102 INFO httpx HTTP Request: POST http://test/api/v1/admin/doc-sets/01b5846f-a201-4562-887a-b3177935193a/members "HTTP/1.1 404 Not Found"
+------------------------------ Captured log call -------------------------------
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/admin/doc-sets/01b5846f-a201-4562-887a-b3177935193a/members "HTTP/1.1 404 Not Found"
+__________________________ test_add_member_duplicate ___________________________
+----------------------------- Captured stderr call -----------------------------
+2026-11-02 16:20:39,266 INFO httpx HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+2026-11-02 16:20:39,299 INFO httpx HTTP Request: POST http://test/api/v1/admin/doc-sets/f38a048f-302d-4940-be2c-49d82c0ecb16/members "HTTP/1.1 409 Conflict"
+------------------------------ Captured log call -------------------------------
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/admin/doc-sets/f38a048f-302d-4940-be2c-49d82c0ecb16/members "HTTP/1.1 409 Conflict"
+__________________ test_remove_member_effective_next_request ___________________
+----------------------------- Captured stderr call -----------------------------
+2026-11-02 16:20:39,452 INFO httpx HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+2026-11-02 16:20:39,474 INFO httpx HTTP Request: GET http://test/api/v1/doc-sets/8a479b41-ae1f-4474-b6d9-697a8061a3ef/documents "HTTP/1.1 200 OK"
+2026-11-02 16:20:39,480 INFO httpx HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+2026-11-02 16:20:39,512 INFO httpx HTTP Request: DELETE http://test/api/v1/admin/doc-sets/8a479b41-ae1f-4474-b6d9-697a8061a3ef/members/d98267e1-1ad3-45b5-8407-6d7427ae8d82 "HTTP/1.1 204 No Content"
+2026-11-02 16:20:39,521 INFO httpx HTTP Request: GET http://test/api/v1/doc-sets/8a479b41-ae1f-4474-b6d9-697a8061a3ef/documents "HTTP/1.1 403 Forbidden"
+2026-11-02 16:20:39,539 INFO httpx HTTP Request: DELETE http://test/api/v1/admin/doc-sets/8a479b41-ae1f-4474-b6d9-697a8061a3ef/members/d98267e1-1ad3-45b5-8407-6d7427ae8d82 "HTTP/1.1 404 Not Found"
+------------------------------ Captured log call -------------------------------
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+INFO     httpx:_client.py:1740 HTTP Request: GET http://test/api/v1/doc-sets/8a479b41-ae1f-4474-b6d9-697a8061a3ef/documents "HTTP/1.1 200 OK"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+INFO     httpx:_client.py:1740 HTTP Request: DELETE http://test/api/v1/admin/doc-sets/8a479b41-ae1f-4474-b6d9-697a8061a3ef/members/d98267e1-1ad3-45b5-8407-6d7427ae8d82 "HTTP/1.1 204 No Content"
+INFO     httpx:_client.py:1740 HTTP Request: GET http://test/api/v1/doc-sets/8a479b41-ae1f-4474-b6d9-697a8061a3ef/documents "HTTP/1.1 403 Forbidden"
+INFO     httpx:_client.py:1740 HTTP Request: DELETE http://test/api/v1/admin/doc-sets/8a479b41-ae1f-4474-b6d9-697a8061a3ef/members/d98267e1-1ad3-45b5-8407-6d7427ae8d82 "HTTP/1.1 404 Not Found"
+____________________ test_role_change_enables_batch_upload _____________________
+----------------------------- Captured stderr call -----------------------------
+2026-11-02 16:20:39,684 INFO httpx HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+2026-11-02 16:20:39,705 INFO httpx HTTP Request: POST http://test/api/v1/doc-sets/dcf9025f-e64d-4c7f-9807-691579dd1f60/classification-confirmations "HTTP/1.1 201 Created"
+2026-11-02 16:20:39,717 INFO httpx HTTP Request: POST http://test/api/v1/doc-sets/dcf9025f-e64d-4c7f-9807-691579dd1f60/documents "HTTP/1.1 403 Forbidden"
+2026-11-02 16:20:39,725 INFO httpx HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+2026-11-02 16:20:39,758 INFO httpx HTTP Request: PATCH http://test/api/v1/admin/doc-sets/dcf9025f-e64d-4c7f-9807-691579dd1f60/members/14387688-3377-4157-8e37-a84e3873f803 "HTTP/1.1 200 OK"
+2026-11-02 16:20:39,799 INFO httpx HTTP Request: POST http://test/api/v1/doc-sets/dcf9025f-e64d-4c7f-9807-691579dd1f60/documents "HTTP/1.1 200 OK"
+------------------------------ Captured log call -------------------------------
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/doc-sets/dcf9025f-e64d-4c7f-9807-691579dd1f60/classification-confirmations "HTTP/1.1 201 Created"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/doc-sets/dcf9025f-e64d-4c7f-9807-691579dd1f60/documents "HTTP/1.1 403 Forbidden"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+INFO     httpx:_client.py:1740 HTTP Request: PATCH http://test/api/v1/admin/doc-sets/dcf9025f-e64d-4c7f-9807-691579dd1f60/members/14387688-3377-4157-8e37-a84e3873f803 "HTTP/1.1 200 OK"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/doc-sets/dcf9025f-e64d-4c7f-9807-691579dd1f60/documents "HTTP/1.1 200 OK"
+_________________________ test_audit_meta_has_no_email _________________________
+----------------------------- Captured stderr call -----------------------------
+2026-11-02 16:20:39,949 INFO httpx HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+2026-11-02 16:20:39,989 INFO httpx HTTP Request: POST http://test/api/v1/admin/doc-sets/94fa0131-f633-437b-aa7a-0e6681c2f822/members "HTTP/1.1 201 Created"
+2026-11-02 16:20:40,007 INFO httpx HTTP Request: PATCH http://test/api/v1/admin/doc-sets/94fa0131-f633-437b-aa7a-0e6681c2f822/members/aec9f369-8026-470b-9536-3bb388c32766 "HTTP/1.1 200 OK"
+2026-11-02 16:20:40,023 INFO httpx HTTP Request: DELETE http://test/api/v1/admin/doc-sets/94fa0131-f633-437b-aa7a-0e6681c2f822/members/aec9f369-8026-470b-9536-3bb388c32766 "HTTP/1.1 204 No Content"
+------------------------------ Captured log call -------------------------------
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/admin/doc-sets/94fa0131-f633-437b-aa7a-0e6681c2f822/members "HTTP/1.1 201 Created"
+INFO     httpx:_client.py:1740 HTTP Request: PATCH http://test/api/v1/admin/doc-sets/94fa0131-f633-437b-aa7a-0e6681c2f822/members/aec9f369-8026-470b-9536-3bb388c32766 "HTTP/1.1 200 OK"
+INFO     httpx:_client.py:1740 HTTP Request: DELETE http://test/api/v1/admin/doc-sets/94fa0131-f633-437b-aa7a-0e6681c2f822/members/aec9f369-8026-470b-9536-3bb388c32766 "HTTP/1.1 204 No Content"
+__________________ test_outsider_forbidden_by_require_member ___________________
+----------------------------- Captured stderr call -----------------------------
+2026-11-02 16:20:40,241 INFO httpx HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+2026-11-02 16:20:40,286 INFO httpx HTTP Request: GET http://test/api/v1/_probe/67715f12-e4c4-4b48-968d-96f37596156d "HTTP/1.1 403 Forbidden"
+2026-11-02 16:20:40,294 INFO httpx HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+2026-11-02 16:20:40,302 INFO httpx HTTP Request: GET http://test/api/v1/_probe/67715f12-e4c4-4b48-968d-96f37596156d "HTTP/1.1 200 OK"
+------------------------------ Captured log call -------------------------------
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+INFO     httpx:_client.py:1740 HTTP Request: GET http://test/api/v1/_probe/67715f12-e4c4-4b48-968d-96f37596156d "HTTP/1.1 403 Forbidden"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+INFO     httpx:_client.py:1740 HTTP Request: GET http://test/api/v1/_probe/67715f12-e4c4-4b48-968d-96f37596156d "HTTP/1.1 200 OK"
+______________________ test_revoke_effective_next_request ______________________
+----------------------------- Captured stderr call -----------------------------
+2026-11-02 16:20:40,438 INFO httpx HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+2026-11-02 16:20:40,471 INFO httpx HTTP Request: GET http://test/api/v1/_probe/f0c4e1d4-857a-4584-896a-d333510f573a "HTTP/1.1 200 OK"
+2026-11-02 16:20:40,483 INFO httpx HTTP Request: GET http://test/api/v1/_probe/f0c4e1d4-857a-4584-896a-d333510f573a "HTTP/1.1 403 Forbidden"
+------------------------------ Captured log call -------------------------------
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+INFO     httpx:_client.py:1740 HTTP Request: GET http://test/api/v1/_probe/f0c4e1d4-857a-4584-896a-d333510f573a "HTTP/1.1 200 OK"
+INFO     httpx:_client.py:1740 HTTP Request: GET http://test/api/v1/_probe/f0c4e1d4-857a-4584-896a-d333510f573a "HTTP/1.1 403 Forbidden"
+___________________________ test_unauthenticated_401 ___________________________
+----------------------------- Captured stderr call -----------------------------
+2026-11-02 16:20:40,649 INFO httpx HTTP Request: GET http://test/api/v1/me "HTTP/1.1 401 Unauthorized"
+------------------------------ Captured log call -------------------------------
+INFO     httpx:_client.py:1740 HTTP Request: GET http://test/api/v1/me "HTTP/1.1 401 Unauthorized"
+___________________________ test_dev_users_lists_all ___________________________
+----------------------------- Captured stderr call -----------------------------
+2026-11-02 16:20:40,777 INFO httpx HTTP Request: GET http://test/api/v1/auth/dev-users "HTTP/1.1 200 OK"
+------------------------------ Captured log call -------------------------------
+INFO     httpx:_client.py:1740 HTTP Request: GET http://test/api/v1/auth/dev-users "HTTP/1.1 200 OK"
+_________________________ test_login_unknown_email_404 _________________________
+----------------------------- Captured stderr call -----------------------------
+2026-11-02 16:20:40,924 INFO httpx HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 404 Not Found"
+------------------------------ Captured log call -------------------------------
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 404 Not Found"
+________________________ test_login_sets_cookie_and_me _________________________
+----------------------------- Captured stderr call -----------------------------
+2026-11-02 16:20:41,073 INFO httpx HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+2026-11-02 16:20:41,087 INFO httpx HTTP Request: GET http://test/api/v1/me "HTTP/1.1 200 OK"
+------------------------------ Captured log call -------------------------------
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+INFO     httpx:_client.py:1740 HTTP Request: GET http://test/api/v1/me "HTTP/1.1 200 OK"
+______________________ test_token_not_stored_in_plaintext ______________________
+----------------------------- Captured stderr call -----------------------------
+2026-11-02 16:20:41,213 INFO httpx HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+------------------------------ Captured log call -------------------------------
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+____________________________ test_idle_expired_401 _____________________________
+----------------------------- Captured stderr call -----------------------------
+2026-11-02 16:20:41,353 INFO httpx HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+2026-11-02 16:20:41,362 INFO httpx HTTP Request: GET http://test/api/v1/me "HTTP/1.1 401 Unauthorized"
+------------------------------ Captured log call -------------------------------
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+INFO     httpx:_client.py:1740 HTTP Request: GET http://test/api/v1/me "HTTP/1.1 401 Unauthorized"
+___________________________ test_logout_invalidates ____________________________
+----------------------------- Captured stderr call -----------------------------
+2026-11-02 16:20:41,499 INFO httpx HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+2026-11-02 16:20:41,507 INFO httpx HTTP Request: POST http://test/api/v1/auth/logout "HTTP/1.1 204 No Content"
+2026-11-02 16:20:41,510 INFO httpx HTTP Request: GET http://test/api/v1/me "HTTP/1.1 401 Unauthorized"
+------------------------------ Captured log call -------------------------------
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/auth/logout "HTTP/1.1 204 No Content"
+INFO     httpx:_client.py:1740 HTTP Request: GET http://test/api/v1/me "HTTP/1.1 401 Unauthorized"
+______________________________ test_login_audited ______________________________
+----------------------------- Captured stderr call -----------------------------
+2026-11-02 16:20:41,654 INFO httpx HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+------------------------------ Captured log call -------------------------------
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+_______________________ test_list_documents_sorted_desc ________________________
+----------------------------- Captured stderr call -----------------------------
+2026-11-02 16:20:41,849 INFO httpx HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+2026-11-02 16:20:41,874 INFO httpx HTTP Request: GET http://test/api/v1/doc-sets/dc7e86b0-e0b5-40f4-8dfe-ec71fa15c188/documents "HTTP/1.1 200 OK"
+------------------------------ Captured log call -------------------------------
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+INFO     httpx:_client.py:1740 HTTP Request: GET http://test/api/v1/doc-sets/dc7e86b0-e0b5-40f4-8dfe-ec71fa15c188/documents "HTTP/1.1 200 OK"
+_____________ test_list_documents_forbidden_for_outsider_and_admin _____________
+----------------------------- Captured stderr call -----------------------------
+2026-11-02 16:20:42,025 INFO httpx HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+2026-11-02 16:20:42,040 INFO httpx HTTP Request: GET http://test/api/v1/doc-sets/71b674f0-7215-482d-80f9-3db37481472a/documents "HTTP/1.1 403 Forbidden"
+2026-11-02 16:20:42,048 INFO httpx HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+2026-11-02 16:20:42,057 INFO httpx HTTP Request: GET http://test/api/v1/doc-sets/71b674f0-7215-482d-80f9-3db37481472a/documents "HTTP/1.1 403 Forbidden"
+------------------------------ Captured log call -------------------------------
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+INFO     httpx:_client.py:1740 HTTP Request: GET http://test/api/v1/doc-sets/71b674f0-7215-482d-80f9-3db37481472a/documents "HTTP/1.1 403 Forbidden"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+INFO     httpx:_client.py:1740 HTTP Request: GET http://test/api/v1/doc-sets/71b674f0-7215-482d-80f9-3db37481472a/documents "HTTP/1.1 403 Forbidden"
+________________ test_view_list_audited_at_most_once_per_minute ________________
+----------------------------- Captured stderr call -----------------------------
+2026-11-02 16:20:42,196 INFO httpx HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+2026-11-02 16:20:42,224 INFO httpx HTTP Request: GET http://test/api/v1/doc-sets/10cc0dc3-b149-49bc-b876-716fe3a2a9c9/documents "HTTP/1.1 200 OK"
+2026-11-02 16:20:42,236 INFO httpx HTTP Request: GET http://test/api/v1/doc-sets/10cc0dc3-b149-49bc-b876-716fe3a2a9c9/documents "HTTP/1.1 200 OK"
+2026-11-02 16:20:42,249 INFO httpx HTTP Request: GET http://test/api/v1/doc-sets/10cc0dc3-b149-49bc-b876-716fe3a2a9c9/documents "HTTP/1.1 200 OK"
+------------------------------ Captured log call -------------------------------
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+INFO     httpx:_client.py:1740 HTTP Request: GET http://test/api/v1/doc-sets/10cc0dc3-b149-49bc-b876-716fe3a2a9c9/documents "HTTP/1.1 200 OK"
+INFO     httpx:_client.py:1740 HTTP Request: GET http://test/api/v1/doc-sets/10cc0dc3-b149-49bc-b876-716fe3a2a9c9/documents "HTTP/1.1 200 OK"
+INFO     httpx:_client.py:1740 HTTP Request: GET http://test/api/v1/doc-sets/10cc0dc3-b149-49bc-b876-716fe3a2a9c9/documents "HTTP/1.1 200 OK"
+________________________ test_open_file_ok_and_removed _________________________
+----------------------------- Captured stderr call -----------------------------
+2026-11-02 16:20:42,397 INFO httpx HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+2026-11-02 16:20:42,421 INFO httpx HTTP Request: GET http://test/api/v1/documents/cc83055d-e282-44b7-9146-657adb98ff15/file?page=2 "HTTP/1.1 200 OK"
+2026-11-02 16:20:42,438 INFO httpx HTTP Request: GET http://test/api/v1/documents/cc83055d-e282-44b7-9146-657adb98ff15/file "HTTP/1.1 410 Gone"
+------------------------------ Captured log call -------------------------------
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+INFO     httpx:_client.py:1740 HTTP Request: GET http://test/api/v1/documents/cc83055d-e282-44b7-9146-657adb98ff15/file?page=2 "HTTP/1.1 200 OK"
+INFO     httpx:_client.py:1740 HTTP Request: GET http://test/api/v1/documents/cc83055d-e282-44b7-9146-657adb98ff15/file "HTTP/1.1 410 Gone"
+____________________ test_open_file_forbidden_for_outsider _____________________
+----------------------------- Captured stderr call -----------------------------
+2026-11-02 16:20:42,598 INFO httpx HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+2026-11-02 16:20:42,618 INFO httpx HTTP Request: GET http://test/api/v1/documents/bbcc2d2a-b594-411b-9ac2-80e9f4ba5eb9/file "HTTP/1.1 403 Forbidden"
+2026-11-02 16:20:42,627 INFO httpx HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+2026-11-02 16:20:42,638 INFO httpx HTTP Request: GET http://test/api/v1/documents/bbcc2d2a-b594-411b-9ac2-80e9f4ba5eb9/file "HTTP/1.1 403 Forbidden"
+------------------------------ Captured log call -------------------------------
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+INFO     httpx:_client.py:1740 HTTP Request: GET http://test/api/v1/documents/bbcc2d2a-b594-411b-9ac2-80e9f4ba5eb9/file "HTTP/1.1 403 Forbidden"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+INFO     httpx:_client.py:1740 HTTP Request: GET http://test/api/v1/documents/bbcc2d2a-b594-411b-9ac2-80e9f4ba5eb9/file "HTTP/1.1 403 Forbidden"
+_________________________ test_open_file_writes_audit __________________________
+----------------------------- Captured stderr call -----------------------------
+2026-11-02 16:20:42,779 INFO httpx HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+2026-11-02 16:20:42,802 INFO httpx HTTP Request: GET http://test/api/v1/documents/231abb32-323e-4a33-abd5-88a57f9ad6f8/file "HTTP/1.1 200 OK"
+------------------------------ Captured log call -------------------------------
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+INFO     httpx:_client.py:1740 HTTP Request: GET http://test/api/v1/documents/231abb32-323e-4a33-abd5-88a57f9ad6f8/file "HTTP/1.1 200 OK"
+_________________________ test_requires_classification _________________________
+----------------------------- Captured stderr call -----------------------------
+2026-11-02 16:20:42,966 INFO httpx HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+2026-11-02 16:20:42,983 INFO httpx HTTP Request: POST http://test/api/v1/doc-sets/bcc18cb3-7e2a-4faf-abba-91b3d8bddc71/documents "HTTP/1.1 409 Conflict"
+2026-11-02 16:20:43,004 INFO httpx HTTP Request: POST http://test/api/v1/doc-sets/bcc18cb3-7e2a-4faf-abba-91b3d8bddc71/classification-confirmations "HTTP/1.1 201 Created"
+2026-11-02 16:20:43,034 INFO httpx HTTP Request: POST http://test/api/v1/doc-sets/bcc18cb3-7e2a-4faf-abba-91b3d8bddc71/documents "HTTP/1.1 200 OK"
+------------------------------ Captured log call -------------------------------
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/doc-sets/bcc18cb3-7e2a-4faf-abba-91b3d8bddc71/documents "HTTP/1.1 409 Conflict"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/doc-sets/bcc18cb3-7e2a-4faf-abba-91b3d8bddc71/classification-confirmations "HTTP/1.1 201 Created"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/doc-sets/bcc18cb3-7e2a-4faf-abba-91b3d8bddc71/documents "HTTP/1.1 200 OK"
+______________________________ test_single_pdf_ok ______________________________
+----------------------------- Captured stderr call -----------------------------
+2026-11-02 16:20:43,171 INFO httpx HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+2026-11-02 16:20:43,193 INFO httpx HTTP Request: POST http://test/api/v1/doc-sets/3b6c8514-8bd2-4d6a-9b59-fe31ac435374/classification-confirmations "HTTP/1.1 201 Created"
+2026-11-02 16:20:43,215 INFO httpx HTTP Request: POST http://test/api/v1/doc-sets/3b6c8514-8bd2-4d6a-9b59-fe31ac435374/documents "HTTP/1.1 200 OK"
+------------------------------ Captured log call -------------------------------
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/doc-sets/3b6c8514-8bd2-4d6a-9b59-fe31ac435374/classification-confirmations "HTTP/1.1 201 Created"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/doc-sets/3b6c8514-8bd2-4d6a-9b59-fe31ac435374/documents "HTTP/1.1 200 OK"
+___________________________ test_not_pdf_magic_bytes ___________________________
+----------------------------- Captured stderr call -----------------------------
+2026-11-02 16:20:43,395 INFO httpx HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+2026-11-02 16:20:43,421 INFO httpx HTTP Request: POST http://test/api/v1/doc-sets/0f41b102-9c47-47cc-bc8a-2b8294d2646f/classification-confirmations "HTTP/1.1 201 Created"
+2026-11-02 16:20:43,443 INFO httpx HTTP Request: POST http://test/api/v1/doc-sets/0f41b102-9c47-47cc-bc8a-2b8294d2646f/documents "HTTP/1.1 200 OK"
+------------------------------ Captured log call -------------------------------
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/doc-sets/0f41b102-9c47-47cc-bc8a-2b8294d2646f/classification-confirmations "HTTP/1.1 201 Created"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/doc-sets/0f41b102-9c47-47cc-bc8a-2b8294d2646f/documents "HTTP/1.1 200 OK"
+________________________________ test_too_large ________________________________
+----------------------------- Captured stderr call -----------------------------
+2026-11-02 16:20:43,581 INFO httpx HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+2026-11-02 16:20:43,602 INFO httpx HTTP Request: POST http://test/api/v1/doc-sets/e6647e94-504a-4f38-aedc-2c76d0f2dd43/classification-confirmations "HTTP/1.1 201 Created"
+2026-11-02 16:20:43,615 INFO httpx HTTP Request: POST http://test/api/v1/doc-sets/e6647e94-504a-4f38-aedc-2c76d0f2dd43/documents "HTTP/1.1 200 OK"
+------------------------------ Captured log call -------------------------------
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/doc-sets/e6647e94-504a-4f38-aedc-2c76d0f2dd43/classification-confirmations "HTTP/1.1 201 Created"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/doc-sets/e6647e94-504a-4f38-aedc-2c76d0f2dd43/documents "HTTP/1.1 200 OK"
+______________________ test_batch_one_too_large_others_ok ______________________
+----------------------------- Captured stderr call -----------------------------
+2026-11-02 16:20:43,778 INFO httpx HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+2026-11-02 16:20:43,801 INFO httpx HTTP Request: POST http://test/api/v1/doc-sets/f57f566e-33d4-4588-aed3-2b25b5b55f0c/classification-confirmations "HTTP/1.1 201 Created"
+2026-11-02 16:20:43,859 INFO httpx HTTP Request: POST http://test/api/v1/doc-sets/f57f566e-33d4-4588-aed3-2b25b5b55f0c/documents "HTTP/1.1 200 OK"
+------------------------------ Captured log call -------------------------------
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/doc-sets/f57f566e-33d4-4588-aed3-2b25b5b55f0c/classification-confirmations "HTTP/1.1 201 Created"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/doc-sets/f57f566e-33d4-4588-aed3-2b25b5b55f0c/documents "HTTP/1.1 200 OK"
+___________________________ test_member_cannot_batch ___________________________
+----------------------------- Captured stderr call -----------------------------
+2026-11-02 16:20:43,998 INFO httpx HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+2026-11-02 16:20:44,019 INFO httpx HTTP Request: POST http://test/api/v1/doc-sets/8d8420eb-9f52-492d-9274-9469702566c1/classification-confirmations "HTTP/1.1 201 Created"
+2026-11-02 16:20:44,031 INFO httpx HTTP Request: POST http://test/api/v1/doc-sets/8d8420eb-9f52-492d-9274-9469702566c1/documents "HTTP/1.1 403 Forbidden"
+------------------------------ Captured log call -------------------------------
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/doc-sets/8d8420eb-9f52-492d-9274-9469702566c1/classification-confirmations "HTTP/1.1 201 Created"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/doc-sets/8d8420eb-9f52-492d-9274-9469702566c1/documents "HTTP/1.1 403 Forbidden"
+_________________________ test_duplicate_name_renamed __________________________
+----------------------------- Captured stderr call -----------------------------
+2026-11-02 16:20:44,189 INFO httpx HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+2026-11-02 16:20:44,211 INFO httpx HTTP Request: POST http://test/api/v1/doc-sets/0eb1623e-504b-4ed6-b1b5-ac3a7be24080/classification-confirmations "HTTP/1.1 201 Created"
+2026-11-02 16:20:44,238 INFO httpx HTTP Request: POST http://test/api/v1/doc-sets/0eb1623e-504b-4ed6-b1b5-ac3a7be24080/documents "HTTP/1.1 200 OK"
+2026-11-02 16:20:44,257 INFO httpx HTTP Request: POST http://test/api/v1/doc-sets/0eb1623e-504b-4ed6-b1b5-ac3a7be24080/documents "HTTP/1.1 200 OK"
+2026-11-02 16:20:44,275 INFO httpx HTTP Request: POST http://test/api/v1/doc-sets/0eb1623e-504b-4ed6-b1b5-ac3a7be24080/documents "HTTP/1.1 200 OK"
+------------------------------ Captured log call -------------------------------
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/doc-sets/0eb1623e-504b-4ed6-b1b5-ac3a7be24080/classification-confirmations "HTTP/1.1 201 Created"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/doc-sets/0eb1623e-504b-4ed6-b1b5-ac3a7be24080/documents "HTTP/1.1 200 OK"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/doc-sets/0eb1623e-504b-4ed6-b1b5-ac3a7be24080/documents "HTTP/1.1 200 OK"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/doc-sets/0eb1623e-504b-4ed6-b1b5-ac3a7be24080/documents "HTTP/1.1 200 OK"
+__________________________ test_concurrent_last_slot ___________________________
+----------------------------- Captured stderr call -----------------------------
+2026-11-02 16:20:44,413 INFO httpx HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+2026-11-02 16:20:44,421 INFO httpx HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+2026-11-02 16:20:44,441 INFO httpx HTTP Request: POST http://test/api/v1/doc-sets/7ccb9696-15dd-43c3-85c6-fe95eed764a2/classification-confirmations "HTTP/1.1 201 Created"
+2026-11-02 16:20:44,457 INFO httpx HTTP Request: POST http://test/api/v1/doc-sets/7ccb9696-15dd-43c3-85c6-fe95eed764a2/classification-confirmations "HTTP/1.1 201 Created"
+2026-11-02 16:20:44,489 INFO httpx HTTP Request: POST http://test/api/v1/doc-sets/7ccb9696-15dd-43c3-85c6-fe95eed764a2/documents "HTTP/1.1 200 OK"
+2026-11-02 16:20:44,516 INFO httpx HTTP Request: POST http://test/api/v1/doc-sets/7ccb9696-15dd-43c3-85c6-fe95eed764a2/documents "HTTP/1.1 200 OK"
+2026-11-02 16:20:44,521 INFO httpx HTTP Request: POST http://test/api/v1/doc-sets/7ccb9696-15dd-43c3-85c6-fe95eed764a2/documents "HTTP/1.1 200 OK"
+------------------------------ Captured log call -------------------------------
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/doc-sets/7ccb9696-15dd-43c3-85c6-fe95eed764a2/classification-confirmations "HTTP/1.1 201 Created"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/doc-sets/7ccb9696-15dd-43c3-85c6-fe95eed764a2/classification-confirmations "HTTP/1.1 201 Created"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/doc-sets/7ccb9696-15dd-43c3-85c6-fe95eed764a2/documents "HTTP/1.1 200 OK"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/doc-sets/7ccb9696-15dd-43c3-85c6-fe95eed764a2/documents "HTTP/1.1 200 OK"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/doc-sets/7ccb9696-15dd-43c3-85c6-fe95eed764a2/documents "HTTP/1.1 200 OK"
+_______________________ test_admin_not_member_forbidden ________________________
+----------------------------- Captured stderr call -----------------------------
+2026-11-02 16:20:44,799 INFO httpx HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+2026-11-02 16:20:44,938 INFO httpx HTTP Request: POST http://test/api/v1/doc-sets/1ec1cba9-f1a5-495b-9479-d9771b8f46da/documents "HTTP/1.1 403 Forbidden"
+2026-11-02 16:20:44,947 INFO httpx HTTP Request: POST http://test/api/v1/doc-sets/1ec1cba9-f1a5-495b-9479-d9771b8f46da/classification-confirmations "HTTP/1.1 403 Forbidden"
+------------------------------ Captured log call -------------------------------
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/doc-sets/1ec1cba9-f1a5-495b-9479-d9771b8f46da/documents "HTTP/1.1 403 Forbidden"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/doc-sets/1ec1cba9-f1a5-495b-9479-d9771b8f46da/classification-confirmations "HTTP/1.1 403 Forbidden"
+__________________________ test_upper_bounds_accepted __________________________
+----------------------------- Captured stderr call -----------------------------
+2026-11-02 16:20:45,099 INFO httpx HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+2026-11-02 16:20:45,121 INFO httpx HTTP Request: POST http://test/api/v1/doc-sets/80cff62f-1258-4b95-b229-27397eaa40c4/classification-confirmations "HTTP/1.1 201 Created"
+2026-11-02 16:20:45,352 INFO httpx HTTP Request: POST http://test/api/v1/doc-sets/80cff62f-1258-4b95-b229-27397eaa40c4/documents "HTTP/1.1 200 OK"
+2026-11-02 16:20:45,675 INFO httpx HTTP Request: POST http://test/api/v1/doc-sets/80cff62f-1258-4b95-b229-27397eaa40c4/documents "HTTP/1.1 200 OK"
+2026-11-02 16:20:46,287 INFO app.worker document 0881401c-51f1-4ca1-b5cb-330c4cdc570f ready: 200 trang, 200 đoạn, 0.6s
+2026-11-02 16:20:47,956 INFO app.worker document 3b0eef47-4964-46d9-904a-a386c7d7d4dd ready: 2 trang, 2 đoạn, 1.7s
+------------------------------ Captured log call -------------------------------
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/doc-sets/80cff62f-1258-4b95-b229-27397eaa40c4/classification-confirmations "HTTP/1.1 201 Created"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/doc-sets/80cff62f-1258-4b95-b229-27397eaa40c4/documents "HTTP/1.1 200 OK"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/doc-sets/80cff62f-1258-4b95-b229-27397eaa40c4/documents "HTTP/1.1 200 OK"
+INFO     app.worker:worker.py:119 document 0881401c-51f1-4ca1-b5cb-330c4cdc570f ready: 200 trang, 200 đoạn, 0.6s
+INFO     app.worker:worker.py:119 document 3b0eef47-4964-46d9-904a-a386c7d7d4dd ready: 2 trang, 2 đoạn, 1.7s
+____________________________ test_worker_happy_path ____________________________
+----------------------------- Captured stderr call -----------------------------
+2026-11-02 16:20:48,256 INFO app.worker document dae7051c-2520-4e96-a321-dbe28d17ed88 ready: 2 trang, 2 đoạn, 0.0s
+------------------------------ Captured log call -------------------------------
+INFO     app.worker:worker.py:119 document dae7051c-2520-4e96-a321-dbe28d17ed88 ready: 2 trang, 2 đoạn, 0.0s
+_________________________ test_worker_rerun_idempotent _________________________
+----------------------------- Captured stderr call -----------------------------
+2026-11-02 16:20:48,459 INFO app.worker document fefd1f9f-bf83-480a-8d74-d70e1dd05440 ready: 2 trang, 2 đoạn, 0.0s
+2026-11-02 16:20:48,498 INFO app.worker document fefd1f9f-bf83-480a-8d74-d70e1dd05440 ready: 2 trang, 2 đoạn, 0.0s
+------------------------------ Captured log call -------------------------------
+INFO     app.worker:worker.py:119 document fefd1f9f-bf83-480a-8d74-d70e1dd05440 ready: 2 trang, 2 đoạn, 0.0s
+INFO     app.worker:worker.py:119 document fefd1f9f-bf83-480a-8d74-d70e1dd05440 ready: 2 trang, 2 đoạn, 0.0s
+____________________________ test_worker_pdf_errors ____________________________
+----------------------------- Captured stderr call -----------------------------
+2026-11-02 16:20:48,675 INFO app.worker document cccd0fcd-9ce7-4a1e-a9aa-d9e7bf00a6ec failed: encrypted
+2026-11-02 16:20:48,684 INFO app.worker document 42f8e5b2-ca78-4e4b-941d-a00086a704ae failed: corrupt
+2026-11-02 16:20:48,702 INFO app.worker document 5bdce9ac-b45f-4b0d-98ae-08d55004d661 failed: no_text
+2026-11-02 16:20:48,732 INFO app.worker document 93682aeb-8755-4d09-b69b-a5044dc71bf6 failed: too_many_pages
+------------------------------ Captured log call -------------------------------
+INFO     app.worker:worker.py:68 document cccd0fcd-9ce7-4a1e-a9aa-d9e7bf00a6ec failed: encrypted
+INFO     app.worker:worker.py:68 document 42f8e5b2-ca78-4e4b-941d-a00086a704ae failed: corrupt
+INFO     app.worker:worker.py:68 document 5bdce9ac-b45f-4b0d-98ae-08d55004d661 failed: no_text
+INFO     app.worker:worker.py:68 document 93682aeb-8755-4d09-b69b-a5044dc71bf6 failed: too_many_pages
+_____________________ test_worker_document_deleted_midway ______________________
+----------------------------- Captured stderr call -----------------------------
+2026-11-02 16:20:49,369 INFO app.worker document d3100eef-6ecb-425d-89ab-a11ef966779a đã bị gỡ trong lúc xử lý — bỏ qua
+------------------------------ Captured log call -------------------------------
+INFO     app.worker:worker.py:61 document d3100eef-6ecb-425d-89ab-a11ef966779a đã bị gỡ trong lúc xử lý — bỏ qua
+_______________________ test_ask_happy_path_event_order ________________________
+---------------------------- Captured stderr setup -----------------------------
+2026-11-02 16:20:49,580 INFO httpx HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+------------------------------ Captured log setup ------------------------------
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+----------------------------- Captured stderr call -----------------------------
+2026-11-02 16:20:49,614 INFO httpx HTTP Request: POST http://test/api/v1/doc-sets/6b51dc89-9afa-41f8-932f-d10c5615604d/conversations "HTTP/1.1 201 Created"
+2026-11-02 16:20:49,670 INFO httpx HTTP Request: POST http://test/api/v1/conversations/064d8b57-436b-493c-aa6a-1a1ea72e6616/messages "HTTP/1.1 200 OK"
+------------------------------ Captured log call -------------------------------
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/doc-sets/6b51dc89-9afa-41f8-932f-d10c5615604d/conversations "HTTP/1.1 201 Created"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/conversations/064d8b57-436b-493c-aa6a-1a1ea72e6616/messages "HTTP/1.1 200 OK"
+_________________________ test_ask_not_found_skips_llm _________________________
+---------------------------- Captured stderr setup -----------------------------
+2026-11-02 16:20:49,844 INFO httpx HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+------------------------------ Captured log setup ------------------------------
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+----------------------------- Captured stderr call -----------------------------
+2026-11-02 16:20:49,869 INFO httpx HTTP Request: POST http://test/api/v1/doc-sets/5a616d7e-bdc6-448e-9a69-ee036a9ad50d/conversations "HTTP/1.1 201 Created"
+2026-11-02 16:20:49,901 INFO httpx HTTP Request: POST http://test/api/v1/conversations/ccaaae1d-7640-4b57-8cc1-625dc4cb84bd/messages "HTTP/1.1 200 OK"
+------------------------------ Captured log call -------------------------------
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/doc-sets/5a616d7e-bdc6-448e-9a69-ee036a9ad50d/conversations "HTTP/1.1 201 Created"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/conversations/ccaaae1d-7640-4b57-8cc1-625dc4cb84bd/messages "HTTP/1.1 200 OK"
+________________________ test_ask_llm_not_found_marker _________________________
+---------------------------- Captured stderr setup -----------------------------
+2026-11-02 16:20:50,067 INFO httpx HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+------------------------------ Captured log setup ------------------------------
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+----------------------------- Captured stderr call -----------------------------
+2026-11-02 16:20:50,093 INFO httpx HTTP Request: POST http://test/api/v1/doc-sets/b17efcff-0833-4b8d-9297-62f4e60c899d/conversations "HTTP/1.1 201 Created"
+2026-11-02 16:20:50,135 INFO httpx HTTP Request: POST http://test/api/v1/conversations/3440ca1b-6f2f-46a9-99bd-7893b162221b/messages "HTTP/1.1 200 OK"
+------------------------------ Captured log call -------------------------------
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/doc-sets/b17efcff-0833-4b8d-9297-62f4e60c899d/conversations "HTTP/1.1 201 Created"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/conversations/3440ca1b-6f2f-46a9-99bd-7893b162221b/messages "HTTP/1.1 200 OK"
+__________________________ test_ask_pending_documents __________________________
+---------------------------- Captured stderr setup -----------------------------
+2026-11-02 16:20:50,297 INFO httpx HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+------------------------------ Captured log setup ------------------------------
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+----------------------------- Captured stderr call -----------------------------
+2026-11-02 16:20:50,330 INFO httpx HTTP Request: POST http://test/api/v1/doc-sets/77c8a61a-01b4-460f-9291-a6c5f495fd8f/conversations "HTTP/1.1 201 Created"
+2026-11-02 16:20:50,393 INFO httpx HTTP Request: POST http://test/api/v1/conversations/d6b1dbbe-8fd7-4f16-ba74-a45e1c4bca84/messages "HTTP/1.1 200 OK"
+------------------------------ Captured log call -------------------------------
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/doc-sets/77c8a61a-01b4-460f-9291-a6c5f495fd8f/conversations "HTTP/1.1 201 Created"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/conversations/d6b1dbbe-8fd7-4f16-ba74-a45e1c4bca84/messages "HTTP/1.1 200 OK"
+________________________ test_ask_followup_uses_rewrite ________________________
+---------------------------- Captured stderr setup -----------------------------
+2026-11-02 16:20:50,545 INFO httpx HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+------------------------------ Captured log setup ------------------------------
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+----------------------------- Captured stderr call -----------------------------
+2026-11-02 16:20:50,570 INFO httpx HTTP Request: POST http://test/api/v1/doc-sets/888d2b46-f886-4bdf-927f-55922fe7d852/conversations "HTTP/1.1 201 Created"
+2026-11-02 16:20:50,628 INFO httpx HTTP Request: POST http://test/api/v1/conversations/b12df436-4ad6-49a1-993e-b87b1ab4019e/messages "HTTP/1.1 200 OK"
+2026-11-02 16:20:50,681 INFO httpx HTTP Request: POST http://test/api/v1/conversations/b12df436-4ad6-49a1-993e-b87b1ab4019e/messages "HTTP/1.1 200 OK"
+------------------------------ Captured log call -------------------------------
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/doc-sets/888d2b46-f886-4bdf-927f-55922fe7d852/conversations "HTTP/1.1 201 Created"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/conversations/b12df436-4ad6-49a1-993e-b87b1ab4019e/messages "HTTP/1.1 200 OK"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/conversations/b12df436-4ad6-49a1-993e-b87b1ab4019e/messages "HTTP/1.1 200 OK"
+_______________________ test_new_conversation_no_history _______________________
+---------------------------- Captured stderr setup -----------------------------
+2026-11-02 16:20:50,860 INFO httpx HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+------------------------------ Captured log setup ------------------------------
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+----------------------------- Captured stderr call -----------------------------
+2026-11-02 16:20:50,883 INFO httpx HTTP Request: POST http://test/api/v1/doc-sets/42af2adb-ab77-41ec-b5b1-cb7e00d4ae99/conversations "HTTP/1.1 201 Created"
+2026-11-02 16:20:50,935 INFO httpx HTTP Request: POST http://test/api/v1/conversations/f36e84cf-4a1a-4576-a18e-6698890c0f36/messages "HTTP/1.1 200 OK"
+2026-11-02 16:20:50,949 INFO httpx HTTP Request: POST http://test/api/v1/doc-sets/42af2adb-ab77-41ec-b5b1-cb7e00d4ae99/conversations "HTTP/1.1 201 Created"
+2026-11-02 16:20:51,001 INFO httpx HTTP Request: POST http://test/api/v1/conversations/305f9868-2bc6-48ca-8d89-3d81cab1bf6e/messages "HTTP/1.1 200 OK"
+------------------------------ Captured log call -------------------------------
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/doc-sets/42af2adb-ab77-41ec-b5b1-cb7e00d4ae99/conversations "HTTP/1.1 201 Created"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/conversations/f36e84cf-4a1a-4576-a18e-6698890c0f36/messages "HTTP/1.1 200 OK"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/doc-sets/42af2adb-ab77-41ec-b5b1-cb7e00d4ae99/conversations "HTTP/1.1 201 Created"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/conversations/305f9868-2bc6-48ca-8d89-3d81cab1bf6e/messages "HTTP/1.1 200 OK"
+_____________________ test_ask_validation_and_permissions ______________________
+---------------------------- Captured stderr setup -----------------------------
+2026-11-02 16:20:51,188 INFO httpx HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+------------------------------ Captured log setup ------------------------------
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+----------------------------- Captured stderr call -----------------------------
+2026-11-02 16:20:51,215 INFO httpx HTTP Request: POST http://test/api/v1/doc-sets/a1efcb9b-aceb-4a21-8b47-451c43671bd1/conversations "HTTP/1.1 201 Created"
+2026-11-02 16:20:51,228 INFO httpx HTTP Request: POST http://test/api/v1/conversations/0e59351f-f193-4e1a-b656-ade18a6e218e/messages "HTTP/1.1 422 Unprocessable Entity"
+2026-11-02 16:20:51,240 INFO httpx HTTP Request: POST http://test/api/v1/conversations/0e59351f-f193-4e1a-b656-ade18a6e218e/messages "HTTP/1.1 422 Unprocessable Entity"
+2026-11-02 16:20:51,252 INFO httpx HTTP Request: POST http://test/api/v1/conversations/0e59351f-f193-4e1a-b656-ade18a6e218e/messages "HTTP/1.1 422 Unprocessable Entity"
+2026-11-02 16:20:51,259 INFO httpx HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+2026-11-02 16:20:51,268 INFO httpx HTTP Request: POST http://test/api/v1/doc-sets/a1efcb9b-aceb-4a21-8b47-451c43671bd1/conversations "HTTP/1.1 403 Forbidden"
+2026-11-02 16:20:51,279 INFO httpx HTTP Request: POST http://test/api/v1/conversations/0e59351f-f193-4e1a-b656-ade18a6e218e/messages "HTTP/1.1 404 Not Found"
+2026-11-02 16:20:51,298 INFO httpx HTTP Request: POST http://test/api/v1/conversations/0e59351f-f193-4e1a-b656-ade18a6e218e/messages "HTTP/1.1 409 Conflict"
+2026-11-02 16:20:51,313 INFO httpx HTTP Request: POST http://test/api/v1/conversations/0e59351f-f193-4e1a-b656-ade18a6e218e/messages "HTTP/1.1 403 Forbidden"
+------------------------------ Captured log call -------------------------------
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/doc-sets/a1efcb9b-aceb-4a21-8b47-451c43671bd1/conversations "HTTP/1.1 201 Created"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/conversations/0e59351f-f193-4e1a-b656-ade18a6e218e/messages "HTTP/1.1 422 Unprocessable Entity"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/conversations/0e59351f-f193-4e1a-b656-ade18a6e218e/messages "HTTP/1.1 422 Unprocessable Entity"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/conversations/0e59351f-f193-4e1a-b656-ade18a6e218e/messages "HTTP/1.1 422 Unprocessable Entity"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/doc-sets/a1efcb9b-aceb-4a21-8b47-451c43671bd1/conversations "HTTP/1.1 403 Forbidden"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/conversations/0e59351f-f193-4e1a-b656-ade18a6e218e/messages "HTTP/1.1 404 Not Found"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/conversations/0e59351f-f193-4e1a-b656-ade18a6e218e/messages "HTTP/1.1 409 Conflict"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/conversations/0e59351f-f193-4e1a-b656-ade18a6e218e/messages "HTTP/1.1 403 Forbidden"
+_____________________________ test_stop_mid_stream _____________________________
+---------------------------- Captured stderr setup -----------------------------
+2026-11-02 16:20:51,471 INFO httpx HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+------------------------------ Captured log setup ------------------------------
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+----------------------------- Captured stderr call -----------------------------
+2026-11-02 16:20:51,496 INFO httpx HTTP Request: POST http://test/api/v1/doc-sets/7797c4db-864f-488c-b65b-c07fc757d3bf/conversations "HTTP/1.1 201 Created"
+2026-11-02 16:20:52,145 INFO httpx HTTP Request: POST http://test/api/v1/messages/0e8eb985-8da9-4faa-8486-11b7f714b7c3/stop "HTTP/1.1 202 Accepted"
+2026-11-02 16:20:52,161 INFO httpx HTTP Request: POST http://test/api/v1/conversations/84ac4ffb-a60a-4fa2-94b4-1cbb93167b27/messages "HTTP/1.1 200 OK"
+------------------------------ Captured log call -------------------------------
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/doc-sets/7797c4db-864f-488c-b65b-c07fc757d3bf/conversations "HTTP/1.1 201 Created"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/messages/0e8eb985-8da9-4faa-8486-11b7f714b7c3/stop "HTTP/1.1 202 Accepted"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/conversations/84ac4ffb-a60a-4fa2-94b4-1cbb93167b27/messages "HTTP/1.1 200 OK"
+_________________________ test_stop_while_llm_thinking _________________________
+---------------------------- Captured stderr setup -----------------------------
+2026-11-02 16:20:52,335 INFO httpx HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+------------------------------ Captured log setup ------------------------------
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+----------------------------- Captured stderr call -----------------------------
+2026-11-02 16:20:52,361 INFO httpx HTTP Request: POST http://test/api/v1/doc-sets/bc9db4f1-83a0-487a-8aca-7b1c6e6917ff/conversations "HTTP/1.1 201 Created"
+2026-11-02 16:20:52,611 INFO httpx HTTP Request: POST http://test/api/v1/messages/88b63b3f-69d5-4a2b-932d-78e211ce7fa9/stop "HTTP/1.1 202 Accepted"
+2026-11-02 16:20:52,626 INFO httpx HTTP Request: POST http://test/api/v1/conversations/0739658d-911e-4323-9668-e091214f2609/messages "HTTP/1.1 200 OK"
+------------------------------ Captured log call -------------------------------
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/doc-sets/bc9db4f1-83a0-487a-8aca-7b1c6e6917ff/conversations "HTTP/1.1 201 Created"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/messages/88b63b3f-69d5-4a2b-932d-78e211ce7fa9/stop "HTTP/1.1 202 Accepted"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/conversations/0739658d-911e-4323-9668-e091214f2609/messages "HTTP/1.1 200 OK"
+_________________________ test_stop_other_user_ignored _________________________
+---------------------------- Captured stderr setup -----------------------------
+2026-11-02 16:20:52,807 INFO httpx HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+------------------------------ Captured log setup ------------------------------
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+----------------------------- Captured stderr call -----------------------------
+2026-11-02 16:20:52,817 INFO httpx HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+2026-11-02 16:20:52,845 INFO httpx HTTP Request: POST http://test/api/v1/doc-sets/1506d039-1838-4c40-9991-3a5ba4fc853a/conversations "HTTP/1.1 201 Created"
+2026-11-02 16:20:52,875 INFO httpx HTTP Request: POST http://test/api/v1/messages/dc09ace8-3ccf-4949-9f17-afe8fadc8e37/stop "HTTP/1.1 202 Accepted"
+2026-11-02 16:20:53,396 INFO httpx HTTP Request: POST http://test/api/v1/conversations/834bcdb4-0513-4004-a6f7-1425b60c2010/messages "HTTP/1.1 200 OK"
+------------------------------ Captured log call -------------------------------
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/doc-sets/1506d039-1838-4c40-9991-3a5ba4fc853a/conversations "HTTP/1.1 201 Created"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/messages/dc09ace8-3ccf-4949-9f17-afe8fadc8e37/stop "HTTP/1.1 202 Accepted"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/conversations/834bcdb4-0513-4004-a6f7-1425b60c2010/messages "HTTP/1.1 200 OK"
+__________________________ test_llm_error_mid_stream ___________________________
+---------------------------- Captured stderr setup -----------------------------
+2026-11-02 16:20:53,579 INFO httpx HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+------------------------------ Captured log setup ------------------------------
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+----------------------------- Captured stderr call -----------------------------
+2026-11-02 16:20:53,608 INFO httpx HTTP Request: POST http://test/api/v1/doc-sets/259bbef6-8762-427e-b927-1fcf033e6467/conversations "HTTP/1.1 201 Created"
+2026-11-02 16:20:53,643 WARNING app.qa.service message ff9cfdc6-762c-4e24-a6e1-d38c2a4c1c31 failed: AI_UNAVAILABLE (APIConnectionError)
+2026-11-02 16:20:53,651 INFO httpx HTTP Request: POST http://test/api/v1/conversations/87f84238-9f2e-48bf-8784-7c7303b9a2a8/messages "HTTP/1.1 200 OK"
+------------------------------ Captured log call -------------------------------
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/doc-sets/259bbef6-8762-427e-b927-1fcf033e6467/conversations "HTTP/1.1 201 Created"
+WARNING  app.qa.service:service.py:303 message ff9cfdc6-762c-4e24-a6e1-d38c2a4c1c31 failed: AI_UNAVAILABLE (APIConnectionError)
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/conversations/87f84238-9f2e-48bf-8784-7c7303b9a2a8/messages "HTTP/1.1 200 OK"
+__________________________ test_max_tokens_is_failed ___________________________
+---------------------------- Captured stderr setup -----------------------------
+2026-11-02 16:20:53,812 INFO httpx HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+------------------------------ Captured log setup ------------------------------
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+----------------------------- Captured stderr call -----------------------------
+2026-11-02 16:20:53,837 INFO httpx HTTP Request: POST http://test/api/v1/doc-sets/17639210-bd3a-4cc4-a288-d5c547fa16f0/conversations "HTTP/1.1 201 Created"
+2026-11-02 16:20:53,871 INFO app.qa.service message 04d522e6-2b94-47e5-8636-e93fd6b484f2 failed: stop_reason=max_tokens
+2026-11-02 16:20:53,881 INFO httpx HTTP Request: POST http://test/api/v1/conversations/acf9e27c-ce99-47c7-8888-a61b4bcc3f6f/messages "HTTP/1.1 200 OK"
+------------------------------ Captured log call -------------------------------
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/doc-sets/17639210-bd3a-4cc4-a288-d5c547fa16f0/conversations "HTTP/1.1 201 Created"
+INFO     app.qa.service:service.py:288 message 04d522e6-2b94-47e5-8636-e93fd6b484f2 failed: stop_reason=max_tokens
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/conversations/acf9e27c-ce99-47c7-8888-a61b4bcc3f6f/messages "HTTP/1.1 200 OK"
+____________________ test_get_citation_ok_removed_forbidden ____________________
+---------------------------- Captured stderr setup -----------------------------
+2026-11-02 16:20:54,045 INFO httpx HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+------------------------------ Captured log setup ------------------------------
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+----------------------------- Captured stderr call -----------------------------
+2026-11-02 16:20:54,074 INFO httpx HTTP Request: POST http://test/api/v1/doc-sets/5866f188-2b2b-47f5-a8bd-a74f812ece98/conversations "HTTP/1.1 201 Created"
+2026-11-02 16:20:54,128 INFO httpx HTTP Request: POST http://test/api/v1/conversations/a3a95cb3-c65a-4190-86a6-95542778b88c/messages "HTTP/1.1 200 OK"
+2026-11-02 16:20:54,145 INFO httpx HTTP Request: GET http://test/api/v1/citations/b82538dc-7c14-49e7-9600-bafa35adf1ec "HTTP/1.1 200 OK"
+2026-11-02 16:20:54,156 INFO httpx HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+2026-11-02 16:20:54,169 INFO httpx HTTP Request: GET http://test/api/v1/citations/b82538dc-7c14-49e7-9600-bafa35adf1ec "HTTP/1.1 403 Forbidden"
+2026-11-02 16:20:54,179 INFO httpx HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+2026-11-02 16:20:54,191 INFO httpx HTTP Request: GET http://test/api/v1/citations/b82538dc-7c14-49e7-9600-bafa35adf1ec "HTTP/1.1 403 Forbidden"
+2026-11-02 16:20:54,208 INFO httpx HTTP Request: GET http://test/api/v1/citations/b82538dc-7c14-49e7-9600-bafa35adf1ec "HTTP/1.1 410 Gone"
+------------------------------ Captured log call -------------------------------
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/doc-sets/5866f188-2b2b-47f5-a8bd-a74f812ece98/conversations "HTTP/1.1 201 Created"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/conversations/a3a95cb3-c65a-4190-86a6-95542778b88c/messages "HTTP/1.1 200 OK"
+INFO     httpx:_client.py:1740 HTTP Request: GET http://test/api/v1/citations/b82538dc-7c14-49e7-9600-bafa35adf1ec "HTTP/1.1 200 OK"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+INFO     httpx:_client.py:1740 HTTP Request: GET http://test/api/v1/citations/b82538dc-7c14-49e7-9600-bafa35adf1ec "HTTP/1.1 403 Forbidden"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+INFO     httpx:_client.py:1740 HTTP Request: GET http://test/api/v1/citations/b82538dc-7c14-49e7-9600-bafa35adf1ec "HTTP/1.1 403 Forbidden"
+INFO     httpx:_client.py:1740 HTTP Request: GET http://test/api/v1/citations/b82538dc-7c14-49e7-9600-bafa35adf1ec "HTTP/1.1 410 Gone"
+________________________ test_no_content_in_audit_meta _________________________
+---------------------------- Captured stderr setup -----------------------------
+2026-11-02 16:20:54,392 INFO httpx HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+------------------------------ Captured log setup ------------------------------
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+----------------------------- Captured stderr call -----------------------------
+2026-11-02 16:20:54,423 INFO httpx HTTP Request: POST http://test/api/v1/doc-sets/bac102a7-36b0-42e5-ac95-f6be171db58c/conversations "HTTP/1.1 201 Created"
+2026-11-02 16:20:54,483 INFO httpx HTTP Request: POST http://test/api/v1/conversations/274c1dcd-d8e6-44d8-88af-78968c54003d/messages "HTTP/1.1 200 OK"
+2026-11-02 16:20:54,509 INFO httpx HTTP Request: POST http://test/api/v1/conversations/274c1dcd-d8e6-44d8-88af-78968c54003d/messages "HTTP/1.1 200 OK"
+------------------------------ Captured log call -------------------------------
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/doc-sets/bac102a7-36b0-42e5-ac95-f6be171db58c/conversations "HTTP/1.1 201 Created"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/conversations/274c1dcd-d8e6-44d8-88af-78968c54003d/messages "HTTP/1.1 200 OK"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/conversations/274c1dcd-d8e6-44d8-88af-78968c54003d/messages "HTTP/1.1 200 OK"
+______________________ test_answer_cites_only_source_file ______________________
+---------------------------- Captured stderr setup -----------------------------
+2026-11-02 16:20:54,742 INFO httpx HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+------------------------------ Captured log setup ------------------------------
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+----------------------------- Captured stderr call -----------------------------
+2026-11-02 16:20:54,806 INFO app.worker document 5907e95f-f889-49df-b4fe-968a7a8c9096 ready: 3 trang, 3 đoạn, 0.1s
+2026-11-02 16:20:54,853 INFO app.worker document 9c400eaf-c4d9-4d66-9515-c14c6ee2c457 ready: 1 trang, 1 đoạn, 0.0s
+2026-11-02 16:20:54,900 INFO httpx HTTP Request: POST http://test/api/v1/doc-sets/dae04200-8f90-4513-9711-fbcca4e31d39/conversations "HTTP/1.1 201 Created"
+2026-11-02 16:20:54,957 INFO httpx HTTP Request: POST http://test/api/v1/conversations/007baa13-2b8d-43d4-8155-e376fc90868e/messages "HTTP/1.1 200 OK"
+------------------------------ Captured log call -------------------------------
+INFO     app.worker:worker.py:119 document 5907e95f-f889-49df-b4fe-968a7a8c9096 ready: 3 trang, 3 đoạn, 0.1s
+INFO     app.worker:worker.py:119 document 9c400eaf-c4d9-4d66-9515-c14c6ee2c457 ready: 1 trang, 1 đoạn, 0.0s
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/doc-sets/dae04200-8f90-4513-9711-fbcca4e31d39/conversations "HTTP/1.1 201 Created"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/conversations/007baa13-2b8d-43d4-8155-e376fc90868e/messages "HTTP/1.1 200 OK"
+_______________________ test_pending_documents_exact_set _______________________
+---------------------------- Captured stderr setup -----------------------------
+2026-11-02 16:20:55,113 INFO httpx HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+------------------------------ Captured log setup ------------------------------
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+----------------------------- Captured stderr call -----------------------------
+2026-11-02 16:20:55,162 INFO app.worker document 411085d5-8d85-4944-8dc1-d9d26f022ea1 ready: 3 trang, 3 đoạn, 0.0s
+2026-11-02 16:20:55,240 INFO httpx HTTP Request: POST http://test/api/v1/doc-sets/e22e23c5-6c24-454f-b673-ee114ab42c97/conversations "HTTP/1.1 201 Created"
+2026-11-02 16:20:55,298 INFO httpx HTTP Request: POST http://test/api/v1/conversations/8d78759f-0908-4996-8e61-1f7eb0935d0d/messages "HTTP/1.1 200 OK"
+2026-11-02 16:20:55,313 INFO httpx HTTP Request: POST http://test/api/v1/doc-sets/e22e23c5-6c24-454f-b673-ee114ab42c97/conversations "HTTP/1.1 201 Created"
+2026-11-02 16:20:55,342 INFO httpx HTTP Request: POST http://test/api/v1/conversations/bb6112de-a892-4ac1-82e3-c52dd061ad23/messages "HTTP/1.1 200 OK"
+------------------------------ Captured log call -------------------------------
+INFO     app.worker:worker.py:119 document 411085d5-8d85-4944-8dc1-d9d26f022ea1 ready: 3 trang, 3 đoạn, 0.0s
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/doc-sets/e22e23c5-6c24-454f-b673-ee114ab42c97/conversations "HTTP/1.1 201 Created"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/conversations/8d78759f-0908-4996-8e61-1f7eb0935d0d/messages "HTTP/1.1 200 OK"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/doc-sets/e22e23c5-6c24-454f-b673-ee114ab42c97/conversations "HTTP/1.1 201 Created"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/conversations/bb6112de-a892-4ac1-82e3-c52dd061ad23/messages "HTTP/1.1 200 OK"
+______________________ test_answered_citation_invariants _______________________
+---------------------------- Captured stderr setup -----------------------------
+2026-11-02 16:20:55,491 INFO httpx HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+------------------------------ Captured log setup ------------------------------
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+----------------------------- Captured stderr call -----------------------------
+2026-11-02 16:20:55,531 INFO app.worker document 41fd14a8-3a4a-4ff6-be92-f2f3ff6e64a2 ready: 3 trang, 3 đoạn, 0.0s
+2026-11-02 16:20:55,560 INFO httpx HTTP Request: POST http://test/api/v1/doc-sets/3f23f5df-eaa4-4c3b-b4f4-f4680c14dabc/conversations "HTTP/1.1 201 Created"
+2026-11-02 16:20:55,612 INFO httpx HTTP Request: POST http://test/api/v1/conversations/cce3165c-bf77-4699-a5e9-edc02882ce87/messages "HTTP/1.1 200 OK"
+2026-11-02 16:20:55,624 INFO httpx HTTP Request: POST http://test/api/v1/doc-sets/3f23f5df-eaa4-4c3b-b4f4-f4680c14dabc/conversations "HTTP/1.1 201 Created"
+2026-11-02 16:20:55,673 INFO httpx HTTP Request: POST http://test/api/v1/conversations/c82e775c-4865-42e4-beca-2d6ef12b30a7/messages "HTTP/1.1 200 OK"
+2026-11-02 16:20:55,687 INFO httpx HTTP Request: POST http://test/api/v1/doc-sets/3f23f5df-eaa4-4c3b-b4f4-f4680c14dabc/conversations "HTTP/1.1 201 Created"
+2026-11-02 16:20:55,737 INFO httpx HTTP Request: POST http://test/api/v1/conversations/79f3228b-dd33-4af2-aa2e-376a72d00583/messages "HTTP/1.1 200 OK"
+------------------------------ Captured log call -------------------------------
+INFO     app.worker:worker.py:119 document 41fd14a8-3a4a-4ff6-be92-f2f3ff6e64a2 ready: 3 trang, 3 đoạn, 0.0s
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/doc-sets/3f23f5df-eaa4-4c3b-b4f4-f4680c14dabc/conversations "HTTP/1.1 201 Created"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/conversations/cce3165c-bf77-4699-a5e9-edc02882ce87/messages "HTTP/1.1 200 OK"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/doc-sets/3f23f5df-eaa4-4c3b-b4f4-f4680c14dabc/conversations "HTTP/1.1 201 Created"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/conversations/c82e775c-4865-42e4-beca-2d6ef12b30a7/messages "HTTP/1.1 200 OK"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/doc-sets/3f23f5df-eaa4-4c3b-b4f4-f4680c14dabc/conversations "HTTP/1.1 201 Created"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/conversations/79f3228b-dd33-4af2-aa2e-376a72d00583/messages "HTTP/1.1 200 OK"
+________________________ test_snippet_is_on_cited_page _________________________
+---------------------------- Captured stderr setup -----------------------------
+2026-11-02 16:20:55,886 INFO httpx HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+------------------------------ Captured log setup ------------------------------
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+----------------------------- Captured stderr call -----------------------------
+2026-11-02 16:20:55,928 INFO app.worker document 90590bec-c285-4bf4-abe2-c77d10f23eae ready: 3 trang, 3 đoạn, 0.0s
+2026-11-02 16:20:55,956 INFO httpx HTTP Request: POST http://test/api/v1/doc-sets/de24e114-9fb2-4b1f-8594-4e4cb9df4890/conversations "HTTP/1.1 201 Created"
+2026-11-02 16:20:56,012 INFO httpx HTTP Request: POST http://test/api/v1/conversations/9e444905-0779-4e7b-89e2-87e282bae137/messages "HTTP/1.1 200 OK"
+2026-11-02 16:20:56,027 INFO httpx HTTP Request: POST http://test/api/v1/doc-sets/de24e114-9fb2-4b1f-8594-4e4cb9df4890/conversations "HTTP/1.1 201 Created"
+2026-11-02 16:20:56,081 INFO httpx HTTP Request: POST http://test/api/v1/conversations/7786b98f-4edc-433f-90ab-76b7f2e65748/messages "HTTP/1.1 200 OK"
+2026-11-02 16:20:56,102 INFO httpx HTTP Request: POST http://test/api/v1/doc-sets/de24e114-9fb2-4b1f-8594-4e4cb9df4890/conversations "HTTP/1.1 201 Created"
+2026-11-02 16:20:56,159 INFO httpx HTTP Request: POST http://test/api/v1/conversations/3804c3aa-71e2-47bd-a3dc-71239be646fa/messages "HTTP/1.1 200 OK"
+------------------------------ Captured log call -------------------------------
+INFO     app.worker:worker.py:119 document 90590bec-c285-4bf4-abe2-c77d10f23eae ready: 3 trang, 3 đoạn, 0.0s
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/doc-sets/de24e114-9fb2-4b1f-8594-4e4cb9df4890/conversations "HTTP/1.1 201 Created"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/conversations/9e444905-0779-4e7b-89e2-87e282bae137/messages "HTTP/1.1 200 OK"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/doc-sets/de24e114-9fb2-4b1f-8594-4e4cb9df4890/conversations "HTTP/1.1 201 Created"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/conversations/7786b98f-4edc-433f-90ab-76b7f2e65748/messages "HTTP/1.1 200 OK"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/doc-sets/de24e114-9fb2-4b1f-8594-4e4cb9df4890/conversations "HTTP/1.1 201 Created"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/conversations/3804c3aa-71e2-47bd-a3dc-71239be646fa/messages "HTTP/1.1 200 OK"
+_________________ test_uncited_blocks_never_streamed_or_saved __________________
+---------------------------- Captured stderr setup -----------------------------
+2026-11-02 16:20:56,333 INFO httpx HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+------------------------------ Captured log setup ------------------------------
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+----------------------------- Captured stderr call -----------------------------
+2026-11-02 16:20:56,359 INFO httpx HTTP Request: POST http://test/api/v1/doc-sets/8d57efc7-1f4f-468d-a739-90db3fce93db/conversations "HTTP/1.1 201 Created"
+2026-11-02 16:20:56,422 INFO httpx HTTP Request: POST http://test/api/v1/conversations/3a0db11b-817f-4266-9dfb-ab60d159373c/messages "HTTP/1.1 200 OK"
+------------------------------ Captured log call -------------------------------
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/doc-sets/8d57efc7-1f4f-468d-a739-90db3fce93db/conversations "HTTP/1.1 201 Created"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/conversations/3a0db11b-817f-4266-9dfb-ab60d159373c/messages "HTTP/1.1 200 OK"
+______________________ test_all_uncited_becomes_not_found ______________________
+---------------------------- Captured stderr setup -----------------------------
+2026-11-02 16:20:56,584 INFO httpx HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+------------------------------ Captured log setup ------------------------------
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+----------------------------- Captured stderr call -----------------------------
+2026-11-02 16:20:56,610 INFO httpx HTTP Request: POST http://test/api/v1/doc-sets/e7720484-1419-493e-b621-049e071b0eda/conversations "HTTP/1.1 201 Created"
+2026-11-02 16:20:56,652 INFO httpx HTTP Request: POST http://test/api/v1/conversations/75260a88-534d-49d5-a9b7-8884e26cf839/messages "HTTP/1.1 200 OK"
+------------------------------ Captured log call -------------------------------
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/doc-sets/e7720484-1419-493e-b621-049e071b0eda/conversations "HTTP/1.1 201 Created"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/conversations/75260a88-534d-49d5-a9b7-8884e26cf839/messages "HTTP/1.1 200 OK"
+____________________ test_feedback_upsert_replaces_previous ____________________
+----------------------------- Captured stderr call -----------------------------
+2026-11-02 16:20:56,954 INFO httpx HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+2026-11-02 16:20:57,008 INFO httpx HTTP Request: PUT http://test/api/v1/messages/9793773f-d5fb-4aa0-b11a-7a4d6f286bde/feedback "HTTP/1.1 200 OK"
+2026-11-02 16:20:57,029 INFO httpx HTTP Request: PUT http://test/api/v1/messages/9793773f-d5fb-4aa0-b11a-7a4d6f286bde/feedback "HTTP/1.1 200 OK"
+------------------------------ Captured log call -------------------------------
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+INFO     httpx:_client.py:1740 HTTP Request: PUT http://test/api/v1/messages/9793773f-d5fb-4aa0-b11a-7a4d6f286bde/feedback "HTTP/1.1 200 OK"
+INFO     httpx:_client.py:1740 HTTP Request: PUT http://test/api/v1/messages/9793773f-d5fb-4aa0-b11a-7a4d6f286bde/feedback "HTTP/1.1 200 OK"
+______________________ test_feedback_other_user_forbidden ______________________
+----------------------------- Captured stderr call -----------------------------
+2026-11-02 16:20:57,195 INFO httpx HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+2026-11-02 16:20:57,216 INFO httpx HTTP Request: PUT http://test/api/v1/messages/54e11343-5302-4da7-b81f-d77b5d7b43fb/feedback "HTTP/1.1 403 Forbidden"
+------------------------------ Captured log call -------------------------------
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+INFO     httpx:_client.py:1740 HTTP Request: PUT http://test/api/v1/messages/54e11343-5302-4da7-b81f-d77b5d7b43fb/feedback "HTTP/1.1 403 Forbidden"
+_______________________ test_feedback_not_completed_turn _______________________
+----------------------------- Captured stderr call -----------------------------
+2026-11-02 16:20:57,357 INFO httpx HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+2026-11-02 16:20:57,378 INFO httpx HTTP Request: PUT http://test/api/v1/messages/2eb35922-cf61-4508-9367-210c08f46dc0/feedback "HTTP/1.1 422 Unprocessable Entity"
+2026-11-02 16:20:57,391 INFO httpx HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+2026-11-02 16:20:57,403 INFO httpx HTTP Request: PUT http://test/api/v1/messages/48742bae-9360-4de5-ac91-a8ad2b4e14e5/feedback "HTTP/1.1 422 Unprocessable Entity"
+------------------------------ Captured log call -------------------------------
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+INFO     httpx:_client.py:1740 HTTP Request: PUT http://test/api/v1/messages/2eb35922-cf61-4508-9367-210c08f46dc0/feedback "HTTP/1.1 422 Unprocessable Entity"
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+INFO     httpx:_client.py:1740 HTTP Request: PUT http://test/api/v1/messages/48742bae-9360-4de5-ac91-a8ad2b4e14e5/feedback "HTTP/1.1 422 Unprocessable Entity"
+__________________ test_feedback_unknown_message_and_bad_body __________________
+----------------------------- Captured stderr call -----------------------------
+2026-11-02 16:20:57,547 INFO httpx HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+2026-11-02 16:20:57,568 INFO httpx HTTP Request: PUT http://test/api/v1/messages/aa7769f4-af6b-422a-a694-df73ab2b8c8f/feedback "HTTP/1.1 404 Not Found"
+2026-11-02 16:20:57,577 INFO httpx HTTP Request: PUT http://test/api/v1/messages/d34ca1e6-c305-4f87-95ef-6b42cc70807f/feedback "HTTP/1.1 422 Unprocessable Entity"
+------------------------------ Captured log call -------------------------------
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/api/v1/auth/login "HTTP/1.1 204 No Content"
+INFO     httpx:_client.py:1740 HTTP Request: PUT http://test/api/v1/messages/aa7769f4-af6b-422a-a694-df73ab2b8c8f/feedback "HTTP/1.1 404 Not Found"
+INFO     httpx:_client.py:1740 HTTP Request: PUT http://test/api/v1/messages/d34ca1e6-c305-4f87-95ef-6b42cc70807f/feedback "HTTP/1.1 422 Unprocessable Entity"
+_________________________ test_feedback_requires_login _________________________
+----------------------------- Captured stderr call -----------------------------
+2026-11-02 16:20:57,723 INFO httpx HTTP Request: PUT http://test/api/v1/messages/6d3816fe-5d37-4868-9e77-e348266549f4/feedback "HTTP/1.1 401 Unauthorized"
+------------------------------ Captured log call -------------------------------
+INFO     httpx:_client.py:1740 HTTP Request: PUT http://test/api/v1/messages/6d3816fe-5d37-4868-9e77-e348266549f4/feedback "HTTP/1.1 401 Unauthorized"
+_______________________ test_rewrite_falls_back_on_error _______________________
+----------------------------- Captured stderr call -----------------------------
+2026-11-02 16:20:57,815 WARNING app.qa.llm rewrite_question lỗi RuntimeError — dùng câu gốc
+------------------------------ Captured log call -------------------------------
+WARNING  app.qa.llm:llm.py:155 rewrite_question lỗi RuntimeError — dùng câu gốc
+_____________________________ test_app_error_shape _____________________________
+----------------------------- Captured stderr call -----------------------------
+2026-11-02 16:20:58,967 INFO httpx HTTP Request: GET http://test/boom-app "HTTP/1.1 403 Forbidden"
+------------------------------ Captured log call -------------------------------
+INFO     httpx:_client.py:1740 HTTP Request: GET http://test/boom-app "HTTP/1.1 403 Forbidden"
+_________________________ test_validation_error_shape __________________________
+----------------------------- Captured stderr call -----------------------------
+2026-11-02 16:20:58,997 INFO httpx HTTP Request: POST http://test/typed "HTTP/1.1 422 Unprocessable Entity"
+------------------------------ Captured log call -------------------------------
+INFO     httpx:_client.py:1740 HTTP Request: POST http://test/typed "HTTP/1.1 422 Unprocessable Entity"
+_______________________ test_unhandled_error_is_internal _______________________
+----------------------------- Captured stderr call -----------------------------
+2026-11-02 16:20:59,031 ERROR app.errors Unhandled error on GET /boom
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.12/site-packages/fastapi/telemetry/_asgi.py", line 151, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.12/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/usr/local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/usr/local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/usr/local/lib/python3.12/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.12/site-packages/starlette/routing.py", line 683, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.12/site-packages/fastapi/routing.py", line 2811, in app
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.12/site-packages/fastapi/routing.py", line 1330, in handle
+    await super().handle(scope, receive, send)
+  File "/usr/local/lib/python3.12/site-packages/starlette/routing.py", line 289, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.12/site-packages/fastapi/routing.py", line 166, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/usr/local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/usr/local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/usr/local/lib/python3.12/site-packages/fastapi/routing.py", line 152, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/fastapi/routing.py", line 745, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/fastapi/routing.py", line 372, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/tests/test_errors.py", line 21, in boom
+    raise RuntimeError("bất ngờ")
+RuntimeError: bất ngờ
+2026-11-02 16:20:59,035 INFO httpx HTTP Request: GET http://test/boom "HTTP/1.1 500 Internal Server Error"
+------------------------------ Captured log call -------------------------------
+ERROR    app.errors:errors.py:30 Unhandled error on GET /boom
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.12/site-packages/fastapi/telemetry/_asgi.py", line 151, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.12/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/usr/local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/usr/local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/usr/local/lib/python3.12/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.12/site-packages/starlette/routing.py", line 683, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/usr/local/lib/python3.12/site-packages/fastapi/routing.py", line 2811, in app
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.12/site-packages/fastapi/routing.py", line 1330, in handle
+    await super().handle(scope, receive, send)
+  File "/usr/local/lib/python3.12/site-packages/starlette/routing.py", line 289, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.12/site-packages/fastapi/routing.py", line 166, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/usr/local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/usr/local/lib/python3.12/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/usr/local/lib/python3.12/site-packages/fastapi/routing.py", line 152, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/fastapi/routing.py", line 745, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/fastapi/routing.py", line 372, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/tests/test_errors.py", line 21, in boom
+    raise RuntimeError("bất ngờ")
+RuntimeError: bất ngờ
+INFO     httpx:_client.py:1740 HTTP Request: GET http://test/boom "HTTP/1.1 500 Internal Server Error"
+________________________________ test_health_ok ________________________________
+----------------------------- Captured stderr call -----------------------------
+2026-11-02 16:20:59,053 INFO httpx HTTP Request: GET http://test/api/v1/health "HTTP/1.1 200 OK"
+------------------------------ Captured log call -------------------------------
+INFO     httpx:_client.py:1740 HTTP Request: GET http://test/api/v1/health "HTTP/1.1 200 OK"
+------------- generated xml file: /app/.test-out/pytest-junit.xml --------------
+=========================== short test summary info ============================
+PASSED tests/admin/test_documents_audit.py::test_admin_lists_metadata_only
+PASSED tests/admin/test_documents_audit.py::test_admin_cannot_open_content
+PASSED tests/admin/test_documents_audit.py::test_purge_removes_chunks_file_and_redacts_citations
+PASSED tests/admin/test_documents_audit.py::test_purge_then_query_not_found
+PASSED tests/admin/test_documents_audit.py::test_purge_forbidden_for_non_admin
+PASSED tests/admin/test_documents_audit.py::test_purge_validation
+PASSED tests/admin/test_documents_audit.py::test_purge_file_missing_on_disk_still_ok
+PASSED tests/admin/test_documents_audit.py::test_audit_query_filters_and_cursor
+PASSED tests/admin/test_documents_audit.py::test_audit_includes_member_logins_and_known_flow
+PASSED tests/admin/test_documents_audit.py::test_audit_meta_never_contains_content
+PASSED tests/admin/test_documents_audit.py::test_audit_document_filename_null_after_purge
+PASSED tests/admin/test_members.py::test_admin_routes_forbidden_for_member_and_manager
+PASSED tests/admin/test_members.py::test_list_doc_sets_and_members
+PASSED tests/admin/test_members.py::test_add_member_then_can_use_content
+PASSED tests/admin/test_members.py::test_add_member_unknown_email
+PASSED tests/admin/test_members.py::test_add_member_duplicate
+PASSED tests/admin/test_members.py::test_remove_member_effective_next_request
+PASSED tests/admin/test_members.py::test_role_change_enables_batch_upload
+PASSED tests/admin/test_members.py::test_audit_meta_has_no_email
+PASSED tests/auth/test_policy.py::test_policy_truth_table[lan@demo.local]
+PASSED tests/auth/test_policy.py::test_policy_truth_table[minh@demo.local]
+PASSED tests/auth/test_policy.py::test_policy_truth_table[hung@demo.local]
+PASSED tests/auth/test_policy.py::test_policy_truth_table[tuan@demo.local]
+PASSED tests/auth/test_policy.py::test_admin_who_is_also_member_has_both
+PASSED tests/auth/test_policy.py::test_outsider_forbidden_by_require_member
+PASSED tests/auth/test_policy.py::test_revoke_effective_next_request
+PASSED tests/auth/test_session.py::test_unauthenticated_401
+PASSED tests/auth/test_session.py::test_dev_users_lists_all
+PASSED tests/auth/test_session.py::test_login_unknown_email_404
+PASSED tests/auth/test_session.py::test_login_sets_cookie_and_me
+PASSED tests/auth/test_session.py::test_token_not_stored_in_plaintext
+PASSED tests/auth/test_session.py::test_idle_expired_401
+PASSED tests/auth/test_session.py::test_logout_invalidates
+PASSED tests/auth/test_session.py::test_login_audited
+PASSED tests/documents/test_list.py::test_list_documents_sorted_desc
+PASSED tests/documents/test_list.py::test_list_documents_forbidden_for_outsider_and_admin
+PASSED tests/documents/test_list.py::test_view_list_audited_at_most_once_per_minute
+PASSED tests/documents/test_list.py::test_open_file_ok_and_removed
+PASSED tests/documents/test_list.py::test_open_file_forbidden_for_outsider
+PASSED tests/documents/test_list.py::test_open_file_writes_audit
+PASSED tests/documents/test_upload.py::test_requires_classification
+PASSED tests/documents/test_upload.py::test_single_pdf_ok
+PASSED tests/documents/test_upload.py::test_not_pdf_magic_bytes
+PASSED tests/documents/test_upload.py::test_too_large
+PASSED tests/documents/test_upload.py::test_batch_one_too_large_others_ok
+PASSED tests/documents/test_upload.py::test_member_cannot_batch
+PASSED tests/documents/test_upload.py::test_duplicate_name_renamed
+PASSED tests/documents/test_upload.py::test_concurrent_last_slot
+PASSED tests/documents/test_upload.py::test_admin_not_member_forbidden
+PASSED tests/documents/test_upload.py::test_upper_bounds_accepted
+PASSED tests/ingestion/test_chunker.py::test_chunk_never_crosses_page
+PASSED tests/ingestion/test_chunker.py::test_chunk_max_len_and_overlap
+PASSED tests/ingestion/test_chunker.py::test_long_sentence_hard_split
+PASSED tests/ingestion/test_chunker.py::test_split_sentences_keeps_numbers
+PASSED tests/ingestion/test_chunker.py::test_split_blocks_deterministic
+PASSED tests/ingestion/test_chunker.py::test_normalization_nfc_and_whitespace
+PASSED tests/ingestion/test_chunker.py::test_is_scanned
+PASSED tests/ingestion/test_pdf.py::test_extract_text_pages
+PASSED tests/ingestion/test_pdf.py::test_pdf_errors[encrypted]
+PASSED tests/ingestion/test_pdf.py::test_pdf_errors[corrupt]
+PASSED tests/ingestion/test_pdf.py::test_pdf_errors[too_many_pages]
+PASSED tests/ingestion/test_pdf.py::test_owner_password_only_is_accepted
+PASSED tests/ingestion/test_worker.py::test_worker_happy_path
+PASSED tests/ingestion/test_worker.py::test_worker_rerun_idempotent
+PASSED tests/ingestion/test_worker.py::test_worker_pdf_errors
+PASSED tests/ingestion/test_worker.py::test_recover_stuck_processing
+PASSED tests/ingestion/test_worker.py::test_claim_skip_locked
+PASSED tests/ingestion/test_worker.py::test_worker_document_deleted_midway
+PASSED tests/qa/test_ask_api.py::test_ask_happy_path_event_order
+PASSED tests/qa/test_ask_api.py::test_ask_not_found_skips_llm
+PASSED tests/qa/test_ask_api.py::test_ask_llm_not_found_marker
+PASSED tests/qa/test_ask_api.py::test_ask_pending_documents
+PASSED tests/qa/test_ask_api.py::test_ask_followup_uses_rewrite
+PASSED tests/qa/test_ask_api.py::test_new_conversation_no_history
+PASSED tests/qa/test_ask_api.py::test_ask_validation_and_permissions
+PASSED tests/qa/test_ask_api.py::test_stop_mid_stream
+PASSED tests/qa/test_ask_api.py::test_stop_while_llm_thinking
+PASSED tests/qa/test_ask_api.py::test_stop_other_user_ignored
+PASSED tests/qa/test_ask_api.py::test_llm_error_mid_stream
+PASSED tests/qa/test_ask_api.py::test_max_tokens_is_failed
+PASSED tests/qa/test_ask_api.py::test_get_citation_ok_removed_forbidden
+PASSED tests/qa/test_ask_api.py::test_no_content_in_audit_meta
+PASSED tests/qa/test_ask_api.py::test_answer_cites_only_source_file
+PASSED tests/qa/test_ask_api.py::test_pending_documents_exact_set
+PASSED tests/qa/test_ask_api.py::test_answered_citation_invariants
+PASSED tests/qa/test_ask_api.py::test_snippet_is_on_cited_page
+PASSED tests/qa/test_ask_api.py::test_uncited_blocks_never_streamed_or_saved
+PASSED tests/qa/test_ask_api.py::test_all_uncited_becomes_not_found
+PASSED tests/qa/test_citation_filter.py::test_cited_block_emitted_immediately
+PASSED tests/qa/test_citation_filter.py::test_uncited_trailing_block_dropped
+PASSED tests/qa/test_citation_filter.py::test_uncited_leading_block_dropped
+PASSED tests/qa/test_citation_filter.py::test_connective_between_cited_kept
+PASSED tests/qa/test_citation_filter.py::test_non_connective_between_dropped
+PASSED tests/qa/test_citation_filter.py::test_two_conflicting_values_both_shown
+PASSED tests/qa/test_citation_filter.py::test_all_uncited_is_not_found
+PASSED tests/qa/test_citation_filter.py::test_marker_only_is_not_found
+PASSED tests/qa/test_citation_filter.py::test_marker_in_sentence
+PASSED tests/qa/test_citation_filter.py::test_clarify_with_citations
+PASSED tests/qa/test_citation_filter.py::test_clarify_without_citations_late_spans
+PASSED tests/qa/test_citation_filter.py::test_same_chunk_same_idx
+PASSED tests/qa/test_citation_filter.py::test_out_of_range_index_ignored
+PASSED tests/qa/test_citation_filter.py::test_snippet_max_300
+PASSED tests/qa/test_citation_filter.py::test_snapshot_only_emitted
+PASSED tests/qa/test_citation_filter.py::test_is_connective_cases[Ngo\xe0i ra, -True]
+PASSED tests/qa/test_citation_filter.py::test_is_connective_cases[\n- -True]
+PASSED tests/qa/test_citation_filter.py::test_is_connective_cases[   -True]
+PASSED tests/qa/test_citation_filter.py::test_is_connective_cases[trong v\xf2ng 30 ng\xe0y-False]
+PASSED tests/qa/test_citation_filter.py::test_is_connective_cases[Gi\xe1 tr\u1ecb kh\xe1c l\xe0 50 tri\u1ec7u-False]
+PASSED tests/qa/test_citation_filter.py::test_is_connective_cases[m\u1ed9t hai ba b\u1ed1n n\u0103m s\xe1u b\u1ea3y t\xe1m ch\xedn m\u01b0\u1eddi m\u01b0\u1eddi m\u1ed9t m\u01b0\u1eddi hai m\u01b0\u1eddi ba-False]
+PASSED tests/qa/test_citation_filter.py::test_is_connective_cases[theo C\xf4ng Ty C\u1ed5 Ph\u1ea7n Alpha-False]
+PASSED tests/qa/test_feedback.py::test_feedback_upsert_replaces_previous
+PASSED tests/qa/test_feedback.py::test_feedback_other_user_forbidden
+PASSED tests/qa/test_feedback.py::test_feedback_not_completed_turn
+PASSED tests/qa/test_feedback.py::test_feedback_unknown_message_and_bad_body
+PASSED tests/qa/test_feedback.py::test_feedback_requires_login
+PASSED tests/qa/test_llm_request.py::test_build_answer_request_snapshot
+PASSED tests/qa/test_llm_request.py::test_empty_history_answer_sent_as_marker
+PASSED tests/qa/test_llm_request.py::test_stream_parse_with_fake_events
+PASSED tests/qa/test_llm_request.py::test_rewrite_falls_back_on_error
+PASSED tests/qa/test_llm_request.py::test_rewrite_without_history_returns_question
+PASSED tests/qa/test_retriever.py::test_rrf_merge_order
+PASSED tests/qa/test_retriever.py::test_rrf_max_per_doc
+PASSED tests/qa/test_retriever.py::test_rrf_tie_deterministic
+PASSED tests/qa/test_retriever.py::test_not_found_flag
+PASSED tests/qa/test_retriever.py::test_retrieve_excludes_non_ready
+PASSED tests/qa/test_retriever.py::test_retrieve_scoped_to_doc_set
+PASSED tests/qa/test_retriever.py::test_fts_unaccent
+PASSED tests/qa/test_retriever.py::test_keyword_code_found
+PASSED tests/qa/test_retriever.py::test_unrelated_question_not_found
+PASSED tests/qa/test_retriever.py::test_max_per_doc_in_retrieve
+PASSED tests/test_config.py::test_defaults_match_readme
+PASSED tests/test_config.py::test_env_overrides
+PASSED tests/test_errors.py::test_app_error_shape
+PASSED tests/test_errors.py::test_validation_error_shape
+PASSED tests/test_errors.py::test_unhandled_error_is_internal
+PASSED tests/test_health.py::test_health_ok
+PASSED tests/test_models.py::test_schema_has_tables_extensions_and_indexes
+PASSED tests/test_models.py::test_unique_filename_per_doc_set
+PASSED tests/test_models.py::test_delete_document_cascades_chunks
+PASSED tests/test_models.py::test_tsv_unaccent
+PASSED tests/test_seed.py::test_seed_idempotent
+PASSED tests/test_seed.py::test_seed_reset_clears_data
+======================= 142 passed, 2 warnings in 29.69s =======================

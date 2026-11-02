@@ -42,5 +42,5 @@ Claude thật (theo `REWRITE_SYSTEM_PROMPT`) chỉ đưa ngữ cảnh vào khi c
 ## Cách sửa và xác nhận
 
 - `FakeLlmClient.rewrite_question` chỉ ghép câu trước khi câu hỏi có từ chỉ trỏ (`đó|này|ấy|trên|vậy`). Các pytest về câu tiếp nối (`test_ask_followup_uses_rewrite`, câu có "đó") không đổi và vẫn pass (`pytest tests/qa`: 62 passed).
-- Xác nhận: 2 lượt chạy sau khi sửa (xem [traceability.md](../traceability.md) §1).
+- Commit sửa: `5ec5abd`. Xác nhận: run-4, run-5 — test PASS 3/3 mỗi lượt, toàn bộ Playwright 66/66 (xem [traceability.md](../traceability.md) §1).
 - Việc còn lại: chất lượng viết lại câu hỏi của Claude thật được đo ở lớp Q (TC-051, chu kỳ 2–3).

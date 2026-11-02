@@ -25,4 +25,4 @@ Với người dùng, bấm chip vẫn chọn đúng radio (label bao input), v�
 ## Cách sửa và xác nhận
 
 - Test bấm vào `label.chip` có chữ "Thiếu thông tin", rồi assert radio `toBeChecked()`. Assert cuối (`aria-pressed="true"`) giữ nguyên.
-- Xác nhận: `chat.spec.ts` 7/7 pass, và 2 lượt chạy đầy đủ sau khi sửa.
+- Commit sửa: `5ec5abd`. Xác nhận: run-4, run-5 — PASS 3/3 mỗi lượt.

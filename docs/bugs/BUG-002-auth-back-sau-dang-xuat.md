@@ -40,4 +40,4 @@ Yêu cầu thật là **"Back không vào lại được"**, và app đáp ứng
 ## Cách sửa và xác nhận
 
 - Đổi assert sau `goBack()` thành: URL **không** phải trang chủ của app, và không có `.topbar` (thanh của người đã đăng nhập).
-- Xác nhận: 2 lượt chạy sau khi sửa, PASS 3/3 mỗi lượt.
+- Commit sửa: `2dac54d`. Xác nhận: test PASS 3/3 ở run-2, run-3, run-4, run-5.

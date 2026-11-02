@@ -22,4 +22,4 @@ Received string:  "Theo tài liệu HopDongKhung.pdf, … [1]\r\n\r\nNguồn:\r\
 ## Cách sửa và xác nhận
 
 - Trong test, chuẩn hóa `\r\n` thành `\n` trước khi so khớp; regex giữ nguyên.
-- Xác nhận: `chat.spec.ts` 7/7 pass, và 2 lượt chạy đầy đủ sau khi sửa (xem [traceability.md](../traceability.md)).
+- Commit sửa: `5ec5abd`. Xác nhận: run-4, run-5 — PASS 3/3 mỗi lượt.
