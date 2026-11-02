@@ -22,7 +22,8 @@ PW="$ROOT/playwright-report/$RUN"
 cd "$ROOT"
 
 rm -rf "$OUT" "$PW" backend/.test-out web/.test-out
-mkdir -p "$OUT"
+# Tạo trước bằng user hiện tại: container chạy root, nếu để container tạo thì trên Linux không mv ra được.
+mkdir -p "$OUT" backend/.test-out web/.test-out
 status=0
 
 step() {

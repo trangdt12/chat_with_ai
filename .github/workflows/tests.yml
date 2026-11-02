@@ -32,6 +32,14 @@ jobs:
           echo "RETRIEVAL_NOT_FOUND_TAU=0.25" >> .env
           mkdir -p data/files models
 
+      # Trước khi dựng stack: nếu không, docker tạo web/node_modules (điểm mount volume) thuộc root
+      # và npm ci trên runner lỗi EACCES (exit 243).
+      - name: Cài Playwright
+        working-directory: web
+        run: |
+          npm ci
+          npx playwright install --with-deps chromium
+
       - name: Dựng stack
         run: |
           docker compose up -d --build --wait db api worker web
@@ -41,12 +49,6 @@ jobs:
             curl -sf http://localhost:5173 >/dev/null && curl -sf http://localhost:8000/api/v1/health >/dev/null && break
             sleep 5
           done
-
-      - name: Cài Playwright
-        working-directory: web
-        run: |
-          npm ci
-          npx playwright install --with-deps chromium
 
       - name: Chạy toàn bộ TC
         run: bash scripts/run-tests.sh ${{ matrix.run }}
