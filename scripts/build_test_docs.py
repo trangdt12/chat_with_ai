@@ -218,7 +218,7 @@ def verdict(tc, res) -> tuple[str, str]:
 def bug_index():
     out = {}
     for f in sorted((DOCS / "bugs").glob("BUG-*.md")):
-        for tc in re.findall(r"TC-\d{3}", f.read_text(encoding="utf-8")):
+        for tc in sorted(set(re.findall(r"TC-\d{3}", f.read_text(encoding="utf-8")))):
             out.setdefault(tc, []).append(f.name)
     return out
 
@@ -364,6 +364,15 @@ def build_traceability_md(acs, tcs, all_runs, results, bugs) -> tuple[str, list[
     if not all_runs:
         L.append("| — | chưa có lượt chạy nào | | | | | | |")
 
+    if all_runs and not any(envs[r].get("ci", "").startswith("true") for r in all_runs):
+        L += [
+            "",
+            "> **Về CI:** đã cấu hình CI ([.github/workflows/tests.yml](../.github/workflows/tests.yml)): 2 lượt độc lập "
+            "trên cùng commit, lưu bằng chứng làm artifact. Lần chạy CI đầu tiên lỗi ở bước cài đặt (npm EACCES), đã sửa; "
+            "từ đó GitHub Actions của tài khoản không cấp runner (các lần chạy dừng ở `queued`), nên **chưa có lần chạy CI "
+            "nào hoàn tất**. Bằng chứng nộp kèm là các lượt chạy local ở trên, dùng **đúng script** "
+            "[scripts/run-tests.sh](../scripts/run-tests.sh) mà CI gọi, trên code đã commit (run-4, run-5: 0 file chưa commit).",
+        ]
     L += [
         "",
         "Verdict cuối của TC: **PASS** ⇔ PASS ở mọi lượt (≥ 2); **FAIL** ⇔ FAIL ở ≥ 1 lượt; còn lại **BLOCKED**. "

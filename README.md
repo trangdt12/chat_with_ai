@@ -11,7 +11,7 @@ Tài liệu: yêu cầu ở [docs/requirements](docs/requirements/UserStories.md
 | Test plan đủ 8 mục | [docs/test-plan.md](docs/test-plan.md) |
 | Test case, ma trận AC ↔ TC, định nghĩa PASS/FAIL viết trước khi chạy | [docs/test-cases.md](docs/test-cases.md) (sinh từ [docs/test/test-cases.yaml](docs/test/test-cases.yaml); lịch sử git cho thấy định nghĩa được commit trước lượt chạy) |
 | 100% AC của US-001, US-009 có TC; không TC nào thiếu AC | [docs/test-cases.md](docs/test-cases.md) §2, dòng "Kiểm tra độ phủ (máy)" |
-| Chạy toàn bộ TC bằng Playwright trong CI | [.github/workflows/tests.yml](.github/workflows/tests.yml) → [scripts/run-tests.sh](scripts/run-tests.sh) |
+| Chạy toàn bộ TC bằng Playwright trong CI | [.github/workflows/tests.yml](.github/workflows/tests.yml) → [scripts/run-tests.sh](scripts/run-tests.sh). **Lưu ý:** CI đã được cấu hình nhưng chưa có lần chạy nào hoàn tất, vì GitHub Actions của tài khoản không cấp runner. Bằng chứng nộp kèm là 2 lượt chạy local (run-4, run-5) dùng đúng script mà CI gọi — xem [docs/traceability.md](docs/traceability.md) §1 |
 | Bằng chứng: trace, log, ảnh chụp | [playwright-report/](playwright-report/) (HTML có trace, ảnh, video) · [reports/](reports/) (log, junit, môi trường) — xem ghi chú bên dưới |
 | Mọi FAIL có bug ticket; PASS lặp lại ≥ 2 lần | [docs/bugs/](docs/bugs/) · 2 lượt `run-1`, `run-2` trên cùng commit, Playwright `--repeat-each=3` |
 | Truy vết US ↔ AC ↔ TC ↔ bằng chứng | [docs/traceability.md](docs/traceability.md) |
