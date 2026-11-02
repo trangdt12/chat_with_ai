@@ -39,7 +39,7 @@ step() {
   echo "run: $RUN"
   echo "started_utc: $(date -u +%Y-%m-%dT%H:%M:%SZ)"
   echo "commit: $(git rev-parse HEAD)"
-  echo "uncommitted_files: $(git status --porcelain | wc -l | tr -d ' ')"
+  echo "uncommitted_files: $(git status --porcelain -- . ':!reports' ':!playwright-report' ':!.claude' | wc -l | tr -d ' ')"
   echo "ci: ${GITHUB_ACTIONS:-false} ${GITHUB_RUN_ID:+run_id=$GITHUB_RUN_ID attempt=${GITHUB_RUN_ATTEMPT:-1}}"
   echo "profile: FAKE"
   grep -E '^(LLM_FAKE|EMBED_FAKE|RETRIEVAL_NOT_FOUND_TAU)=' .env

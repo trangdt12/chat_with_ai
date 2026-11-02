@@ -146,6 +146,18 @@ def run_results(run_dir: Path):
     }
 
 
+def suite_summary(res) -> str:
+    """Cả regression ngoài phạm vi: số pass / fail / skip của từng công cụ."""
+    def count(statuses):
+        f = sum(s == "failed" for s in statuses)
+        k = sum(s == "skipped" for s in statuses)
+        return f"{len(statuses) - f - k}✓" + (f" **{f}✗**" if f else "") + (f" {k} skip" if k else "")
+
+    pw = ["passed" if s == "passed" else "failed" if s in ("failed", "timedOut") else "skipped"
+          for _, _, st in res["pw"] for s in st]
+    return " · ".join(count(x) for x in ([s for *_, s in res["pytest"]], [s for *_, s in res["vitest"]], pw))
+
+
 def evidence_for(tc, run: str) -> list[tuple[str, str]]:
     """[(nhãn, đường dẫn tương đối từ docs/)] cho một TC ở một lượt."""
     ev = []
@@ -335,15 +347,17 @@ def build_traceability_md(acs, tcs, all_runs, results, bugs) -> tuple[str, list[
         "",
         "## 1. Các lượt chạy",
         "",
-        "| Lượt | Bắt đầu (UTC) | Commit | File chưa commit | Hồ sơ | CI | Tính verdict | Bằng chứng |",
-        "|---|---|---|---|---|---|---|---|",
+        "| Lượt | Bắt đầu (UTC) | Commit | File chưa commit | Hồ sơ | CI | Toàn bộ suite (pytest · vitest · Playwright ×3) "
+        "| Tính verdict | Bằng chứng |",
+        "|---|---|---|---|---|---|---|---|---|",
     ]
     for r in all_runs:
         e = envs[r]
         used = "**có**" if r in runs else "không — commit cũ, xem §5"
         L.append(
             f"| {r} | {e.get('started_utc', '?')} | `{e.get('commit', '?')[:7]}` | {e.get('uncommitted_files', '?')} | "
-            f"{e.get('profile', '?')} | {e.get('ci', '?')} | {used} | [env](../reports/{r}/env.txt) · "
+            f"{e.get('profile', '?')} | {e.get('ci', '?')} | {suite_summary(results[r])} | {used} | "
+            f"[env](../reports/{r}/env.txt) · "
             f"[exit codes](../reports/{r}/exit-codes.txt) · [Playwright](../playwright-report/{r}/index.html) · "
             f"[docker log](../reports/{r}/docker-compose.log) |"
         )
@@ -414,16 +428,18 @@ def build_traceability_md(acs, tcs, all_runs, results, bugs) -> tuple[str, list[
     if not old_runs:
         L.append("Không có.")
     else:
-        L += ["| Lượt | Commit | TC FAIL | Bug | Bằng chứng |", "|---|---|---|---|---|"]
+        L += ["| Lượt | Commit | Toàn bộ suite | TC FAIL | Bug của TC | Bằng chứng |", "|---|---|---|---|---|---|"]
         for r in old_runs:
             failed = [t for t in all_verdicts if all_verdicts[t][r][0] == "FAIL"]
             tickets = sorted({b for t in failed for b in bugs.get(t, [])})
             L.append(
-                f"| {r} | `{envs[r].get('commit', '?')[:7]}` | {', '.join(failed) or '—'} | "
+                f"| {r} | `{envs[r].get('commit', '?')[:7]}` | {suite_summary(results[r])} | {', '.join(failed) or '—'} | "
                 f"{', '.join(f'[{b}](bugs/{b})' for b in tickets) or '—'} | "
                 f"[Playwright](../playwright-report/{r}/index.html) · [log](../reports/{r}/playwright.log) |"
             )
-        L += ["", "Lỗi regression ngoài phạm vi (không gắn TC) cũng có ticket trong [bugs/](bugs/)."]
+        L += ["", "Lỗi regression ngoài phạm vi (không gắn TC) có ticket riêng: "
+              + ", ".join(f"[{f.stem}](bugs/{f.name})" for f in sorted((DOCS / "bugs").glob("BUG-[0-9]*.md"))
+                          if not f.name.startswith("BUG-000")) + "."]
     return "\n".join(L) + "\n", fail_no_bug
 
 

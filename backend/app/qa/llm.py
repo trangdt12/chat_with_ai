@@ -2,6 +2,7 @@
 
 import asyncio
 import logging
+import re
 from collections.abc import AsyncIterator, Sequence
 from dataclasses import dataclass
 from functools import lru_cache
@@ -20,6 +21,8 @@ FALLBACK_BETA = "server-side-fallback-2026-07-01"
 SEARCH_BLOCK_MAX_CHARS = 300
 REWRITE_TIMEOUT_SECONDS = 8
 REWRITE_MAX_TOKENS = 1000
+# FakeLlmClient: từ chỉ trỏ cho thấy câu hỏi phụ thuộc lượt trước.
+FOLLOWUP_REF = re.compile(r"\b(đó|này|ấy|trên|vậy)\b", re.IGNORECASE)
 
 
 @dataclass(frozen=True)
@@ -199,7 +202,9 @@ class FakeLlmClient:
 
     async def rewrite_question(self, history: History, question: str) -> str:
         self.rewrite_calls.append((list(history), question))
-        if not history:
+        # Như REWRITE_SYSTEM_PROMPT: chỉ ghép ngữ cảnh khi câu hỏi tham chiếu lượt trước; câu độc lập
+        # ("Thủ đô của Pháp là gì?") giữ nguyên, nếu không FTS sẽ khớp câu trước (BUG-003).
+        if not history or not FOLLOWUP_REF.search(question):
             return question
         return f"{history[-1][0]} {question}"
 
