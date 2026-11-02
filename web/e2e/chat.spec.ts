@@ -19,7 +19,8 @@ test.beforeEach(async ({ page }) => {
 test("hỏi → stream → [1] → popover → mở PDF đúng trang", async ({ page, context }) => {
   await ask(page, "Thời hạn thanh toán là bao lâu?");
   const answer = lastAnswer(page);
-  const cite = answer.getByRole("button", { name: /^Nguồn 1: HopDongKhung\.pdf trang \d+$/ });
+  // Mỗi khối có nguồn đều có nút [n]: FakeLlm trả 2 khối cùng trích nguồn 1 nên có 2 nút "Nguồn 1" (BUG-001).
+  const cite = answer.getByRole("button", { name: /^Nguồn 1: HopDongKhung\.pdf trang \d+$/ }).first();
   await expect(cite).toBeVisible();
   await expect(answer.locator(".sources")).toContainText("HopDongKhung.pdf · trang");
 
@@ -50,7 +51,7 @@ test("hỏi → stream → [1] → popover → mở PDF đúng trang", async ({ 
 
 test("bàn phím: Tab tới [1], Enter mở, Esc đóng và trả focus", async ({ page }) => {
   await ask(page, "Thời hạn thanh toán là bao lâu?");
-  const cite = lastAnswer(page).getByRole("button", { name: /^Nguồn 1:/ });
+  const cite = lastAnswer(page).getByRole("button", { name: /^Nguồn 1:/ }).first();
   await expect(cite).toBeVisible();
   await cite.focus();
   await page.keyboard.press("Enter");

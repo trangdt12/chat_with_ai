@@ -197,10 +197,10 @@ def verdict(tc, res) -> tuple[str, str]:
             statuses += got or ["missing"]
     n = len(statuses)
     if "failed" in statuses:
-        return "FAIL", f"{statuses.count('failed')}/{n} lần chạy lỗi"
+        return "FAIL", f"{statuses.count('failed')}/{n} kết quả lỗi"
     if "missing" in statuses or "skipped" in statuses:
         return "BLOCKED", "không tìm thấy kết quả test hoặc test bị skip"
-    return "PASS", f"{n}/{n} lần chạy pass"
+    return "PASS", f"{n}/{n} kết quả pass"
 
 
 def bug_index():
@@ -297,8 +297,21 @@ def build_test_cases_md(data, acs, tcs) -> str:
     return "\n".join(L) + "\n", missing_ac, orphan
 
 
-def build_traceability_md(acs, tcs, runs, results, bugs) -> tuple[str, list[str]]:
-    verdicts = {tc["id"]: {r: verdict(tc, results[r]) for r in runs} for tc in tcs}
+def build_traceability_md(acs, tcs, all_runs, results, bugs) -> tuple[str, list[str]]:
+    envs = {}
+    for r in all_runs:
+        p = REPORTS / r / "env.txt"
+        envs[r] = dict(
+            line.split(": ", 1) for line in p.read_text(encoding="utf-8").splitlines() if ": " in line
+        ) if p.exists() else {}
+    # Verdict tính trên các lượt ở commit của lượt mới nhất; lượt ở commit cũ hơn là lịch sử (có bug ticket).
+    latest = max(all_runs, key=lambda r: envs[r].get("started_utc", "")) if all_runs else None
+    head = envs[latest].get("commit") if latest else None
+    runs = [r for r in all_runs if envs[r].get("commit") == head]
+    old_runs = [r for r in all_runs if r not in runs]
+
+    all_verdicts = {tc["id"]: {r: verdict(tc, results[r]) for r in all_runs} for tc in tcs}
+    verdicts = {t: {r: v[r] for r in runs} for t, v in all_verdicts.items()}
     final = {}
     for tc in tcs:
         vs = [verdicts[tc["id"]][r][0] for r in runs]
@@ -310,14 +323,8 @@ def build_traceability_md(acs, tcs, runs, results, bugs) -> tuple[str, list[str]
             final[tc["id"]] = "PASS"
         else:
             final[tc["id"]] = "BLOCKED"
-    fail_no_bug = [t for t, v in final.items() if v == "FAIL" and t not in bugs]
-
-    envs = {}
-    for r in runs:
-        p = REPORTS / r / "env.txt"
-        envs[r] = dict(
-            line.split(": ", 1) for line in p.read_text(encoding="utf-8").splitlines() if ": " in line
-        ) if p.exists() else {}
+    ever_failed = {t for t, v in all_verdicts.items() if any(x == "FAIL" for x, _ in v.values())}
+    fail_no_bug = sorted(t for t in ever_failed if t not in bugs)
 
     icon = {"PASS": "✅ PASS", "FAIL": "❌ FAIL", "BLOCKED": "⏸ BLOCKED"}
     L = [
@@ -328,19 +335,20 @@ def build_traceability_md(acs, tcs, runs, results, bugs) -> tuple[str, list[str]
         "",
         "## 1. Các lượt chạy",
         "",
-        "| Lượt | Bắt đầu (UTC) | Commit | File chưa commit | Hồ sơ | CI | Bằng chứng |",
-        "|---|---|---|---|---|---|---|",
+        "| Lượt | Bắt đầu (UTC) | Commit | File chưa commit | Hồ sơ | CI | Tính verdict | Bằng chứng |",
+        "|---|---|---|---|---|---|---|---|",
     ]
-    for r in runs:
+    for r in all_runs:
         e = envs[r]
+        used = "**có**" if r in runs else "không — commit cũ, xem §5"
         L.append(
             f"| {r} | {e.get('started_utc', '?')} | `{e.get('commit', '?')[:7]}` | {e.get('uncommitted_files', '?')} | "
-            f"{e.get('profile', '?')} | {e.get('ci', '?')} | [env](../reports/{r}/env.txt) · "
+            f"{e.get('profile', '?')} | {e.get('ci', '?')} | {used} | [env](../reports/{r}/env.txt) · "
             f"[exit codes](../reports/{r}/exit-codes.txt) · [Playwright](../playwright-report/{r}/index.html) · "
             f"[docker log](../reports/{r}/docker-compose.log) |"
         )
-    if not runs:
-        L.append("| — | chưa có lượt chạy nào | | | | | |")
+    if not all_runs:
+        L.append("| — | chưa có lượt chạy nào | | | | | | |")
 
     L += [
         "",
@@ -398,6 +406,24 @@ def build_traceability_md(acs, tcs, runs, results, bugs) -> tuple[str, list[str]
             reason = verdicts[tc["id"]][runs[0]][1] if runs else "chưa có lượt chạy"
             L.append(f"| {tc['id']} | {'+'.join(as_list(tc['layer']))} | {cell(reason)} | "
                      f"{' ; '.join(code(r) for r in as_list(tc['run']))} |")
+    L += [
+        "",
+        "## 5. Lịch sử: lượt chạy ở commit cũ",
+        "",
+    ]
+    if not old_runs:
+        L.append("Không có.")
+    else:
+        L += ["| Lượt | Commit | TC FAIL | Bug | Bằng chứng |", "|---|---|---|---|---|"]
+        for r in old_runs:
+            failed = [t for t in all_verdicts if all_verdicts[t][r][0] == "FAIL"]
+            tickets = sorted({b for t in failed for b in bugs.get(t, [])})
+            L.append(
+                f"| {r} | `{envs[r].get('commit', '?')[:7]}` | {', '.join(failed) or '—'} | "
+                f"{', '.join(f'[{b}](bugs/{b})' for b in tickets) or '—'} | "
+                f"[Playwright](../playwright-report/{r}/index.html) · [log](../reports/{r}/playwright.log) |"
+            )
+        L += ["", "Lỗi regression ngoài phạm vi (không gắn TC) cũng có ticket trong [bugs/](bugs/)."]
     return "\n".join(L) + "\n", fail_no_bug
 
 

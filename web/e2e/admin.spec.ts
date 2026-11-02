@@ -42,7 +42,7 @@ test("gỡ tài liệu → biến khỏi danh sách của Lan; trích dẫn cũ 
   const lan = await loginNewContext(browser, "lan");
   await uploadOneByOne(lan.page, [CONTRACT]);
   await ask(lan.page, "Thời hạn thanh toán là bao lâu?");
-  const cite = lan.page.locator("article.msg-assistant").last().getByRole("button", { name: /^Nguồn 1:/ });
+  const cite = lan.page.locator("article.msg-assistant").last().getByRole("button", { name: /^Nguồn 1:/ }).first();
   await expect(cite).toBeVisible();
 
   await login(page, "hung");
