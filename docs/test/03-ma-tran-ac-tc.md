@@ -1,5 +1,8 @@
 # Ma trận AC ↔ test case
 
+> ⚠️ **Đã được thay bằng [docs/test-cases.md](../test-cases.md)** (ma trận + định nghĩa PASS/FAIL, sinh tự động từ test-cases.yaml) và [docs/traceability.md](../traceability.md) (kết quả + bằng chứng).
+> Giữ file này vì §2 (mã test đã thêm) và §3 (test không trỏ về AC trong phạm vi → regression) vẫn đúng. Cột trạng thái ✅ ở §1 nghĩa là "test đã có", **không** phải kết quả chạy.
+
 > Nguồn sự thật: [test-cases.yaml](test-cases.yaml) — bảng này tóm tắt từ đó. Định nghĩa AC: [01-pham-vi-va-ac.md](01-pham-vi-va-ac.md).
 > Quy tắc: **mọi AC có một dòng**; **mọi TC trỏ về ≥ 1 AC**. TC không trỏ về AC nào thì bị loại khỏi ma trận (giữ làm regression) hoặc phải mở AC mới — xem §3.
 > Trạng thái: ✅ test đã có trong repo · 👤 người chấm. Kết quả chạy: [reports/2026-10-28.md](reports/2026-10-28.md).

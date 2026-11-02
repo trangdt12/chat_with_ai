@@ -8,7 +8,7 @@ Nguồn sự thật, theo thứ tự ưu tiên:
 
 1. AC: [docs/test/01-pham-vi-va-ac.md](docs/test/01-pham-vi-va-ac.md)
 2. Định nghĩa PASS/FAIL của từng TC (khối `expect`): [docs/test/test-cases.yaml](docs/test/test-cases.yaml)
-3. Test plan (phạm vi, tiêu chí vào/thoát): [docs/test/02-test-plan.md](docs/test/02-test-plan.md). Ma trận AC↔TC: [docs/test/03-ma-tran-ac-tc.md](docs/test/03-ma-tran-ac-tc.md)
+3. Test plan (phạm vi, tiêu chí vào/thoát): [docs/test-plan.md](docs/test-plan.md). Ma trận AC↔TC: [docs/test-cases.md](docs/test-cases.md) (sinh từ YAML bằng `scripts/build_test_docs.py`). Kết quả và bằng chứng: [docs/traceability.md](docs/traceability.md)
 
 ### Môi trường test
 

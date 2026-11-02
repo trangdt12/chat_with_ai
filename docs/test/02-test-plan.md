@@ -1,5 +1,8 @@
 # Test plan — Đường xương sống "Tải PDF → câu trả lời có trích dẫn"
 
+> ⚠️ **Đã được thay bằng [docs/test-plan.md](../test-plan.md)** (8 mục, có CI, quy trình lỗi, bằng chứng). File này là bản nháp v0.1 ngày 2026-10-28, giữ làm lịch sử.
+> Phạm vi, AC và tiêu chí thoát không đổi; điểm khác chính: bản mới chạy tự động qua CI và yêu cầu PASS ở ≥ 2 lượt độc lập.
+
 | Phiên bản | Ngày | Phạm vi code | AC | Ma trận | PASS/FAIL |
 |---|---|---|---|---|---|
 | 0.1 | 2026-10-28 | commit `20031fe` | [01-pham-vi-va-ac.md](01-pham-vi-va-ac.md) | [03-ma-tran-ac-tc.md](03-ma-tran-ac-tc.md) | [test-cases.yaml](test-cases.yaml) |
